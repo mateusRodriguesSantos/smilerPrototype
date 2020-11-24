@@ -14,7 +14,8 @@ class CameraView:UIView{
     //UI components
     
     init() {
-        super.init(frame: CGRect.zero)
+        super.init(frame: .zero)
+        self.isUserInteractionEnabled = true
         self.setupViews()
     }
     

@@ -45,7 +45,10 @@ extension CameraViewController:CameraDelegate{
     }
 }
 
-extension CameraViewController:AVCaptureVideoDataOutputSampleBufferDelegate{
-    
+extension
+CameraViewController:AVCaptureVideoDataOutputSampleBufferDelegate{
+    func captureOutput(_ output: AVCaptureOutput, didOutput sampleBuffer: CMSampleBuffer, from connection: AVCaptureConnection) {
+        
+    }
 }
 

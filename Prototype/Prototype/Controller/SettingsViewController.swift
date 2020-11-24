@@ -38,6 +38,7 @@ extension SettingsViewController{
 // MARK: - Action Buttons
 extension SettingsViewController{
     @objc func actionButtonCamera(_ sender: Any) {
+        
         coordinator?.navigateToCameraViewController()
     }
 }
