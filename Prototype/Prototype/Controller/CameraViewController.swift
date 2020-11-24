@@ -31,8 +31,10 @@ class CameraViewController: UIViewController{
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
-
-
+    
+    override func viewWillAppear(_ animated: Bool) {
+        camera.prepareCamera(isCustomSize: false)
+    }
 }
 
 extension CameraViewController:CameraDelegate{
