@@ -95,6 +95,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6E10C70B25743A6B00A39F3F /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				AD41F240256D534500F0E467 /* SettingsView.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		6E10C70C25743A7100A39F3F /* Camera */ = {
+			isa = PBXGroup;
+			children = (
+				AD41F245256D535700F0E467 /* CameraView.swift */,
+			);
+			path = Camera;
+			sourceTree = "<group>";
+		};
 		AD41F230256D519D00F0E467 /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
@@ -116,10 +132,10 @@
 		AD8A2E0D256D4FD700B05AAB /* View */ = {
 			isa = PBXGroup;
 			children = (
+				6E10C70C25743A7100A39F3F /* Camera */,
+				6E10C70B25743A6B00A39F3F /* Settings */,
 				ADFBEC18256D4BDB002EAE9D /* Main.storyboard */,
 				ADFBEC20256D4BDC002EAE9D /* LaunchScreen.storyboard */,
-				AD41F240256D534500F0E467 /* SettingsView.swift */,
-				AD41F245256D535700F0E467 /* CameraView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
