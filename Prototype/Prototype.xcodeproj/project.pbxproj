@@ -12,6 +12,9 @@
 		AD41F23C256D522500F0E467 /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD41F23B256D522500F0E467 /* MainCoordinator.swift */; };
 		AD41F241256D534500F0E467 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD41F240256D534500F0E467 /* SettingsView.swift */; };
 		AD41F246256D535700F0E467 /* CameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD41F245256D535700F0E467 /* CameraView.swift */; };
+		AD7F26732575363100DB0387 /* FaceDetection.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7F26722575363100DB0387 /* FaceDetection.swift */; };
+		AD7F267825753ADE00DB0387 /* FaceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7F267725753ADE00DB0387 /* FaceView.swift */; };
+		AD7F267F25753CB400DB0387 /* CoreGraphicsExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7F267E25753CB300DB0387 /* CoreGraphicsExtensions.swift */; };
 		AD8A2DFE256D4D6300B05AAB /* Camera.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD8A2DFD256D4D6300B05AAB /* Camera.swift */; };
 		AD8A2DFF256D4D6300B05AAB /* Camera.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD8A2DFD256D4D6300B05AAB /* Camera.swift */; };
 		AD8A2E07256D4FC200B05AAB /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD8A2E06256D4FC200B05AAB /* SettingsViewController.swift */; };
@@ -51,6 +54,9 @@
 		AD41F23B256D522500F0E467 /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
 		AD41F240256D534500F0E467 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		AD41F245256D535700F0E467 /* CameraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraView.swift; sourceTree = "<group>"; };
+		AD7F26722575363100DB0387 /* FaceDetection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaceDetection.swift; sourceTree = "<group>"; };
+		AD7F267725753ADE00DB0387 /* FaceView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FaceView.swift; sourceTree = "<group>"; };
+		AD7F267E25753CB300DB0387 /* CoreGraphicsExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreGraphicsExtensions.swift; sourceTree = "<group>"; };
 		AD8A2DFD256D4D6300B05AAB /* Camera.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Camera.swift; sourceTree = "<group>"; };
 		AD8A2E06256D4FC200B05AAB /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		ADFBEC0F256D4BDB002EAE9D /* Prototype.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Prototype.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -108,7 +114,9 @@
 		AD8A2E0C256D4FC800B05AAB /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				AD7F267E25753CB300DB0387 /* CoreGraphicsExtensions.swift */,
 				AD8A2DFD256D4D6300B05AAB /* Camera.swift */,
+				AD7F26722575363100DB0387 /* FaceDetection.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -120,6 +128,7 @@
 				ADFBEC20256D4BDC002EAE9D /* LaunchScreen.storyboard */,
 				AD41F240256D534500F0E467 /* SettingsView.swift */,
 				AD41F245256D535700F0E467 /* CameraView.swift */,
+				AD7F267725753ADE00DB0387 /* FaceView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -325,6 +334,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AD7F26732575363100DB0387 /* FaceDetection.swift in Sources */,
+				AD7F267825753ADE00DB0387 /* FaceView.swift in Sources */,
 				ADFBEC1D256D4BDB002EAE9D /* Prototype.xcdatamodeld in Sources */,
 				AD41F237256D51D000F0E467 /* ViewCodable.swift in Sources */,
 				AD8A2DFE256D4D6300B05AAB /* Camera.swift in Sources */,
@@ -334,6 +345,7 @@
 				ADFBEC15256D4BDB002EAE9D /* SceneDelegate.swift in Sources */,
 				AD41F246256D535700F0E467 /* CameraView.swift in Sources */,
 				AD8A2E07256D4FC200B05AAB /* SettingsViewController.swift in Sources */,
+				AD7F267F25753CB400DB0387 /* CoreGraphicsExtensions.swift in Sources */,
 				AD41F23C256D522500F0E467 /* MainCoordinator.swift in Sources */,
 				AD41F232256D51C300F0E467 /* Coordinator.swift in Sources */,
 			);

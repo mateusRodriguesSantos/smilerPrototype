@@ -13,6 +13,15 @@ class CameraView:UIView{
     
     //UI components
     
+    let faceView:FaceView = {
+        let view = FaceView(frame: .zero)
+        view.backgroundColor = .clear
+        view.layer.zPosition = 0
+        view.isUserInteractionEnabled = false
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
+    
     init() {
         super.init(frame: .zero)
         self.isUserInteractionEnabled = true
@@ -26,10 +35,16 @@ class CameraView:UIView{
 
 extension CameraView:ViewCodable{
     func setupViewHierarchy() {
-        
+        self.addSubview(faceView)
+        self.layer.addSublayer(faceView.layer)
     }
     
     func setupConstraints() {
-        
+        NSLayoutConstraint.activate([
+            faceView.widthAnchor.constraint(equalToConstant: UIScreen.main.bounds.width),
+            faceView.heightAnchor.constraint(equalToConstant: UIScreen.main.bounds.height),
+            faceView.centerYAnchor.constraint(equalTo: self.centerYAnchor),
+            faceView.centerXAnchor.constraint(equalTo: self.centerXAnchor),
+        ])
     }
 }
