@@ -32,9 +32,9 @@ class SettingsView:UIView{
     //Provisorio
     let scareFaceButton: UIButton = {
         let button = UIButton()
-        button.setBackgroundImage(UIImage(named: "Scare"), for: .normal)
+        button.setBackgroundImage(UIImage(named: "Happy"), for: .normal)
         button.contentMode = .scaleAspectFill
-        button.setTitle("Medo", for: .normal)
+        button.setTitle("Alegria", for: .normal)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.titleLabel?.font = UIFont.systemFont(ofSize: 35)
         button.centerLabelVerticallyWithPadding(spacing: 150)
