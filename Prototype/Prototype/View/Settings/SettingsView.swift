@@ -10,7 +10,6 @@ import UIKit
 class SettingsView:UIView{
     
     //Variables
-    
     //UI components
     let buttonCam:UIButton = {
         let button = UIButton(type: .system)
@@ -30,7 +29,7 @@ class SettingsView:UIView{
     }()
     
     //Provisorio
-    let scareFaceButton: UIButton = {
+    let happyFaceButton: UIButton = {
         let button = UIButton()
         button.setBackgroundImage(UIImage(named: "Happy"), for: .normal)
         button.contentMode = .scaleAspectFill
@@ -39,7 +38,7 @@ class SettingsView:UIView{
         button.titleLabel?.font = UIFont.systemFont(ofSize: 35)
         button.centerLabelVerticallyWithPadding(spacing: 150)
         
-        return button
+        return button 
     }()
 
     
@@ -57,7 +56,7 @@ extension SettingsView:ViewCodable{
     func setupViewHierarchy() {
         self.setupBackground()
         self.addSubview(buttonCam)
-        self.addSubview(scareFaceButton)
+        self.addSubview(happyFaceButton)
         
     }
     
@@ -68,15 +67,19 @@ extension SettingsView:ViewCodable{
             buttonCam.widthAnchor.constraint(equalToConstant: 300),
             buttonCam.heightAnchor.constraint(equalToConstant: 30),
             
+            
+            //Bacground Settings Constraints
             backgroundSettings.centerYAnchor.constraint(equalTo: self.centerYAnchor),
             backgroundSettings.centerXAnchor.constraint(equalTo: self.centerXAnchor),
             backgroundSettings.widthAnchor.constraint(equalTo: self.widthAnchor),
             backgroundSettings.heightAnchor.constraint(equalTo: self.heightAnchor),
             
-            scareFaceButton.widthAnchor.constraint(equalToConstant: 100),
-            scareFaceButton.heightAnchor.constraint(equalToConstant: 100),
-            scareFaceButton.centerXAnchor.constraint(equalTo: self.centerXAnchor),
-            scareFaceButton.centerYAnchor.constraint(equalTo: self.centerYAnchor)
+            
+            //Happy Face Button Constraints
+            happyFaceButton.widthAnchor.constraint(equalToConstant: 100),
+            happyFaceButton.heightAnchor.constraint(equalToConstant: 100),
+            happyFaceButton.centerXAnchor.constraint(equalTo: self.centerXAnchor),
+            happyFaceButton.centerYAnchor.constraint(equalTo: self.centerYAnchor)
         ])
     }
     

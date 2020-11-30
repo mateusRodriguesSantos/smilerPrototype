@@ -28,5 +28,11 @@ extension MainCoordinator{
         cameraVC.coordinator = self
         navigationController.pushViewController(cameraVC, animated: true)
     }
+    
+    func navigateToHappyViewController(){
+        let happyVC = HappyViewController()
+        happyVC.coordinator = self
+        navigationController.pushViewController(happyVC, animated: true)
+    }
 }
 
