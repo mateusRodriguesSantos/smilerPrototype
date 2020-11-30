@@ -18,13 +18,13 @@ import AVFoundation
 import Vision
 
 protocol FaceExpressionDelegate:class {
-    func smileDetected()
+    func smileDetected(_ faceDetected:Bool)
     func sadnessDetected()
 }
 
 class FaceDetection{
     
-    var neutralOnnerLips = [CGPoint]()
+    var face:Bool = false
     
     weak var delegate:FaceExpressionDelegate?
     weak var faceView:FaceView?
@@ -44,6 +44,7 @@ class FaceDetection{
             let result = results.first
         else {
             // 2 - Clear the FaceView if something goes wrong or no face is detected.
+            
             faceView?.clear()
             return
         }
@@ -133,6 +134,9 @@ class FaceDetection{
           points: landmarks.outerLips?.normalizedPoints,
           to: result.boundingBox) {
             faceView?.outerLips = outerLips
+            DispatchQueue.main.async { [weak self] in
+                self?.detectSmile(outerLips,yal: result.yaw!)
+            }
         }
 
         if let innerLips = landmark(
@@ -146,5 +150,48 @@ class FaceDetection{
           to: result.boundingBox) {
             faceView?.faceContour = faceContour
         }
+        
+  
+    }
+    
+    func detectSmile(_ points:[CGPoint],yal:NSNumber){
+        if points.isEmpty == false && yal == 0.0{
+            //compare points
+            //Calculate distance between p12 and p7
+            //MAR = L/D
+            
+            let distanceHorizontal = CGPointDistanceSquared(from: points[13], to: points[7])
+            
+            //Calculate - Vertical distances
+            
+            let distanceVerical1 = CGPointDistanceSquared(from: points[2], to: points[11])
+            let distanceVerical2 = CGPointDistanceSquared(from: points[3], to: points[10])
+            let distanceVerical3 = CGPointDistanceSquared(from: points[4], to: points[9])
+            
+            //Calculate average of vertical distances
+            
+            let sum = distanceVerical1 + distanceVerical2 + distanceVerical3
+            let divisor = distanceHorizontal * 3
+            
+            //Calculate MAR
+            let mar = sum/divisor
+            
+            print("MAR: \(mar)")
+            if mar < 0.10 || mar > 0.19{
+                delegate?.smileDetected(true)
+            }else{
+                delegate?.smileDetected(false)
+            }
+        }
+    }
+    
+    func CGPointDistanceSquared(from: CGPoint, to: CGPoint) -> CGFloat {
+        return (from.x - to.x) * (from.x - to.x) + (from.y - to.y) * (from.y - to.y)
+    }
+
+    func CGPointDistance(from: CGPoint, to: CGPoint) -> CGFloat {
+        return sqrt(CGPointDistanceSquared(from: from, to: to))
     }
 }
+
+

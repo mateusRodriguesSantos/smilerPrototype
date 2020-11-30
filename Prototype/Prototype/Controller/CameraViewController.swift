@@ -36,6 +36,7 @@ class CameraViewController: UIViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        addTriggers()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -53,9 +54,22 @@ extension CameraViewController:CameraDelegate{
     }
 }
 
+// MARK: - Triggers
+extension CameraViewController{
+    func addTriggers() {
+        self.baseView.buttonRegister.addTarget(self, action: #selector(self.actionButtonCamera(_:)), for: .touchUpInside)
+    }
+    
+    @objc func actionButtonCamera(_ sender: Any) {
+        
+        faceDetection.faceView?.registerNeutralOuterLips()
+    }
+}
+
 extension CameraViewController:AVCaptureVideoDataOutputSampleBufferDelegate{
     func captureOutput(_ output: AVCaptureOutput, didOutput sampleBuffer: CMSampleBuffer, from connection: AVCaptureConnection) {
         
+
         // 1 - Get the image buffer from the passed in sample buffer.
         guard let imageBuffer = CMSampleBufferGetImageBuffer(sampleBuffer) else {
             return
@@ -74,11 +88,24 @@ extension CameraViewController:AVCaptureVideoDataOutputSampleBufferDelegate{
             print(error.localizedDescription)
         }
     }
+    
+    func call(){
+        if let url = URL(string: "tel://+556133992954"),
+           UIApplication.shared.canOpenURL(url) {
+            UIApplication.shared.open(url, options: [:], completionHandler: nil)
+        }
+    }
 }
 
 extension CameraViewController:FaceExpressionDelegate{
-    func smileDetected() {
-        
+    
+    func smileDetected(_ faceDetected: Bool) {
+        if faceDetected{
+            call()
+            baseView.labelCamera.isHidden = false
+        }else{
+            baseView.labelCamera.isHidden = true
+        }
     }
     
     func sadnessDetected() {
