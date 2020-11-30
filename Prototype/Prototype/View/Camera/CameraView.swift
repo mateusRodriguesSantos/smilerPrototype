@@ -19,6 +19,7 @@ class CameraView:UIView{
         button.layer.cornerRadius = 10
         button.tintColor = .white
         button.title(for: .normal)
+        button.isHidden = true
         button.setTitle("Registrar", for: .normal)
         button.translatesAutoresizingMaskIntoConstraints = false
         return button

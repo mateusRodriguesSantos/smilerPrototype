@@ -101,7 +101,7 @@ extension CameraViewController:FaceExpressionDelegate{
     
     func smileDetected(_ faceDetected: Bool) {
         if faceDetected{
-            call()
+//            call()
             baseView.labelCamera.isHidden = false
         }else{
             baseView.labelCamera.isHidden = true

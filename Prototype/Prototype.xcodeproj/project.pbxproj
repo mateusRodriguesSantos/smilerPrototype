@@ -118,7 +118,6 @@
 		6E10C70C25743A7100A39F3F /* Camera */ = {
 			isa = PBXGroup;
 			children = (
-				6E10C732257577FB00A39F3F /* OptionsBar */,
 				6E10C7282575687400A39F3F /* CameraView.swift */,
 			);
 			path = Camera;
@@ -130,13 +129,6 @@
 				6E10C7142574538E00A39F3F /* UIButton.swift */,
 			);
 			path = Extensions;
-			sourceTree = "<group>";
-		};
-		6E10C732257577FB00A39F3F /* OptionsBar */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = OptionsBar;
 			sourceTree = "<group>";
 		};
 		6E10C7332575781800A39F3F /* Faces */ = {

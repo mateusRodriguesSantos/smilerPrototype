@@ -62,7 +62,7 @@ extension SettingsView:ViewCodable{
     
     func setupConstraints() {
         NSLayoutConstraint.activate([
-            buttonCam.centerYAnchor.constraint(equalTo: self.centerYAnchor),
+            buttonCam.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -50),
             buttonCam.centerXAnchor.constraint(equalTo: self.centerXAnchor),
             buttonCam.widthAnchor.constraint(equalToConstant: 300),
             buttonCam.heightAnchor.constraint(equalToConstant: 30),
