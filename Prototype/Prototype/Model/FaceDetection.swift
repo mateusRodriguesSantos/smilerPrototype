@@ -142,7 +142,8 @@ class FaceDetection{
           to: result.boundingBox) {
             faceView?.outerLips = outerLips
             DispatchQueue.main.async { [weak self] in
-                self?.detectSmile(outerLips,yal: result.yaw!)
+                
+                self?.detectSmile(outerLips,yal: result.yaw!,roll: result.roll!)
             }
         }
 
@@ -161,8 +162,9 @@ class FaceDetection{
   
     }
     
-    func detectSmile(_ points:[CGPoint],yal:NSNumber){
-        if points.isEmpty == false && yal == 0.0{
+    func detectSmile(_ points:[CGPoint],yal:NSNumber, roll:NSNumber){
+        if points.isEmpty == false && yal == 0.0 {
+
             //compare points
             //Calculate distance between p12 and p7
             //MAR = L/D
@@ -192,9 +194,7 @@ class FaceDetection{
             let marR = Double(round(1000*mar)/100)
             print(marR)
             
-         
-            
-            if marR >= 0.0 || marR >= 1.4{
+            if marR >= 0.0 {
                 delegate?.smileDetected(false)
             }
             
