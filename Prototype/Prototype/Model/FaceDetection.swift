@@ -184,23 +184,29 @@ class FaceDetection{
             //Calculate average of vertical distances
             
             let sum = distanceVerical1 + distanceVerical2 + distanceVerical3 + distanceVerical4 + distanceVerical5 + distanceVerical6 + distanceVerical7
-            let divisor = distanceHorizontal * 7
+            
+            let avg = sum / 7
             
             //Calculate MAR
-            let mar = sum/divisor
+            let mar = avg / distanceHorizontal
             
             print("MAR: \(mar)")
             
-            let marR = Double(round(1000*mar)/100)
-            print(marR)
             
-            if marR >= 0.0 {
-                delegate?.smileDetected(false)
-            }
-            
-            //Neutral
-            if  marR <= 1.0{
+            if mar >= 0.16 {
                 delegate?.smileDetected(true)
+            }
+
+//            let marR = Double(round(mar*1000/1000))
+//            print(marR)
+//
+//            if marR == 0.0 {
+//                delegate?.smileDetected(true)
+//            }
+//
+            //Neutral
+            if  mar <= 0.16{
+                delegate?.smileDetected(false)
             }
             
         }

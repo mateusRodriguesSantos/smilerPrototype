@@ -113,9 +113,9 @@ extension CameraViewController:FaceExpressionDelegate{
                 call()
             }
             isCallEnabled = true
-            baseView.labelCamera.isHidden = false
+            baseView.imageSmile.isHidden = false
         }else{
-            baseView.labelCamera.isHidden = true
+            baseView.imageSmile.isHidden = true
         }
     }
     

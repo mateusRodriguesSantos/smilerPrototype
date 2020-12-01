@@ -34,15 +34,12 @@ class CameraView:UIView{
         return view
     }()
     
-    let labelCamera: UILabel = {
-        let label = UILabel(frame: CGRect.zero)
-        label.text = "😀"
-        label.textAlignment = .center
-        label.font = UIFont.systemFont(ofSize: 40)
-        label.isHidden = true
-        label.textColor = .white
-        label.translatesAutoresizingMaskIntoConstraints = false
-        return label
+    let imageSmile: UIImageView = {
+        let imageView = UIImageView(frame: CGRect.zero)
+        imageView.image = UIImage(named: "Happy")
+        imageView.isHidden = true
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        return imageView
     }()
     
     init() {
@@ -58,7 +55,7 @@ class CameraView:UIView{
 
 extension CameraView:ViewCodable{
     func setupViewHierarchy() {
-        self.addSubview(labelCamera)
+        self.addSubview(imageSmile)
         self.addSubview(buttonRegister)
         self.addSubview(faceView)
         self.layer.addSublayer(faceView.layer)
@@ -67,10 +64,10 @@ extension CameraView:ViewCodable{
     func setupConstraints() {
         
         NSLayoutConstraint.activate([
-            labelCamera.widthAnchor.constraint(equalToConstant: 200),
-            labelCamera.heightAnchor.constraint(equalToConstant: 60),
-            labelCamera.centerXAnchor.constraint(equalTo: self.centerXAnchor),
-            labelCamera.centerYAnchor.constraint(equalTo: self.centerYAnchor),
+            imageSmile.widthAnchor.constraint(equalToConstant: 100),
+            imageSmile.heightAnchor.constraint(equalToConstant: 100),
+            imageSmile.centerXAnchor.constraint(equalTo: self.centerXAnchor),
+            imageSmile.centerYAnchor.constraint(equalTo: self.centerYAnchor),
         ])
         
         NSLayoutConstraint.activate([
