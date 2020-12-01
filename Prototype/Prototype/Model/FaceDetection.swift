@@ -18,13 +18,15 @@ import AVFoundation
 import Vision
 
 protocol FaceExpressionDelegate:class {
-    func smileDetected(_ faceDetected:Bool)
+    func smileDetected(_ smile:Bool)
     func sadnessDetected()
+    func faceDetectedAction(_ boundingBox:CGRect)
 }
 
 class FaceDetection{
     
-    var face:Bool = false
+    var isfaceDetected:Bool = false
+    var isSmile:Bool = false
     
     weak var delegate:FaceExpressionDelegate?
     weak var faceView:FaceView?
@@ -44,14 +46,19 @@ class FaceDetection{
             let result = results.first
         else {
             // 2 - Clear the FaceView if something goes wrong or no face is detected.
-            
+     
             faceView?.clear()
             return
         }
         
+       
         // 3 - Set the bounding box to draw in the FaceView after converting it from the coordinates in the VNFaceObservation.
         //      let box = result.boundingBox
         //        baseView.faceView.boundingBox = convert(rect: box)
+        
+        let box = convert(rect: result.boundingBox)
+        delegate?.faceDetectedAction(box)
+        
         
         updateFaceView(for: result)
         
@@ -164,14 +171,18 @@ class FaceDetection{
             
             //Calculate - Vertical distances
             
-            let distanceVerical1 = CGPointDistanceSquared(from: points[2], to: points[11])
-            let distanceVerical2 = CGPointDistanceSquared(from: points[3], to: points[10])
-            let distanceVerical3 = CGPointDistanceSquared(from: points[4], to: points[9])
+            let distanceVerical1 = CGPointDistanceSquared(from: points[0], to: points[12])
+            let distanceVerical2 = CGPointDistanceSquared(from: points[2], to: points[11])
+            let distanceVerical3 = CGPointDistanceSquared(from: points[3], to: points[10])
+            let distanceVerical4 = CGPointDistanceSquared(from: points[4], to: points[9])
+            let distanceVerical5 = CGPointDistanceSquared(from: points[6], to: points[8])
+            let distanceVerical6 = CGPointDistanceSquared(from: points[1], to: points[11])
+            let distanceVerical7 = CGPointDistanceSquared(from: points[5], to: points[8])
             
             //Calculate average of vertical distances
             
-            let sum = distanceVerical1 + distanceVerical2 + distanceVerical3
-            let divisor = distanceHorizontal * 3
+            let sum = distanceVerical1 + distanceVerical2 + distanceVerical3 + distanceVerical4 + distanceVerical5 + distanceVerical6 + distanceVerical7
+            let divisor = distanceHorizontal * 7
             
             //Calculate MAR
             let mar = sum/divisor

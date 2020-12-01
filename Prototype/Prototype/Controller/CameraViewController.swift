@@ -74,7 +74,7 @@ extension CameraViewController:AVCaptureVideoDataOutputSampleBufferDelegate{
         guard let imageBuffer = CMSampleBufferGetImageBuffer(sampleBuffer) else {
             return
         }
-        
+                
         // 2 - Get the image buffer from the passed in sample buffer.
         let detectFaceRequest = VNDetectFaceLandmarksRequest(completionHandler: self.faceDetection.detectedFace)
         
@@ -98,6 +98,10 @@ extension CameraViewController:AVCaptureVideoDataOutputSampleBufferDelegate{
 }
 
 extension CameraViewController:FaceExpressionDelegate{
+    func faceDetectedAction(_ boundingBox: CGRect) {
+        
+    }
+    
     
     func smileDetected(_ faceDetected: Bool) {
         if faceDetected{
@@ -106,6 +110,7 @@ extension CameraViewController:FaceExpressionDelegate{
         }else{
             baseView.labelCamera.isHidden = true
         }
+
     }
     
     func sadnessDetected() {
