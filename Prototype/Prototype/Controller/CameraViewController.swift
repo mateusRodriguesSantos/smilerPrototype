@@ -16,6 +16,8 @@ class CameraViewController: UIViewController{
     
     let baseView = CameraView()
     
+    var isCallEnabled:Bool = false
+    
     lazy var camera:Camera = {
         let cam = Camera()
         cam.delegateCamera = self
@@ -92,7 +94,9 @@ extension CameraViewController:AVCaptureVideoDataOutputSampleBufferDelegate{
     func call(){
         if let url = URL(string: "tel://+556133992954"),
            UIApplication.shared.canOpenURL(url) {
-            UIApplication.shared.open(url, options: [:], completionHandler: nil)
+            UIApplication.shared.open(url, options: [:], completionHandler: {_ in
+//                self.isCallEnabled = false
+            })
         }
     }
 }
@@ -105,12 +109,14 @@ extension CameraViewController:FaceExpressionDelegate{
     
     func smileDetected(_ faceDetected: Bool) {
         if faceDetected{
-//            call()
+            if isCallEnabled == false{
+                call()
+            }
+            isCallEnabled = true
             baseView.labelCamera.isHidden = false
         }else{
             baseView.labelCamera.isHidden = true
         }
-
     }
     
     func sadnessDetected() {

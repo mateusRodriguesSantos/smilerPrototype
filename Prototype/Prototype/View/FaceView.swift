@@ -41,30 +41,30 @@ class FaceView: UIView {
     }
     
     override func draw(_ rect: CGRect) {
-        // 1
-        guard let context = UIGraphicsGetCurrentContext() else {
-            return
-        }
-        
-        // 2
-        context.saveGState()
-        
-        // 3
-        defer {
-            context.restoreGState()
-        }
-        
-        // 4
-        context.addRect(boundingBox)
-        
-        // 5
-        UIColor.yellow.setStroke()
-        
-        // 6
-        context.strokePath()
-        
-        // 1
-        UIColor.white.setStroke()
+//        // 1
+//        guard let context = UIGraphicsGetCurrentContext() else {
+//            return
+//        }
+//
+//        // 2
+//        context.saveGState()
+//
+//        // 3
+//        defer {
+//            context.restoreGState()
+//        }
+//
+//        // 4
+//        context.addRect(boundingBox)
+//
+//        // 5
+//        UIColor.yellow.setStroke()
+//
+//        // 6
+//        context.strokePath()
+//
+//        // 1
+//        UIColor.white.setStroke()
         
 //        if !leftEye.isEmpty {
 //            // 2
@@ -97,11 +97,11 @@ class FaceView: UIView {
 //            context.strokePath()
 //        }
 //        
-        if !outerLips.isEmpty {
-            context.addLines(between: outerLips)
-            context.closePath()
-            context.strokePath()
-        }
+//        if !outerLips.isEmpty {
+//            context.addLines(between: outerLips)
+//            context.closePath()
+//            context.strokePath()
+//        }
 //        
 //        if !innerLips.isEmpty {
 //            context.addLines(between: innerLips)

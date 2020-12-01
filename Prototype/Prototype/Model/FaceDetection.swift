@@ -188,11 +188,21 @@ class FaceDetection{
             let mar = sum/divisor
             
             print("MAR: \(mar)")
-            if mar < 0.10 || mar > 0.19{
-                delegate?.smileDetected(true)
-            }else{
+            
+            let marR = Double(round(1000*mar)/100)
+            print(marR)
+            
+         
+            
+            if marR >= 0.0 || marR >= 1.4{
                 delegate?.smileDetected(false)
             }
+            
+            //Neutral
+            if  marR <= 1.0{
+                delegate?.smileDetected(true)
+            }
+            
         }
     }
     
