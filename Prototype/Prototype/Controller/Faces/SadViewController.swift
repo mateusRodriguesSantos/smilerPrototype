@@ -65,6 +65,7 @@ extension SadViewController{
             return
         }
         self.getText = text
+        self.delegate?.sendSadData(self.getText)
     }
 }
 

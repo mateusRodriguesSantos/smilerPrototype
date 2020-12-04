@@ -65,6 +65,7 @@ extension ScareViewController{
             return
         }
         self.getText = text
+        self.delegate?.sendScareData(self.getText)
     }
 }
 

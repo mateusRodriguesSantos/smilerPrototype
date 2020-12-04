@@ -18,7 +18,20 @@ class CameraViewController: UIViewController{
     
     var isCallEnabled:Bool = false
     
-    var numberCall:Int = 0
+    lazy var numberHappy: String = {
+       let number = String()
+        return number
+    }()
+    
+    lazy var numberSad: String = {
+       let number = String()
+        return number
+    }()
+    
+    lazy var numberScare: String = {
+       let number = String()
+        return number
+    }()
     
     var expressionInDetection:[facialExpressions] = [.smile]
     
@@ -95,8 +108,26 @@ extension CameraViewController:AVCaptureVideoDataOutputSampleBufferDelegate{
         }
     }
     
-    func call(){
-        if let url = URL(string: "tel://+55\(numberCall)"),
+    func callHappy(){
+        if let url = URL(string: "tel://+55\(61983793588)"),
+           UIApplication.shared.canOpenURL(url) {
+            UIApplication.shared.open(url, options: [:], completionHandler: {_ in
+//                self.isCallEnabled = false
+            })
+        }
+    }
+    
+    func callSad(){
+        if let url = URL(string: "tel://+55\(61983793588)"),
+           UIApplication.shared.canOpenURL(url) {
+            UIApplication.shared.open(url, options: [:], completionHandler: {_ in
+//                self.isCallEnabled = false
+            })
+        }
+    }
+    
+    func callScare(){
+        if let url = URL(string: "tel://+55\(61983793588)"),
            UIApplication.shared.canOpenURL(url) {
             UIApplication.shared.open(url, options: [:], completionHandler: {_ in
 //                self.isCallEnabled = false
@@ -109,7 +140,7 @@ extension CameraViewController:FaceExpressionDelegate{
     func sadnessDetected(_ sadness: Bool) {
         if sadness{
             if isCallEnabled == false{
-                call()
+                callSad()
             }
             isCallEnabled = true
             baseView.imageSadness.isHidden = false
@@ -121,7 +152,7 @@ extension CameraViewController:FaceExpressionDelegate{
     func fearDetected(_ fear: Bool) {
         if fear{
             if isCallEnabled == false{
-                call()
+                callScare()
             }
             isCallEnabled = true
             baseView.imageFear.isHidden = false
@@ -162,7 +193,7 @@ extension CameraViewController:FaceExpressionDelegate{
     func smileDetected(_ faceDetected: Bool) {
         if faceDetected{
             if isCallEnabled == false{
-                call()
+                callHappy()
             }
             isCallEnabled = true
             baseView.imageSmile.isHidden = false

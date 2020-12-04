@@ -67,5 +67,6 @@ extension HappyViewController{
             return
         }
         self.getText = text
+        self.delegate?.sendHappyData(self.getText)
     }
 }

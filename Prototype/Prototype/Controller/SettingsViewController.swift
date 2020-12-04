@@ -17,6 +17,11 @@ class SettingsViewController: UIViewController {
     var scareNumber = String()
     var sadNumber = String()
     
+    var happyVC = HappyViewController()
+    var sadVC = SadViewController()
+    var scareVC = ScareViewController()
+
+    
     //MARK: - Load View
     /// Load View
     override func loadView() {
@@ -28,8 +33,11 @@ class SettingsViewController: UIViewController {
     // View Did Load
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         addTriggers()
+        self.happyVC.delegate = self
+        self.sadVC.delegate = self
+        self.scareVC.delegate = self
+       
         items.append(baseView.cameraBarButtonItem)
         self.navigationItem.largeTitleDisplayMode = .always
         self.navigationController?.navigationBar.prefersLargeTitles = true
@@ -65,7 +73,7 @@ extension SettingsViewController{
 extension SettingsViewController{
     @objc func actionButtonCamera(_ sender: Any) {
         
-        coordinator?.navigateToCameraViewController(expressionForDetection: [.fear,.smile,.sadness], numberCall: 21223923)
+        coordinator?.navigateToCameraViewController(expressionForDetection: [.fear,.smile,.sadness], numberHappy: self.happyNumber, numberSad: self.sadNumber, numberScare: self.scareNumber)
     }
     
     @objc func goToHappyViewController(_ sender: Any) {

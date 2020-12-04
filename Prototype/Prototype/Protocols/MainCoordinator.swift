@@ -23,10 +23,12 @@ class MainCoordinator: Coordinator {
 
 //MARK: Functins
 extension MainCoordinator{
-    func navigateToCameraViewController(expressionForDetection:[facialExpressions],numberCall:Int){
+    func navigateToCameraViewController(expressionForDetection:[facialExpressions],numberHappy:String, numberSad: String, numberScare: String){
         let cameraVC = CameraViewController()
         cameraVC.coordinator = self
-        cameraVC.numberCall = numberCall
+        cameraVC.numberHappy = numberHappy
+        cameraVC.numberSad = numberSad
+        cameraVC.numberScare = numberScare
         cameraVC.expressionInDetection = expressionForDetection
         navigationController.pushViewController(cameraVC, animated: true)
     }
