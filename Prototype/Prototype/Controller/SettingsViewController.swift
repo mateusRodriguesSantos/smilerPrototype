@@ -108,21 +108,3 @@ extension SettingsViewController{
         coordinator?.navigateToScareViewController(self)
     }
 }
-
-extension SettingsViewController: SendHappyDataDelegate{
-    func sendHappyData(_ number: String) {
-        self.happyNumber = number
-    }
-}
-
-extension SettingsViewController: SendSadDataDelegate{
-    func sendSadData(_ number: String) {
-        self.sadNumber = number
-    }
-}
-
-extension SettingsViewController: SendScareDataDelegate{
-    func sendScareData(_ number: String) {
-        self.scareNumber = number
-    }
-}

@@ -20,7 +20,7 @@ class HappyViewController: UIViewController, UINavigationControllerDelegate {
     //MARK: - Variables
     let baseView = ExpressionView()
     weak var coordinator: MainCoordinator?
-    var delegate: SendHappyDataDelegate?
+
     var getText = String()
     
     override func loadView() {
@@ -40,7 +40,7 @@ class HappyViewController: UIViewController, UINavigationControllerDelegate {
         super.willMove(toParent: parent)
         if parent == nil
         {
-            self.delegate?.sendHappyData(self.getText)
+//            self.delegate?.sendHappyData(self.getText)
         }
     }
 }
@@ -64,7 +64,7 @@ extension HappyViewController{
     
     @objc func validatePhoneNumber(_ sender: Any) {
         
-        delegate?.delegateHappy(baseView.textInputNumber.text ?? " ")
+      
         // Create new Alert
         let dialogMessage = UIAlertController(title: "Sucesso!", message: "Número Registrado.", preferredStyle: .alert)
         
@@ -81,7 +81,8 @@ extension HappyViewController{
             return
         }
         self.getText = text
-        self.delegate?.sendHappyData(self.getText)
+        delegate?.delegateHappy(text)
+//        self.delegate?.sendHappyData(self.getText)
         // Present Alert to
         self.present(dialogMessage, animated: true, completion: nil)
     }

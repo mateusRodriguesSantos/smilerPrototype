@@ -19,7 +19,6 @@ class SadViewController: UIViewController {
     //MARK: - Variables
     let baseView = ExpressionView()
     weak var coordinator: MainCoordinator?
-    var delegate: SendSadDataDelegate?
     var getText = String()
     
     override func loadView() {
@@ -38,7 +37,6 @@ class SadViewController: UIViewController {
         super.willMove(toParent: parent)
         if parent == nil
         {
-            self.delegate?.sendSadData(self.getText)
         }
     }
     
@@ -62,8 +60,7 @@ extension SadViewController{
     
     
     @objc func validatePhoneNumber(_ sender: Any) {
-        delegate?.delegateSad(baseView.textInputNumber.text ?? " ")
-        
+       
         // Create new Alert
         let dialogMessage = UIAlertController(title: "Sucesso!", message: "Número Registrado.", preferredStyle: .alert)
          // Create OK button with action handler
@@ -78,7 +75,7 @@ extension SadViewController{
             return
         }
         self.getText = text
-        self.delegate?.sendSadData(self.getText)
+        delegate?.delegateSad(text)
         
         // Present Alert to
         self.present(dialogMessage, animated: true, completion: nil)
