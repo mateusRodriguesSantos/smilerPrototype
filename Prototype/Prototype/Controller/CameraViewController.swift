@@ -18,6 +18,8 @@ class CameraViewController: UIViewController{
     
     var isCallEnabled:Bool = false
     
+    var expressionInDetection:[facialExpressions] = [.smile]
+    
     lazy var camera:Camera = {
         let cam = Camera()
         cam.delegateCamera = self
@@ -25,7 +27,7 @@ class CameraViewController: UIViewController{
     }()
     
     lazy var faceDetection:FaceDetection = {
-        let faceDetection = FaceDetection(faceView: baseView.faceView, previewLayer: camera.captureVideoPreviewLayer)
+        let faceDetection = FaceDetection(faceView: baseView.faceView, previewLayer: camera.captureVideoPreviewLayer, expressionDetecting: expressionInDetection)
         faceDetection.delegate = self
         return faceDetection
     }()
@@ -103,7 +105,11 @@ extension CameraViewController:AVCaptureVideoDataOutputSampleBufferDelegate{
 
 extension CameraViewController:FaceExpressionDelegate{
     func faceDetectedAction(_ boundingBox: CGRect) {
-        
+        DispatchQueue.main.async {
+            if boundingBox == .zero{
+                self.baseView.imageSmile.isHidden = true
+            }
+        }
     }
     
     
