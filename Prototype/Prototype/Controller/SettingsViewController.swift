@@ -40,6 +40,12 @@ extension SettingsViewController{
         
         //Go To Happy View Controller
         self.baseView.happyFaceButton.addTarget(self, action: #selector(goToHappyViewController(_:)), for: .touchUpInside)
+        
+        //Go To Sad View Controller
+        self.baseView.sadFaceButton.addTarget(self, action: #selector(goToSadViewController(_:)), for: .touchUpInside)
+        
+        //Go To Scare View Controller
+        self.baseView.scareFaceButton.addTarget(self, action: #selector(goToScareViewController(_:)), for: .touchUpInside)
     }
     
 }
@@ -53,5 +59,13 @@ extension SettingsViewController{
     
     @objc func goToHappyViewController(_ sender: Any) {
         coordinator?.navigateToHappyViewController()
+    }
+    
+    @objc func goToSadViewController(_ sender: Any) {
+        coordinator?.navigateToSadViewController()
+    }
+    
+    @objc func goToScareViewController(_ sender: Any) {
+        coordinator?.navigateToScareViewController()
     }
 }

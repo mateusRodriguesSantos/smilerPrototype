@@ -35,11 +35,41 @@ class SettingsView:UIView{
         button.contentMode = .scaleAspectFill
         button.setTitle("Alegria", for: .normal)
         button.translatesAutoresizingMaskIntoConstraints = false
-        button.titleLabel?.font = UIFont.systemFont(ofSize: 35)
+        button.titleLabel?.font = UIFont.systemFont(ofSize: 25)
         button.centerLabelVerticallyWithPadding(spacing: 150)
-        
         return button 
     }()
+    
+    let sadFaceButton: UIButton = {
+        let button = UIButton()
+        button.setBackgroundImage(UIImage(named: "Sad"), for: .normal)
+        button.contentMode = .scaleAspectFill
+        button.setTitle("Tristeza", for: .normal)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.titleLabel?.font = UIFont.systemFont(ofSize: 25)
+        button.centerLabelVerticallyWithPadding(spacing: 150)
+        return button
+    }()
+
+    
+    let scareFaceButton: UIButton = {
+        let button = UIButton()
+        button.setBackgroundImage(UIImage(named: "Scare"), for: .normal)
+        button.contentMode = .scaleAspectFill
+        button.setTitle("Medo", for: .normal)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.titleLabel?.font = UIFont.systemFont(ofSize: 25)
+        button.centerLabelVerticallyWithPadding(spacing: 150)
+        return button
+    }()
+    
+//    var stackViewFaces: UIStackView = {
+//        let stackView = UIStackView()
+//        stackView.alignment = .center
+//        stackView.axis = .vertical
+//        return stackView
+//    }()
+
 
     
     init() {
@@ -57,6 +87,8 @@ extension SettingsView:ViewCodable{
         self.setupBackground()
         self.addSubview(buttonCam)
         self.addSubview(happyFaceButton)
+        self.addSubview(sadFaceButton)
+        self.addSubview(scareFaceButton)
         
     }
     
@@ -76,10 +108,22 @@ extension SettingsView:ViewCodable{
             
             
             //Happy Face Button Constraints
-            happyFaceButton.widthAnchor.constraint(equalToConstant: 100),
-            happyFaceButton.heightAnchor.constraint(equalToConstant: 100),
+            happyFaceButton.widthAnchor.constraint(equalToConstant: 80),
+            happyFaceButton.heightAnchor.constraint(equalToConstant: 80),
             happyFaceButton.centerXAnchor.constraint(equalTo: self.centerXAnchor),
-            happyFaceButton.centerYAnchor.constraint(equalTo: self.centerYAnchor)
+            happyFaceButton.centerYAnchor.constraint(equalTo: self.centerYAnchor, constant: -200),
+            
+            //Sad Face Button Constraints
+            sadFaceButton.widthAnchor.constraint(equalToConstant: 80),
+            sadFaceButton.heightAnchor.constraint(equalToConstant: 80),
+            sadFaceButton.centerXAnchor.constraint(equalTo: self.centerXAnchor, constant: 0),
+            sadFaceButton.centerYAnchor.constraint(equalTo: self.centerYAnchor, constant: 0),
+            
+            //Scare Face Button Constraints
+            scareFaceButton.widthAnchor.constraint(equalToConstant: 80),
+            scareFaceButton.heightAnchor.constraint(equalToConstant: 80),
+            scareFaceButton.centerXAnchor.constraint(equalTo: self.centerXAnchor, constant: 0),
+            scareFaceButton.centerYAnchor.constraint(equalTo: self.centerYAnchor, constant: 200)
         ])
     }
     

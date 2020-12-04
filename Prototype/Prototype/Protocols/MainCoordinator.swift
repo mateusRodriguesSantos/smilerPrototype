@@ -34,5 +34,17 @@ extension MainCoordinator{
         happyVC.coordinator = self
         navigationController.pushViewController(happyVC, animated: true)
     }
+    
+    func navigateToSadViewController(){
+        let sadVC = SadViewController()
+        sadVC.coordinator = self
+        navigationController.pushViewController(sadVC, animated: true)
+    }
+    
+    func navigateToScareViewController(){
+        let scareVC = ScareViewController()
+        scareVC.coordinator = self
+        navigationController.pushViewController(scareVC, animated: true)
+    }
 }
 
