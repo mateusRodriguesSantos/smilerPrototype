@@ -19,6 +19,8 @@ class ScareViewController: UIViewController {
     //MARK: - Variables
     let baseView = ExpressionView()
     weak var coordinator: MainCoordinator?
+    var delegate: SendScareDataDelegate?
+    var getText = String()
     
     override func loadView() {
         super.loadView()
@@ -29,6 +31,15 @@ class ScareViewController: UIViewController {
         super.viewDidLoad()
         baseView.textInputNumber.delegate = self
         addTriggers()
+    }
+    
+    override func willMove(toParent parent: UIViewController?)
+    {
+        super.willMove(toParent: parent)
+        if parent == nil
+        {
+            self.delegate?.sendScareData(self.getText)
+        }
     }
     
     
@@ -52,5 +63,28 @@ extension ScareViewController{
     
     @objc func validatePhoneNumber(_ sender: Any) {
         delegate?.delegateScare(baseView.textInputNumber.text ?? " ")
+        
+        // Create new Alert
+        let dialogMessage = UIAlertController(title: "Sucesso!", message: "Número Registrado.", preferredStyle: .alert)
+         
+         // Create OK button with action handler
+         let ok = UIAlertAction(title: "OK", style: .default, handler: { (action) -> Void in
+          })
+         
+         //Add OK button to a dialog message
+         dialogMessage.addAction(ok)
+        
+        guard let text = self.baseView.textInputNumber.text else {
+            print(Error.self)
+            return
+        }
+        self.getText = text
+        self.delegate?.sendScareData(self.getText)
+        
+        // Present Alert to
+        self.present(dialogMessage, animated: true, completion: nil)
+        
     }
 }
+
+

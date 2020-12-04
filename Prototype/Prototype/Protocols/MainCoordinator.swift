@@ -26,7 +26,9 @@ extension MainCoordinator{
     func navigateToCameraViewController(expressionForDetection:[facialExpressions],numberCall:String){
         let cameraVC = CameraViewController()
         cameraVC.coordinator = self
-        cameraVC.numberCall = numberCall
+        cameraVC.numberHappy = numberHappy
+        cameraVC.numberSad = numberSad
+        cameraVC.numberScare = numberScare
         cameraVC.expressionInDetection = expressionForDetection
         navigationController.pushViewController(cameraVC, animated: true)
     }
