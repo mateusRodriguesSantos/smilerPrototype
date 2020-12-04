@@ -18,7 +18,7 @@ class CameraViewController: UIViewController{
     
     var isCallEnabled:Bool = false
     
-    var numberCall = Int()
+    var numberCall:Int = 0
     
     var expressionInDetection:[facialExpressions] = [.smile]
     
