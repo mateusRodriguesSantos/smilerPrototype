@@ -62,11 +62,25 @@ extension HappyViewController{
     }
     
     @objc func validatePhoneNumber(_ sender: Any) {
+        
+        // Create new Alert
+        let dialogMessage = UIAlertController(title: "Sucesso!", message: "Número Registrado.", preferredStyle: .alert)
+        
+         // Create OK button with action handler
+         let ok = UIAlertAction(title: "OK", style: .default, handler: { (action) -> Void in
+          })
+         
+         //Add OK button to a dialog message
+         dialogMessage.addAction(ok)
+         
+        
         guard let text = self.baseView.textInputNumber.text else {
             print(Error.self)
             return
         }
         self.getText = text
         self.delegate?.sendHappyData(self.getText)
+        // Present Alert to
+        self.present(dialogMessage, animated: true, completion: nil)
     }
 }
