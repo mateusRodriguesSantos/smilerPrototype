@@ -20,6 +20,23 @@ class ExpressionView: UIView{
         return background
     }()
     
+    let buttonValidatePhone: UIButton = {
+        let button = UIButton()
+        button.setImage(UIImage(named: "normalButton"), for: .normal)
+        button.setImage(UIImage(named: "pressedButton"), for: .selected)
+        button.setImage(UIImage(named: "pressedButton"), for: .disabled)
+        return button
+    }()
+    
+    let textInputNumber: UITextField = {
+        let input = UITextField()
+        input.placeholder = "Número de Telefone com DDD"
+        if let text = input.text {
+            input.text = text.applyPatternOnNumbers(pattern: "(##) ###-####", replacmentCharacter: "#")
+        }
+        return input
+    }()
+    
     
     init() {
         super.init(frame: CGRect.zero)
