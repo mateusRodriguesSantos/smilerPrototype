@@ -23,9 +23,10 @@ class MainCoordinator: Coordinator {
 
 //MARK: Functins
 extension MainCoordinator{
-    func navigateToCameraViewController(){
+    func navigateToCameraViewController(expressionForDetection:facialExpressions){
         let cameraVC = CameraViewController()
         cameraVC.coordinator = self
+        cameraVC.expressionInDetection = expressionForDetection
         navigationController.pushViewController(cameraVC, animated: true)
     }
     

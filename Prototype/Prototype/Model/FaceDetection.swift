@@ -17,6 +17,12 @@ Resultados: os resultados serão anexados à solicitação original e passados �
 import AVFoundation
 import Vision
 
+enum facialExpressions{
+    case smile
+    case sadness
+    case fear
+}
+
 protocol FaceExpressionDelegate:class {
     func smileDetected(_ smile:Bool)
     func sadnessDetected()
@@ -25,17 +31,17 @@ protocol FaceExpressionDelegate:class {
 
 class FaceDetection{
     
-    var isfaceDetected:Bool = false
-    var isSmile:Bool = false
+    var expressionDetecting:facialExpressions?
     
     weak var delegate:FaceExpressionDelegate?
     weak var faceView:FaceView?
     weak var previewLayer:AVCaptureVideoPreviewLayer?
     var sequenceHandler = VNSequenceRequestHandler()
     
-    init(faceView:FaceView,previewLayer:AVCaptureVideoPreviewLayer) {
+    init(faceView:FaceView,previewLayer:AVCaptureVideoPreviewLayer,expressionDetecting:facialExpressions) {
         self.faceView = faceView
         self.previewLayer = previewLayer
+        self.expressionDetecting = expressionDetecting
     }
     
     func detectedFace(request: VNRequest, error: Error?) {
@@ -48,6 +54,7 @@ class FaceDetection{
             // 2 - Clear the FaceView if something goes wrong or no face is detected.
      
             faceView?.clear()
+            delegate?.faceDetectedAction(.zero)
             return
         }
         
@@ -141,10 +148,13 @@ class FaceDetection{
           points: landmarks.outerLips?.normalizedPoints,
           to: result.boundingBox) {
             faceView?.outerLips = outerLips
-            DispatchQueue.main.async { [weak self] in
-                
-                self?.detectSmile(outerLips,yal: result.yaw!,roll: result.roll!)
+            
+            if self.expressionDetecting == .smile{
+                DispatchQueue.main.async { [weak self] in
+                    self?.detectSmile(outerLips,yal: result.yaw!,roll: result.roll!)
+                }
             }
+            
         }
 
         if let innerLips = landmark(
