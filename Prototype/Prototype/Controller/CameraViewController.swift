@@ -18,7 +18,7 @@ class CameraViewController: UIViewController{
     
     var isCallEnabled:Bool = false
     
-    var expressionInDetection:facialExpressions = .smile
+    var expressionInDetection:[facialExpressions] = [.smile]
     
     lazy var camera:Camera = {
         let cam = Camera()

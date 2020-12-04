@@ -31,14 +31,14 @@ protocol FaceExpressionDelegate:class {
 
 class FaceDetection{
     
-    var expressionDetecting:facialExpressions?
+    var expressionDetecting:[facialExpressions] = []
     
     weak var delegate:FaceExpressionDelegate?
     weak var faceView:FaceView?
     weak var previewLayer:AVCaptureVideoPreviewLayer?
     var sequenceHandler = VNSequenceRequestHandler()
     
-    init(faceView:FaceView,previewLayer:AVCaptureVideoPreviewLayer,expressionDetecting:facialExpressions) {
+    init(faceView:FaceView,previewLayer:AVCaptureVideoPreviewLayer,expressionDetecting:[facialExpressions]) {
         self.faceView = faceView
         self.previewLayer = previewLayer
         self.expressionDetecting = expressionDetecting
@@ -149,7 +149,7 @@ class FaceDetection{
           to: result.boundingBox) {
             faceView?.outerLips = outerLips
             
-            if self.expressionDetecting == .smile{
+            if self.expressionDetecting.contains(.smile) {
                 DispatchQueue.main.async { [weak self] in
                     self?.detectSmile(outerLips,yal: result.yaw!,roll: result.roll!)
                 }
