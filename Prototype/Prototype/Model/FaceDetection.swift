@@ -169,19 +169,6 @@ class FaceDetection{
             
         }
 
-//        if let innerLips = landmark(
-//          points: landmarks.innerLips?.normalizedPoints,
-//          to: result.boundingBox) {
-//            faceView?.innerLips = innerLips
-//        }
-//
-//        if let faceContour = landmark(
-//          points: landmarks.faceContour?.normalizedPoints,
-//          to: result.boundingBox) {
-//            faceView?.faceContour = faceContour
-//        }
-        
-  
     }
     
     func detectSmile(_ points:[CGPoint],yal:NSNumber, roll:NSNumber){
@@ -317,7 +304,7 @@ class FaceDetection{
             print(Int(distanceEyeRightToEyeBrownParse))
             print(Int(distanceEyeLeftToEyeBrownParse))
             
-            if mar <= 0.0 && (Int(distanceEyeRightToEyeBrownParse) <= 20 || Int(distanceEyeLeftToEyeBrownParse) <= 20){
+            if mar <= 0.1 && (Int(distanceEyeRightToEyeBrownParse) <= 20 || Int(distanceEyeLeftToEyeBrownParse) <= 20){
                 delegate?.sadnessDetected(true)
                 
             }else{

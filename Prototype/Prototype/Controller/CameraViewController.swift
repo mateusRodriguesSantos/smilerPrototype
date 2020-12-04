@@ -18,6 +18,8 @@ class CameraViewController: UIViewController{
     
     var isCallEnabled:Bool = false
     
+    var numberCall = Int()
+    
     var expressionInDetection:[facialExpressions] = [.smile]
     
     lazy var camera:Camera = {
@@ -94,7 +96,7 @@ extension CameraViewController:AVCaptureVideoDataOutputSampleBufferDelegate{
     }
     
     func call(){
-        if let url = URL(string: "tel://+556133992954"),
+        if let url = URL(string: "tel://+55\(numberCall)"),
            UIApplication.shared.canOpenURL(url) {
             UIApplication.shared.open(url, options: [:], completionHandler: {_ in
 //                self.isCallEnabled = false
@@ -133,14 +135,24 @@ extension CameraViewController:FaceExpressionDelegate{
         DispatchQueue.main.async {
             if boundingBox == .zero{
                 self.baseView.imageSmile.isHidden = true
+                self.baseView.imageFear.isHidden = true
+                self.baseView.imageSadness.isHidden = true
+                
+                self.baseView.viewLeft.backgroundColor = .red
+                self.baseView.viewRight.backgroundColor = .red
+                self.baseView.labelCamera.text = "Tente Manter o quadrado do rosto tocando as duas áreas vermelhas"
             }else{
                 self.baseView.viewLeft.backgroundColor = .red
                 self.baseView.viewRight.backgroundColor = .red
+                self.baseView.labelCamera.text = "Tente Manter o quadrado do rosto tocando as duas áreas vermelhas"
+                
                 if boundingBox.intersects(self.baseView.viewLeft.bounds){
                     self.baseView.viewLeft.backgroundColor = .green
+                    self.baseView.labelCamera.text = "Mantenha seu rosto perpendicular aos quadrados"
                 }
                 if boundingBox.intersects(self.baseView.viewRight.bounds){
                     self.baseView.viewRight.backgroundColor = .green
+                    self.baseView.labelCamera.text = "Mantenha seu rosto perpendicular aos quadrados"
                 }
             }
         }
