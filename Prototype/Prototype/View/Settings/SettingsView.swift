@@ -11,21 +11,35 @@ class SettingsView:UIView{
     
     //Variables
     //UI components
-    let buttonCam:UIButton = {
-        let button = UIButton(type: .system)
-        button.backgroundColor = .blue
-        button.tintColor = .white
-        button.title(for: .normal)
-        button.setTitle("Camera", for: .normal)
-        button.translatesAutoresizingMaskIntoConstraints = false
-        return button
-    }()
+//    let buttonCam:UIButton = {
+//        let button = UIButton(type: .system)
+//        button.backgroundColor = .blue
+//        button.tintColor = .white
+//        button.title(for: .normal)
+//        button.setTitle("Camera", for: .normal)
+//        button.translatesAutoresizingMaskIntoConstraints = false
+//        return button
+//    }()
     
     let backgroundSettings: UIImageView = {
         let background = UIImageView(image: UIImage(named: "background"))
         background.contentMode = .scaleAspectFill
         background.translatesAutoresizingMaskIntoConstraints = false
         return background
+    }()
+    
+    let cameraOptionBarButton: UIButton = {
+        let optionBarButton = UIButton()
+        optionBarButton.setImage(UIImage(named: "Camera"), for: .normal)
+        optionBarButton.setTitle("Camera", for: .normal)
+        optionBarButton.sizeToFit()
+        optionBarButton.centerLabelVerticallyWithPadding(spacing: 0.5, alingment: 0)
+        return optionBarButton
+    }()
+    
+     lazy var cameraBarButtonItem: UIBarButtonItem = {
+        let barButtonItem = UIBarButtonItem(customView: self.cameraOptionBarButton)
+        return barButtonItem
     }()
     
     //Provisorio
@@ -36,7 +50,7 @@ class SettingsView:UIView{
         button.setTitle("Alegria", for: .normal)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.titleLabel?.font = UIFont.systemFont(ofSize: 25)
-        button.centerLabelVerticallyWithPadding(spacing: 150)
+        button.centerLabelVerticallyWithPadding(spacing: 150, alingment: 2)
         return button 
     }()
     
@@ -47,7 +61,7 @@ class SettingsView:UIView{
         button.setTitle("Tristeza", for: .normal)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.titleLabel?.font = UIFont.systemFont(ofSize: 25)
-        button.centerLabelVerticallyWithPadding(spacing: 150)
+        button.centerLabelVerticallyWithPadding(spacing: 150, alingment: 2)
         return button
     }()
 
@@ -59,7 +73,7 @@ class SettingsView:UIView{
         button.setTitle("Medo", for: .normal)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.titleLabel?.font = UIFont.systemFont(ofSize: 25)
-        button.centerLabelVerticallyWithPadding(spacing: 150)
+        button.centerLabelVerticallyWithPadding(spacing: 150, alingment: 2)
         return button
     }()
     
@@ -79,7 +93,7 @@ class SettingsView:UIView{
 extension SettingsView:ViewCodable{
     func setupViewHierarchy() {
         self.setupBackground()
-        self.addSubview(buttonCam)
+//        self.addSubview(buttonCam)
         self.addSubview(happyFaceButton)
         self.addSubview(sadFaceButton)
         self.addSubview(scareFaceButton)
@@ -88,10 +102,10 @@ extension SettingsView:ViewCodable{
     
     func setupConstraints() {
         NSLayoutConstraint.activate([
-            buttonCam.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -50),
-            buttonCam.centerXAnchor.constraint(equalTo: self.centerXAnchor),
-            buttonCam.widthAnchor.constraint(equalToConstant: 300),
-            buttonCam.heightAnchor.constraint(equalToConstant: 30),
+//            buttonCam.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -50),
+//            buttonCam.centerXAnchor.constraint(equalTo: self.centerXAnchor),
+//            buttonCam.widthAnchor.constraint(equalToConstant: 300),
+//            buttonCam.heightAnchor.constraint(equalToConstant: 30),
             
             
             //Bacground Settings Constraints

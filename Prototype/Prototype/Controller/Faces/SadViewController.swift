@@ -8,12 +8,17 @@
 import Foundation
 import UIKit
 
+protocol SendSadDataDelegate{
+    func sendSadData(_ number: String)
+}
 
 class SadViewController: UIViewController {
     
     //MARK: - Variables
     let baseView = ExpressionView()
     weak var coordinator: MainCoordinator?
+    var delegate: SendSadDataDelegate?
+    var getText = String()
     
     override func loadView() {
         super.loadView()
@@ -24,6 +29,15 @@ class SadViewController: UIViewController {
         super.viewDidLoad()
         baseView.textInputNumber.delegate = self
         addTriggers()
+    }
+    
+    override func willMove(toParent parent: UIViewController?)
+    {
+        super.willMove(toParent: parent)
+        if parent == nil
+        {
+            self.delegate?.sendSadData(self.getText)
+        }
     }
     
 }
@@ -44,10 +58,13 @@ extension SadViewController{
         self.baseView.buttonValidatePhone.addTarget(self, action: #selector(validatePhoneNumber(_:)), for: .touchUpInside)
     }
     
+    
     @objc func validatePhoneNumber(_ sender: Any) {
-        
-      
+        guard let text = self.baseView.textInputNumber.text else {
+            print(Error.self)
+            return
+        }
+        self.getText = text
     }
 }
-
 

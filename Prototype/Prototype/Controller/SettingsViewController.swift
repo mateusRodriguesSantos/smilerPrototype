@@ -12,6 +12,10 @@ class SettingsViewController: UIViewController {
     //MARK: - Variables
     weak var coordinator:MainCoordinator?
     let baseView = SettingsView()
+    var items = [UIBarButtonItem]()
+    var happyNumber =  String()
+    var scareNumber = String()
+    var sadNumber = String()
     
     //MARK: - Load View
     /// Load View
@@ -24,8 +28,15 @@ class SettingsViewController: UIViewController {
     // View Did Load
     override func viewDidLoad() {
         super.viewDidLoad()
-//        navigationController?.navigationBar.isHidden = true
+        
         addTriggers()
+        items.append(baseView.cameraBarButtonItem)
+        self.navigationItem.largeTitleDisplayMode = .always
+        self.navigationController?.navigationBar.prefersLargeTitles = true
+        self.navigationItem.title = "Smiler"
+        navigationController?.isToolbarHidden = false
+        self.toolbarItems = items
+        
     }
     
 }
@@ -36,7 +47,7 @@ extension SettingsViewController{
     func addTriggers() {
         
         //Activate Camera
-        self.baseView.buttonCam.addTarget(self, action: #selector(self.actionButtonCamera(_:)), for: .touchUpInside)
+        self.baseView.cameraOptionBarButton.addTarget(self, action: #selector(actionButtonCamera(_:)), for: .touchUpInside)
         
         //Go To Happy View Controller
         self.baseView.happyFaceButton.addTarget(self, action: #selector(goToHappyViewController(_:)), for: .touchUpInside)
@@ -67,5 +78,23 @@ extension SettingsViewController{
     
     @objc func goToScareViewController(_ sender: Any) {
         coordinator?.navigateToScareViewController()
+    }
+}
+
+extension SettingsViewController: SendHappyDataDelegate{
+    func sendHappyData(_ number: String) {
+        self.happyNumber = number
+    }
+}
+
+extension SettingsViewController: SendSadDataDelegate{
+    func sendSadData(_ number: String) {
+        self.sadNumber = number
+    }
+}
+
+extension SettingsViewController: SendScareDataDelegate{
+    func sendScareData(_ number: String) {
+        self.scareNumber = number
     }
 }

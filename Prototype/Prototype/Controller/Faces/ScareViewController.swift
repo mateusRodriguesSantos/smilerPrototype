@@ -7,12 +7,18 @@
 
 import Foundation
 import UIKit
+
+protocol SendScareDataDelegate{
+    func sendScareData(_ number: String)
+}
+
 class ScareViewController: UIViewController {
-    
     
     //MARK: - Variables
     let baseView = ExpressionView()
     weak var coordinator: MainCoordinator?
+    var delegate: SendScareDataDelegate?
+    var getText = String()
     
     override func loadView() {
         super.loadView()
@@ -23,6 +29,15 @@ class ScareViewController: UIViewController {
         super.viewDidLoad()
         baseView.textInputNumber.delegate = self
         addTriggers()
+    }
+    
+    override func willMove(toParent parent: UIViewController?)
+    {
+        super.willMove(toParent: parent)
+        if parent == nil
+        {
+            self.delegate?.sendScareData(self.getText)
+        }
     }
     
     
@@ -45,7 +60,12 @@ extension ScareViewController{
     }
     
     @objc func validatePhoneNumber(_ sender: Any) {
-        
-
+        guard let text = self.baseView.textInputNumber.text else {
+            print(Error.self)
+            return
+        }
+        self.getText = text
     }
 }
+
+

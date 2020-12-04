@@ -8,12 +8,19 @@
 import Foundation
 import UIKit
 
-class HappyViewController: UIViewController {
+protocol SendHappyDataDelegate{
+    func sendHappyData(_ number: String)
+}
+
+
+class HappyViewController: UIViewController, UINavigationControllerDelegate {
     
     
     //MARK: - Variables
     let baseView = ExpressionView()
     weak var coordinator: MainCoordinator?
+    var delegate: SendHappyDataDelegate?
+    var getText = String()
     
     override func loadView() {
         super.loadView()
@@ -23,9 +30,21 @@ class HappyViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         baseView.textInputNumber.delegate = self
+        navigationController?.delegate = self
         addTriggers()
     }
+    
+    override func willMove(toParent parent: UIViewController?)
+    {
+        super.willMove(toParent: parent)
+        if parent == nil
+        {
+            self.delegate?.sendHappyData(self.getText)
+        }
+    }
 }
+
+
 
 extension HappyViewController: UITextFieldDelegate{
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
@@ -43,7 +62,10 @@ extension HappyViewController{
     }
     
     @objc func validatePhoneNumber(_ sender: Any) {
-        
-      
+        guard let text = self.baseView.textInputNumber.text else {
+            print(Error.self)
+            return
+        }
+        self.getText = text
     }
 }
