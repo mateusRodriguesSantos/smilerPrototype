@@ -63,12 +63,6 @@ class SettingsView:UIView{
         return button
     }()
     
-//    var stackViewFaces: UIStackView = {
-//        let stackView = UIStackView()
-//        stackView.alignment = .center
-//        stackView.axis = .vertical
-//        return stackView
-//    }()
 
 
     

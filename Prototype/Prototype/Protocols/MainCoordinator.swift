@@ -47,5 +47,6 @@ extension MainCoordinator{
         scareVC.coordinator = self
         navigationController.pushViewController(scareVC, animated: true)
     }
+
 }
 
