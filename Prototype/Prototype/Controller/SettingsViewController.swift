@@ -54,7 +54,7 @@ extension SettingsViewController{
 extension SettingsViewController{
     @objc func actionButtonCamera(_ sender: Any) {
         
-        coordinator?.navigateToCameraViewController(expressionForDetection: [.fear,.smile])
+        coordinator?.navigateToCameraViewController(expressionForDetection: [.fear,.smile,.sadness])
     }
     
     @objc func goToHappyViewController(_ sender: Any) {

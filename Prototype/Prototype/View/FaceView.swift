@@ -41,31 +41,31 @@ class FaceView: UIView {
     }
     
     override func draw(_ rect: CGRect) {
-//        // 1
-//        guard let context = UIGraphicsGetCurrentContext() else {
-//            return
-//        }
-//
-//        // 2
-//        context.saveGState()
-//
-//        // 3
-//        defer {
-//            context.restoreGState()
-//        }
-//
-//        // 4
-//        context.addRect(boundingBox)
-//
-//        // 5
-//        UIColor.yellow.setStroke()
-//
-//        // 6
-//        context.strokePath()
-//
-//        // 1
-//        UIColor.white.setStroke()
-        
+        // 1
+        guard let context = UIGraphicsGetCurrentContext() else {
+            return
+        }
+
+        // 2
+        context.saveGState()
+
+        // 3
+        defer {
+            context.restoreGState()
+        }
+
+        // 4
+        context.addRect(boundingBox)
+
+        // 5
+        UIColor.yellow.setStroke()
+
+        // 6
+        context.strokePath()
+
+        // 1
+        UIColor.white.setStroke()
+//        
 //        if !leftEye.isEmpty {
 //            // 2
 //            context.addLines(between: leftEye)
@@ -114,12 +114,33 @@ class FaceView: UIView {
 //            context.strokePath()
 //        }
 //
-//        //Add outer lips points
-//        for point in outerLips{
-//            let point = strongPointLayer(center: point)
-//            outerLipsPoints.append(point)
+        
+
+//        if leftEyebrow.isEmpty == false{
+//            let point = strongPointLayer(center: leftEyebrow[4])
 //            context.addPath(point.path!)
-//            UIColor.green.setFill()
+//            UIColor.red.setFill()
+//            context.fillPath()
+//        }
+//
+//        if rightEyebrow.isEmpty == false{
+//            let point = strongPointLayer(center: rightEyebrow[4])
+//            context.addPath(point.path!)
+//            UIColor.red.setFill()
+//            context.fillPath()
+//        }
+//
+//        if rightEye.isEmpty == false{
+//            let point = strongPointLayer(center: rightEye[1])
+//            context.addPath(point.path!)
+//            UIColor.red.setFill()
+//            context.fillPath()
+//        }
+//
+//        if leftEye.isEmpty == false{
+//            let point = strongPointLayer(center: leftEye[1])
+//            context.addPath(point.path!)
+//            UIColor.red.setFill()
 //            context.fillPath()
 //        }
         

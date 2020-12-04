@@ -25,7 +25,7 @@ enum facialExpressions{
 
 protocol FaceExpressionDelegate:class {
     func smileDetected(_ smile:Bool)
-    func sadnessDetected()
+    func sadnessDetected(_ sadness:Bool)
     func fearDetected(_ fear:Bool)
     func faceDetectedAction(_ boundingBox:CGRect)
 }
@@ -115,35 +115,6 @@ class FaceDetection{
             return
         }
         
-        if let leftEye = landmark(
-            points: landmarks.leftEye?.normalizedPoints,
-            to: result.boundingBox) {
-            faceView?.leftEye = leftEye
-        }
-        
-        if let rightEye = landmark(
-            points: landmarks.rightEye?.normalizedPoints,
-            to: result.boundingBox) {
-            faceView?.rightEye = rightEye
-        }
-        
-        if let leftEyebrow = landmark(
-            points: landmarks.leftEyebrow?.normalizedPoints,
-            to: result.boundingBox) {
-            faceView?.leftEyebrow = leftEyebrow
-        }
-       
-        if let rightEyebrow = landmark(
-            points: landmarks.rightEyebrow?.normalizedPoints,
-            to: result.boundingBox) {
-            faceView?.rightEyebrow = rightEyebrow
-        }
-        
-        if let nose = landmark(
-          points: landmarks.nose?.normalizedPoints,
-          to: result.boundingBox) {
-            faceView?.nose = nose
-        }
 
         if let outerLips = landmark(
           points: landmarks.outerLips?.normalizedPoints,
@@ -155,26 +126,60 @@ class FaceDetection{
                     self?.detectSmile(outerLips,yal: result.yaw!,roll: result.roll!)
                 }
             }
-            
+
             if self.expressionDetecting.contains(.fear) {
                 DispatchQueue.main.async { [weak self] in
                     self?.detectFear(outerLips, yal: result.yaw!, roll: result.roll!)
                 }
             }
             
+            if self.expressionDetecting.contains(.sadness){
+                
+                guard let leftEye = landmark(
+                    points: landmarks.leftEye?.normalizedPoints,
+                    to: result.boundingBox) else{ return}
+                
+                faceView?.leftEye = leftEye
+                
+                guard let rightEye = landmark(
+                    points: landmarks.rightEye?.normalizedPoints,
+                        to: result.boundingBox) else{ return}
+                
+                faceView?.rightEye = rightEye
+                
+                
+                guard let leftEyebrow = landmark(
+                    points: landmarks.leftEyebrow?.normalizedPoints,
+                    to: result.boundingBox) else{ return}
+                
+                faceView?.leftEyebrow = leftEyebrow
+                
+               
+                guard let rightEyebrow = landmark(
+                    points: landmarks.rightEyebrow?.normalizedPoints,
+                        to: result.boundingBox) else{ return}
+                    
+                faceView?.rightEyebrow = rightEyebrow
+                
+                
+                DispatchQueue.main.async { [weak self] in
+                    self?.detectSadness(outerLips, pointEyeRight: rightEye[1], pointEyeLeft: leftEye[1], pointEyeBrownRight: leftEyebrow[4], pointEyeBrownLeft: rightEyebrow[4], yal: result.yaw!)
+                }
+            }
+            
         }
 
-        if let innerLips = landmark(
-          points: landmarks.innerLips?.normalizedPoints,
-          to: result.boundingBox) {
-            faceView?.innerLips = innerLips
-        }
-
-        if let faceContour = landmark(
-          points: landmarks.faceContour?.normalizedPoints,
-          to: result.boundingBox) {
-            faceView?.faceContour = faceContour
-        }
+//        if let innerLips = landmark(
+//          points: landmarks.innerLips?.normalizedPoints,
+//          to: result.boundingBox) {
+//            faceView?.innerLips = innerLips
+//        }
+//
+//        if let faceContour = landmark(
+//          points: landmarks.faceContour?.normalizedPoints,
+//          to: result.boundingBox) {
+//            faceView?.faceContour = faceContour
+//        }
         
   
     }
@@ -207,10 +212,10 @@ class FaceDetection{
             //Calculate MAR
             let mar = avg / distanceHorizontal
             
-            print("MAR: \(mar)")
+//            print("MAR: \(mar)")
             
             
-            if mar >= 0.16 && mar < 0.50 {
+            if mar >= 0.16 && mar < 0.20 {
                 delegate?.smileDetected(true)
             }else{
                 delegate?.smileDetected(false)
@@ -260,13 +265,64 @@ class FaceDetection{
             //Calculate MAR
             let mar = avg / distanceHorizontal
             
-            print("MAR: \(mar)")
+//            print("MAR: \(mar)")
             
             
-            if mar >= 0.50 {
+            if mar >= 0.20 {
                 delegate?.fearDetected(true)
             }else{
                 delegate?.fearDetected(false)
+            }
+
+        }
+    }
+    
+    func detectSadness(_ pointsMouth:[CGPoint],pointEyeRight:CGPoint,pointEyeLeft:CGPoint,pointEyeBrownRight:CGPoint,pointEyeBrownLeft:CGPoint,yal:NSNumber){
+        
+        if pointsMouth.isEmpty == false && yal == 0.0 {
+
+            //compare points
+            //Calculate distance between p12 and p7
+            //MAR = L/D
+            
+            let distanceHorizontal = CGPointDistanceSquared(from: pointsMouth[13], to: pointsMouth[7])
+            
+            //Calculate - Vertical distances
+            
+            let distanceVerical1 = CGPointDistanceSquared(from: pointsMouth[0], to: pointsMouth[12])
+            let distanceVerical2 = CGPointDistanceSquared(from: pointsMouth[2], to: pointsMouth[11])
+            let distanceVerical3 = CGPointDistanceSquared(from: pointsMouth[3], to: pointsMouth[10])
+            let distanceVerical4 = CGPointDistanceSquared(from: pointsMouth[4], to: pointsMouth[9])
+            let distanceVerical5 = CGPointDistanceSquared(from: pointsMouth[6], to: pointsMouth[8])
+            let distanceVerical6 = CGPointDistanceSquared(from: pointsMouth[1], to: pointsMouth[11])
+            let distanceVerical7 = CGPointDistanceSquared(from: pointsMouth[5], to: pointsMouth[8])
+            
+            //Calculate average of vertical distances
+            
+            let sum = distanceVerical1 + distanceVerical2 + distanceVerical3 + distanceVerical4 + distanceVerical5 + distanceVerical6 + distanceVerical7
+            
+            let avg = sum / 7
+            
+            //Calculate MAR
+            let mar = avg / distanceHorizontal
+            
+            print("MAR: \(mar)")
+            
+            let distanceEyeRightToEyeBrown = CGPointDistanceSquared(from: pointEyeBrownRight, to: pointEyeRight)
+            let distanceEyeLeftToEyeBrown = CGPointDistanceSquared(from: pointEyeBrownLeft, to: pointEyeLeft)
+            
+            let distanceEyeRightToEyeBrownParse = (distanceEyeRightToEyeBrown) / 1000
+            let distanceEyeLeftToEyeBrownParse = (distanceEyeLeftToEyeBrown) / 1000
+            
+            print(Int(distanceEyeRightToEyeBrownParse))
+            print(Int(distanceEyeLeftToEyeBrownParse))
+            
+            if mar <= 0.0 && (Int(distanceEyeRightToEyeBrownParse) <= 20 || Int(distanceEyeLeftToEyeBrownParse) <= 20){
+                delegate?.sadnessDetected(true)
+                
+            }else{
+                delegate?.sadnessDetected(false)
+                
             }
 
         }

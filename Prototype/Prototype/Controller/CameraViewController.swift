@@ -104,6 +104,18 @@ extension CameraViewController:AVCaptureVideoDataOutputSampleBufferDelegate{
 }
 
 extension CameraViewController:FaceExpressionDelegate{
+    func sadnessDetected(_ sadness: Bool) {
+        if sadness{
+            if isCallEnabled == false{
+                call()
+            }
+            isCallEnabled = true
+            baseView.imageSadness.isHidden = false
+        }else{
+            baseView.imageSadness.isHidden = true
+        }
+    }
+    
     func fearDetected(_ fear: Bool) {
         if fear{
             if isCallEnabled == false{
@@ -121,6 +133,15 @@ extension CameraViewController:FaceExpressionDelegate{
         DispatchQueue.main.async {
             if boundingBox == .zero{
                 self.baseView.imageSmile.isHidden = true
+            }else{
+                self.baseView.viewLeft.backgroundColor = .red
+                self.baseView.viewRight.backgroundColor = .red
+                if boundingBox.intersects(self.baseView.viewLeft.bounds){
+                    self.baseView.viewLeft.backgroundColor = .green
+                }
+                if boundingBox.intersects(self.baseView.viewRight.bounds){
+                    self.baseView.viewRight.backgroundColor = .green
+                }
             }
         }
     }
@@ -138,7 +159,4 @@ extension CameraViewController:FaceExpressionDelegate{
         }
     }
     
-    func sadnessDetected() {
-        
-    }
 }
