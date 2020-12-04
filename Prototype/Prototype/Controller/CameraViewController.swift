@@ -104,6 +104,19 @@ extension CameraViewController:AVCaptureVideoDataOutputSampleBufferDelegate{
 }
 
 extension CameraViewController:FaceExpressionDelegate{
+    func fearDetected(_ fear: Bool) {
+        if fear{
+            if isCallEnabled == false{
+                call()
+            }
+            isCallEnabled = true
+            baseView.imageFear.isHidden = false
+        }else{
+            baseView.imageFear.isHidden = true
+        }
+    }
+    
+
     func faceDetectedAction(_ boundingBox: CGRect) {
         DispatchQueue.main.async {
             if boundingBox == .zero{

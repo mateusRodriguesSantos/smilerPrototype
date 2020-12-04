@@ -26,6 +26,7 @@ enum facialExpressions{
 protocol FaceExpressionDelegate:class {
     func smileDetected(_ smile:Bool)
     func sadnessDetected()
+    func fearDetected(_ fear:Bool)
     func faceDetectedAction(_ boundingBox:CGRect)
 }
 
@@ -155,6 +156,12 @@ class FaceDetection{
                 }
             }
             
+            if self.expressionDetecting.contains(.fear) {
+                DispatchQueue.main.async { [weak self] in
+                    self?.detectFear(outerLips, yal: result.yaw!, roll: result.roll!)
+                }
+            }
+            
         }
 
         if let innerLips = landmark(
@@ -203,8 +210,10 @@ class FaceDetection{
             print("MAR: \(mar)")
             
             
-            if mar >= 0.16 {
+            if mar >= 0.16 && mar < 0.50 {
                 delegate?.smileDetected(true)
+            }else{
+                delegate?.smileDetected(false)
             }
 
 //            let marR = Double(round(mar*1000/1000))
@@ -215,10 +224,51 @@ class FaceDetection{
 //            }
 //
             //Neutral
-            if  mar <= 0.16{
-                delegate?.smileDetected(false)
-            }
+//            if  mar <= 0.12{
+//                delegate?.smileDetected(false)
+//            }
             
+        }
+    }
+    
+    
+    func detectFear(_ points:[CGPoint],yal:NSNumber, roll:NSNumber){
+        if points.isEmpty == false && yal == 0.0 {
+
+            //compare points
+            //Calculate distance between p12 and p7
+            //MAR = L/D
+            
+            let distanceHorizontal = CGPointDistanceSquared(from: points[13], to: points[7])
+            
+            //Calculate - Vertical distances
+            
+            let distanceVerical1 = CGPointDistanceSquared(from: points[0], to: points[12])
+            let distanceVerical2 = CGPointDistanceSquared(from: points[2], to: points[11])
+            let distanceVerical3 = CGPointDistanceSquared(from: points[3], to: points[10])
+            let distanceVerical4 = CGPointDistanceSquared(from: points[4], to: points[9])
+            let distanceVerical5 = CGPointDistanceSquared(from: points[6], to: points[8])
+            let distanceVerical6 = CGPointDistanceSquared(from: points[1], to: points[11])
+            let distanceVerical7 = CGPointDistanceSquared(from: points[5], to: points[8])
+            
+            //Calculate average of vertical distances
+            
+            let sum = distanceVerical1 + distanceVerical2 + distanceVerical3 + distanceVerical4 + distanceVerical5 + distanceVerical6 + distanceVerical7
+            
+            let avg = sum / 7
+            
+            //Calculate MAR
+            let mar = avg / distanceHorizontal
+            
+            print("MAR: \(mar)")
+            
+            
+            if mar >= 0.50 {
+                delegate?.fearDetected(true)
+            }else{
+                delegate?.fearDetected(false)
+            }
+
         }
     }
     

@@ -42,6 +42,14 @@ class CameraView:UIView{
         return imageView
     }()
     
+    let imageFear: UIImageView = {
+        let imageView = UIImageView(frame: CGRect.zero)
+        imageView.image = UIImage(named: "Scare")
+        imageView.isHidden = true
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        return imageView
+    }()
+    
     init() {
         super.init(frame: .zero)
         self.isUserInteractionEnabled = true
@@ -56,12 +64,20 @@ class CameraView:UIView{
 extension CameraView:ViewCodable{
     func setupViewHierarchy() {
         self.addSubview(imageSmile)
+        self.addSubview(imageFear)
         self.addSubview(buttonRegister)
         self.addSubview(faceView)
         self.layer.addSublayer(faceView.layer)
     }
     
     func setupConstraints() {
+        
+        NSLayoutConstraint.activate([
+            imageFear.widthAnchor.constraint(equalToConstant: 100),
+            imageFear.heightAnchor.constraint(equalToConstant: 100),
+            imageFear.centerXAnchor.constraint(equalTo: self.centerXAnchor),
+            imageFear.centerYAnchor.constraint(equalTo: self.centerYAnchor),
+        ])
         
         NSLayoutConstraint.activate([
             imageSmile.widthAnchor.constraint(equalToConstant: 100),
