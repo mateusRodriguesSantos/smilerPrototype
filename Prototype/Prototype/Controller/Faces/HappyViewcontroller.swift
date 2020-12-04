@@ -8,8 +8,13 @@
 import Foundation
 import UIKit
 
+protocol delegateHappyVC:class {
+    func delegateHappy(_ numCell:String)
+}
+
 class HappyViewController: UIViewController {
     
+    weak var delegate:delegateHappyVC?
     
     //MARK: - Variables
     let baseView = ExpressionView()
@@ -44,6 +49,6 @@ extension HappyViewController{
     
     @objc func validatePhoneNumber(_ sender: Any) {
         
-      
+        delegate?.delegateHappy(baseView.textInputNumber.text ?? " ")
     }
 }

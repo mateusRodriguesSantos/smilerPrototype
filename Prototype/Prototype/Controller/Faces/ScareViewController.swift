@@ -7,8 +7,14 @@
 
 import Foundation
 import UIKit
+
+protocol delegateScareVC:class {
+    func delegateScare(_ numCell:String)
+}
+
 class ScareViewController: UIViewController {
     
+    weak var delegate:delegateScareVC?
     
     //MARK: - Variables
     let baseView = ExpressionView()
@@ -45,7 +51,6 @@ extension ScareViewController{
     }
     
     @objc func validatePhoneNumber(_ sender: Any) {
-        
-
+        delegate?.delegateScare(baseView.textInputNumber.text ?? " ")
     }
 }

@@ -13,6 +13,7 @@ class SettingsViewController: UIViewController {
     weak var coordinator:MainCoordinator?
     let baseView = SettingsView()
     
+    var numberCall:String = ""
     //MARK: - Load View
     /// Load View
     override func loadView() {
@@ -50,22 +51,41 @@ extension SettingsViewController{
     
 }
 
+extension SettingsViewController:delegateSadVC{
+    func delegateSad(_ numCell: String) {
+        numberCall = numCell
+    }
+    
+    
+}
+
+extension SettingsViewController:delegateScareVC{
+    func delegateScare(_ numCell: String) {
+        numberCall = numCell
+    }
+}
+
+extension SettingsViewController:delegateHappyVC{
+    func delegateHappy(_ numCell: String) {
+        numberCall = numCell
+    }
+}
+
 // MARK: - Action Buttons
 extension SettingsViewController{
     @objc func actionButtonCamera(_ sender: Any) {
-        
-        coordinator?.navigateToCameraViewController(expressionForDetection: [.fear,.smile,.sadness], numberCall: 21223923)
+        coordinator?.navigateToCameraViewController(expressionForDetection: [.fear,.smile,.sadness], numberCall: numberCall)
     }
     
     @objc func goToHappyViewController(_ sender: Any) {
-        coordinator?.navigateToHappyViewController()
+        coordinator?.navigateToHappyViewController(self)
     }
     
     @objc func goToSadViewController(_ sender: Any) {
-        coordinator?.navigateToSadViewController()
+        coordinator?.navigateToSadViewController(self)
     }
     
     @objc func goToScareViewController(_ sender: Any) {
-        coordinator?.navigateToScareViewController()
+        coordinator?.navigateToScareViewController(self)
     }
 }

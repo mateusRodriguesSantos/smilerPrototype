@@ -65,7 +65,7 @@ class FaceView: UIView {
 
         // 1
         UIColor.white.setStroke()
-//        
+////        
 //        if !leftEye.isEmpty {
 //            // 2
 //            context.addLines(between: leftEye)
@@ -114,8 +114,13 @@ class FaceView: UIView {
 //            context.strokePath()
 //        }
 //
-        
-
+//        for point in outerLips {
+//            let point = strongPointLayer(center: point)
+//            context.addPath(point.path!)
+//            UIColor.red.setFill()
+//            context.fillPath()
+//        }
+//
 //        if leftEyebrow.isEmpty == false{
 //            let point = strongPointLayer(center: leftEyebrow[4])
 //            context.addPath(point.path!)

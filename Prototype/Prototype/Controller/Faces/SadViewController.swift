@@ -8,8 +8,13 @@
 import Foundation
 import UIKit
 
+protocol delegateSadVC:class {
+    func delegateSad(_ numCell:String)
+}
 
 class SadViewController: UIViewController {
+    
+    weak var delegate:delegateSadVC?
     
     //MARK: - Variables
     let baseView = ExpressionView()
@@ -45,8 +50,7 @@ extension SadViewController{
     }
     
     @objc func validatePhoneNumber(_ sender: Any) {
-        
-      
+        delegate?.delegateSad(baseView.textInputNumber.text ?? " ")
     }
 }
 
