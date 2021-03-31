@@ -1,0 +1,23 @@
+# Uncomment the next line to define a global platform for your project
+# platform :ios, '9.0'
+
+target 'Smiler' do
+  # Comment the next line if you don't want to use dynamic frameworks
+  use_frameworks!
+
+  # Pods for Smiler
+  pod 'RealmSwift'
+
+  target 'SmilerTests' do
+    # Pods for testing
+    pod 'Quick' # if you want to use it with Quick
+    pod 'Nimble' # if you want to use it with Quick
+    pod 'Nimble-Snapshots'
+  
+  end
+
+  target 'SmilerUITests' do
+    # Pods for testing
+  end
+
+end
