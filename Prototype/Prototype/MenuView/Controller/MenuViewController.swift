@@ -19,19 +19,17 @@ class MenuViewController: UIViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
+        let apperance = [NSAttributedString.Key.foregroundColor : UIColor.black,NSAttributedString.Key.font: UIFont.systemFont(ofSize: 30)]
+        navigationController?.navigationBar.topItem?.title = "Menu"
+        navigationController?.navigationBar.titleTextAttributes = apperance
         
+        navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+
+        navigationController?.navigationBar.shadowImage = UIImage()
+        
+        navigationController?.navigationBar.isTranslucent = true
+        
+        navigationController?.view.backgroundColor = .clear
         // Do any additional setup after loading the view.
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

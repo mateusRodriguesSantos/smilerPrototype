@@ -199,6 +199,7 @@
 			children = (
 				DC2F58BC2614FEA4008D12B3 /* Controller */,
 				DC2F58BB2614FE9E008D12B3 /* View */,
+				DC59015526155292006F8049 /* ViewModel */,
 			);
 			path = MenuView;
 			sourceTree = "<group>";
@@ -280,7 +281,6 @@
 				267C49BC627802DC8A051D92 /* Pods-Smiler-SmilerUITests.debug.xcconfig */,
 				80DC82A68E3A0BCCF8899723 /* Pods-Smiler-SmilerUITests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -316,6 +316,13 @@
 				DC2F58BD2614FEC7008D12B3 /* MenuViewController.swift */,
 			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		DC59015526155292006F8049 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
