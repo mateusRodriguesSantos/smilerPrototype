@@ -10,10 +10,16 @@ import UIKit
 class MenuViewController: UIViewController {
     
     weak var coordinator:MainCoordinator?
+    
+    let viewBase = MenuView()
 
+    override func loadView() {
+        super.loadView()
+        self.view = viewBase
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
     }
     
