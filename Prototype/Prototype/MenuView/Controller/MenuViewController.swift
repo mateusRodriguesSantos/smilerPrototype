@@ -12,11 +12,22 @@ class MenuViewController: UIViewController {
     weak var coordinator:MainCoordinator?
     
     let viewBase = MenuView()
+    
+    lazy var pickerDelegate:PickerDelegate = {
+        let delegate = PickerDelegate()
+        return delegate
+    }()
+    
+    lazy var pickerDataSource:PickerDataSource = {
+        let dataSource = PickerDataSource()
+        return dataSource
+    }()
 
     override func loadView() {
         super.loadView()
         self.view = viewBase
     }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         let apperance = [NSAttributedString.Key.foregroundColor : UIColor.black,NSAttributedString.Key.font: UIFont.systemFont(ofSize: 30)]
@@ -30,6 +41,10 @@ class MenuViewController: UIViewController {
         navigationController?.navigationBar.isTranslucent = true
         
         navigationController?.view.backgroundColor = .clear
-        // Do any additional setup after loading the view.
+        
+
+        viewBase.pickerModesView.delegate = pickerDelegate
+        viewBase.pickerModesView.dataSource = pickerDataSource
     }
+    
 }
