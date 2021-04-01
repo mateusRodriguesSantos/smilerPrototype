@@ -15,9 +15,9 @@ class MainCoordinator: Coordinator {
     }
     
     func start() {
-        let sessionVC = SettingsViewController()
-        sessionVC.coordinator = self
-        navigationController.pushViewController(sessionVC, animated: true)
+        let viewController = MenuViewController()
+        viewController.coordinator = self
+        navigationController.pushViewController(viewController, animated: true)
     }
 }
 
@@ -28,27 +28,6 @@ extension MainCoordinator{
         cameraVC.coordinator = self
         cameraVC.expressionInDetection = expressionForDetection
         navigationController.pushViewController(cameraVC, animated: true)
-    }
-    
-    func navigateToHappyViewController(_ settingsViewController:SettingsViewController){
-        let happyVC = HappyViewController()
-        happyVC.coordinator = self
-        happyVC.delegate = settingsViewController
-        navigationController.pushViewController(happyVC, animated: true)
-    }
-    
-    func navigateToSadViewController(_ settingsViewController:SettingsViewController){
-        let sadVC = SadViewController()
-        sadVC.coordinator = self
-        sadVC.delegate = settingsViewController
-        navigationController.pushViewController(sadVC, animated: true)
-    }
-    
-    func navigateToScareViewController(_ settingsViewController:SettingsViewController){
-        let scareVC = ScareViewController()
-        scareVC.coordinator = self
-        scareVC.delegate = settingsViewController
-        navigationController.pushViewController(scareVC, animated: true)
     }
 
 }
