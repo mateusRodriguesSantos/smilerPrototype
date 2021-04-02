@@ -29,6 +29,17 @@ extension MainCoordinator{
 ////        cameraVC.expressionInDetection = expressionForDetection
 //        navigationController.pushViewController(cameraVC, animated: true)
 //    }
-
+    
+    func navigateToAlertsViewController(){
+        let viewController = AlertsManagerViewController()
+        viewController.coordinator = self
+        navigationController.pushViewController(viewController, animated: true)
+    }
+    
+    func navigateToContactsManagerViewController(){
+        let viewController = ContactsManagerViewController()
+        viewController.coordinator = self
+        navigationController.pushViewController(viewController, animated: true)
+    }
 }
 

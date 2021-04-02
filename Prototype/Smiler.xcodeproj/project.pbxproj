@@ -33,8 +33,10 @@
 		DC2F58BE2614FEC7008D12B3 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC2F58BD2614FEC7008D12B3 /* MenuViewController.swift */; };
 		DC2F58C62614FEE3008D12B3 /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC2F58C52614FEE3008D12B3 /* MenuView.swift */; };
 		DCA809C026177EBD00AC89FC /* MenuViewViewControllerTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA809BF26177EBD00AC89FC /* MenuViewViewControllerTestCase.swift */; };
-		DCC7E99F26164F9500A30E2D /* PickerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC7E99E26164F9500A30E2D /* PickerDelegate.swift */; };
-		DCC7E9A726164FB700A30E2D /* PickerDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC7E9A626164FB700A30E2D /* PickerDataSource.swift */; };
+		DCA809CC26178F9300AC89FC /* AlertsManagerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA809CB26178F9300AC89FC /* AlertsManagerViewController.swift */; };
+		DCA809D426178FAB00AC89FC /* AlertsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA809D326178FAB00AC89FC /* AlertsView.swift */; };
+		DCA809E3261793E800AC89FC /* ContactsManagerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA809E2261793E800AC89FC /* ContactsManagerViewController.swift */; };
+		DCA809EB261793FA00AC89FC /* ContactsManagerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA809EA261793FA00AC89FC /* ContactsManagerView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -96,8 +98,10 @@
 		DC2F58BD2614FEC7008D12B3 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		DC2F58C52614FEE3008D12B3 /* MenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
 		DCA809BF26177EBD00AC89FC /* MenuViewViewControllerTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewViewControllerTestCase.swift; sourceTree = "<group>"; };
-		DCC7E99E26164F9500A30E2D /* PickerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerDelegate.swift; sourceTree = "<group>"; };
-		DCC7E9A626164FB700A30E2D /* PickerDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerDataSource.swift; sourceTree = "<group>"; };
+		DCA809CB26178F9300AC89FC /* AlertsManagerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertsManagerViewController.swift; sourceTree = "<group>"; };
+		DCA809D326178FAB00AC89FC /* AlertsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertsView.swift; sourceTree = "<group>"; };
+		DCA809E2261793E800AC89FC /* ContactsManagerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsManagerViewController.swift; sourceTree = "<group>"; };
+		DCA809EA261793FA00AC89FC /* ContactsManagerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsManagerView.swift; sourceTree = "<group>"; };
 		DE9A6AC7F97FCC16F5B2F392 /* Pods_Smiler.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Smiler.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E6898BD246CE3EF04041533D /* Pods_Smiler_SmilerTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Smiler_SmilerTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -244,6 +248,8 @@
 			isa = PBXGroup;
 			children = (
 				AD8A2E19256D500100B05AAB /* AppDelegate */,
+				DCA809DE261793A900AC89FC /* ContactsManager */,
+				DCA809C726178F4700AC89FC /* AlertsManager */,
 				AD8A2E0E256D4FDC00B05AAB /* MenuView */,
 				DC2F58B22614FDBD008D12B3 /* RecognitionView */,
 				6E68FB4D2579FD5900BA3315 /* Sources */,
@@ -312,8 +318,6 @@
 			isa = PBXGroup;
 			children = (
 				DC2F58C52614FEE3008D12B3 /* MenuView.swift */,
-				DCC7E99E26164F9500A30E2D /* PickerDelegate.swift */,
-				DCC7E9A626164FB700A30E2D /* PickerDataSource.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -339,6 +343,72 @@
 				DCA809BF26177EBD00AC89FC /* MenuViewViewControllerTestCase.swift */,
 			);
 			path = MenuView;
+			sourceTree = "<group>";
+		};
+		DCA809C726178F4700AC89FC /* AlertsManager */ = {
+			isa = PBXGroup;
+			children = (
+				DCA809C826178F5B00AC89FC /* Controller */,
+				DCA809C926178F6200AC89FC /* View */,
+				DCA809CA26178F7200AC89FC /* ViewModel */,
+			);
+			path = AlertsManager;
+			sourceTree = "<group>";
+		};
+		DCA809C826178F5B00AC89FC /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				DCA809CB26178F9300AC89FC /* AlertsManagerViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		DCA809C926178F6200AC89FC /* View */ = {
+			isa = PBXGroup;
+			children = (
+				DCA809D326178FAB00AC89FC /* AlertsView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		DCA809CA26178F7200AC89FC /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		DCA809DE261793A900AC89FC /* ContactsManager */ = {
+			isa = PBXGroup;
+			children = (
+				DCA809DF261793B700AC89FC /* Controller */,
+				DCA809E0261793BF00AC89FC /* View */,
+				DCA809E1261793C600AC89FC /* ViewModel */,
+			);
+			path = ContactsManager;
+			sourceTree = "<group>";
+		};
+		DCA809DF261793B700AC89FC /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				DCA809E2261793E800AC89FC /* ContactsManagerViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		DCA809E0261793BF00AC89FC /* View */ = {
+			isa = PBXGroup;
+			children = (
+				DCA809EA261793FA00AC89FC /* ContactsManagerView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		DCA809E1261793C600AC89FC /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -598,20 +668,22 @@
 			buildActionMask = 2147483647;
 			files = (
 				6E10C7772579BC5300A39F3F /* String.swift in Sources */,
+				DCA809D426178FAB00AC89FC /* AlertsView.swift in Sources */,
 				DC2F58BE2614FEC7008D12B3 /* MenuViewController.swift in Sources */,
 				AD7F26732575363100DB0387 /* FaceDetection.swift in Sources */,
+				DCA809E3261793E800AC89FC /* ContactsManagerViewController.swift in Sources */,
 				6E10C7292575687400A39F3F /* CameraView.swift in Sources */,
 				AD7F267825753ADE00DB0387 /* FaceView.swift in Sources */,
 				ADFBEC1D256D4BDB002EAE9D /* Prototype.xcdatamodeld in Sources */,
 				AD41F237256D51D000F0E467 /* ViewCodable.swift in Sources */,
-				DCC7E99F26164F9500A30E2D /* PickerDelegate.swift in Sources */,
 				AD8A2DFE256D4D6300B05AAB /* Camera.swift in Sources */,
 				ADFBEC17256D4BDB002EAE9D /* CameraViewController.swift in Sources */,
 				DC2F58C62614FEE3008D12B3 /* MenuView.swift in Sources */,
 				ADFBEC13256D4BDB002EAE9D /* AppDelegate.swift in Sources */,
-				DCC7E9A726164FB700A30E2D /* PickerDataSource.swift in Sources */,
+				DCA809EB261793FA00AC89FC /* ContactsManagerView.swift in Sources */,
 				ADFBEC15256D4BDB002EAE9D /* SceneDelegate.swift in Sources */,
 				AD7F267F25753CB400DB0387 /* CoreGraphicsExtensions.swift in Sources */,
+				DCA809CC26178F9300AC89FC /* AlertsManagerViewController.swift in Sources */,
 				AD41F23C256D522500F0E467 /* MainCoordinator.swift in Sources */,
 				AD41F232256D51C300F0E467 /* Coordinator.swift in Sources */,
 				6E10C7152574538E00A39F3F /* UIButton.swift in Sources */,
