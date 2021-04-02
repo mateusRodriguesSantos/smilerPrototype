@@ -6,7 +6,7 @@
 //
 
 import XCTest
-@testable import Prototype
+@testable import Smiler
 
 class PrototypeTests: XCTestCase {
 

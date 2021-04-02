@@ -23,12 +23,12 @@ class MainCoordinator: Coordinator {
 
 //MARK: Functins
 extension MainCoordinator{
-    func navigateToCameraViewController(expressionForDetection:[facialExpressions],numberCall:String){
-        let cameraVC = CameraViewController()
-        cameraVC.coordinator = self
-        cameraVC.expressionInDetection = expressionForDetection
-        navigationController.pushViewController(cameraVC, animated: true)
-    }
+//    func navigateToCameraViewController(expressionForDetection:[facialExpressions],numberCall:String){
+//        let cameraVC = CameraViewController()
+//        cameraVC.coordinator = self
+////        cameraVC.expressionInDetection = expressionForDetection
+//        navigationController.pushViewController(cameraVC, animated: true)
+//    }
 
 }
 
