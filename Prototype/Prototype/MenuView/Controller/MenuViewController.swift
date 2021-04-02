@@ -41,10 +41,7 @@ class MenuViewController: UIViewController {
         navigationController?.navigationBar.isTranslucent = true
         
         navigationController?.view.backgroundColor = .clear
-        
 
-        viewBase.pickerModesView.delegate = pickerDelegate
-        viewBase.pickerModesView.dataSource = pickerDataSource
     }
     
 }
