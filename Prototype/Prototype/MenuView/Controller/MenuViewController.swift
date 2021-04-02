@@ -13,16 +13,6 @@ class MenuViewController: UIViewController {
     
     let viewBase = MenuView()
     
-    lazy var pickerDelegate:PickerDelegate = {
-        let delegate = PickerDelegate()
-        return delegate
-    }()
-    
-    lazy var pickerDataSource:PickerDataSource = {
-        let dataSource = PickerDataSource()
-        return dataSource
-    }()
-
     override func loadView() {
         super.loadView()
         self.view = viewBase
@@ -41,7 +31,26 @@ class MenuViewController: UIViewController {
         navigationController?.navigationBar.isTranslucent = true
         
         navigationController?.view.backgroundColor = .clear
-
+        
+        addTriggers()
     }
-    
+}
+
+//MARK: Triggers
+extension MenuViewController{
+    func addTriggers(){
+        viewBase.setUpsViewButton1.addTarget(self, action: #selector(self.alertViewAction), for: .touchUpInside)
+        
+        viewBase.setUpsViewButton2.addTarget(self, action: #selector(self.contactsViewAction), for: .touchUpInside)
+    }
+}
+
+//MARK: Target
+extension MenuViewController{
+    @objc func alertViewAction(){
+        coordinator?.navigateToAlertsViewController()
+    }
+    @objc func contactsViewAction(){
+        coordinator?.navigateToContactsManagerViewController()
+    }
 }
