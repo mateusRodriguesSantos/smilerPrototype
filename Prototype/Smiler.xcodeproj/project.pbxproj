@@ -37,6 +37,9 @@
 		DCA809D426178FAB00AC89FC /* AlertsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA809D326178FAB00AC89FC /* AlertsView.swift */; };
 		DCA809E3261793E800AC89FC /* ContactsManagerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA809E2261793E800AC89FC /* ContactsManagerViewController.swift */; };
 		DCA809EB261793FA00AC89FC /* ContactsManagerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA809EA261793FA00AC89FC /* ContactsManagerView.swift */; };
+		DCA809F02617C40400AC89FC /* TableHourDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA809EF2617C40400AC89FC /* TableHourDelegate.swift */; };
+		DCA809F52617C45A00AC89FC /* TableHourDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA809F42617C45A00AC89FC /* TableHourDataSource.swift */; };
+		DCA809FA2617D67400AC89FC /* AlertViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA809F92617D67400AC89FC /* AlertViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -102,6 +105,9 @@
 		DCA809D326178FAB00AC89FC /* AlertsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertsView.swift; sourceTree = "<group>"; };
 		DCA809E2261793E800AC89FC /* ContactsManagerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsManagerViewController.swift; sourceTree = "<group>"; };
 		DCA809EA261793FA00AC89FC /* ContactsManagerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsManagerView.swift; sourceTree = "<group>"; };
+		DCA809EF2617C40400AC89FC /* TableHourDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableHourDelegate.swift; sourceTree = "<group>"; };
+		DCA809F42617C45A00AC89FC /* TableHourDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableHourDataSource.swift; sourceTree = "<group>"; };
+		DCA809F92617D67400AC89FC /* AlertViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertViewCell.swift; sourceTree = "<group>"; };
 		DE9A6AC7F97FCC16F5B2F392 /* Pods_Smiler.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Smiler.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E6898BD246CE3EF04041533D /* Pods_Smiler_SmilerTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Smiler_SmilerTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -367,6 +373,9 @@
 			isa = PBXGroup;
 			children = (
 				DCA809D326178FAB00AC89FC /* AlertsView.swift */,
+				DCA809EF2617C40400AC89FC /* TableHourDelegate.swift */,
+				DCA809F42617C45A00AC89FC /* TableHourDataSource.swift */,
+				DCA809F92617D67400AC89FC /* AlertViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -667,6 +676,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DCA809F52617C45A00AC89FC /* TableHourDataSource.swift in Sources */,
 				6E10C7772579BC5300A39F3F /* String.swift in Sources */,
 				DCA809D426178FAB00AC89FC /* AlertsView.swift in Sources */,
 				DC2F58BE2614FEC7008D12B3 /* MenuViewController.swift in Sources */,
@@ -682,9 +692,11 @@
 				ADFBEC13256D4BDB002EAE9D /* AppDelegate.swift in Sources */,
 				DCA809EB261793FA00AC89FC /* ContactsManagerView.swift in Sources */,
 				ADFBEC15256D4BDB002EAE9D /* SceneDelegate.swift in Sources */,
+				DCA809FA2617D67400AC89FC /* AlertViewCell.swift in Sources */,
 				AD7F267F25753CB400DB0387 /* CoreGraphicsExtensions.swift in Sources */,
 				DCA809CC26178F9300AC89FC /* AlertsManagerViewController.swift in Sources */,
 				AD41F23C256D522500F0E467 /* MainCoordinator.swift in Sources */,
+				DCA809F02617C40400AC89FC /* TableHourDelegate.swift in Sources */,
 				AD41F232256D51C300F0E467 /* Coordinator.swift in Sources */,
 				6E10C7152574538E00A39F3F /* UIButton.swift in Sources */,
 			);
