@@ -30,7 +30,6 @@ class AlertViewCell: UITableViewCell {
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         setupViews()
-        self.isUserInteractionEnabled = true
     }
     
     required init?(coder: NSCoder) {
@@ -42,7 +41,7 @@ class AlertViewCell: UITableViewCell {
 extension AlertViewCell:ViewCodable {
     func setupViewHierarchy() {
         self.addSubview(title)
-        self.addSubview(switchActive)
+        self.contentView.addSubview(switchActive)
     }
     
     func setupConstraints() {

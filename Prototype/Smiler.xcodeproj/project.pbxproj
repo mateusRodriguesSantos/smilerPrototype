@@ -40,6 +40,7 @@
 		DCA809F02617C40400AC89FC /* TableHourDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA809EF2617C40400AC89FC /* TableHourDelegate.swift */; };
 		DCA809F52617C45A00AC89FC /* TableHourDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA809F42617C45A00AC89FC /* TableHourDataSource.swift */; };
 		DCA809FA2617D67400AC89FC /* AlertViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA809F92617D67400AC89FC /* AlertViewCell.swift */; };
+		DCDE75D1261A56EA007D1BE4 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCDE75D0261A56EA007D1BE4 /* Date.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -108,6 +109,7 @@
 		DCA809EF2617C40400AC89FC /* TableHourDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableHourDelegate.swift; sourceTree = "<group>"; };
 		DCA809F42617C45A00AC89FC /* TableHourDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableHourDataSource.swift; sourceTree = "<group>"; };
 		DCA809F92617D67400AC89FC /* AlertViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertViewCell.swift; sourceTree = "<group>"; };
+		DCDE75D0261A56EA007D1BE4 /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
 		DE9A6AC7F97FCC16F5B2F392 /* Pods_Smiler.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Smiler.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E6898BD246CE3EF04041533D /* Pods_Smiler_SmilerTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Smiler_SmilerTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -163,6 +165,7 @@
 			children = (
 				6E10C7142574538E00A39F3F /* UIButton.swift */,
 				6E10C7762579BC5300A39F3F /* String.swift */,
+				DCDE75D0261A56EA007D1BE4 /* Date.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -695,6 +698,7 @@
 				DCA809FA2617D67400AC89FC /* AlertViewCell.swift in Sources */,
 				AD7F267F25753CB400DB0387 /* CoreGraphicsExtensions.swift in Sources */,
 				DCA809CC26178F9300AC89FC /* AlertsManagerViewController.swift in Sources */,
+				DCDE75D1261A56EA007D1BE4 /* Date.swift in Sources */,
 				AD41F23C256D522500F0E467 /* MainCoordinator.swift in Sources */,
 				DCA809F02617C40400AC89FC /* TableHourDelegate.swift in Sources */,
 				AD41F232256D51C300F0E467 /* Coordinator.swift in Sources */,
