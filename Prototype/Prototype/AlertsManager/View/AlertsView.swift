@@ -45,13 +45,23 @@ class AlertsView:UIView {
         button.backgroundColor = .white
         button.setTitleColor(.black, for: .normal)
         button.setTitle("+", for: .normal)
-        button.tintColor = .systemBlue
+        button.tintColor = .white
         button.setTitleColor(.systemBlue, for: .normal)
         button.titleLabel?.textColor = .systemBlue
         button.titleLabel?.textAlignment = .left
         button.titleLabel?.font = UIFont.systemFont(ofSize: 20)
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
+    }()
+    
+    let backAddHourAlert:UIView = {
+        let view = UIView(frame: .zero)
+        view.backgroundColor = .lightGray
+        view.layer.cornerRadius = 6
+        view.alpha = 0.2
+        view.isUserInteractionEnabled = false
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
     }()
     
     let titleAlarmView:UILabel = {
@@ -122,6 +132,8 @@ extension AlertsView:ViewCodable {
         //Suplementary View
         addAlarmView.addArrangedSubview(titleAlarmView)
         addAlarmView.addArrangedSubview(pickerAlarmView)
+        
+        addHourAlert.addSubview(backAddHourAlert)
     }
     
     func setupConstraints() {
@@ -141,6 +153,12 @@ extension AlertsView:ViewCodable {
             addHourAlert.heightAnchor.constraint(equalTo: self.heightAnchor, multiplier: 0.07),
         ])
         
+        NSLayoutConstraint.activate([
+            backAddHourAlert.widthAnchor.constraint(equalTo: addHourAlert.widthAnchor, multiplier: 0.8),
+            backAddHourAlert.heightAnchor.constraint(equalTo: addHourAlert.heightAnchor, multiplier: 0.55),
+            backAddHourAlert.centerXAnchor.constraint(equalTo: addHourAlert.centerXAnchor),
+            backAddHourAlert.centerYAnchor.constraint(equalTo: addHourAlert.centerYAnchor),
+        ])
         NSLayoutConstraint.activate([
             addAlarmView.leadingAnchor.constraint(equalTo: self.leadingAnchor),
             addAlarmView.trailingAnchor.constraint(equalTo: self.addHourAlert.leadingAnchor),
