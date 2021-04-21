@@ -23,7 +23,6 @@
 		ADFBEC13256D4BDB002EAE9D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADFBEC12256D4BDB002EAE9D /* AppDelegate.swift */; };
 		ADFBEC15256D4BDB002EAE9D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADFBEC14256D4BDB002EAE9D /* SceneDelegate.swift */; };
 		ADFBEC17256D4BDB002EAE9D /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADFBEC16256D4BDB002EAE9D /* CameraViewController.swift */; };
-		ADFBEC1A256D4BDB002EAE9D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ADFBEC18256D4BDB002EAE9D /* Main.storyboard */; };
 		ADFBEC1D256D4BDB002EAE9D /* Prototype.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = ADFBEC1B256D4BDB002EAE9D /* Prototype.xcdatamodeld */; };
 		ADFBEC1F256D4BDC002EAE9D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ADFBEC1E256D4BDC002EAE9D /* Assets.xcassets */; };
 		ADFBEC22256D4BDC002EAE9D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ADFBEC20256D4BDC002EAE9D /* LaunchScreen.storyboard */; };
@@ -87,7 +86,6 @@
 		ADFBEC12256D4BDB002EAE9D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ADFBEC14256D4BDB002EAE9D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		ADFBEC16256D4BDB002EAE9D /* CameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
-		ADFBEC19256D4BDB002EAE9D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		ADFBEC1C256D4BDB002EAE9D /* Prototype.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Prototype.xcdatamodel; sourceTree = "<group>"; };
 		ADFBEC1E256D4BDC002EAE9D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		ADFBEC21256D4BDC002EAE9D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -265,7 +263,6 @@
 				6E10C7132574538000A39F3F /* Extensions */,
 				AD41F230256D519D00F0E467 /* Utils */,
 				ADFBEC20256D4BDC002EAE9D /* LaunchScreen.storyboard */,
-				ADFBEC18256D4BDB002EAE9D /* Main.storyboard */,
 				ADFBEC1E256D4BDC002EAE9D /* Assets.xcassets */,
 				ADFBEC23256D4BDC002EAE9D /* Info.plist */,
 				ADFBEC1B256D4BDB002EAE9D /* Prototype.xcdatamodeld */,
@@ -534,7 +531,6 @@
 			files = (
 				ADFBEC22256D4BDC002EAE9D /* LaunchScreen.storyboard in Resources */,
 				ADFBEC1F256D4BDC002EAE9D /* Assets.xcassets in Resources */,
-				ADFBEC1A256D4BDB002EAE9D /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -740,14 +736,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		ADFBEC18256D4BDB002EAE9D /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				ADFBEC19256D4BDB002EAE9D /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		ADFBEC20256D4BDC002EAE9D /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
