@@ -7,6 +7,7 @@ target 'Smiler' do
 
   # Pods for Smiler
   pod 'RealmSwift'
+  pod 'Alamofire', '~> 5.2'
 
   target 'SmilerTests' do
     # Pods for testing

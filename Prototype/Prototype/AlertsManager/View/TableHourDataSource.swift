@@ -13,7 +13,6 @@ class TableHourDataSource:NSObject,UITableViewDataSource {
     var date:String {
         didSet{
             hours.append(date)
-            
         }
     }
     

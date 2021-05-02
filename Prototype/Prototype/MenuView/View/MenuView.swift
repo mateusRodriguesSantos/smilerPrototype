@@ -119,6 +119,7 @@ class MenuView:UIView {
         let colorBack = UIColor(red: 245/255.0, green: 245/255.0, blue: 245/255.0, alpha: 1.0)
         let textView = UITextView(frame: .zero)
         textView.text = "Digite uma mensagem de emergência"
+        textView.alpha = 0.2
         textView.textAlignment = .left
         textView.backgroundColor = colorBack
         textView.font = UIFont.systemFont(ofSize: 20)
