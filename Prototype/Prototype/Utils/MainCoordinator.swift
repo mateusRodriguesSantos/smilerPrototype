@@ -15,7 +15,7 @@ class MainCoordinator: Coordinator {
     }
     
     func start() {
-        let viewController = MenuViewController()
+        let viewController = ShakeViewController()
         viewController.coordinator = self
         navigationController.pushViewController(viewController, animated: true)
     }
@@ -23,14 +23,17 @@ class MainCoordinator: Coordinator {
 
 //MARK: Functins
 extension MainCoordinator{
-//    func navigateToCameraViewController(expressionForDetection:[facialExpressions],numberCall:String){
-//        let cameraVC = CameraViewController()
-//        cameraVC.coordinator = self
-////        cameraVC.expressionInDetection = expressionForDetection
-//        navigationController.pushViewController(cameraVC, animated: true)
-//    }
     
+    func navigateToMenuViewController(){
+        let viewController = MenuViewController()
+        viewController.coordinator = self
+        viewController.modalPresentationStyle = .overFullScreen
+//        navigationController.present(viewController, animated: true, completion: nil)
+        self.navigationController.viewControllers = [viewController]
+    }
+
     func navigateToAlertsViewController(){
+        
         let viewController = AlertsManagerViewController()
         viewController.coordinator = self
         navigationController.pushViewController(viewController, animated: true)
