@@ -25,7 +25,7 @@ git checkout develop
 
 - Agora só basta adicionar a API_Key ao arquivo criado com o nome 'SMSDevAPI_Info.plist', como abaixo:
 
-![image](https://user-images.githubusercontent.com/51207923/118400381-c1741980-b637-11eb-9995-4be180c292aa.png)
+![image](htt![image](https://user-images.githubusercontent.com/51207923/118405024-e6728780-b64b-11eb-9340-8d57c5b39404.png)
 
 ***Para obter a chave KEY da API SMS DEV, basta entrar em contato com um dos administradores do projeto
 
