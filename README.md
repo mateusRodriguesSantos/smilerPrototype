@@ -9,7 +9,7 @@ Como utilizar esse repositório?
 
 git clone https://github.com/mateusRodriguesSantos/smilerPrototype.git
 
-2 - Em seguida, faça migre para a branch develop, com o comando:
+2 - Em seguida, migre para a branch develop, com o comando:
 
 git checkout develop 
 
