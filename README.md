@@ -20,8 +20,8 @@ git clone https://github.com/mateusRodriguesSantos/smilerPrototype.git
 ![image](https://user-images.githubusercontent.com/51207923/118400286-56c2de00-b637-11eb-92f4-e0d341b3f315.png)
 
 - Agora só basta adicionar a API_Key ao arquivo criado com o nome 'SMSDevAPI_Info.plist', como abaixo:
-
-![image](https://user-images.githubusercontent.com/51207923/118400381-c1741980-b637-11eb-9995-4be180c292aa.png)
+- 
+![image](https://user-images.githubusercontent.com/51207923/118405320-c774f500-b64d-11eb-80ce-591016a98e9f.png)
 
 ***Para obter a chave KEY da API SMS DEV, basta entrar em contato com um dos administradores do projeto
 
