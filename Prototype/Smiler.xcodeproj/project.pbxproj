@@ -24,14 +24,14 @@
 		ADFBEC2D256D4BDC002EAE9D /* PrototypeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADFBEC2C256D4BDC002EAE9D /* PrototypeTests.swift */; };
 		ADFBEC38256D4BDC002EAE9D /* PrototypeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADFBEC37256D4BDC002EAE9D /* PrototypeUITests.swift */; };
 		B5EB8CEDDBB98472604A9EE6 /* Pods_Smiler_SmilerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E6898BD246CE3EF04041533D /* Pods_Smiler_SmilerTests.framework */; };
+		DC22DC0A26517B1500C50AA7 /* Properties.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC22DC0126517B1500C50AA7 /* Properties.swift */; };
+		DC22DC0B26517B1500C50AA7 /* ReturnSMS.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC22DC0326517B1500C50AA7 /* ReturnSMS.swift */; };
+		DC22DC0C26517B1500C50AA7 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC22DC0526517B1500C50AA7 /* APIClient.swift */; };
+		DC22DC0D26517B1500C50AA7 /* APIResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC22DC0726517B1500C50AA7 /* APIResponse.swift */; };
+		DC22DC0E26517B1500C50AA7 /* APIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC22DC0926517B1500C50AA7 /* APIRequest.swift */; };
+		DC22DC1026517BD500C50AA7 /* SMSDevAPI_Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DC22DC0F26517BD500C50AA7 /* SMSDevAPI_Info.plist */; };
 		DC2F58BE2614FEC7008D12B3 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC2F58BD2614FEC7008D12B3 /* MenuViewController.swift */; };
 		DC2F58C62614FEE3008D12B3 /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC2F58C52614FEE3008D12B3 /* MenuView.swift */; };
-		DC7DB3CD26471F49007E7CB5 /* APIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC7DB3CC26471F49007E7CB5 /* APIRequest.swift */; };
-		DC7DB3CF2647214A007E7CB5 /* SMSDevAPI_Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DC7DB3CE2647214A007E7CB5 /* SMSDevAPI_Info.plist */; };
-		DC7DB3D126472260007E7CB5 /* Properties.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC7DB3D026472260007E7CB5 /* Properties.swift */; };
-		DC7DB3D326472D0A007E7CB5 /* ReturnSMS.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC7DB3D226472D09007E7CB5 /* ReturnSMS.swift */; };
-		DC7DB3D526473355007E7CB5 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC7DB3D426473355007E7CB5 /* APIClient.swift */; };
-		DC7DB3D72647468E007E7CB5 /* APIResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC7DB3D62647468E007E7CB5 /* APIResponse.swift */; };
 		DCA809C026177EBD00AC89FC /* MenuViewViewControllerTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA809BF26177EBD00AC89FC /* MenuViewViewControllerTestCase.swift */; };
 		DCA809CC26178F9300AC89FC /* AlertsManagerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA809CB26178F9300AC89FC /* AlertsManagerViewController.swift */; };
 		DCA809D426178FAB00AC89FC /* AlertsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA809D326178FAB00AC89FC /* AlertsView.swift */; };
@@ -94,14 +94,14 @@
 		ADFBEC37256D4BDC002EAE9D /* PrototypeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrototypeUITests.swift; sourceTree = "<group>"; };
 		ADFBEC39256D4BDC002EAE9D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D4EA4AEFD0E4AD588E064F82 /* Pods-Smiler.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Smiler.release.xcconfig"; path = "Target Support Files/Pods-Smiler/Pods-Smiler.release.xcconfig"; sourceTree = "<group>"; };
+		DC22DC0126517B1500C50AA7 /* Properties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Properties.swift; sourceTree = "<group>"; };
+		DC22DC0326517B1500C50AA7 /* ReturnSMS.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReturnSMS.swift; sourceTree = "<group>"; };
+		DC22DC0526517B1500C50AA7 /* APIClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
+		DC22DC0726517B1500C50AA7 /* APIResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIResponse.swift; sourceTree = "<group>"; };
+		DC22DC0926517B1500C50AA7 /* APIRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIRequest.swift; sourceTree = "<group>"; };
+		DC22DC0F26517BD500C50AA7 /* SMSDevAPI_Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = SMSDevAPI_Info.plist; path = ../../../SMSDevAPI_Info.plist; sourceTree = "<group>"; };
 		DC2F58BD2614FEC7008D12B3 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		DC2F58C52614FEE3008D12B3 /* MenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
-		DC7DB3CC26471F49007E7CB5 /* APIRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRequest.swift; sourceTree = "<group>"; };
-		DC7DB3CE2647214A007E7CB5 /* SMSDevAPI_Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = SMSDevAPI_Info.plist; sourceTree = "<group>"; };
-		DC7DB3D026472260007E7CB5 /* Properties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Properties.swift; sourceTree = "<group>"; };
-		DC7DB3D226472D09007E7CB5 /* ReturnSMS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReturnSMS.swift; sourceTree = "<group>"; };
-		DC7DB3D426473355007E7CB5 /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
-		DC7DB3D62647468E007E7CB5 /* APIResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIResponse.swift; sourceTree = "<group>"; };
 		DCA809BF26177EBD00AC89FC /* MenuViewViewControllerTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewViewControllerTestCase.swift; sourceTree = "<group>"; };
 		DCA809CB26178F9300AC89FC /* AlertsManagerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertsManagerViewController.swift; sourceTree = "<group>"; };
 		DCA809D326178FAB00AC89FC /* AlertsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertsView.swift; sourceTree = "<group>"; };
@@ -186,13 +186,6 @@
 			path = Utils;
 			sourceTree = "<group>";
 		};
-		AD8A2E0C256D4FC800B05AAB /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
 		AD8A2E0D256D4FD700B05AAB /* View */ = {
 			isa = PBXGroup;
 			children = (
@@ -245,8 +238,8 @@
 		ADFBEC11256D4BDB002EAE9D /* Prototype */ = {
 			isa = PBXGroup;
 			children = (
+				DC22DC0026517B1500C50AA7 /* Network */,
 				AD8A2E19256D500100B05AAB /* AppDelegate */,
-				DCC6AA7C2646C529000A48B8 /* Network */,
 				DCA809DE261793A900AC89FC /* ContactsManager */,
 				DCA809C726178F4700AC89FC /* AlertsManager */,
 				AD8A2E0E256D4FDC00B05AAB /* MenuView */,
@@ -258,7 +251,7 @@
 				ADFBEC1E256D4BDC002EAE9D /* Assets.xcassets */,
 				ADFBEC23256D4BDC002EAE9D /* Info.plist */,
 				ADFBEC1B256D4BDB002EAE9D /* Prototype.xcdatamodeld */,
-				DC7DB3CE2647214A007E7CB5 /* SMSDevAPI_Info.plist */,
+				DC22DC0F26517BD500C50AA7 /* SMSDevAPI_Info.plist */,
 			);
 			path = Prototype;
 			sourceTree = "<group>";
@@ -295,12 +288,56 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		DC22DC0026517B1500C50AA7 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				DC22DC0126517B1500C50AA7 /* Properties.swift */,
+				DC22DC0226517B1500C50AA7 /* Codable */,
+				DC22DC0426517B1500C50AA7 /* APIClient */,
+				DC22DC0626517B1500C50AA7 /* APIResponse */,
+				DC22DC0826517B1500C50AA7 /* APIRequest */,
+			);
+			name = Network;
+			path = ../../../Network;
+			sourceTree = "<group>";
+		};
+		DC22DC0226517B1500C50AA7 /* Codable */ = {
+			isa = PBXGroup;
+			children = (
+				DC22DC0326517B1500C50AA7 /* ReturnSMS.swift */,
+			);
+			path = Codable;
+			sourceTree = "<group>";
+		};
+		DC22DC0426517B1500C50AA7 /* APIClient */ = {
+			isa = PBXGroup;
+			children = (
+				DC22DC0526517B1500C50AA7 /* APIClient.swift */,
+			);
+			path = APIClient;
+			sourceTree = "<group>";
+		};
+		DC22DC0626517B1500C50AA7 /* APIResponse */ = {
+			isa = PBXGroup;
+			children = (
+				DC22DC0726517B1500C50AA7 /* APIResponse.swift */,
+			);
+			path = APIResponse;
+			sourceTree = "<group>";
+		};
+		DC22DC0826517B1500C50AA7 /* APIRequest */ = {
+			isa = PBXGroup;
+			children = (
+				DC22DC0926517B1500C50AA7 /* APIRequest.swift */,
+			);
+			path = APIRequest;
+			sourceTree = "<group>";
+		};
 		DC2F58B22614FDBD008D12B3 /* RecognitionView */ = {
 			isa = PBXGroup;
 			children = (
 				DC2F58B92614FE89008D12B3 /* Controller */,
 				AD8A2E0D256D4FD700B05AAB /* View */,
-				AD8A2E0C256D4FC800B05AAB /* Model */,
 			);
 			path = RecognitionView;
 			sourceTree = "<group>";
@@ -413,50 +450,6 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
-		DCC6AA7C2646C529000A48B8 /* Network */ = {
-			isa = PBXGroup;
-			children = (
-				DCC6AA802646C55C000A48B8 /* APIResponse */,
-				DCC6AA7F2646C552000A48B8 /* APIRequest */,
-				DCC6AA7E2646C547000A48B8 /* APIClient */,
-				DCC6AA7D2646C53E000A48B8 /* Codable */,
-				DC7DB3D026472260007E7CB5 /* Properties.swift */,
-			);
-			path = Network;
-			sourceTree = "<group>";
-		};
-		DCC6AA7D2646C53E000A48B8 /* Codable */ = {
-			isa = PBXGroup;
-			children = (
-				DC7DB3D226472D09007E7CB5 /* ReturnSMS.swift */,
-			);
-			path = Codable;
-			sourceTree = "<group>";
-		};
-		DCC6AA7E2646C547000A48B8 /* APIClient */ = {
-			isa = PBXGroup;
-			children = (
-				DC7DB3D426473355007E7CB5 /* APIClient.swift */,
-			);
-			path = APIClient;
-			sourceTree = "<group>";
-		};
-		DCC6AA7F2646C552000A48B8 /* APIRequest */ = {
-			isa = PBXGroup;
-			children = (
-				DC7DB3CC26471F49007E7CB5 /* APIRequest.swift */,
-			);
-			path = APIRequest;
-			sourceTree = "<group>";
-		};
-		DCC6AA802646C55C000A48B8 /* APIResponse */ = {
-			isa = PBXGroup;
-			children = (
-				DC7DB3D62647468E007E7CB5 /* APIResponse.swift */,
-			);
-			path = APIResponse;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -566,7 +559,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DC7DB3CF2647214A007E7CB5 /* SMSDevAPI_Info.plist in Resources */,
+				DC22DC1026517BD500C50AA7 /* SMSDevAPI_Info.plist in Resources */,
 				ADFBEC22256D4BDC002EAE9D /* LaunchScreen.storyboard in Resources */,
 				ADFBEC1F256D4BDC002EAE9D /* Assets.xcassets in Resources */,
 			);
@@ -714,29 +707,29 @@
 			buildActionMask = 2147483647;
 			files = (
 				DCA809F52617C45A00AC89FC /* TableHourDataSource.swift in Sources */,
-				DC7DB3CD26471F49007E7CB5 /* APIRequest.swift in Sources */,
 				6E10C7772579BC5300A39F3F /* String.swift in Sources */,
 				DCA809D426178FAB00AC89FC /* AlertsView.swift in Sources */,
+				DC22DC0E26517B1500C50AA7 /* APIRequest.swift in Sources */,
 				DC2F58BE2614FEC7008D12B3 /* MenuViewController.swift in Sources */,
 				DCA809E3261793E800AC89FC /* ContactsManagerViewController.swift in Sources */,
+				DC22DC0D26517B1500C50AA7 /* APIResponse.swift in Sources */,
 				6E10C7292575687400A39F3F /* ShakeView.swift in Sources */,
+				DC22DC0A26517B1500C50AA7 /* Properties.swift in Sources */,
 				ADFBEC1D256D4BDB002EAE9D /* Prototype.xcdatamodeld in Sources */,
 				AD41F237256D51D000F0E467 /* ViewCodable.swift in Sources */,
 				ADFBEC17256D4BDB002EAE9D /* ShakeViewController.swift in Sources */,
 				DC2F58C62614FEE3008D12B3 /* MenuView.swift in Sources */,
-				DC7DB3D526473355007E7CB5 /* APIClient.swift in Sources */,
+				DC22DC0B26517B1500C50AA7 /* ReturnSMS.swift in Sources */,
 				ADFBEC13256D4BDB002EAE9D /* AppDelegate.swift in Sources */,
-				DC7DB3D126472260007E7CB5 /* Properties.swift in Sources */,
 				DCA809EB261793FA00AC89FC /* ContactsManagerView.swift in Sources */,
 				ADFBEC15256D4BDB002EAE9D /* SceneDelegate.swift in Sources */,
 				DCA809FA2617D67400AC89FC /* AlertViewCell.swift in Sources */,
-				DC7DB3D326472D0A007E7CB5 /* ReturnSMS.swift in Sources */,
 				DCA809CC26178F9300AC89FC /* AlertsManagerViewController.swift in Sources */,
 				DCDE75D1261A56EA007D1BE4 /* Date.swift in Sources */,
 				AD41F23C256D522500F0E467 /* MainCoordinator.swift in Sources */,
 				DCA809F02617C40400AC89FC /* TableHourDelegate.swift in Sources */,
 				AD41F232256D51C300F0E467 /* Coordinator.swift in Sources */,
-				DC7DB3D72647468E007E7CB5 /* APIResponse.swift in Sources */,
+				DC22DC0C26517B1500C50AA7 /* APIClient.swift in Sources */,
 				6E10C7152574538E00A39F3F /* UIButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
