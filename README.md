@@ -9,11 +9,15 @@ Como utilizar esse repositório?
 
 git clone https://github.com/mateusRodriguesSantos/smilerPrototype.git
 
-2 - Em um device com o sistema MacOS, abra o arquivo 'Smiler.xcworkspace' - o projeto em branco, exemplo:
+2 - Em seguida, faça migre para a branch develop, com o comando:
+
+git checkout develop 
+
+3 - Em um device com o sistema MacOS, abra o arquivo 'Smiler.xcworkspace' - o projeto em branco, exemplo:
 
 ![image](https://user-images.githubusercontent.com/51207923/118400001-37778100-b636-11eb-87b3-2d11cfd848d5.png)
 
-3 - Antes de rodar o projeto, é necessário adicionar a chave API_Key da API SMS Dev:
+4 - Antes de rodar o projeto, é necessário adicionar a chave API_Key da API SMS Dev:
 
 - Para isso, é necessário adicionar o arquivo 'SMSDevAPI_Info.plist' com a chave da API. Crie o arquivo clicando com o botão direito na pasta 'Prototype' e crie um arquivo 'Property List', como na imagem abaixo:
 
@@ -25,7 +29,7 @@ git clone https://github.com/mateusRodriguesSantos/smilerPrototype.git
 
 ***Para obter a chave KEY da API SMS DEV, basta entrar em contato com um dos administradores do projeto
 
-4 - Agora que é possível buildar o projeto no XCode, fique atento as regras de boas prátias do git:
+5 - Agora que é possível buildar o projeto no XCode, fique atento as regras de boas prátias do git:
 
 - Como desenvolver no projeto?
   - Crie uma bracha adicional, com o nome do recurso adicionado, como "feature/network". Lembre-se de criar a branch a partir da branch develop, para evitar conflitos de merge ou rebase.
