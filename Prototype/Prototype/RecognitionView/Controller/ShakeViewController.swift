@@ -48,7 +48,7 @@ class ShakeViewController: UIViewController{
     
     override func motionEnded(_ motion: UIEvent.EventSubtype, with event: UIEvent?) {
         if motion == .motionShake {
-
+            APIClient.client.execute()
         }
     }
 }

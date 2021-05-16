@@ -167,3 +167,7 @@ $RECYCLE.BIN/
 **/xcshareddata/WorkspaceSettings.xcsettings
 
 # End of https://www.toptal.com/developers/gitignore/api/swift,xcode,macos,windows
+
+### APY info.plist
+
+Prototype/Prototype/SMSDevAPI_Info.plist 
