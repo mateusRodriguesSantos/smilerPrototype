@@ -29,7 +29,7 @@ class AlertsManagerViewController: UIViewController {
         navigationController?.navigationBar.titleTextAttributes = apperance
         
         navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
-
+        
         navigationController?.navigationBar.shadowImage = UIImage()
         
         navigationController?.navigationBar.isTranslucent = true
@@ -51,22 +51,38 @@ extension AlertsManagerViewController{
 extension AlertsManagerViewController{
     @objc func addHourToTableViewAction(){
         let edit = UIBarButtonItem(barButtonSystemItem: .edit, target: self, action: #selector(playTappedEditAction))
-
+        
         navigationItem.rightBarButtonItems = [edit]
         
-        self.viewBase.tableDataSource.date = self.viewBase.pickerAlarmView.date.dateStringWith(strFormat: "hh:mm a")
+       // self.viewBase.tableDataSource.date = self.viewBase.pickerAlarmView.date.dateStringWith(strFormat: "hh:mm a")
+        let alert = Alert(date: self.viewBase.pickerAlarmView.date.dateStringWith(strFormat: "hh:mm aa"), isEnable: true)
+        self.viewBase.tableDataSource.hours.append(alert)
         self.viewBase.tableView.reloadData()
     }
     
     @objc func playTappedEditAction(){
         let delete = UIBarButtonItem(barButtonSystemItem: .trash, target: self, action: #selector(playTappedTrashAction))
-
+        
         navigationItem.rightBarButtonItems = [delete]
+        
+        ObserverDelete.share.notifyEdition()
     }
     
     @objc func playTappedTrashAction(){
         let edit = UIBarButtonItem(barButtonSystemItem: .edit, target: self, action: #selector(playTappedEditAction))
-
+        
         navigationItem.rightBarButtonItems = [edit]
+        
+        let reverse = self.viewBase.tableView.visibleCells.reversed()
+        reverse.forEach { cell in
+            guard let cell = cell as? AlertViewCell else{return}
+            if cell.isForDropping ?? false{
+                self.viewBase.tableDataSource.deleteAlert(cell.id_tableView ?? -1)
+            }
+        }
+        
+        ObserverDelete.share.notifyDeletion()
+        ObserverDelete.share.dropAllObservers()
+        self.viewBase.tableView.reloadData()
     }
 }

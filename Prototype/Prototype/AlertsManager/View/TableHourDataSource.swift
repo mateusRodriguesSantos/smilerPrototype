@@ -10,20 +10,18 @@ import Foundation
 
 class TableHourDataSource:NSObject,UITableViewDataSource {
     
-    var date:String {
-        didSet{
-            hours.append(date)
-        }
-    }
+//    var date:String {
+////        didSet{
+////            let alert = Alert(date: date, isEnable: true)
+////            hours.append(alert)
+////            
+////        }
+//    }
     
-    private var hours:[String] = []
+    var hours:[Alert] = []
 
     override init() {
-        self.date = ""
-    }
-    
-    @objc func addNotification(_ sender:UISwitch) {
-        //Add Notification
+        //self.date = ""
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -39,15 +37,26 @@ class TableHourDataSource:NSObject,UITableViewDataSource {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: AlertViewCell.reuseIdentiferCell) as? AlertViewCell else{return UITableViewCell()}
         
         let hour = self.hours[indexPath.row]
+        cell.id_tableView = indexPath.row
+        
+        cell.id_observer = ObserverDelete.share.addObserver(cell)
         
         cell.isUserInteractionEnabled = true
         cell.selectionStyle = .none
-        cell.title.text = hour
+        cell.title.text = hour.date
         cell.backgroundColor = .white
-        cell.switchActive.addTarget(self, action: #selector(addNotification), for: .touchUpInside)
+        cell.switchActive.isOn = hour.isEnable ?? false
+        
+        cell.switchActive.addAction(UIAction(handler: {_ in
+            let state = cell.switchActive.isOn
+            self.hours[cell.id_tableView ?? -1].isEnable = state
+        }), for: .touchUpInside)
+        
+     
         return cell
     }
     
- 
-    
+    func deleteAlert(_ id_tableView:Int){
+        self.hours.remove(at: id_tableView)
+    }
 }
