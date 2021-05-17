@@ -9,7 +9,28 @@ import UIKit
 
 class AlertViewCell: UITableViewCell {
     
+    var id_tableView:Int?
+    
+    var id_observer:Int = 0
+    
     static let reuseIdentiferCell = "AlertCell"
+    
+    var isForDropping:Bool?
+    
+    var removeAlertButtonLeading:NSLayoutConstraint?
+    var titleTrailing:NSLayoutConstraint?
+    
+    lazy var removeAlertButton:UIButton = {
+        let button = UIButton(frame: .zero)
+        button.isHidden = true
+        button.isUserInteractionEnabled = true
+        button.setImage(UIImage(systemName: "checkmark.circle"), for: .normal)
+        button.addTarget(self, action: #selector(addForDrop), for: .touchUpInside)
+        button.tintColor = .systemBlue
+        button.setTitleColor(.systemBlue, for: .normal)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        return button
+    }()
     
     let title:UILabel = {
         let label = UILabel(frame: .zero)
@@ -40,13 +61,25 @@ class AlertViewCell: UITableViewCell {
 
 extension AlertViewCell:ViewCodable {
     func setupViewHierarchy() {
+        self.contentView.addSubview(removeAlertButton)
         self.addSubview(title)
         self.contentView.addSubview(switchActive)
     }
     
     func setupConstraints() {
+        self.removeAlertButtonLeading = removeAlertButton.leadingAnchor.constraint(equalTo: self.leadingAnchor,constant: 10)
+        guard let constraint1 = removeAlertButtonLeading else { return  }
+        
         NSLayoutConstraint.activate([
-            title.leadingAnchor.constraint(equalTo: self.leadingAnchor,constant: 20),
+            constraint1,
+            removeAlertButton.centerYAnchor.constraint(equalTo: self.centerYAnchor),
+        ])
+        
+        titleTrailing = title.trailingAnchor.constraint(equalTo: self.removeAlertButton.leadingAnchor, constant: 160)
+        guard let constraint2 = titleTrailing else { return  }
+        
+        NSLayoutConstraint.activate([
+            constraint2,
             title.centerYAnchor.constraint(equalTo: self.centerYAnchor),
         ])
         
@@ -54,5 +87,29 @@ extension AlertViewCell:ViewCodable {
             switchActive.trailingAnchor.constraint(equalTo: self.trailingAnchor,constant: -20),
             switchActive.centerYAnchor.constraint(equalTo: self.centerYAnchor)
         ])
+    }
+}
+
+extension AlertViewCell{
+    @objc func addForDrop(){
+        if self.isForDropping == false {
+            self.isForDropping = true
+            self.removeAlertButton.setImage(UIImage(systemName: "checkmark.circle.fill"), for: .normal)
+        }else{
+            self.isForDropping = false
+            self.removeAlertButton.setImage(UIImage(systemName: "checkmark.circle"), for: .normal)
+        }
+    }
+}
+
+extension AlertViewCell:ObserverDeleteButton {
+    func notifyEdition() {
+        removeAlertButton.isHidden = false
+    }
+    
+    func notifyDeletion() {
+        removeAlertButton.isHidden = true
+        isForDropping = false
+        removeAlertButton.setImage(UIImage(systemName: "checkmark.circle"), for: .normal)
     }
 }

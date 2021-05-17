@@ -11,7 +11,7 @@ class AlertsView:UIView {
 
     let title:UILabel = {
         let label = UILabel(frame: .zero)
-        label.text = "Hórários de alerta"
+        label.text = "Horários de alerta"
         label.numberOfLines = 0
         label.font = UIFont.boldSystemFont(ofSize: 30)
         label.textColor = .black
