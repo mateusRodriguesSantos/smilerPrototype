@@ -54,13 +54,14 @@ extension AlertsManagerViewController{
         
         navigationItem.rightBarButtonItems = [edit]
         
-       // self.viewBase.tableDataSource.date = self.viewBase.pickerAlarmView.date.dateStringWith(strFormat: "hh:mm a")
-        let alert = Alert(date: self.viewBase.pickerAlarmView.date.dateStringWith(strFormat: "hh:mm aa"), isEnable: true)
-        self.viewBase.tableDataSource.hours.append(alert)
+       self.viewBase.tableDataSource.date = self.viewBase.pickerAlarmView.date.dateStringWith(strFormat: "hh:mm a")
         self.viewBase.tableView.reloadData()
     }
     
     @objc func playTappedEditAction(){
+        //Transform the button that add alarm in unavailable
+        viewBase.backAddHourAlert.alpha = 0.8
+        viewBase.addHourAlert.isUserInteractionEnabled = true
         let delete = UIBarButtonItem(barButtonSystemItem: .trash, target: self, action: #selector(playTappedTrashAction))
         
         navigationItem.rightBarButtonItems = [delete]
@@ -69,6 +70,9 @@ extension AlertsManagerViewController{
     }
     
     @objc func playTappedTrashAction(){
+        //Transform the button that add alarm in available
+        viewBase.backAddHourAlert.alpha = 0.2
+        viewBase.addHourAlert.isUserInteractionEnabled = true
         let edit = UIBarButtonItem(barButtonSystemItem: .edit, target: self, action: #selector(playTappedEditAction))
         
         navigationItem.rightBarButtonItems = [edit]
