@@ -203,7 +203,6 @@
 			children = (
 				DC2F58BC2614FEA4008D12B3 /* Controller */,
 				DC2F58BB2614FE9E008D12B3 /* View */,
-				DC59015526155292006F8049 /* ViewModel */,
 			);
 			path = MenuView;
 			sourceTree = "<group>";
@@ -376,13 +375,6 @@
 				DC5505292652AFD200B7EE29 /* ReturnSMS.swift */,
 			);
 			path = Codable;
-			sourceTree = "<group>";
-		};
-		DC59015526155292006F8049 /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		DCA809A426176BFF00AC89FC /* MenuView */ = {

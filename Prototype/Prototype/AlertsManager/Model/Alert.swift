@@ -10,5 +10,4 @@ import Foundation
 struct Alert{
     var date:String?
     var isEnable:Bool?
-    var isDropped:Bool?
 }
