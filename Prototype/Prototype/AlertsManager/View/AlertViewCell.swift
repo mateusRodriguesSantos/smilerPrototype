@@ -15,7 +15,7 @@ class AlertViewCell: UITableViewCell {
     
     static let reuseIdentiferCell = "AlertCell"
     
-    var isForDropping:Bool?
+    var isForDropping:Bool? = false
     
     var removeAlertButtonLeading:NSLayoutConstraint?
     var titleTrailing:NSLayoutConstraint?
@@ -48,6 +48,14 @@ class AlertViewCell: UITableViewCell {
         return switch_
     }()
     
+    let separatorView:UIView = {
+        let view = UIView(frame: .zero)
+        view.backgroundColor = .black
+        view.isUserInteractionEnabled = false
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
+    
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         setupViews()
@@ -64,6 +72,7 @@ extension AlertViewCell:ViewCodable {
         self.contentView.addSubview(removeAlertButton)
         self.addSubview(title)
         self.contentView.addSubview(switchActive)
+        self.addSubview(separatorView)
     }
     
     func setupConstraints() {
@@ -86,6 +95,13 @@ extension AlertViewCell:ViewCodable {
         NSLayoutConstraint.activate([
             switchActive.trailingAnchor.constraint(equalTo: self.trailingAnchor,constant: -20),
             switchActive.centerYAnchor.constraint(equalTo: self.centerYAnchor)
+        ])
+        
+        NSLayoutConstraint.activate([
+            separatorView.widthAnchor.constraint(equalTo: self.widthAnchor, multiplier: 0.93),
+            separatorView.heightAnchor.constraint(equalTo: self.heightAnchor, multiplier: 0.01),
+            separatorView.trailingAnchor.constraint(equalTo: self.trailingAnchor),
+            separatorView.bottomAnchor.constraint(equalTo: self.bottomAnchor),
         ])
     }
 }

@@ -6,8 +6,10 @@
 //
 
 import Foundation
+import RealmSwift
 
-struct Alert{
-    var date:String?
-    var isEnable:Bool?
+class Alert:Object{
+    @objc dynamic var id:Int = 0
+    @objc dynamic var date:String = ""
+    @objc dynamic var isEnable:String = ""
 }
