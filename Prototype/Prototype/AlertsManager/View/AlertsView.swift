@@ -76,6 +76,8 @@ class AlertsView:UIView {
     
     lazy var pickerAlarmView:UIDatePicker = {
         let picker = UIDatePicker()
+        picker.locale = Locale(identifier: "en_US")
+        picker.preferredDatePickerStyle = .compact
         picker.backgroundColor = .clear
         picker.datePickerMode = .time
         picker.translatesAutoresizingMaskIntoConstraints = false
@@ -96,7 +98,6 @@ class AlertsView:UIView {
         let tableView = UITableView(frame: .zero, style: .plain)
         tableView.isUserInteractionEnabled = true
         tableView.register(AlertViewCell.self, forCellReuseIdentifier: AlertViewCell.reuseIdentiferCell)
-//        tableView.allowsSelection = false
         tableView.backgroundColor = .clear
         tableView.automaticallyAdjustsScrollIndicatorInsets = false
         tableView.separatorColor = .black
@@ -148,7 +149,8 @@ extension AlertsView:ViewCodable {
         ])
         
         NSLayoutConstraint.activate([
-            addHourAlert.trailingAnchor.constraint(equalTo: self.trailingAnchor,constant: -5),
+            addHourAlert.trailingAnchor.constraint(equalTo: self.trailingAnchor),
+            
             addHourAlert.topAnchor.constraint(equalTo: self.subTitle.bottomAnchor,constant: 5),
             addHourAlert.heightAnchor.constraint(equalTo: self.heightAnchor, multiplier: 0.07),
         ])
@@ -182,7 +184,7 @@ extension AlertsView:ViewCodable {
             tableView.topAnchor.constraint(equalTo: addAlarmView.bottomAnchor, constant: 20),
             tableView.leadingAnchor.constraint(equalTo: self.leadingAnchor),
             tableView.trailingAnchor.constraint(equalTo: self.trailingAnchor),
-            tableView.heightAnchor.constraint(equalTo: self.heightAnchor, multiplier: 0.8)
+            tableView.bottomAnchor.constraint(equalTo: self.layoutMarginsGuide.bottomAnchor)
         ])
     }
 }

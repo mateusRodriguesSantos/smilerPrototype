@@ -10,18 +10,24 @@ import Foundation
 
 class TableHourDataSource:NSObject,UITableViewDataSource {
     
-//    var date:String {
-////        didSet{
-////            let alert = Alert(date: date, isEnable: true)
-////            hours.append(alert)
-////            
-////        }
-//    }
+    var date:String {
+        didSet{
+            //create a Alert object
+            let alert = Alert(date: date, isEnable: true)
+            //verify if the choice hour is available
+            let result = hours.contains { alert in
+                alert.date == date
+            }
+            if result == false{
+                hours.append(alert)
+            }
+        }
+    }
     
     var hours:[Alert] = []
 
     override init() {
-        //self.date = ""
+        self.date = ""
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {

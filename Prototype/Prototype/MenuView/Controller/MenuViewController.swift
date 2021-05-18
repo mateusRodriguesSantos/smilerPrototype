@@ -13,6 +13,8 @@ class MenuViewController: UIViewController {
     
     let viewBase = MenuView()
     
+    var isInOtherView:Bool = false
+    
     override func loadView() {
         super.loadView()
         self.view = viewBase
@@ -24,22 +26,19 @@ class MenuViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        isInOtherView = false
         let apperance = [NSAttributedString.Key.foregroundColor : UIColor.black,NSAttributedString.Key.font: UIFont.systemFont(ofSize: 30)]
-
         navigationController?.navigationBar.topItem?.title = "Menu"
         navigationController?.navigationBar.titleTextAttributes = apperance
-        
         navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
-
         navigationController?.navigationBar.shadowImage = UIImage()
-        
         navigationController?.navigationBar.isTranslucent = true
-        
         navigationController?.view.backgroundColor = .clear
         
         let notificationCenter = NotificationCenter.default
             notificationCenter.addObserver(self, selector: #selector(appMovedToBackground), name: UIApplication.willResignActiveNotification, object: nil)
         
+    
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
         
@@ -97,9 +96,11 @@ extension MenuViewController{
     }
 
     @objc func keyboardWillHide(notification: NSNotification) {
-        if view.frame.origin.y != 0 {
-            self.view.frame.origin.y = 0
-            navigationController?.navigationBar.topItem?.title = "Menu"
+        if isInOtherView == false{
+            if view.frame.origin.y != 0 {
+                self.view.frame.origin.y = 0
+                navigationController?.navigationBar.topItem?.title = "Menu"
+            }
         }
     }
 }
@@ -118,9 +119,11 @@ extension MenuViewController{
 //MARK: Target
 extension MenuViewController{
     @objc func alertViewAction(){
+        isInOtherView = true
         coordinator?.navigateToAlertsViewController()
     }
     @objc func contactsViewAction(){
+        isInOtherView = true
         coordinator?.navigateToContactsManagerViewController()
     }
     @objc func switchShareLocationAction(){
