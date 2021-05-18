@@ -7,7 +7,8 @@
 
 import UIKit
 
-class AlertsManagerViewController: UIViewController {
+class AlertsManagerViewController: UIViewController{
+    
     ///MainCoordinator
     weak var coordinator:MainCoordinator?
     ///ViewBase
@@ -33,6 +34,13 @@ class AlertsManagerViewController: UIViewController {
         navigationController?.navigationBar.isTranslucent = true
         navigationController?.view.backgroundColor = .clear
         self.navigationController?.isNavigationBarHidden = false
+        
+        //Check if already exists alerts
+        if viewBase.tableDataSource.hours.isEmpty == false{
+            //Add edit button in navBar
+            let edit = UIBarButtonItem(barButtonSystemItem: .edit, target: self, action: #selector(playTappedEditAction))
+            navigationItem.rightBarButtonItems = [edit]
+        }
     }
 }
 
@@ -46,12 +54,12 @@ extension AlertsManagerViewController{
 //MARK: Target
 extension AlertsManagerViewController{
     @objc func addHourToTableViewAction(){
-            //Add edit button in navBar
-            let edit = UIBarButtonItem(barButtonSystemItem: .edit, target: self, action: #selector(playTappedEditAction))
-            navigationItem.rightBarButtonItems = [edit]
-            //Add a alert in tableView and tableView
-            self.viewBase.tableDataSource.date = self.viewBase.pickerAlarmView.date.dateStringWith(strFormat: "hh:mm a")
-            self.viewBase.tableView.reloadData()
+        //Add edit button in navBar
+        let edit = UIBarButtonItem(barButtonSystemItem: .edit, target: self, action: #selector(playTappedEditAction))
+        navigationItem.rightBarButtonItems = [edit]
+        //Add a alert in tableView and tableView
+        self.viewBase.tableDataSource.date = self.viewBase.pickerAlarmView.date.dateStringWith(strFormat: "hh:mm a")
+        self.viewBase.tableView.reloadData()
     }
     
     @objc func playTappedEditAction(){

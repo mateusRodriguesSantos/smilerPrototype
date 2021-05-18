@@ -43,6 +43,9 @@
 		DCA809F52617C45A00AC89FC /* TableHourDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA809F42617C45A00AC89FC /* TableHourDataSource.swift */; };
 		DCA809FA2617D67400AC89FC /* AlertViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA809F92617D67400AC89FC /* AlertViewCell.swift */; };
 		DCDE75D1261A56EA007D1BE4 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCDE75D0261A56EA007D1BE4 /* Date.swift */; };
+		DCE2A93D2653ED0C007B99B9 /* PersistenceAlerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE2A93C2653ED0C007B99B9 /* PersistenceAlerts.swift */; };
+		DCE2A9402653F4E8007B99B9 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE2A93F2653F4E8007B99B9 /* Persistence.swift */; };
+		DCE2A9422653FF73007B99B9 /* Results.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE2A9412653FF73007B99B9 /* Results.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -115,6 +118,9 @@
 		DCA809F42617C45A00AC89FC /* TableHourDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableHourDataSource.swift; sourceTree = "<group>"; };
 		DCA809F92617D67400AC89FC /* AlertViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertViewCell.swift; sourceTree = "<group>"; };
 		DCDE75D0261A56EA007D1BE4 /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
+		DCE2A93C2653ED0C007B99B9 /* PersistenceAlerts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceAlerts.swift; sourceTree = "<group>"; };
+		DCE2A93F2653F4E8007B99B9 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
+		DCE2A9412653FF73007B99B9 /* Results.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Results.swift; sourceTree = "<group>"; };
 		DE9A6AC7F97FCC16F5B2F392 /* Pods_Smiler.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Smiler.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E6898BD246CE3EF04041533D /* Pods_Smiler_SmilerTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Smiler_SmilerTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -163,6 +169,7 @@
 				6E10C7142574538E00A39F3F /* UIButton.swift */,
 				6E10C7762579BC5300A39F3F /* String.swift */,
 				DCDE75D0261A56EA007D1BE4 /* Date.swift */,
+				DCE2A9412653FF73007B99B9 /* Results.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -241,6 +248,7 @@
 		ADFBEC11256D4BDB002EAE9D /* Prototype */ = {
 			isa = PBXGroup;
 			children = (
+				DCE2A93E2653F4BE007B99B9 /* Persistence */,
 				DC5505222652AF7900B7EE29 /* Network */,
 				AD8A2E19256D500100B05AAB /* AppDelegate */,
 				DCA809DE261793A900AC89FC /* ContactsManager */,
@@ -445,6 +453,15 @@
 			children = (
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		DCE2A93E2653F4BE007B99B9 /* Persistence */ = {
+			isa = PBXGroup;
+			children = (
+				DCE2A93F2653F4E8007B99B9 /* Persistence.swift */,
+				DCE2A93C2653ED0C007B99B9 /* PersistenceAlerts.swift */,
+			);
+			path = Persistence;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -713,6 +730,7 @@
 				DC22DC14265187A400C50AA7 /* ObserverDeleteButton.swift in Sources */,
 				DC22DC162651B01100C50AA7 /* Alert.swift in Sources */,
 				ADFBEC1D256D4BDB002EAE9D /* Prototype.xcdatamodeld in Sources */,
+				DCE2A93D2653ED0C007B99B9 /* PersistenceAlerts.swift in Sources */,
 				AD41F237256D51D000F0E467 /* ViewCodable.swift in Sources */,
 				ADFBEC17256D4BDB002EAE9D /* ShakeViewController.swift in Sources */,
 				DC2F58C62614FEE3008D12B3 /* MenuView.swift in Sources */,
@@ -726,10 +744,12 @@
 				DCA809F02617C40400AC89FC /* TableHourDelegate.swift in Sources */,
 				DC5505282652AFBD00B7EE29 /* Properties.swift in Sources */,
 				DC55052A2652AFD200B7EE29 /* ReturnSMS.swift in Sources */,
+				DCE2A9422653FF73007B99B9 /* Results.swift in Sources */,
 				AD41F232256D51C300F0E467 /* Coordinator.swift in Sources */,
 				DC55052C2652AFDB00B7EE29 /* APIResponse.swift in Sources */,
 				6E10C7152574538E00A39F3F /* UIButton.swift in Sources */,
 				DC5505302652AFE900B7EE29 /* APIClient.swift in Sources */,
+				DCE2A9402653F4E8007B99B9 /* Persistence.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

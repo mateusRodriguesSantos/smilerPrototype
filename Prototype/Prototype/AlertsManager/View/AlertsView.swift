@@ -100,7 +100,7 @@ class AlertsView:UIView {
         tableView.register(AlertViewCell.self, forCellReuseIdentifier: AlertViewCell.reuseIdentiferCell)
         tableView.backgroundColor = .clear
         tableView.automaticallyAdjustsScrollIndicatorInsets = false
-        tableView.separatorColor = .black
+        tableView.separatorColor = .clear
         tableView.contentInset = .zero
         tableView.tableFooterView = UIView()
         tableView.delegate = tableDelegate
@@ -178,7 +178,6 @@ extension AlertsView:ViewCodable {
             pickerAlarmView.heightAnchor.constraint(equalTo: addAlarmView.heightAnchor, multiplier: 0.7),
             pickerAlarmView.trailingAnchor.constraint(equalTo: addHourAlert.leadingAnchor, constant: -3)
         ])
-    
         
         NSLayoutConstraint.activate([
             tableView.topAnchor.constraint(equalTo: addAlarmView.bottomAnchor, constant: 20),
