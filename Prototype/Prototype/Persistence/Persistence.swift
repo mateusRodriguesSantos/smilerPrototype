@@ -9,10 +9,10 @@ import RealmSwift
 
 class Persistence{
     static let realm:Realm? = {
-        let re:Realm?
+        let _realm:Realm?
         do{
-            re = try Realm()
-            return re
+            _realm = try Realm()
+            return _realm
         }catch{
             NSLog("Error in create a Realm instance")
         }

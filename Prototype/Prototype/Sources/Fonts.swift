@@ -17,4 +17,8 @@ enum Fonts {
     static let SFProDisplayRegular = "SF Pro Display Regular"
     static let SFProDisplayBold = "SF Pro Display Bold"
     static let SFProDisplaySemibold = "SF Pro Display Semibold"
+    
+    //MARK: - Roboto
+    static let RobotoRegular = "Roboto-Regular"
+    static let RobotoBold = "Roboto-Bold"
 }

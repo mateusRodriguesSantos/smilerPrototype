@@ -41,7 +41,7 @@ class MenuView:UIView {
         let label = UILabel(frame: .zero)
         label.text = "Gerenciar Alertas"
         label.numberOfLines = 0
-        label.font = UIFont.systemFont(ofSize: 20)
+        label.font = UIFont(name: Fonts.RobotoRegular, size: 20)
         label.textAlignment = .left
         label.textColor = .black
         label.backgroundColor = colorBack
@@ -54,7 +54,7 @@ class MenuView:UIView {
         let label = UILabel(frame: .zero)
         label.text = "Gerenciar contatos"
         label.numberOfLines = 0
-        label.font = UIFont.systemFont(ofSize: 20)
+        label.font = UIFont(name: Fonts.RobotoRegular, size: 20)
         label.textAlignment = .left
         label.backgroundColor = colorBack
         label.textColor = .black
@@ -69,7 +69,7 @@ class MenuView:UIView {
         button.setTitle("Editar Alertas", for: .normal)
         button.tintColor = .black
         button.titleLabel?.textAlignment = .left
-        button.titleLabel?.font = UIFont.systemFont(ofSize: 20)
+        button.titleLabel?.font = UIFont(name: Fonts.RobotoRegular, size: 20)
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()
@@ -81,7 +81,7 @@ class MenuView:UIView {
         button.setTitle("Gatilhos de emergência", for: .normal)
         button.tintColor = .black
         button.titleLabel?.textAlignment = .left
-        button.titleLabel?.font = UIFont.systemFont(ofSize: 20)
+        button.titleLabel?.font = UIFont(name: Fonts.RobotoRegular, size: 20)
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()
@@ -90,7 +90,7 @@ class MenuView:UIView {
         let label = UILabel(frame: .zero)
         label.text = "Compartilhar Localização em tempo real"
         label.numberOfLines = 0
-        label.font = UIFont.systemFont(ofSize: 20)
+        label.font = UIFont(name: Fonts.RobotoRegular, size: 15)
         label.textAlignment = .center
         label.textColor = .black
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -108,7 +108,7 @@ class MenuView:UIView {
         let label = UILabel(frame: .zero)
         label.text = "Mensagem"
         label.numberOfLines = 0
-        label.font = UIFont.systemFont(ofSize: 20)
+        label.font = UIFont(name: Fonts.RobotoRegular, size: 20)
         label.textAlignment = .left
         label.textColor = .black
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -122,7 +122,7 @@ class MenuView:UIView {
         textView.alpha = 0.2
         textView.textAlignment = .left
         textView.backgroundColor = colorBack
-        textView.font = UIFont.systemFont(ofSize: 20)
+        textView.font = UIFont(name: Fonts.RobotoRegular, size: 20)
         textView.translatesAutoresizingMaskIntoConstraints = false
         return textView
     }()

@@ -8,7 +8,6 @@
 import UIKit
 
 class AlertsManagerViewController: UIViewController{
-    
     ///MainCoordinator
     weak var coordinator:MainCoordinator?
     ///ViewBase
@@ -22,13 +21,14 @@ class AlertsManagerViewController: UIViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         addTriggers()
+        NotificationService.share.delegateEndNotification = self
     }
     
     override func viewWillAppear(_ animated: Bool) {
         //Customize NavigationBar
-        let apperance = [NSAttributedString.Key.foregroundColor : UIColor.black,NSAttributedString.Key.font: UIFont.systemFont(ofSize: 30)]
+        let apperance = [NSAttributedString.Key.foregroundColor : UIColor.black,NSAttributedString.Key.font: UIFont(name: Fonts.RobotoRegular, size: 20)]
         
-        navigationController?.navigationBar.titleTextAttributes = apperance
+        navigationController?.navigationBar.titleTextAttributes = apperance as [NSAttributedString.Key : Any]
         navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
         navigationController?.navigationBar.shadowImage = UIImage()
         navigationController?.navigationBar.isTranslucent = true
@@ -44,6 +44,13 @@ class AlertsManagerViewController: UIViewController{
     }
 }
 
+//MARK: DelegateEndNotification
+extension AlertsManagerViewController:DelegateEndNotification{
+    func notificationPresented() {
+        self.viewBase.tableView.reloadData()
+    }
+}
+
 //MARK: Triggers
 extension AlertsManagerViewController{
     func addTriggers() {
@@ -51,14 +58,36 @@ extension AlertsManagerViewController{
     }
 }
 
-//MARK: Target
+//MARK: System Alerts
 extension AlertsManagerViewController{
+    func alertFactory(_ title:String,_ menssage:String){
+        let alert = UIAlertController(title: title, message: menssage, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { alertAction in
+            
+        }))
+        self.present(alert, animated: true, completion: nil)
+    }
+}
+
+//MARK: Actions NavBar
+extension AlertsManagerViewController{
+    
+    func addButtonInNavBar(_ buttonType: UIBarButtonItem.SystemItem?){
+        guard let type = buttonType else { return  }
+        
+        if type == .edit{
+            let edit = UIBarButtonItem(barButtonSystemItem: type, target: self, action: #selector(playTappedEditAction))
+            navigationItem.rightBarButtonItems = [edit]
+        }else{
+            let edit = UIBarButtonItem(barButtonSystemItem: type, target: self, action: #selector(playTappedTrashAction))
+            navigationItem.rightBarButtonItems = [edit]
+        }
+    }
+    
     @objc func addHourToTableViewAction(){
         //Add edit button in navBar
-        let edit = UIBarButtonItem(barButtonSystemItem: .edit, target: self, action: #selector(playTappedEditAction))
-        navigationItem.rightBarButtonItems = [edit]
-        //Add a alert in tableView and tableView
-        self.viewBase.tableDataSource.date = self.viewBase.pickerAlarmView.date.dateStringWith(strFormat: "hh:mm a")
+        addButtonInNavBar(.edit)
+        self.viewBase.tableDataSource.date = self.viewBase.pickerAlarmView.date.dateStringWith(strFormat: "HH:mm")
         self.viewBase.tableView.reloadData()
     }
     
@@ -66,9 +95,10 @@ extension AlertsManagerViewController{
         //Transform the button that add alarm in unavailable
         viewBase.backAddHourAlert.alpha = 0.8
         viewBase.addHourAlert.isUserInteractionEnabled = false
+        
         //Add delete button in navBar
-        let delete = UIBarButtonItem(barButtonSystemItem: .trash, target: self, action: #selector(playTappedTrashAction))
-        navigationItem.rightBarButtonItems = [delete]
+        addButtonInNavBar(.trash)
+        
         //Notify all observers
         ObserverDelete.share.notifyEdition()
     }
@@ -77,9 +107,10 @@ extension AlertsManagerViewController{
         //Transform the button that add alarm in available
         viewBase.backAddHourAlert.alpha = 0.2
         viewBase.addHourAlert.isUserInteractionEnabled = true
+        
         //Add delete button in navBar
-        let edit = UIBarButtonItem(barButtonSystemItem: .edit, target: self, action: #selector(playTappedEditAction))
-        navigationItem.rightBarButtonItems = [edit]
+        addButtonInNavBar(.edit)
+        
         //Delete the choice alerts for drop
         let reverse = self.viewBase.tableView.visibleCells.reversed()
         reverse.forEach { cell in
@@ -88,12 +119,13 @@ extension AlertsManagerViewController{
                 self.viewBase.tableDataSource.deleteAlert(cell.id_tableView ?? -1)
             }
         }
+        
         //Notify all observers and remove all observers from list observers
         ObserverDelete.share.notifyDeletion()
         ObserverDelete.share.dropAllObservers()
+        
         //Reload tableView
         self.viewBase.tableView.reloadData()
-        
         //Remove buttons if all alarms is deleted
         if self.viewBase.tableDataSource.hours.isEmpty{
             navigationItem.rightBarButtonItems = []
