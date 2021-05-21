@@ -37,7 +37,7 @@ class MenuView:UIView {
     //Suplementary Views
     
     let setUpsViewLabel1:UILabel = {
-        let colorBack = UIColor(red: 245/255.0, green: 245/255.0, blue: 245/255.0, alpha: 1.0)
+        let colorBack = UIColor(red: 213/255.0, green: 212/255.0, blue: 220/255.0, alpha: 1.0)
         let label = UILabel(frame: .zero)
         label.text = "Gerenciar Alertas"
         label.numberOfLines = 0
@@ -50,7 +50,7 @@ class MenuView:UIView {
     }()
     
     let setUpsViewLabel2:UILabel = {
-        let colorBack = UIColor(red: 245/255.0, green: 245/255.0, blue: 245/255.0, alpha: 1.0)
+        let colorBack =  UIColor(red: 213/255.0, green: 212/255.0, blue: 220/255.0, alpha: 1.0)
         let label = UILabel(frame: .zero)
         label.text = "Gerenciar contatos"
         label.numberOfLines = 0
@@ -184,7 +184,7 @@ extension MenuView:ViewCodable {
         //Suplementary Subviews
 
         NSLayoutConstraint.activate([
-            setUpsViewLabel1.leadingAnchor.constraint(equalTo: setUpsView.leadingAnchor, constant: 5),
+            setUpsViewLabel1.leadingAnchor.constraint(equalTo: setUpsView.leadingAnchor),
             setUpsViewLabel1.widthAnchor.constraint(equalTo: setUpsView.widthAnchor),
             setUpsViewLabel1.heightAnchor.constraint(equalTo: setUpsView.heightAnchor, multiplier: 0.25),
         ])

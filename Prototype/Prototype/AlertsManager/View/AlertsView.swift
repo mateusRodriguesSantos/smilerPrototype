@@ -23,7 +23,7 @@ class AlertsView:UIView {
         let label = UILabel(frame: .zero)
         label.text = "Adicionar"
         label.numberOfLines = 0
-        label.font = UIFont(name: Fonts.RobotoBold, size: 20)
+        label.font = UIFont(name: Fonts.RobotoRegular, size: 20)
         label.textColor = .black
         label.translatesAutoresizingMaskIntoConstraints = false
         return label

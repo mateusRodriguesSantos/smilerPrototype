@@ -48,17 +48,34 @@ extension NotificationService:UNUserNotificationCenterDelegate{
         //Atualizando alerta para uma nova data
         let dateAtual = Date()
         let dateTomorrow = dateAtual.dayAfter
-        let calendar = Calendar.current.dateComponents([.year,.month,.day,.hour,.minute], from: dateTomorrow)
+        let calendar = Calendar.current
+        let year = calendar.component(.year, from: dateTomorrow)
+        let day = calendar.component(.day, from: dateTomorrow)
+        let month = calendar.component(.month, from: dateTomorrow)
         
         let identifierUsed = response.notification.request.identifier
         
         alerts.forEach { alert in
             if alert.identifier == identifierUsed{
                 //PersistenceAlerts.share.updateAlertState(alert, "false")
-                let newIdentifier = requestDateNotification(repeatedly: false, on: calendar)
+                let dateSplit = alert.date.split(separator: ":")
+                let hourAlert = Int(String(dateSplit.first ?? "Error"))
+                let minuteAlert = Int(String(dateSplit.last ?? "Error"))
+                
+                var dateComponents = DateComponents()
+                dateComponents.year = year
+                dateComponents.month = month
+                dateComponents.day = day
+                dateComponents.timeZone = TimeZone(identifier: TimeZone.current.identifier)
+                dateComponents.hour = hourAlert
+                dateComponents.minute = minuteAlert
+                
+                let newIdentifier = requestDateNotification(repeatedly: false, on: dateComponents)
                 PersistenceAlerts.share.updateAlertIdentifier(alert, newIdentifier)
+                print("Amanhã - Remarcado: \(String(describing: dateComponents.hour ?? 0)):\(String(describing: dateComponents.minute ?? 0)) \(newIdentifier)" as Any)
             }
         }
+
     }
     
     //Primeiro plano
@@ -72,15 +89,31 @@ extension NotificationService:UNUserNotificationCenterDelegate{
         //Atualizando alerta para uma nova data
         let dateAtual = Date()
         let dateTomorrow = dateAtual.dayAfter
-        let calendar = Calendar.current.dateComponents([.year,.month,.day,.hour,.minute], from: dateTomorrow)
+        let calendar = Calendar.current
+        let year = calendar.component(.year, from: dateTomorrow)
+        let day = calendar.component(.day, from: dateTomorrow)
+        let month = calendar.component(.month, from: dateTomorrow)
         
         let identifierUsed = notification.request.identifier
         
         alerts.forEach { alert in
             if alert.identifier == identifierUsed{
                 //PersistenceAlerts.share.updateAlertState(alert, "false")
-                let newIdentifier = requestDateNotification(repeatedly: false, on: calendar)
+                let dateSplit = alert.date.split(separator: ":")
+                let hourAlert = Int(String(dateSplit.first ?? "Error"))
+                let minuteAlert = Int(String(dateSplit.last ?? "Error"))
+                
+                var dateComponents = DateComponents()
+                dateComponents.year = year
+                dateComponents.month = month
+                dateComponents.day = day
+                dateComponents.timeZone = TimeZone(identifier: TimeZone.current.identifier)
+                dateComponents.hour = hourAlert
+                dateComponents.minute = minuteAlert
+                
+                let newIdentifier = requestDateNotification(repeatedly: false, on: dateComponents)
                 PersistenceAlerts.share.updateAlertIdentifier(alert, newIdentifier)
+                print("Amanhã - Remarcado: \(String(describing: dateComponents.hour ?? 0)):\(String(describing: dateComponents.minute ?? 0)) \(newIdentifier)" as Any)
             }
         }
 
@@ -113,7 +146,7 @@ extension NotificationService:UNUserNotificationCenterDelegate{
         content.title = "Estou Aqui"
         content.subtitle = "Avise seus amigos !!!"
         content.body = "Se precisar avisar alguém, abra o app e chaqualhe. Vou enviar a mensagem de emergência para os seus amigos e parentes."
-        //content.sound = UNNotificationSound(named: .)
+        content.sound = UNNotificationSound.default
         
         //Trigger for notify after set time
         let trigger = UNCalendarNotificationTrigger(dateMatching: components, repeats: repeatedly)
