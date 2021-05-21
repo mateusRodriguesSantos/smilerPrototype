@@ -109,6 +109,7 @@ extension TableHourDataSource{
         //Atual Date
         let atualDate = Date()
         let atualDateComponents = Calendar.current.dateComponents([.year,.month,.day,.hour,.minute], from: atualDate)
+        
         //DatePicker date
         //Get Minutes and hours
         let selectedHour = self.hours[indexAlert]
