@@ -24,6 +24,12 @@ class MainCoordinator: Coordinator {
 //MARK: Functins
 extension MainCoordinator{
     
+    func navigateToShakeViewController(){
+        let viewController = ShakeViewController()
+        viewController.coordinator = self
+        self.navigationController.viewControllers = [viewController]
+    }
+    
     func navigateToMenuViewController(){
         let viewController = MenuViewController()
         viewController.coordinator = self

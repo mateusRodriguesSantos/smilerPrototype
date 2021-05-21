@@ -35,7 +35,19 @@ class AlertViewCell: UITableViewCell {
     let title:UILabel = {
         let label = UILabel(frame: .zero)
         label.numberOfLines = 0
-        label.font = UIFont.boldSystemFont(ofSize: 30)
+        label.textAlignment = .left
+        label.font = UIFont(name: Fonts.RobotoRegular, size: 30)
+        label.textColor = .black
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
+    
+    let subTitle:UILabel = {
+        let label = UILabel(frame: .zero)
+        label.numberOfLines = 0
+        label.text = "22/07/2021"
+        label.textAlignment = .left
+        label.font = UIFont(name: Fonts.RobotoRegular, size: 20)
         label.textColor = .black
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
@@ -71,26 +83,28 @@ extension AlertViewCell:ViewCodable {
     func setupViewHierarchy() {
         self.contentView.addSubview(removeAlertButton)
         self.addSubview(title)
+        //self.addSubview(subTitle)
         self.contentView.addSubview(switchActive)
         self.addSubview(separatorView)
     }
     
     func setupConstraints() {
-        self.removeAlertButtonLeading = removeAlertButton.leadingAnchor.constraint(equalTo: self.leadingAnchor,constant: 10)
-        guard let constraint1 = removeAlertButtonLeading else { return  }
-        
+
         NSLayoutConstraint.activate([
-            constraint1,
+            removeAlertButton.leadingAnchor.constraint(equalTo: self.leadingAnchor,constant: 10),
             removeAlertButton.centerYAnchor.constraint(equalTo: self.centerYAnchor),
         ])
         
-        titleTrailing = title.trailingAnchor.constraint(equalTo: self.removeAlertButton.leadingAnchor, constant: 160)
-        guard let constraint2 = titleTrailing else { return  }
-        
         NSLayoutConstraint.activate([
-            constraint2,
+            title.trailingAnchor.constraint(equalTo: self.removeAlertButton.leadingAnchor, constant: 100),
             title.centerYAnchor.constraint(equalTo: self.centerYAnchor),
         ])
+        
+//        NSLayoutConstraint.activate([
+//            subTitle.trailingAnchor.constraint(equalTo: self.removeAlertButton.leadingAnchor, constant: 135),
+//            subTitle.topAnchor.constraint(equalTo: self.title.bottomAnchor),
+//            //subTitle.centerYAnchor.constraint(equalTo: self.centerYAnchor),
+//        ])
         
         NSLayoutConstraint.activate([
             switchActive.trailingAnchor.constraint(equalTo: self.trailingAnchor,constant: -20),

@@ -9,8 +9,6 @@ import UIKit
 import Foundation
 
 class TableHourDataSource:NSObject,UITableViewDataSource {
-    let persistAlert = PersistenceAlerts()
-    
     var date:String {
         didSet{
             //create a Alert object
@@ -25,7 +23,9 @@ class TableHourDataSource:NSObject,UITableViewDataSource {
                 hours.append(alert)
                 alert.id = hours.count - 1
                 //save in realm
-                persistAlert.saveAlert(alert)
+                PersistenceAlerts.share.saveAlert(alert)
+                //create notification
+                createAlertNotification(hours.count - 1)
             }
         }
     }
@@ -35,7 +35,7 @@ class TableHourDataSource:NSObject,UITableViewDataSource {
     override init() {
         self.date = ""
         //Check if already exists hours in realm
-        let alerts = persistAlert.getAlerts()
+        let alerts = PersistenceAlerts.share.getAlerts()
         if alerts.isEmpty == false{
             hours = alerts
         }
@@ -60,7 +60,7 @@ class TableHourDataSource:NSObject,UITableViewDataSource {
             cell.separatorView.isHidden = false
         }
         
-        if indexPath.row == persistAlert.getAlerts().count - 1{
+        if indexPath.row == PersistenceAlerts.share.getAlerts().count - 1{
             cell.separatorView.isHidden = true
         }else{
             cell.separatorView.isHidden = false
@@ -82,6 +82,9 @@ class TableHourDataSource:NSObject,UITableViewDataSource {
         
         if hour.isEnable == "true"{
             cell.switchActive.isOn = true
+            if hours.isEmpty {
+                createAlertNotification(cell.id_tableView ?? -1)
+            }
         }else{
             cell.switchActive.isOn = false
         }
@@ -89,30 +92,80 @@ class TableHourDataSource:NSObject,UITableViewDataSource {
         cell.switchActive.addAction(UIAction(handler: {[weak self] _ in
             let state = cell.switchActive.isOn
             self?.updateAlert(cell.id_tableView ?? -1,state)
+
+            if state{
+                self?.createAlertNotification(cell.id_tableView ?? -1)
+            }else{
+                NotificationService.share.disableNotification(self?.hours[cell.id_tableView ?? -1].identifier ?? "Error")
+            }
         }),for: .touchUpInside)
         
         return cell
     }
-    
-    func updateAlert(_ indexAlert:Int,_ switchState:Bool){
-        do{
-            let selectedHour = self.hours[indexAlert]
-            if switchState{
-                try Persistence.realm?.write{
-                    selectedHour.isEnable = "true"
+}
+
+extension TableHourDataSource{
+    func createAlertNotification(_ indexAlert:Int){
+        //Atual Date
+        let atualDate = Date()
+        let atualDateComponents = Calendar.current.dateComponents([.year,.month,.day,.hour,.minute], from: atualDate)
+        //DatePicker date
+        //Get Minutes and hours
+        let selectedHour = self.hours[indexAlert]
+        let selectedDate = selectedHour.date
+        let dateSplit = selectedDate.split(separator: ":")
+        let hour = String(dateSplit.first ?? "Error")
+        let minute = String(dateSplit.last ?? "Error")
+        let datePickerComponents = Date.dateAtualWithTime(Int(hour) ?? 0,Int(minute) ?? 0)
+     
+        //Tomorrow Date
+        let tomorrowDate = atualDate.dayAfter
+        let tomorrowComponents = Calendar.current.dateComponents([.year,.month,.day,.hour,.minute], from: tomorrowDate)
+        
+        //Se a data atual é igual a da datePicker
+        if atualDateComponents.day == datePickerComponents.day && atualDateComponents.year == datePickerComponents.year && atualDateComponents.month == datePickerComponents.month{
+            //Se a hora é menor que a do dataPicker - Notificação pra amanha
+            if atualDateComponents.hour ?? 0 < datePickerComponents.hour ?? 0{
+                //Notification
+                let identifier = NotificationService.share.requestDateNotification(repeatedly: false, on: tomorrowComponents)
+                //Save identifier
+                PersistenceAlerts.share.updateAlertIdentifier(indexAlert, selectedHour, identifier)
+                print("Amanhã - Marcado: \(String(describing: datePickerComponents.hour ?? 0)):\(String(describing: datePickerComponents.minute ?? 0)) \(identifier)"as Any)
+            }
+            
+            //Se a hora for maior ou igual
+            if atualDateComponents.hour ?? 0 >= datePickerComponents.hour ?? 0{
+                //Se os minutos são menores ou iguais que o do datePicker - Notificação pra amanhã
+                if atualDateComponents.minute ?? 0 >= datePickerComponents.minute ?? 0{
+                    //Notification
+                    let identifier = NotificationService.share.requestDateNotification(repeatedly: false, on: tomorrowComponents)
+                    //Save identifier
+                    PersistenceAlerts.share.updateAlertIdentifier(indexAlert, selectedHour, identifier)
+                    print("Amanhã - Marcado: \(String(describing: datePickerComponents.hour ?? 0)):\(String(describing: datePickerComponents.minute ?? 0)) \(identifier)"as Any)
                 }
-            }else{
-                try Persistence.realm?.write{
-                    selectedHour.isEnable = "false"
+                //Se os minutos são menores que o do datePicker - Notificação pra hoje
+                if datePickerComponents.minute ?? 0 > atualDateComponents.minute ?? 0 {
+                    //Notification
+                    let identifier = NotificationService.share.requestDateNotification(repeatedly: false, on: datePickerComponents)
+                    //Save identifier
+                    PersistenceAlerts.share.updateAlertIdentifier(indexAlert, selectedHour, identifier)
+                    print("Hoje - Marcado: \(String(describing: datePickerComponents.hour ?? 0)):\(String(describing: datePickerComponents.minute ?? 0)) \(identifier)"as Any)
                 }
             }
-        }catch{
-            NSLog("Error in update alert: \(error)")
+        }
+    }
+    
+    func updateAlert(_ indexAlert:Int,_ switchState:Bool){
+        let selectedHour = self.hours[indexAlert]
+        if switchState{
+            PersistenceAlerts.share.updateAlertState(indexAlert, selectedHour, "true")
+        }else{
+            PersistenceAlerts.share.updateAlertState(indexAlert, selectedHour, "false")
         }
     }
     
     func deleteAlert(_ id_tableView:Int){
-        persistAlert.deleteAlert(id_tableView)
+        PersistenceAlerts.share.deleteAlert(id_tableView)
         self.hours.remove(at: id_tableView)
     }
 }

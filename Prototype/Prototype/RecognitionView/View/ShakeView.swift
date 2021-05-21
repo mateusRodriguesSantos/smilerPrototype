@@ -18,7 +18,7 @@ class ShakeView:UIView{
         label.text = "Faça um Shake!!!\nCaso esteja em situação de perigo"
         label.numberOfLines = 0
         label.textAlignment = .center
-        label.font = UIFont.systemFont(ofSize: 20)
+        label.font = UIFont(name: Fonts.RobotoBold, size: 20)
         label.textColor = .black
         label.translatesAutoresizingMaskIntoConstraints = false
         return label

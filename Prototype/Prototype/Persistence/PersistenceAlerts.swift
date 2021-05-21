@@ -10,6 +10,8 @@ import RealmSwift
 
 class PersistenceAlerts{
     
+    static let share = PersistenceAlerts()
+    
     private var alerts:Results<Alert>?
     
     func getAlerts() -> [Alert]{
@@ -41,6 +43,56 @@ class PersistenceAlerts{
                 let alert = alerts?[index]
                 alert?.date = newObject.date
                 alert?.isEnable = newObject.isEnable
+                alert?.identifier = newObject.identifier
+            }
+        } catch {
+            NSLog("Error in Update")
+        }
+    }
+    
+    func updateAlertIdentifier(_ index:Int,_ newObject:Alert,_ identifier:String){
+        //fetchAlert()
+        do {
+            try Persistence.realm?.write{
+                let alert = alerts?[index]
+                alert?.date = newObject.date
+                alert?.isEnable = newObject.isEnable
+                alert?.identifier = identifier
+            }
+        } catch {
+            NSLog("Error in Update")
+        }
+    }
+    
+    func updateAlertIdentifier(_ alert:Alert,_ identifier:String){
+        //fetchAlert()
+        do {
+            try Persistence.realm?.write{
+                alert.identifier = identifier
+            }
+        } catch {
+            NSLog("Error in Update")
+        }
+    }
+    
+    func updateAlertState(_ index:Int,_ newObject:Alert,_ state:String){
+        //fetchAlert()
+        do {
+            try Persistence.realm?.write{
+                let alert = alerts?[index]
+                alert?.date = newObject.date
+                alert?.isEnable = newObject.isEnable
+                alert?.isEnable = state
+            }
+        } catch {
+            NSLog("Error in Update")
+        }
+    }
+    
+    func updateAlertState(_ alert:Alert,_ state:String){
+        do {
+            try Persistence.realm?.write{
+                alert.isEnable = state
             }
         } catch {
             NSLog("Error in Update")

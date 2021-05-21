@@ -13,7 +13,7 @@ class AlertsView:UIView {
         let label = UILabel(frame: .zero)
         label.text = "Horários de alerta"
         label.numberOfLines = 0
-        label.font = UIFont.boldSystemFont(ofSize: 30)
+        label.font = UIFont(name: Fonts.RobotoBold, size: 30)
         label.textColor = .black
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
@@ -23,7 +23,7 @@ class AlertsView:UIView {
         let label = UILabel(frame: .zero)
         label.text = "Adicionar"
         label.numberOfLines = 0
-        label.font = UIFont.boldSystemFont(ofSize: 20)
+        label.font = UIFont(name: Fonts.RobotoBold, size: 20)
         label.textColor = .black
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
@@ -49,7 +49,7 @@ class AlertsView:UIView {
         button.setTitleColor(.systemBlue, for: .normal)
         button.titleLabel?.textColor = .systemBlue
         button.titleLabel?.textAlignment = .left
-        button.titleLabel?.font = UIFont.systemFont(ofSize: 20)
+        button.titleLabel?.font = UIFont(name: Fonts.RobotoRegular, size: 20)
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()
@@ -68,7 +68,7 @@ class AlertsView:UIView {
         let label = UILabel(frame: .zero)
         label.text = "Hora"
         label.numberOfLines = 0
-        label.font = UIFont.boldSystemFont(ofSize: 20)
+        label.font = UIFont(name: Fonts.RobotoRegular, size: 20)
         label.textColor = .black
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
@@ -76,8 +76,8 @@ class AlertsView:UIView {
     
     lazy var pickerAlarmView:UIDatePicker = {
         let picker = UIDatePicker()
-        picker.locale = Locale(identifier: "en_US")
-        picker.preferredDatePickerStyle = .compact
+        picker.locale = Locale(identifier: "en_BR")
+        picker.preferredDatePickerStyle = .automatic
         picker.backgroundColor = .clear
         picker.datePickerMode = .time
         picker.translatesAutoresizingMaskIntoConstraints = false
@@ -150,7 +150,6 @@ extension AlertsView:ViewCodable {
         
         NSLayoutConstraint.activate([
             addHourAlert.trailingAnchor.constraint(equalTo: self.trailingAnchor),
-            
             addHourAlert.topAnchor.constraint(equalTo: self.subTitle.bottomAnchor,constant: 5),
             addHourAlert.heightAnchor.constraint(equalTo: self.heightAnchor, multiplier: 0.07),
         ])
@@ -174,9 +173,9 @@ extension AlertsView:ViewCodable {
         ])
 
         NSLayoutConstraint.activate([
-            pickerAlarmView.widthAnchor.constraint(equalTo: addAlarmView.widthAnchor, multiplier: 0.3),
-            pickerAlarmView.heightAnchor.constraint(equalTo: addAlarmView.heightAnchor, multiplier: 0.7),
-            pickerAlarmView.trailingAnchor.constraint(equalTo: addHourAlert.leadingAnchor, constant: -3)
+            pickerAlarmView.widthAnchor.constraint(equalTo: addAlarmView.widthAnchor, multiplier: 0.2),
+            pickerAlarmView.heightAnchor.constraint(equalTo: addAlarmView.heightAnchor, multiplier: 0.9),
+            pickerAlarmView.trailingAnchor.constraint(equalTo: addHourAlert.leadingAnchor, constant: -0.8)
         ])
         
         NSLayoutConstraint.activate([
