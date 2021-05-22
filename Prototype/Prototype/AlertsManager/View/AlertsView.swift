@@ -13,18 +13,20 @@ class AlertsView:UIView {
         let label = UILabel(frame: .zero)
         label.text = "Horários de alerta"
         label.numberOfLines = 0
-        label.font = UIFont(name: Fonts.RobotoBold, size: 30)
+        label.font = UIFont.systemFont(ofSize: 30)
         label.textColor = .black
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
     
     let subTitle:UILabel = {
+        let colorBack = UIColor(red: 0, green: 0, blue: 0, alpha: 0.5)
         let label = UILabel(frame: .zero)
         label.text = "Adicionar"
         label.numberOfLines = 0
-        label.font = UIFont(name: Fonts.RobotoRegular, size: 20)
-        label.textColor = .black
+        label.textColor = colorBack
+        label.backgroundColor = .clear
+        label.font = UIFont.systemFont(ofSize: 15)
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -105,6 +107,8 @@ class AlertsView:UIView {
         tableView.tableFooterView = UIView()
         tableView.delegate = tableDelegate
         tableView.dataSource = tableDataSource
+        tableView.layer.borderWidth = 0.28
+        tableView.layer.borderColor = UIColor.black.cgColor
         tableView.translatesAutoresizingMaskIntoConstraints = false
         return tableView
     }()
@@ -139,19 +143,19 @@ extension AlertsView:ViewCodable {
     
     func setupConstraints() {
         NSLayoutConstraint.activate([
-            title.topAnchor.constraint(equalTo: self.layoutMarginsGuide.topAnchor,constant: 5),
-            title.leadingAnchor.constraint(equalTo: self.leadingAnchor,constant: 5)
+            title.topAnchor.constraint(equalTo: self.layoutMarginsGuide.topAnchor,constant: 20),
+            title.centerXAnchor.constraint(equalTo: self.centerXAnchor),
         ])
         
         NSLayoutConstraint.activate([
-            subTitle.topAnchor.constraint(equalTo: self.title.bottomAnchor,constant: 5),
+            subTitle.topAnchor.constraint(equalTo: self.title.bottomAnchor,constant: 20),
             subTitle.leadingAnchor.constraint(equalTo: self.leadingAnchor,constant: 5)
         ])
         
         NSLayoutConstraint.activate([
             addHourAlert.trailingAnchor.constraint(equalTo: self.trailingAnchor),
-            addHourAlert.topAnchor.constraint(equalTo: self.subTitle.bottomAnchor,constant: 5),
-            addHourAlert.heightAnchor.constraint(equalTo: self.heightAnchor, multiplier: 0.07),
+            addHourAlert.topAnchor.constraint(equalTo: self.subTitle.bottomAnchor,constant: 10),
+            addHourAlert.heightAnchor.constraint(equalTo: self.heightAnchor, multiplier: 0.09),
         ])
         
         NSLayoutConstraint.activate([
@@ -164,8 +168,8 @@ extension AlertsView:ViewCodable {
             addAlarmView.leadingAnchor.constraint(equalTo: self.leadingAnchor),
             addAlarmView.trailingAnchor.constraint(equalTo: self.addHourAlert.leadingAnchor),
             addAlarmView.widthAnchor.constraint(equalTo: self.widthAnchor, multiplier: 0.8),
-            addAlarmView.heightAnchor.constraint(equalTo: self.heightAnchor, multiplier: 0.07),
-            addAlarmView.topAnchor.constraint(equalTo: self.subTitle.bottomAnchor,constant: 5),
+            addAlarmView.heightAnchor.constraint(equalTo: self.heightAnchor, multiplier: 0.09),
+            addAlarmView.topAnchor.constraint(equalTo: self.subTitle.bottomAnchor,constant: 10),
         ])
         
         NSLayoutConstraint.activate([
