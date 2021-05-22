@@ -23,6 +23,7 @@ class AlertViewCell: UITableViewCell {
     lazy var removeAlertButton:UIButton = {
         let button = UIButton(frame: .zero)
         button.isHidden = true
+        button.contentMode = .scaleAspectFill
         button.isUserInteractionEnabled = true
         button.setImage(UIImage(systemName: "checkmark.circle"), for: .normal)
         button.addTarget(self, action: #selector(addForDrop), for: .touchUpInside)

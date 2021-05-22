@@ -26,13 +26,10 @@ class AlertsManagerViewController: UIViewController{
     
     override func viewWillAppear(_ animated: Bool) {
         //Customize NavigationBar
-        let apperance = [NSAttributedString.Key.foregroundColor : UIColor.black,NSAttributedString.Key.font: UIFont(name: Fonts.RobotoRegular, size: 20)]
+        //let apperance = [NSAttributedString.Key.font: UIFont(name: Fonts.RobotoRegular, size: 10)]
         
-        navigationController?.navigationBar.titleTextAttributes = apperance as [NSAttributedString.Key : Any]
-        navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
-        navigationController?.navigationBar.shadowImage = UIImage()
-        navigationController?.navigationBar.isTranslucent = true
-        navigationController?.view.backgroundColor = .clear
+        //navigationController?.navigationBar.titleTextAttributes = apperance as [NSAttributedString.Key : Any]
+        //navigationController?.view.backgroundColor = .white
         self.navigationController?.isNavigationBarHidden = false
         
         //Check if already exists alerts
