@@ -107,8 +107,8 @@ class TableHourDataSource:NSObject,UITableViewDataSource {
 extension TableHourDataSource{
     func createAlertNotification(_ indexAlert:Int){
         //Atual Date
-        let atualDate = Date()
-        let atualDateComponents = Calendar.current.dateComponents([.year,.month,.day,.hour,.minute], from: atualDate)
+//        let atualDate = Date()
+//        let atualDateComponents = Calendar.current.dateComponents([.year,.month,.day,.hour,.minute], from: atualDate)
         
         //DatePicker date
         //Get Minutes and hours
@@ -119,41 +119,46 @@ extension TableHourDataSource{
         let minute = String(dateSplit.last ?? "Error")
         let datePickerComponents = Date.dateAtualWithTime(Int(hour) ?? 0,Int(minute) ?? 0)
      
-        //Tomorrow Date
-        let tomorrowDate = atualDate.dayAfter
-        let tomorrowComponents = Calendar.current.dateComponents([.year,.month,.day,.hour,.minute], from: tomorrowDate)
+        let identifier = NotificationService.share.requestDateNotification(repeatedly: true, on: datePickerComponents)
+        //Save identifier
+        PersistenceAlerts.share.updateAlertIdentifier(indexAlert, selectedHour, identifier)
+        print("Marcado: \(String(describing: datePickerComponents.hour ?? 0)) Hrs :\(String(describing: datePickerComponents.minute ?? 0)) Min \(identifier)"as Any)
         
-        //Se a data atual é igual a da datePicker
-        if atualDateComponents.day == datePickerComponents.day && atualDateComponents.year == datePickerComponents.year && atualDateComponents.month == datePickerComponents.month{
-            //Se a hora é menor que a do dataPicker - Notificação pra amanha
-            if atualDateComponents.hour ?? 0 < datePickerComponents.hour ?? 0{
-                //Notification
-                let identifier = NotificationService.share.requestDateNotification(repeatedly: false, on: tomorrowComponents)
-                //Save identifier
-                PersistenceAlerts.share.updateAlertIdentifier(indexAlert, selectedHour, identifier)
-                print("Amanhã - Marcado: \(String(describing: datePickerComponents.hour ?? 0)):\(String(describing: datePickerComponents.minute ?? 0)) \(identifier)"as Any)
-            }
-            
-            //Se a hora for maior ou igual
-            if atualDateComponents.hour ?? 0 >= datePickerComponents.hour ?? 0{
-                //Se os minutos são menores ou iguais que o do datePicker - Notificação pra amanhã
-                if atualDateComponents.minute ?? 0 >= datePickerComponents.minute ?? 0{
-                    //Notification
-                    let identifier = NotificationService.share.requestDateNotification(repeatedly: false, on: tomorrowComponents)
-                    //Save identifier
-                    PersistenceAlerts.share.updateAlertIdentifier(indexAlert, selectedHour, identifier)
-                    print("Amanhã - Marcado: \(String(describing: datePickerComponents.hour ?? 0)):\(String(describing: datePickerComponents.minute ?? 0)) \(identifier)"as Any)
-                }
-                //Se os minutos são menores que o do datePicker - Notificação pra hoje
-                if datePickerComponents.minute ?? 0 > atualDateComponents.minute ?? 0 {
-                    //Notification
-                    let identifier = NotificationService.share.requestDateNotification(repeatedly: false, on: datePickerComponents)
-                    //Save identifier
-                    PersistenceAlerts.share.updateAlertIdentifier(indexAlert, selectedHour, identifier)
-                    print("Hoje - Marcado: \(String(describing: datePickerComponents.hour ?? 0)):\(String(describing: datePickerComponents.minute ?? 0)) \(identifier)"as Any)
-                }
-            }
-        }
+        //Tomorrow Date
+//        let tomorrowDate = atualDate.dayAfter
+//        let tomorrowComponents = Calendar.current.dateComponents([.year,.month,.day,.hour,.minute], from: tomorrowDate)
+        
+//        //Se a data atual é igual a da datePicker
+//        if atualDateComponents.day == datePickerComponents.day && atualDateComponents.year == datePickerComponents.year && atualDateComponents.month == datePickerComponents.month{
+//            //Se a hora é menor que a do dataPicker - Notificação pra amanha
+//            if atualDateComponents.hour ?? 0 < datePickerComponents.hour ?? 0{
+//                //Notification
+//                let identifier = NotificationService.share.requestDateNotification(repeatedly: false, on: tomorrowComponents)
+//                //Save identifier
+//                PersistenceAlerts.share.updateAlertIdentifier(indexAlert, selectedHour, identifier)
+//                print("Amanhã - Marcado: \(String(describing: datePickerComponents.hour ?? 0)):\(String(describing: datePickerComponents.minute ?? 0)) \(identifier)"as Any)
+//            }
+//
+//            //Se a hora for maior ou igual
+//            if atualDateComponents.hour ?? 0 >= datePickerComponents.hour ?? 0{
+//                //Se os minutos são menores ou iguais que o do datePicker - Notificação pra amanhã
+//                if atualDateComponents.minute ?? 0 >= datePickerComponents.minute ?? 0{
+//                    //Notification
+//                    let identifier = NotificationService.share.requestDateNotification(repeatedly: false, on: tomorrowComponents)
+//                    //Save identifier
+//                    PersistenceAlerts.share.updateAlertIdentifier(indexAlert, selectedHour, identifier)
+//                    print("Amanhã - Marcado: \(String(describing: datePickerComponents.hour ?? 0)):\(String(describing: datePickerComponents.minute ?? 0)) \(identifier)"as Any)
+//                }
+//                //Se os minutos são menores que o do datePicker - Notificação pra hoje
+//                if datePickerComponents.minute ?? 0 > atualDateComponents.minute ?? 0 {
+//                    //Notification
+//                    let identifier = NotificationService.share.requestDateNotification(repeatedly: false, on: datePickerComponents)
+//                    //Save identifier
+//                    PersistenceAlerts.share.updateAlertIdentifier(indexAlert, selectedHour, identifier)
+//                    print("Hoje - Marcado: \(String(describing: datePickerComponents.hour ?? 0)):\(String(describing: datePickerComponents.minute ?? 0)) \(identifier)"as Any)
+//                }
+//            }
+//        }
     }
     
     func updateAlert(_ indexAlert:Int,_ switchState:Bool){

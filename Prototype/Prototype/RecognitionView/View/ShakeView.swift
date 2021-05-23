@@ -33,6 +33,12 @@ class ShakeView:UIView{
         return imageView
     }()
     
+    let menuButton:UIButton = {
+        let button = UIButton(frame: .zero)
+        button.setBackgroundImage(UIImage(named: "SettingsIconsettings"), for: .normal)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        return button
+    }()
 
     init() {
         super.init(frame: .zero)
@@ -50,6 +56,7 @@ extension ShakeView:ViewCodable{
     func setupViewHierarchy() {
         self.addSubview(imageShake)
         self.addSubview(labelShake)
+        self.addSubview(menuButton)
     }
     
     func setupConstraints() {
@@ -63,6 +70,11 @@ extension ShakeView:ViewCodable{
         NSLayoutConstraint.activate([
             labelShake.topAnchor.constraint(equalTo: imageShake.bottomAnchor),
             labelShake.widthAnchor.constraint(equalTo: self.widthAnchor),
+        ])
+        
+        NSLayoutConstraint.activate([
+            menuButton.topAnchor.constraint(equalTo: self.layoutMarginsGuide.topAnchor),
+            menuButton.trailingAnchor.constraint(equalTo: self.trailingAnchor,constant: -20),
         ])
     }
 }

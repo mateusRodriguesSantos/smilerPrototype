@@ -50,6 +50,15 @@ extension Date {
         return dateComponents
     }
     
+    static func dateComponentsTime(_ hour:Int,_ minute:Int) -> DateComponents{
+        // Specify date components
+        var dateComponents = DateComponents()
+        dateComponents.hour = hour
+        dateComponents.minute = minute
+        
+        return dateComponents
+    }
+    
     static func dateAtualWithTime(_ hour:Int,_ minute:Int) -> DateComponents{
         //Atual date
         let atualDate = Date()

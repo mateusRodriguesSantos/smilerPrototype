@@ -9,7 +9,7 @@ import UIKit
 
 extension CALayer {
 
-  func addBorder(edge: UIRectEdge, color: UIColor, thickness: CGFloat) {
+  func addBorder(edge: UIRectEdge, color: UIColor, thickness: CGFloat) -> CALayer{
 
     let border = CALayer()
     //border.opacity = 0.5
@@ -32,5 +32,6 @@ extension CALayer {
     border.backgroundColor = color.cgColor
 
     addSublayer(border)
+    return border
  }
 }
