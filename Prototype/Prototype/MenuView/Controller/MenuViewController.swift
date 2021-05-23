@@ -13,6 +13,8 @@ class MenuViewController: UIViewController {
     
     let viewBase = MenuView()
     
+    var border = CALayer()
+    
     var isInOtherView:Bool = false
     
     override func loadView() {
@@ -22,20 +24,18 @@ class MenuViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
     }
     
     override func viewWillAppear(_ animated: Bool) {
         isInOtherView = false
         let apperance = [NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 18)]
-        navigationController?.navigationBar.layer.addBorder(edge: .bottom, color: UIColor.black, thickness: 0.28)
+        border = navigationController?.navigationBar.layer.addBorder(edge: .bottom, color: UIColor.black, thickness: 0.28) ?? CALayer()
+        navigationController?.navigationBar.isHidden = false
         navigationController?.navigationBar.topItem?.title = "Menu"
         navigationController?.navigationBar.titleTextAttributes = apperance as [NSAttributedString.Key : Any]
-//        navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
-//        navigationController?.navigationBar.shadowImage = UIImage()
         navigationController?.navigationBar.isTranslucent = false
         navigationController?.view.backgroundColor = .black
-//
+
         let notificationCenter = NotificationCenter.default
             notificationCenter.addObserver(self, selector: #selector(appMovedToBackground), name: UIApplication.didBecomeActiveNotification, object: nil)
         
@@ -86,12 +86,12 @@ extension MenuViewController:UITextViewDelegate {
 //MARK: Keyboard
 extension MenuViewController{
     @objc func keyboardWillShow(notification: NSNotification) {
-        if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
+//        if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
 //            if view.frame.origin.y == 0 {
 //                self.view.frame.origin.y -= keyboardSize.height * 0.2
 //                navigationController?.navigationBar.topItem?.title = ""
 //            }
-        }
+//        }
     }
 
     @objc func keyboardWillHide(notification: NSNotification) {

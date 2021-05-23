@@ -23,33 +23,36 @@ class ShakeViewController: UIViewController{
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        addTriggers()
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        let apperance = [NSAttributedString.Key.foregroundColor : UIColor.black,NSAttributedString.Key.font: UIFont.systemFont(ofSize: 30)]
-        
-        navigationController?.navigationBar.titleTextAttributes = apperance
-        
-        navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
-
-        navigationController?.navigationBar.shadowImage = UIImage()
-        
-        navigationController?.navigationBar.isTranslucent = true
-        
-        navigationController?.view.backgroundColor = .clear
-        
-        self.navigationController?.isNavigationBarHidden = false
-        
-        let setUp = UIBarButtonItem(title: "Settings", style: .plain, target: self, action: #selector(playTapped))
-
-        navigationItem.rightBarButtonItems = [setUp]
+//        let apperance = [NSAttributedString.Key.foregroundColor : UIColor.black,NSAttributedString.Key.font: UIFont.systemFont(ofSize: 30)]
+  navigationController?.navigationBar.isHidden = true
+//        navigationController?.navigationBar.titleTextAttributes = apperance
+//        navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+//        navigationController?.navigationBar.shadowImage = UIImage()
+//        navigationController?.navigationBar.isTranslucent = true
+//        navigationController?.view.backgroundColor = .clear
+//
+//        self.navigationController?.isNavigationBarHidden = false
+//
+//        let setUp = UIBarButtonItem(title: "Settings", style: .plain, target: self, action: #selector(playTapped))
+//
+//        navigationItem.rightBarButtonItems = [setUp]
     }
     
     override func motionEnded(_ motion: UIEvent.EventSubtype, with event: UIEvent?) {
         if motion == .motionShake {
             APIClient.client.execute()
         }
+    }
+}
+
+//MARK: Triggers
+extension ShakeViewController{
+    func addTriggers(){
+        baseView.menuButton.addTarget(self, action: #selector(self.playTapped), for: .touchUpInside)
     }
 }
 

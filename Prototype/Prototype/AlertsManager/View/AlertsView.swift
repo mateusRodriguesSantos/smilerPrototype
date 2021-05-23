@@ -31,12 +31,15 @@ class AlertsView:UIView {
         return label
     }()
     
-    let addAlarmView:UIStackView = {
+    lazy var addAlarmView:UIStackView = {
         let view = UIStackView(frame: .zero)
         view.backgroundColor = .white
         view.alignment = .center
         view.axis = .horizontal
         view.distribution = .fill
+        let border = CALayer()
+        border.frame = CGRect(x:0, y: view.layer.frame.height - 0.28, width: view.layer.frame.width, height:0.28)
+        view.layer.insertSublayer(border, at: 0)
         view.isUserInteractionEnabled = true
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
@@ -107,8 +110,8 @@ class AlertsView:UIView {
         tableView.tableFooterView = UIView()
         tableView.delegate = tableDelegate
         tableView.dataSource = tableDataSource
-        tableView.layer.borderWidth = 0.28
-        tableView.layer.borderColor = UIColor.black.cgColor
+        //tableView.layer.borderWidth = 0.28
+        //tableView.layer.borderColor = UIColor.black.cgColor
         tableView.translatesAutoresizingMaskIntoConstraints = false
         return tableView
     }()
