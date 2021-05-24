@@ -60,20 +60,8 @@ extension Date {
     }
     
     static func dateAtualWithTime(_ hour:Int,_ minute:Int) -> DateComponents{
-        //Atual date
-        let atualDate = Date()
-        let calendar = Calendar.current
-        let year = calendar.component(.year, from: atualDate)
-        let month = calendar.component(.month, from: atualDate)
-        let day = calendar.component(.day, from: atualDate)
-        
-        
         // Specify date components
         var dateComponents = DateComponents()
-        dateComponents.year = year
-        dateComponents.month = month
-        dateComponents.day = day
-        dateComponents.timeZone = TimeZone(identifier: TimeZone.current.identifier)
         dateComponents.hour = hour
         dateComponents.minute = minute
         
