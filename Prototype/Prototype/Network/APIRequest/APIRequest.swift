@@ -15,11 +15,11 @@ protocol ExecuteRequestURLSession{
 extension ExecuteRequestURLSession {
     func sendSMS(completion: @escaping (Data?,Error?) -> Void) {
         
-        let type = Properties.param["type"] as? String ?? "Error"
-        let number = Properties.param["number"] as? String ?? "Error"
-        let msg = Properties.param["msg"] as? String ?? "Error"
-        let apiKey = Properties().getApiKey()
-        let urlString = "\(Properties.path)\(apiKey)\(type)\(number)\(msg)"
+        let type = PropertiesRequest.param["type"] as? String ?? "Error"
+        let number = PropertiesRequest.param["number"] as? String ?? "Error"
+        let msg = PropertiesRequest.param["msg"] as? String ?? "Error"
+        let apiKey = PropertiesRequest().getApiKey()
+        let urlString = "\(PropertiesRequest.path)\(apiKey)\(type)\(number)\(msg)"
         
         //1. Create URL
         if let encoded = urlString.addingPercentEncoding(withAllowedCharacters: .urlFragmentAllowed), let url = URL(string: encoded){
@@ -47,11 +47,11 @@ protocol ExecuteRequestAlamo{
 extension ExecuteRequestAlamo {
     func sendSMS(completion: @escaping (Data?,Error?) -> Void) {
         
-        let type = Properties.param["type"] as? String ?? "Error"
-        let number = Properties.param["number"] as? String ?? "Error"
-        let msg = Properties.param["msg"] as? String ?? "Error"
-        let apiKey = Properties().getApiKey()
-        let urlString = "\(Properties.path)\(apiKey)\(type)\(number)\(msg)"
+        let type = PropertiesRequest.param["type"] as? String ?? "Error"
+        let number = PropertiesRequest.param["number"] as? String ?? "Error"
+        let msg = PropertiesRequest.param["msg"] as? String ?? "Error"
+        let apiKey = PropertiesRequest().getApiKey()
+        let urlString = "\(PropertiesRequest.path)\(apiKey)\(type)\(number)\(msg)"
         
         if let encoded = urlString.addingPercentEncoding(withAllowedCharacters: .urlFragmentAllowed), let url = URL(string: encoded){
             AF.request(url, method: .post).response { response in

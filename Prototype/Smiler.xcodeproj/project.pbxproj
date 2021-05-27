@@ -30,7 +30,7 @@
 		DC22DC162651B01100C50AA7 /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC22DC152651B01100C50AA7 /* Alert.swift */; };
 		DC2F58BE2614FEC7008D12B3 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC2F58BD2614FEC7008D12B3 /* MenuViewController.swift */; };
 		DC2F58C62614FEE3008D12B3 /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC2F58C52614FEE3008D12B3 /* MenuView.swift */; };
-		DC5505282652AFBD00B7EE29 /* Properties.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC5505272652AFBD00B7EE29 /* Properties.swift */; };
+		DC5505282652AFBD00B7EE29 /* PropertiesRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC5505272652AFBD00B7EE29 /* PropertiesRequest.swift */; };
 		DC55052A2652AFD200B7EE29 /* ReturnSMS.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC5505292652AFD200B7EE29 /* ReturnSMS.swift */; };
 		DC55052C2652AFDB00B7EE29 /* APIResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC55052B2652AFDB00B7EE29 /* APIResponse.swift */; };
 		DC55052E2652AFE200B7EE29 /* APIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC55052D2652AFE200B7EE29 /* APIRequest.swift */; };
@@ -44,6 +44,7 @@
 		DCA809F02617C40400AC89FC /* TableHourDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA809EF2617C40400AC89FC /* TableHourDelegate.swift */; };
 		DCA809F52617C45A00AC89FC /* TableHourDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA809F42617C45A00AC89FC /* TableHourDataSource.swift */; };
 		DCA809FA2617D67400AC89FC /* AlertViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA809F92617D67400AC89FC /* AlertViewCell.swift */; };
+		DCCFCF0B265D7375007623AB /* AcessoryViewKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCCFCF0A265D7375007623AB /* AcessoryViewKeyboard.swift */; };
 		DCDE75D1261A56EA007D1BE4 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCDE75D0261A56EA007D1BE4 /* Date.swift */; };
 		DCE2A93D2653ED0C007B99B9 /* PersistenceAlerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE2A93C2653ED0C007B99B9 /* PersistenceAlerts.swift */; };
 		DCE2A9402653F4E8007B99B9 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE2A93F2653F4E8007B99B9 /* Persistence.swift */; };
@@ -52,7 +53,11 @@
 		DCE72A802655B491005D06E9 /* Roboto-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DCE72A7F2655B491005D06E9 /* Roboto-Regular.ttf */; };
 		DCE72A822655B4A1005D06E9 /* Roboto-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DCE72A812655B4A1005D06E9 /* Roboto-Bold.ttf */; };
 		DCE72A832655B5E3005D06E9 /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E68FB532579FD9B00BA3315 /* Fonts.swift */; };
-		DCE72A852655BEB9005D06E9 /* CustomDatePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE72A842655BEB9005D06E9 /* CustomDatePicker.swift */; };
+		DCF3C29E265BDA6A000FE0CB /* LocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF3C29D265BDA6A000FE0CB /* LocationService.swift */; };
+		DCF3C2A0265C4C51000FE0CB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF3C29F265C4C51000FE0CB /* ViewController.swift */; };
+		DCF3C2A3265C4E3D000FE0CB /* TextFieldDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF3C2A2265C4E3D000FE0CB /* TextFieldDelegate.swift */; };
+		DCF3C2A5265C530F000FE0CB /* KeyboardNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF3C2A4265C530F000FE0CB /* KeyboardNotification.swift */; };
+		DCF40028265C8B6600A10B2C /* SpinnerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF40027265C8B6600A10B2C /* SpinnerViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -112,7 +117,7 @@
 		DC22DC152651B01100C50AA7 /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
 		DC2F58BD2614FEC7008D12B3 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		DC2F58C52614FEE3008D12B3 /* MenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
-		DC5505272652AFBD00B7EE29 /* Properties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Properties.swift; sourceTree = "<group>"; };
+		DC5505272652AFBD00B7EE29 /* PropertiesRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PropertiesRequest.swift; sourceTree = "<group>"; };
 		DC5505292652AFD200B7EE29 /* ReturnSMS.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReturnSMS.swift; sourceTree = "<group>"; };
 		DC55052B2652AFDB00B7EE29 /* APIResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIResponse.swift; sourceTree = "<group>"; };
 		DC55052D2652AFE200B7EE29 /* APIRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIRequest.swift; sourceTree = "<group>"; };
@@ -126,6 +131,7 @@
 		DCA809EF2617C40400AC89FC /* TableHourDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableHourDelegate.swift; sourceTree = "<group>"; };
 		DCA809F42617C45A00AC89FC /* TableHourDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableHourDataSource.swift; sourceTree = "<group>"; };
 		DCA809F92617D67400AC89FC /* AlertViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertViewCell.swift; sourceTree = "<group>"; };
+		DCCFCF0A265D7375007623AB /* AcessoryViewKeyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcessoryViewKeyboard.swift; sourceTree = "<group>"; };
 		DCDE75D0261A56EA007D1BE4 /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
 		DCE2A93C2653ED0C007B99B9 /* PersistenceAlerts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceAlerts.swift; sourceTree = "<group>"; };
 		DCE2A93F2653F4E8007B99B9 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
@@ -133,7 +139,11 @@
 		DCE72A7D2655830B005D06E9 /* AlertViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertViewModel.swift; sourceTree = "<group>"; };
 		DCE72A7F2655B491005D06E9 /* Roboto-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Regular.ttf"; sourceTree = "<group>"; };
 		DCE72A812655B4A1005D06E9 /* Roboto-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Bold.ttf"; sourceTree = "<group>"; };
-		DCE72A842655BEB9005D06E9 /* CustomDatePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomDatePicker.swift; sourceTree = "<group>"; };
+		DCF3C29D265BDA6A000FE0CB /* LocationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationService.swift; sourceTree = "<group>"; };
+		DCF3C29F265C4C51000FE0CB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		DCF3C2A2265C4E3D000FE0CB /* TextFieldDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldDelegate.swift; sourceTree = "<group>"; };
+		DCF3C2A4265C530F000FE0CB /* KeyboardNotification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardNotification.swift; sourceTree = "<group>"; };
+		DCF40027265C8B6600A10B2C /* SpinnerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpinnerViewController.swift; sourceTree = "<group>"; };
 		DE9A6AC7F97FCC16F5B2F392 /* Pods_Smiler.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Smiler.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E6898BD246CE3EF04041533D /* Pods_Smiler_SmilerTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Smiler_SmilerTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -184,6 +194,7 @@
 				DCDE75D0261A56EA007D1BE4 /* Date.swift */,
 				DCE2A9412653FF73007B99B9 /* Results.swift */,
 				DC02A63426589F7100011760 /* CALayer.swift */,
+				DCF3C29F265C4C51000FE0CB /* ViewController.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -206,10 +217,13 @@
 		AD41F230256D519D00F0E467 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				DCCFCF0A265D7375007623AB /* AcessoryViewKeyboard.swift */,
 				AD41F231256D51C300F0E467 /* Coordinator.swift */,
 				AD41F236256D51D000F0E467 /* ViewCodable.swift */,
 				AD41F23B256D522500F0E467 /* MainCoordinator.swift */,
-				DCE72A842655BEB9005D06E9 /* CustomDatePicker.swift */,
+				DCF3C2A2265C4E3D000FE0CB /* TextFieldDelegate.swift */,
+				DCF3C2A4265C530F000FE0CB /* KeyboardNotification.swift */,
+				DCF40027265C8B6600A10B2C /* SpinnerViewController.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -266,6 +280,7 @@
 			isa = PBXGroup;
 			children = (
 				AD8A2E19256D500100B05AAB /* AppDelegate */,
+				DCF3C29C265BDA54000FE0CB /* Location */,
 				DC9AFD7E265466DB00EA5B49 /* Notification */,
 				DCE2A93E2653F4BE007B99B9 /* Persistence */,
 				DC5505222652AF7900B7EE29 /* Network */,
@@ -362,7 +377,7 @@
 		DC5505222652AF7900B7EE29 /* Network */ = {
 			isa = PBXGroup;
 			children = (
-				DC5505272652AFBD00B7EE29 /* Properties.swift */,
+				DC5505272652AFBD00B7EE29 /* PropertiesRequest.swift */,
 				DC5505262652AFA000B7EE29 /* Codable */,
 				DC5505252652AF9800B7EE29 /* APIResponse */,
 				DC5505242652AF9000B7EE29 /* APIRequest */,
@@ -489,6 +504,14 @@
 				DCE72A7D2655830B005D06E9 /* AlertViewModel.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		DCF3C29C265BDA54000FE0CB /* Location */ = {
+			isa = PBXGroup;
+			children = (
+				DCF3C29D265BDA6A000FE0CB /* LocationService.swift */,
+			);
+			path = Location;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -756,17 +779,21 @@
 				DC02A63526589F7100011760 /* CALayer.swift in Sources */,
 				DC2F58BE2614FEC7008D12B3 /* MenuViewController.swift in Sources */,
 				DCA809E3261793E800AC89FC /* ContactsManagerViewController.swift in Sources */,
+				DCF3C2A5265C530F000FE0CB /* KeyboardNotification.swift in Sources */,
 				6E10C7292575687400A39F3F /* ShakeView.swift in Sources */,
 				DC9AFD802654670C00EA5B49 /* NotificationService.swift in Sources */,
 				DC22DC14265187A400C50AA7 /* ObserverDeleteButton.swift in Sources */,
 				DC22DC162651B01100C50AA7 /* Alert.swift in Sources */,
 				ADFBEC1D256D4BDB002EAE9D /* Prototype.xcdatamodeld in Sources */,
+				DCF40028265C8B6600A10B2C /* SpinnerViewController.swift in Sources */,
 				DCE2A93D2653ED0C007B99B9 /* PersistenceAlerts.swift in Sources */,
-				DCE72A852655BEB9005D06E9 /* CustomDatePicker.swift in Sources */,
 				AD41F237256D51D000F0E467 /* ViewCodable.swift in Sources */,
 				ADFBEC17256D4BDB002EAE9D /* ShakeViewController.swift in Sources */,
 				DC2F58C62614FEE3008D12B3 /* MenuView.swift in Sources */,
+				DCCFCF0B265D7375007623AB /* AcessoryViewKeyboard.swift in Sources */,
 				ADFBEC13256D4BDB002EAE9D /* AppDelegate.swift in Sources */,
+				DCF3C2A0265C4C51000FE0CB /* ViewController.swift in Sources */,
+				DCF3C2A3265C4E3D000FE0CB /* TextFieldDelegate.swift in Sources */,
 				DCA809EB261793FA00AC89FC /* ContactsManagerView.swift in Sources */,
 				ADFBEC15256D4BDB002EAE9D /* SceneDelegate.swift in Sources */,
 				DCA809FA2617D67400AC89FC /* AlertViewCell.swift in Sources */,
@@ -776,13 +803,14 @@
 				DCDE75D1261A56EA007D1BE4 /* Date.swift in Sources */,
 				AD41F23C256D522500F0E467 /* MainCoordinator.swift in Sources */,
 				DCA809F02617C40400AC89FC /* TableHourDelegate.swift in Sources */,
-				DC5505282652AFBD00B7EE29 /* Properties.swift in Sources */,
+				DC5505282652AFBD00B7EE29 /* PropertiesRequest.swift in Sources */,
 				DC55052A2652AFD200B7EE29 /* ReturnSMS.swift in Sources */,
 				DCE2A9422653FF73007B99B9 /* Results.swift in Sources */,
 				AD41F232256D51C300F0E467 /* Coordinator.swift in Sources */,
 				DC55052C2652AFDB00B7EE29 /* APIResponse.swift in Sources */,
 				6E10C7152574538E00A39F3F /* UIButton.swift in Sources */,
 				DC5505302652AFE900B7EE29 /* APIClient.swift in Sources */,
+				DCF3C29E265BDA6A000FE0CB /* LocationService.swift in Sources */,
 				DCE2A9402653F4E8007B99B9 /* Persistence.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

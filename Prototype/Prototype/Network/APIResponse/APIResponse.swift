@@ -7,7 +7,7 @@
 
 import Alamofire
 
-class APIResponse:ExecuteRequestURLSession {
+class APIResponse:ExecuteRequestAlamo {
     func execute(completion: @escaping (ReturnSMS?,Error?) -> Void) {
         sendSMS { data, erro in
             let decoder = JSONDecoder()

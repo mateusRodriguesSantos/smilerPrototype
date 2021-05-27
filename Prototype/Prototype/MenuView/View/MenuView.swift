@@ -8,36 +8,11 @@
 import UIKit
 
 class MenuView:UIView {
-
-//    let setUpsView:UIStackView = {
-//        let view = UIStackView(frame: .zero)
-//        view.backgroundColor = .clear
-//        view.alignment = .top
-//        view.axis = .vertical
-//        view.distribution = .equalSpacing
-//        view.isUserInteractionEnabled = true
-//        view.translatesAutoresizingMaskIntoConstraints = false
-//        return view
-//    }()
     
-    let shareLocationView:UIView = {
-        let view = UIView(frame: .zero)
-        view.backgroundColor = .white
-        view.layer.borderWidth = 0.28
-        view.layer.borderColor = UIColor.black.cgColor
-        view.translatesAutoresizingMaskIntoConstraints = false
-        return view
-    }()
+    ///Acessory view of keyboards
+    let viewAcessory = AcessoryViewKeyboard(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height * 0.05))
     
-    let mensagesView:UIView = {
-        let view = UIView(frame: .zero)
-        view.backgroundColor = .white
-        view.layer.cornerRadius = 20
-        view.translatesAutoresizingMaskIntoConstraints = false
-        return view
-    }()
-    
-    //Suplementary Views
+    //MARK: Buttons
     
     let setUpsViewLabel1:UILabel = {
         let colorBack = UIColor(red: 0, green: 0, blue: 0, alpha: 0.5)
@@ -95,6 +70,17 @@ class MenuView:UIView {
         return button
     }()
     
+    //MARK: LocationView share
+    
+    let shareLocationView:UIView = {
+        let view = UIView(frame: .zero)
+        view.backgroundColor = .white
+        view.layer.borderWidth = 0.28
+        view.layer.borderColor = UIColor.black.cgColor
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
+    
     let textShareLocationView:UILabel = {
         let label = UILabel(frame: .zero)
         label.text = "Compartilhar Localização em tempo real"
@@ -113,6 +99,89 @@ class MenuView:UIView {
         return switch_
     }()
     
+    //MARK: NameView
+    
+    let nameView:UIView = {
+        let view = UIView(frame: .zero)
+        view.backgroundColor = .white
+        view.layer.cornerRadius = 20
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
+    
+    let textNameView:UILabel = {
+        let colorBack = UIColor(red: 0, green: 0, blue: 0, alpha: 0.5)
+        let label = UILabel(frame: .zero)
+        label.text = "Meu Nome"
+        label.numberOfLines = 0
+        label.font = UIFont.systemFont(ofSize: 18)
+        label.textAlignment = .left
+        label.backgroundColor = .white
+        label.textColor = .black
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
+    
+    lazy var textFieldNameView:UITextView = {
+        let colorBack = UIColor(red: 245/255.0, green: 245/255.0, blue: 245/255.0, alpha: 1.0)
+        let textView = UITextView(frame: .zero)
+        textView.text = "Seu nome"
+        textView.alpha = 0.2
+        textView.inputAccessoryView = viewAcessory
+        textView.textAlignment = .left
+        textView.backgroundColor = .white
+        textView.font = UIFont.systemFont(ofSize: 20)
+        textView.translatesAutoresizingMaskIntoConstraints = false
+        return textView
+    }()
+    
+    //MARK: Number View
+    
+    let numberView:UIView = {
+        let view = UIView(frame: .zero)
+        view.backgroundColor = .white
+        view.layer.cornerRadius = 20
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
+    
+    let textNumberView:UILabel = {
+        let colorBack = UIColor(red: 0, green: 0, blue: 0, alpha: 0.5)
+        let label = UILabel(frame: .zero)
+        label.text = "Meu número"
+        label.numberOfLines = 0
+        label.font = UIFont.systemFont(ofSize: 18)
+        label.textAlignment = .left
+        label.backgroundColor = .white
+        label.textColor = .black
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
+    
+    lazy var textFieldNumberView:UITextView = {
+        let colorBack = UIColor(red: 245/255.0, green: 245/255.0, blue: 245/255.0, alpha: 1.0)
+        let textView = UITextView(frame: .zero)
+        textView.text = "Seu número com DDD"
+        textView.alpha = 0.2
+        textView.keyboardType = .numberPad
+        textView.inputAccessoryView = viewAcessory
+        textView.textAlignment = .left
+        textView.backgroundColor = .white
+        textView.font = UIFont.systemFont(ofSize: 20)
+        textView.translatesAutoresizingMaskIntoConstraints = false
+        return textView
+    }()
+    
+    //MARK: MensagesView
+    
+    let mensagesView:UIView = {
+        let view = UIView(frame: .zero)
+        view.backgroundColor = .white
+        view.layer.cornerRadius = 20
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
+    
     let textMensagesView:UILabel = {
         let colorBack = UIColor(red: 0, green: 0, blue: 0, alpha: 0.5)
         let label = UILabel(frame: .zero)
@@ -126,11 +195,12 @@ class MenuView:UIView {
         return label
     }()
     
-    let textFieldMensagesView:UITextView = {
+    lazy var textFieldMensagesView:UITextView = {
         let colorBack = UIColor(red: 245/255.0, green: 245/255.0, blue: 245/255.0, alpha: 1.0)
         let textView = UITextView(frame: .zero)
         textView.text = "Digite uma mensagem de emergência"
         textView.alpha = 0.2
+        textView.inputAccessoryView = viewAcessory
         textView.textAlignment = .left
         textView.backgroundColor = .white
         textView.font = UIFont.systemFont(ofSize: 20)
@@ -154,6 +224,8 @@ extension MenuView:ViewCodable {
     func setupViewHierarchy() {
         //self.addSubview(setUpsView)
         self.addSubview(shareLocationView)
+        self.addSubview(numberView)
+        self.addSubview(nameView)
         self.addSubview(mensagesView)
         self.addSubview(setUpsViewLabel1)
         self.addSubview(setUpsViewButton1)
@@ -163,18 +235,19 @@ extension MenuView:ViewCodable {
         shareLocationView.addSubview(textShareLocationView)
         shareLocationView.addSubview(switchShareLocationView)
         
+        
+        nameView.addSubview(textNameView)
+        nameView.addSubview(textFieldNameView)
+        
+        
+        numberView.addSubview(textNumberView)
+        numberView.addSubview(textFieldNumberView)
+        
         mensagesView.addSubview(textMensagesView)
         mensagesView.addSubview(textFieldMensagesView)
     }
     
     func setupConstraints() {
-
-    //        NSLayoutConstraint.activate([
-    //            setUpsView.heightAnchor.constraint(equalToConstant: UIScreen.main.bounds.height * 0.2),
-    //            setUpsView.leadingAnchor.constraint(equalTo: self.leadingAnchor),
-    //            setUpsView.trailingAnchor.constraint(equalTo: self.trailingAnchor),
-    //            setUpsView.topAnchor.constraint(equalTo: self.layoutMarginsGuide.topAnchor,constant: 20),
-    //        ])
 
         NSLayoutConstraint.activate([
             setUpsViewLabel1.topAnchor.constraint(equalTo: self.layoutMarginsGuide.topAnchor),
@@ -210,13 +283,7 @@ extension MenuView:ViewCodable {
             shareLocationView.trailingAnchor.constraint(equalTo: self.trailingAnchor),
             shareLocationView.topAnchor.constraint(equalTo: self.setUpsViewButton2.bottomAnchor,constant: 20),
         ])
-        
-        NSLayoutConstraint.activate([
-            mensagesView.heightAnchor.constraint(equalToConstant: UIScreen.main.bounds.height * 0.2),
-            mensagesView.leadingAnchor.constraint(equalTo: self.leadingAnchor,constant: 10),
-            mensagesView.trailingAnchor.constraint(equalTo: self.trailingAnchor,constant: -10),
-            mensagesView.topAnchor.constraint(equalTo: self.shareLocationView.bottomAnchor,constant: 20),
-        ])
+
         
         NSLayoutConstraint.activate([
             textShareLocationView.widthAnchor.constraint(equalTo: shareLocationView.widthAnchor, multiplier: 0.6),
@@ -228,6 +295,55 @@ extension MenuView:ViewCodable {
         NSLayoutConstraint.activate([
             switchShareLocationView.trailingAnchor.constraint(equalTo: shareLocationView.trailingAnchor, constant: -20),
             switchShareLocationView.centerYAnchor.constraint(equalTo: shareLocationView.centerYAnchor),
+        ])
+        
+        NSLayoutConstraint.activate([
+            nameView.heightAnchor.constraint(equalToConstant: UIScreen.main.bounds.height * 0.12),
+            nameView.leadingAnchor.constraint(equalTo: self.leadingAnchor,constant: 10),
+            nameView.trailingAnchor.constraint(equalTo: self.trailingAnchor,constant: -10),
+            nameView.topAnchor.constraint(equalTo: self.shareLocationView.bottomAnchor,constant: 20),
+        ])
+        
+        NSLayoutConstraint.activate([
+            textNameView.leadingAnchor.constraint(equalTo: self.leadingAnchor,constant: 40),
+            textNameView.trailingAnchor.constraint(equalTo: self.trailingAnchor,constant: -30),
+            textNameView.leadingAnchor.constraint(equalTo: nameView.leadingAnchor,constant: 20),
+            textNameView.topAnchor.constraint(equalTo: nameView.topAnchor, constant: 5),
+        ])
+        
+        NSLayoutConstraint.activate([
+            textFieldNameView.leadingAnchor.constraint(equalTo: nameView.leadingAnchor,constant: 20),
+            textFieldNameView.trailingAnchor.constraint(equalTo: nameView.trailingAnchor,constant: -30),
+            textFieldNameView.topAnchor.constraint(equalTo: textNameView.bottomAnchor, constant: 5),
+            textFieldNameView.bottomAnchor.constraint(equalTo: nameView.bottomAnchor, constant: -5),
+        ])
+        
+        NSLayoutConstraint.activate([
+            numberView.heightAnchor.constraint(equalToConstant: UIScreen.main.bounds.height * 0.12),
+            numberView.leadingAnchor.constraint(equalTo: self.leadingAnchor,constant: 10),
+            numberView.trailingAnchor.constraint(equalTo: self.trailingAnchor,constant: -10),
+            numberView.topAnchor.constraint(equalTo: self.nameView.bottomAnchor,constant: 20),
+        ])
+        
+        NSLayoutConstraint.activate([
+            textNumberView.leadingAnchor.constraint(equalTo: self.leadingAnchor,constant: 40),
+            textNumberView.trailingAnchor.constraint(equalTo: self.trailingAnchor,constant: -30),
+            textNumberView.leadingAnchor.constraint(equalTo: numberView.leadingAnchor,constant: 20),
+            textNumberView.topAnchor.constraint(equalTo: numberView.topAnchor, constant: 5),
+        ])
+        
+        NSLayoutConstraint.activate([
+            textFieldNumberView.leadingAnchor.constraint(equalTo: numberView.leadingAnchor,constant: 20),
+            textFieldNumberView.trailingAnchor.constraint(equalTo: numberView.trailingAnchor,constant: -30),
+            textFieldNumberView.topAnchor.constraint(equalTo: textNumberView.bottomAnchor, constant: 5),
+            textFieldNumberView.bottomAnchor.constraint(equalTo: numberView.bottomAnchor, constant: -5),
+        ])
+        
+        NSLayoutConstraint.activate([
+            mensagesView.heightAnchor.constraint(equalToConstant: UIScreen.main.bounds.height * 0.2),
+            mensagesView.leadingAnchor.constraint(equalTo: self.leadingAnchor,constant: 10),
+            mensagesView.trailingAnchor.constraint(equalTo: self.trailingAnchor,constant: -10),
+            mensagesView.topAnchor.constraint(equalTo: self.numberView.bottomAnchor,constant: 20),
         ])
         
         NSLayoutConstraint.activate([
