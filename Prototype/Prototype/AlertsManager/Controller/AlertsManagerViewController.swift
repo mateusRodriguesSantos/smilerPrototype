@@ -50,17 +50,6 @@ extension AlertsManagerViewController{
     }
 }
 
-//MARK: System Alerts
-extension AlertsManagerViewController{
-    func alertFactory(_ title:String,_ menssage:String){
-        let alert = UIAlertController(title: title, message: menssage, preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { alertAction in
-            
-        }))
-        self.present(alert, animated: true, completion: nil)
-    }
-}
-
 //MARK: Actions NavBar
 extension AlertsManagerViewController{
     
