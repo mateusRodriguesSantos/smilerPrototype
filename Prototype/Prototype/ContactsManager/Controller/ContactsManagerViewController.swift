@@ -11,11 +11,11 @@ class ContactsManagerViewController: UIViewController {
     
     weak var coordinator:MainCoordinator?
     
-    let viewBase = ContactsManagerView()
+//    let viewBase = ContactsManagerView()
     
     override func loadView() {
         super.loadView()
-        self.view = viewBase
+//        self.view = viewBase
     }
     
     override func viewDidLoad() {

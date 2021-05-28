@@ -10,6 +10,8 @@ target 'Smiler' do
   pod 'Alamofire', '~> 5.2'
   pod "TinyConstraints"
   pod 'NatDS'
+  pod 'NatDSIcons'
+  pod 'ABBadgeButton'
 
   target 'SmilerTests' do
     # Pods for testing

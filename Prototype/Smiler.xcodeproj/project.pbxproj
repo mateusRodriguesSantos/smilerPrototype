@@ -9,6 +9,12 @@
 /* Begin PBXBuildFile section */
 		4571DF7C94C01DA112A91A4A /* Pods_Smiler.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE9A6AC7F97FCC16F5B2F392 /* Pods_Smiler.framework */; };
 		577540BC2661709E00C0DC6B /* SMSDevAPI_Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 577540BB2661709E00C0DC6B /* SMSDevAPI_Info.plist */; };
+		57754121266174B800C0DC6B /* AppNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57754120266174B800C0DC6B /* AppNavigationBar.swift */; };
+		57754139266175A900C0DC6B /* UIWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57754138266175A900C0DC6B /* UIWindow.swift */; };
+		5775413E266175D100C0DC6B /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5775413D266175D100C0DC6B /* UIView.swift */; };
+		577541432661767500C0DC6B /* NatFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 577541422661767500C0DC6B /* NatFont.swift */; };
+		57754148266177FD00C0DC6B /* ContactsManagerTBViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57754147266177FD00C0DC6B /* ContactsManagerTBViewCell.swift */; };
+		5775414D266178FD00C0DC6B /* FeedbackButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5775414C266178FD00C0DC6B /* FeedbackButton.swift */; };
 		6E10C7152574538E00A39F3F /* UIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E10C7142574538E00A39F3F /* UIButton.swift */; };
 		6E10C7292575687400A39F3F /* ShakeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E10C7282575687400A39F3F /* ShakeView.swift */; };
 		6E10C7772579BC5300A39F3F /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E10C7762579BC5300A39F3F /* String.swift */; };
@@ -82,6 +88,12 @@
 		267C49BC627802DC8A051D92 /* Pods-Smiler-SmilerUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Smiler-SmilerUITests.debug.xcconfig"; path = "Target Support Files/Pods-Smiler-SmilerUITests/Pods-Smiler-SmilerUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		27C80D5F332D67DF67F82C65 /* Pods-Smiler-SmilerTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Smiler-SmilerTests.debug.xcconfig"; path = "Target Support Files/Pods-Smiler-SmilerTests/Pods-Smiler-SmilerTests.debug.xcconfig"; sourceTree = "<group>"; };
 		577540BB2661709E00C0DC6B /* SMSDevAPI_Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = SMSDevAPI_Info.plist; sourceTree = "<group>"; };
+		57754120266174B800C0DC6B /* AppNavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppNavigationBar.swift; sourceTree = "<group>"; };
+		57754138266175A900C0DC6B /* UIWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIWindow.swift; sourceTree = "<group>"; };
+		5775413D266175D100C0DC6B /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
+		577541422661767500C0DC6B /* NatFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NatFont.swift; sourceTree = "<group>"; };
+		57754147266177FD00C0DC6B /* ContactsManagerTBViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsManagerTBViewCell.swift; sourceTree = "<group>"; };
+		5775414C266178FD00C0DC6B /* FeedbackButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackButton.swift; sourceTree = "<group>"; };
 		5D3273A99E96E1A66C281DA9 /* Pods_Smiler_SmilerUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Smiler_SmilerUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6E10C7142574538E00A39F3F /* UIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButton.swift; sourceTree = "<group>"; };
 		6E10C7282575687400A39F3F /* ShakeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShakeView.swift; sourceTree = "<group>"; };
@@ -195,6 +207,9 @@
 				DCE2A9412653FF73007B99B9 /* Results.swift */,
 				DC02A63426589F7100011760 /* CALayer.swift */,
 				DCF3C29F265C4C51000FE0CB /* ViewController.swift */,
+				57754138266175A900C0DC6B /* UIWindow.swift */,
+				5775413D266175D100C0DC6B /* UIView.swift */,
+				577541422661767500C0DC6B /* NatFont.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -224,6 +239,8 @@
 				DCF3C2A2265C4E3D000FE0CB /* TextFieldDelegate.swift */,
 				DCF3C2A4265C530F000FE0CB /* KeyboardNotification.swift */,
 				DCF40027265C8B6600A10B2C /* SpinnerViewController.swift */,
+				57754120266174B800C0DC6B /* AppNavigationBar.swift */,
+				5775414C266178FD00C0DC6B /* FeedbackButton.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -485,6 +502,7 @@
 			isa = PBXGroup;
 			children = (
 				DCA809EA261793FA00AC89FC /* ContactsManagerView.swift */,
+				57754147266177FD00C0DC6B /* ContactsManagerTBViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -789,23 +807,29 @@
 				DCE2A93D2653ED0C007B99B9 /* PersistenceAlerts.swift in Sources */,
 				AD41F237256D51D000F0E467 /* ViewCodable.swift in Sources */,
 				ADFBEC17256D4BDB002EAE9D /* ShakeViewController.swift in Sources */,
+				57754121266174B800C0DC6B /* AppNavigationBar.swift in Sources */,
+				5775414D266178FD00C0DC6B /* FeedbackButton.swift in Sources */,
 				DC2F58C62614FEE3008D12B3 /* MenuView.swift in Sources */,
 				DCCFCF0B265D7375007623AB /* AcessoryViewKeyboard.swift in Sources */,
 				ADFBEC13256D4BDB002EAE9D /* AppDelegate.swift in Sources */,
+				57754139266175A900C0DC6B /* UIWindow.swift in Sources */,
 				DCF3C2A0265C4C51000FE0CB /* ViewController.swift in Sources */,
 				DCF3C2A3265C4E3D000FE0CB /* TextFieldDelegate.swift in Sources */,
 				DCA809EB261793FA00AC89FC /* ContactsManagerView.swift in Sources */,
 				ADFBEC15256D4BDB002EAE9D /* SceneDelegate.swift in Sources */,
 				DCA809FA2617D67400AC89FC /* AlertViewCell.swift in Sources */,
 				DCE72A832655B5E3005D06E9 /* Fonts.swift in Sources */,
+				57754148266177FD00C0DC6B /* ContactsManagerTBViewCell.swift in Sources */,
 				DCE72A7E2655830B005D06E9 /* AlertViewModel.swift in Sources */,
 				DCA809CC26178F9300AC89FC /* AlertsManagerViewController.swift in Sources */,
 				DCDE75D1261A56EA007D1BE4 /* Date.swift in Sources */,
 				AD41F23C256D522500F0E467 /* MainCoordinator.swift in Sources */,
 				DCA809F02617C40400AC89FC /* TableHourDelegate.swift in Sources */,
 				DC5505282652AFBD00B7EE29 /* PropertiesRequest.swift in Sources */,
+				577541432661767500C0DC6B /* NatFont.swift in Sources */,
 				DC55052A2652AFD200B7EE29 /* ReturnSMS.swift in Sources */,
 				DCE2A9422653FF73007B99B9 /* Results.swift in Sources */,
+				5775413E266175D100C0DC6B /* UIView.swift in Sources */,
 				AD41F232256D51C300F0E467 /* Coordinator.swift in Sources */,
 				DC55052C2652AFDB00B7EE29 /* APIResponse.swift in Sources */,
 				6E10C7152574538E00A39F3F /* UIButton.swift in Sources */,
