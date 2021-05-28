@@ -5,6 +5,7 @@ PODS:
   - iOSSnapshotTestCase/Core (6.2.0)
   - iOSSnapshotTestCase/SwiftSupport (6.2.0):
     - iOSSnapshotTestCase/Core
+  - NatDS (4.0.1)
   - Nimble (9.0.0)
   - Nimble-Snapshots (9.1.0):
     - Nimble-Snapshots/Core (= 9.1.0)
@@ -17,33 +18,40 @@ PODS:
   - Realm/Headers (10.7.2)
   - RealmSwift (10.7.2):
     - Realm (= 10.7.2)
+  - TinyConstraints (4.0.1)
 
 DEPENDENCIES:
   - Alamofire (~> 5.2)
+  - NatDS
   - Nimble
   - Nimble-Snapshots
   - Quick
   - RealmSwift
+  - TinyConstraints
 
 SPEC REPOS:
   trunk:
     - Alamofire
     - iOSSnapshotTestCase
+    - NatDS
     - Nimble
     - Nimble-Snapshots
     - Quick
     - Realm
     - RealmSwift
+    - TinyConstraints
 
 SPEC CHECKSUMS:
   Alamofire: e447a2774a40c996748296fa2c55112fdbbc42f9
   iOSSnapshotTestCase: 9ab44cb5aa62b84d31847f40680112e15ec579a6
+  NatDS: 28f6beec28189bc37e05229bdccb0d1d7d54c88b
   Nimble: 3b4ec3fd40f1dc178058e0981107721c615643d8
   Nimble-Snapshots: 6605431525245f967ca9d558bb12a49da3d040e3
   Quick: 60f0ea3b8e0cfc0df3259a5c06a238ad8b3c46e0
   Realm: e523da9ade306c5ae87e85dc09fdef148d3e1cc1
   RealmSwift: 4f6758c3adbdcc87f7b7777107226532a077f61c
+  TinyConstraints: 8dd91295e56797648c7bc335dd20e1d91ec4c192
 
-PODFILE CHECKSUM: 47dc416e13b8e458626b92a8b86bb7e3cc0af2e7
+PODFILE CHECKSUM: c0cdee629d408fd7b27190669fa22fee37cc118e
 
 COCOAPODS: 1.10.1
