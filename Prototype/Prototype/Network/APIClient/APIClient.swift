@@ -15,11 +15,17 @@ class APIClient {
     static let client = APIClient()
     
     let response = APIResponse()
-    
+
     func execute(){
-        response.execute { retorno, erro in
-            NSLog("Estado -> \(retorno?.descricao as Any)")
-            NSLog("Estado -> \(retorno?.situacao as Any)")
+//        response.execute2 { retorno, erro in
+//            NSLog("Estado -> \(retorno?.descricao as Any)")
+//            NSLog("Estado -> \(retorno?.situacao as Any)")
+//        }
+        
+        response.execute_MessageBird { retorno, error in
+            retorno?.recipients?.items?.forEach({ item in
+                print("Número: \(item.recipient ?? 0) - Status: \(item.status ?? "Error")")
+            })
         }
     }
 }
