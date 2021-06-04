@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct PropertiesForSMS {
+struct PropertiesForSMS_SMSDev {
     static var coordinates:[String:String] = ["Latitude":"","Longitude":""]
     static var userMensage:String = ""
     static var userName:String = ""
@@ -35,21 +35,51 @@ Localização: https://www.google.com/maps/search/?api=1&query=\(coordinates["La
     }()
 }
 
-struct PropertiesRequest {
-    static var path:String = {
+struct PropertiesRequestSMSDev {
+    
+    private var path:String = {
         return "https://api.smsdev.com.br/v1/send"
     }()
     
-    func getApiKey() -> String{
+    private func getApiKey() -> String{
         return "?key=\(apiKey)"
     }
     
-    static var param:[String:Any] =
+    private func getMessage() -> String{
+        return "&msg=\(PropertiesForSMS_SMSDev.mensage)"
+    }
+    
+    private func getAtualDate() -> String{
+        let atualDate = Date.dateAtual()
+        let month = atualDate.month ?? 0
+        if month < 10{
+            return "\(atualDate.day ?? 0)/0\(month)/\(atualDate.year ?? 0)"
+        }
+        return "\(atualDate.day ?? 0)/\(month)/\(atualDate.year ?? 0)"
+    }
+    
+    private lazy var param:[String:Any] =
         [
-         "type":"&type=9",
-            "number":"&number=\(PropertiesForSMS.number)",
-            "msg":"&msg=\(PropertiesForSMS.mensage)",
+            "type":"&type=9",
+            "flash":"&flash=1",
+            "number":"&number=+55\(PropertiesForSMS_SMSDev.number)",
+            "jobdate":"&jobdate=\(self.getAtualDate())",
+            "jobtime":"&jobtime=\(Date.dateAtual().hour ?? 0):\(Date.dateAtual().minute ?? 0)",
         ]
+    
+    static func urlString() -> String{
+        var propertRequest = PropertiesRequestSMSDev()
+        var endPoint = "\(propertRequest.path)"
+        
+        endPoint.append(propertRequest.getApiKey())
+        
+        propertRequest.param.forEach { key,value in
+            endPoint.append(propertRequest.param[key] as? String ?? "Error")
+        }
+        
+        endPoint.append(propertRequest.getMessage())
+        return endPoint
+    }
 
     private var apiKey: String {
         get {

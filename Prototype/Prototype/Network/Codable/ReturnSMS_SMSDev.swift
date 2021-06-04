@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct ReturnSMS:Codable{
+struct ReturnSMS_SMSDev:Codable{
     var situacao:String?
     var codigo:String?
     var id:String?
