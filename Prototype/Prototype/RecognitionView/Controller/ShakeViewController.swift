@@ -46,12 +46,12 @@ class ShakeViewController: UIViewController{
                 guard let latitude = LocationService.share.coordinates.latitude else{return}
                 guard let longitude = LocationService.share.coordinates.longitude else{return}
                 
-                PropertiesForSMS.number = number ?? "Error"
-                PropertiesForSMS.userName = name ?? "Error"
-                PropertiesForSMS.userNumber = number ?? "Error"
-                PropertiesForSMS.userMensage = mensage ?? "Error"
-                PropertiesForSMS.coordinates["Latitude"] = "\(latitude)"
-                PropertiesForSMS.coordinates["Longitude"] = "\(longitude)"
+                PropertiesForSMS_SMSDev.number = number ?? "Error"
+                PropertiesForSMS_SMSDev.userName = name ?? "Error"
+                PropertiesForSMS_SMSDev.userNumber = number ?? "Error"
+                PropertiesForSMS_SMSDev.userMensage = mensage ?? "Error"
+                PropertiesForSMS_SMSDev.coordinates["Latitude"] = "\(latitude)"
+                PropertiesForSMS_SMSDev.coordinates["Longitude"] = "\(longitude)"
                 
                 APIClient.client.execute()
                 

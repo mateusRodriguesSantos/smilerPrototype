@@ -9,17 +9,13 @@ import Foundation
 import Alamofire
 
 protocol ExecuteRequestURLSession{
-    func execute(completion: @escaping (ReturnSMS?,Error?) -> Void)
+    func execute_MessageBird(completion: @escaping (ReturnSMS_MessageBird?,Error?) -> Void)
+    func execute_SMSDev(completion: @escaping (ReturnSMS_SMSDev?,Error?) -> Void)
 }
 
 extension ExecuteRequestURLSession {
-    func sendSMS(completion: @escaping (Data?,Error?) -> Void) {
-        
-        let type = PropertiesRequest.param["type"] as? String ?? "Error"
-        let number = PropertiesRequest.param["number"] as? String ?? "Error"
-        let msg = PropertiesRequest.param["msg"] as? String ?? "Error"
-        let apiKey = PropertiesRequest().getApiKey()
-        let urlString = "\(PropertiesRequest.path)\(apiKey)\(type)\(number)\(msg)"
+    func sendSMS_SMSDev(completion: @escaping (Data?,Error?) -> Void) {
+        let urlString = PropertiesRequestSMSDev.urlString()
         
         //1. Create URL
         if let encoded = urlString.addingPercentEncoding(withAllowedCharacters: .urlFragmentAllowed), let url = URL(string: encoded){
@@ -38,20 +34,40 @@ extension ExecuteRequestURLSession {
             task.resume()
         }
     }
+    
+    func sendSMS_MessageBird(completion: @escaping (Data?,Error?) -> Void) {
+        guard let url = URL(string: PropertiesRequestMessageBird.endPoint),
+              let parameters = PropertiesRequestMessageBird.parameters
+        else{return}
+       
+
+        var request = URLRequest(url: url)
+        request.httpMethod = "POST"
+        request.addValue("AccessKey \(PropertiesRequestMessageBird.apiKeyLive)", forHTTPHeaderField: "Authorization")
+        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.httpBody = parameters
+
+        URLSession.shared.dataTask(with: request) { (data, response, error) in
+            guard error == nil else {
+                completion(nil,error)
+                print(error!.localizedDescription); return }
+            guard let data = data else { print("Empty data"); return }
+
+//            if let str = String(data: data, encoding: .utf8) {
+//                print(str)
+//            }
+            completion(data,error)
+        }.resume()
+    }
 }
 
 protocol ExecuteRequestAlamo{
-    func execute(completion: @escaping (ReturnSMS?,Error?) -> Void)
+    func execute(completion: @escaping (ReturnSMS_SMSDev?,Error?) -> Void)
 }
 
 extension ExecuteRequestAlamo {
     func sendSMS(completion: @escaping (Data?,Error?) -> Void) {
-        
-        let type = PropertiesRequest.param["type"] as? String ?? "Error"
-        let number = PropertiesRequest.param["number"] as? String ?? "Error"
-        let msg = PropertiesRequest.param["msg"] as? String ?? "Error"
-        let apiKey = PropertiesRequest().getApiKey()
-        let urlString = "\(PropertiesRequest.path)\(apiKey)\(type)\(number)\(msg)"
+        let urlString = PropertiesRequestSMSDev.urlString()
         
         if let encoded = urlString.addingPercentEncoding(withAllowedCharacters: .urlFragmentAllowed), let url = URL(string: encoded){
             AF.request(url, method: .post).response { response in
