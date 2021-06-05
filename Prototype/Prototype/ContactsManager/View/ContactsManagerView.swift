@@ -6,26 +6,43 @@
 //
 
 import UIKit
+import NatDS
+import NatDSIcons
 
-class ContactsManagerView:UIView {
+class ContactsManagerView: UIView {
 
+    //NavigationBar
+    private let navigationBar = AppNavigationBar(title: .text("Contatos"), leftButton: .back)
+    
+//    private let tableViewContacts: UITableView = {
+//       let tableView = UITableView()
+//        tableView.register(<#T##cellClass: AnyClass?##AnyClass?#>, forCellReuseIdentifier: <#T##String#>)
+//        return tableView
+//    }()
+    
+    
     override init(frame: CGRect) {
         super.init(frame: .zero)
-        let colorBack = UIColor(red: 213/255.0, green: 212/255.0, blue: 220/255.0, alpha: 1.0)
-        backgroundColor = colorBack
+        setupViews()
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
 }
 
 extension ContactsManagerView:ViewCodable {
     func setupViewHierarchy() {
-       
+        self.addSubview(navigationBar)
+//        self.addSubview(tableViewContacts)
     }
     
     func setupConstraints() {
 
+    }
+    
+    func setupAditionalConfiguration() {
+        self.backgroundColor = NatColors.background
     }
 }
