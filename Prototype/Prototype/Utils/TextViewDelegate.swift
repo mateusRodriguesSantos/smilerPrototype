@@ -14,7 +14,7 @@ enum TextBase{
     case error
 }
 
-class TextFieldDelegate:NSObject, UITextViewDelegate{
+class TextViewDelegate:NSObject, UITextViewDelegate{
     
     var sizeOriginView:CGFloat?
     var nameKeyUserDefault:String?
@@ -63,7 +63,7 @@ class TextFieldDelegate:NSObject, UITextViewDelegate{
         guard let menuViewController = self.ownerView as? MenuViewController else{return}
         menuViewController.constraintTopAnchorViewBase?.constant = 0
         
-        UIView.animate(withDuration: 0.5) {
+        UIView.animate(withDuration: 0.2) {
             menuViewController.view.layoutIfNeeded()
         }
     }

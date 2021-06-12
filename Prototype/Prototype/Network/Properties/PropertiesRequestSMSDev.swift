@@ -7,34 +7,6 @@
 
 import Foundation
 
-struct PropertiesForSMS_SMSDev {
-    static var coordinates:[String:String] = ["Latitude":"","Longitude":""]
-    static var userMensage:String = ""
-    static var userName:String = ""
-    static var userNumber:String = ""
-    static var number:String = ""
-    static var numbers:[String:String] = [:]
-    
-    static var mensage:String = {
-        return """
-\(userMensage)
-
-Mensagem Enviada por:
-
-\(userName)
-
-Número:
-\(userNumber)
-
-
-
-
-Localização: https://www.google.com/maps/search/?api=1&query=\(coordinates["Latitude"] ?? "Error"),\(coordinates["Longitude"] ?? "Error")
-"""
-        
-    }()
-}
-
 struct PropertiesRequestSMSDev {
     
     private var path:String = {
@@ -46,7 +18,7 @@ struct PropertiesRequestSMSDev {
     }
     
     private func getMessage() -> String{
-        return "&msg=\(PropertiesForSMS_SMSDev.mensage)"
+        return "&msg=\(PropertiesForSMS.mensage)"
     }
     
     private func getAtualDate() -> String{
@@ -62,7 +34,7 @@ struct PropertiesRequestSMSDev {
         [
             "type":"&type=9",
             "flash":"&flash=1",
-            "number":"&number=+55\(PropertiesForSMS_SMSDev.number)",
+            "number":"&number=+55\(PropertiesForSMS.number)",
             "jobdate":"&jobdate=\(self.getAtualDate())",
             "jobtime":"&jobtime=\(Date.dateAtual().hour ?? 0):\(Date.dateAtual().minute ?? 0)",
         ]

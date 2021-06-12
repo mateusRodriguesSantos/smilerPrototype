@@ -19,6 +19,8 @@ class ShakeViewController: UIViewController{
     override func loadView() {
         super.loadView()
         self.view = baseView
+        NotificationService.share.authorizeNotification()
+        LocationService.share.requestAuthorization()
     }
     
     override func viewDidLoad() {
@@ -26,11 +28,11 @@ class ShakeViewController: UIViewController{
         addTriggers()
         LocationService.share.delegateAuthorization = self
         LocationService.share.delegateLocation = self
-        LocationService.share.locationManager.startUpdatingLocation()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         navigationController?.navigationBar.isHidden = true
+        LocationService.share.locationManager.startUpdatingLocation()
         runSpinnerView()
     }
     
@@ -38,26 +40,35 @@ class ShakeViewController: UIViewController{
         if motion == .motionShake {
             //Envio de mensagem para todos
             if UserDefaults.standard.value(forKey: "Mensage") != nil && UserDefaults.standard.value(forKey: "Name") != nil &&  UserDefaults.standard.value(forKey: "Number") != nil{
-         
-                let name = UserDefaults.standard.value(forKey: "Name") as? String
-                let number = UserDefaults.standard.value(forKey: "Number") as? String
-                let mensage = UserDefaults.standard.value(forKey: "Mensage") as? String
                 
-                guard let latitude = LocationService.share.coordinates.latitude else{return}
-                guard let longitude = LocationService.share.coordinates.longitude else{return}
-                
-                PropertiesForSMS_SMSDev.number = number ?? "Error"
-                PropertiesForSMS_SMSDev.userName = name ?? "Error"
-                PropertiesForSMS_SMSDev.userNumber = number ?? "Error"
-                PropertiesForSMS_SMSDev.userMensage = mensage ?? "Error"
-                PropertiesForSMS_SMSDev.coordinates["Latitude"] = "\(latitude)"
-                PropertiesForSMS_SMSDev.coordinates["Longitude"] = "\(longitude)"
-                
+                setUpRequest()
+
                 APIClient.client.execute()
                 
                 UIViewController.alertFactory("Aviso", "Mensagens enviadas!!!", self)
+            }else{
+                UIViewController.alertFactory("Aviso", "Configure os dados de envio, no Menu.", self)
             }
         }
+    }
+}
+
+//MARK: Set Up Request
+extension ShakeViewController{
+    func setUpRequest(){
+        let name = UserDefaults.standard.value(forKey: "Name") as? String
+        let number = UserDefaults.standard.value(forKey: "Number") as? String
+        let mensage = UserDefaults.standard.value(forKey: "Mensage") as? String
+        
+        guard let latitude = LocationService.share.coordinates.latitude else{return}
+        guard let longitude = LocationService.share.coordinates.longitude else{return}
+        
+        PropertiesForSMS.number = number ?? "Error"
+        PropertiesForSMS.userName = name ?? "Error"
+        PropertiesForSMS.userNumber = number ?? "Error"
+        PropertiesForSMS.userMensage = mensage ?? "Error"
+        PropertiesForSMS.coordinates["Latitude"] = "\(latitude)"
+        PropertiesForSMS.coordinates["Longitude"] = "\(longitude)"
     }
 }
 
@@ -82,8 +93,10 @@ extension ShakeViewController{
 //MARK: DelegateLocation
 extension ShakeViewController:DelegateLocation{
     func informlocation() {
-        print(LocationService.share.coordinates.latitude as Any)
-        print(LocationService.share.coordinates.longitude as Any)
+//        guard let latitude = LocationService.share.coordinates.latitude else{return}
+//        guard let longitude = LocationService.share.coordinates.longitude else{return}
+//        print("Latitude: \(latitude) Longitude: \(longitude)")
+
         removeSpinner()
     }
 }

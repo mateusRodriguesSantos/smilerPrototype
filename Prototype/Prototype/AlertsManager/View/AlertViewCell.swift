@@ -33,22 +33,11 @@ class AlertViewCell: UITableViewCell {
         return button
     }()
     
-    let title:UILabel = {
+    let hour:UILabel = {
         let label = UILabel(frame: .zero)
         label.numberOfLines = 0
         label.textAlignment = .left
         label.font = UIFont(name: Fonts.RobotoRegular, size: 30)
-        label.textColor = .black
-        label.translatesAutoresizingMaskIntoConstraints = false
-        return label
-    }()
-    
-    let subTitle:UILabel = {
-        let label = UILabel(frame: .zero)
-        label.numberOfLines = 0
-        label.text = "22/07/2021"
-        label.textAlignment = .left
-        label.font = UIFont(name: Fonts.RobotoRegular, size: 20)
         label.textColor = .black
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
@@ -83,8 +72,7 @@ class AlertViewCell: UITableViewCell {
 extension AlertViewCell:ViewCodable {
     func setupViewHierarchy() {
         self.contentView.addSubview(removeAlertButton)
-        self.addSubview(title)
-        //self.addSubview(subTitle)
+        self.addSubview(hour)
         self.contentView.addSubview(switchActive)
         self.addSubview(separatorView)
     }
@@ -97,15 +85,9 @@ extension AlertViewCell:ViewCodable {
         ])
         
         NSLayoutConstraint.activate([
-            title.trailingAnchor.constraint(equalTo: self.removeAlertButton.leadingAnchor, constant: 100),
-            title.centerYAnchor.constraint(equalTo: self.centerYAnchor),
+            hour.trailingAnchor.constraint(equalTo: self.removeAlertButton.leadingAnchor, constant: 100),
+            hour.centerYAnchor.constraint(equalTo: self.centerYAnchor),
         ])
-        
-//        NSLayoutConstraint.activate([
-//            subTitle.trailingAnchor.constraint(equalTo: self.removeAlertButton.leadingAnchor, constant: 135),
-//            subTitle.topAnchor.constraint(equalTo: self.title.bottomAnchor),
-//            //subTitle.centerYAnchor.constraint(equalTo: self.centerYAnchor),
-//        ])
         
         NSLayoutConstraint.activate([
             switchActive.trailingAnchor.constraint(equalTo: self.trailingAnchor,constant: -20),

@@ -12,9 +12,7 @@ import CoreData
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        NotificationService.share.authorizeNotification()
-        LocationService.share.requestAuthorization()
-        //LocationService.share.locationManager.startUpdatingLocation()
+   
         return true
     }
 

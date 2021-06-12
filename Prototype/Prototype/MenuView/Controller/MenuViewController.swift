@@ -13,36 +13,27 @@ class MenuViewController: UIViewController{
     let viewBase = MenuView()
     
     var constraintTopAnchorViewBase:NSLayoutConstraint?
-
-    lazy var textFieldDelegate1:TextFieldDelegate = {
-        let delegate = TextFieldDelegate(.name,0, "Name", self)
+    
+    lazy var textFieldDelegate1:TextViewDelegate = {
+        let delegate = TextViewDelegate(.name,0, "Name", self)
         return delegate
     }()
-    lazy var textFieldDelegate2:TextFieldDelegate = {
-        let delegate = TextFieldDelegate(.number,-100, "Number", self)
+    lazy var textFieldDelegate2:TextViewDelegate = {
+        let delegate = TextViewDelegate(.number,-(UIScreen.main.bounds.height * 0.2), "Number", self)
         return delegate
     }()
-    lazy var textFieldDelegate3:TextFieldDelegate = {
-        let delegate = TextFieldDelegate(.menssage,-350, "Mensage", self)
+    lazy var textFieldDelegate3:TextViewDelegate = {
+        let delegate = TextViewDelegate(.menssage,-(UIScreen.main.bounds.height * 0.4), "Mensage", self)
         return delegate
     }()
-  
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         viewBase.translatesAutoresizingMaskIntoConstraints = false
         self.view.addSubview(viewBase)
         
-        constraintTopAnchorViewBase = viewBase.topAnchor.constraint(equalTo: self.view.layoutMarginsGuide.topAnchor, constant: 0)
-        if let constraintTop = constraintTopAnchorViewBase{
-            NSLayoutConstraint.activate([
-                viewBase.leadingAnchor.constraint(equalTo: self.view.leadingAnchor),
-                viewBase.trailingAnchor.constraint(equalTo: self.view.trailingAnchor),
-                viewBase.heightAnchor.constraint(equalTo: self.view.heightAnchor),
-                viewBase.topAnchor.constraint(equalTo: self.view.layoutMarginsGuide.topAnchor, constant: 0),
-                constraintTop,
-            ])
-        }
+        setUpConstraints()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -50,16 +41,13 @@ class MenuViewController: UIViewController{
         setUpNavBar()
         //Notification if app is on background
         let notificationCenter = NotificationCenter.default
-            notificationCenter.addObserver(self, selector: #selector(appMovedToBackground), name: UIApplication.didBecomeActiveNotification, object: nil)
+        notificationCenter.addObserver(self, selector: #selector(appMovedToBackground), name: UIApplication.didBecomeActiveNotification, object: nil)
         //Get UserDefault data
         userDefaultData()
         //Button Triggers
         addTriggers()
         //TextField Delegate
-        viewBase.viewAcessory.delegateEndEditionKeyboard = self
-        viewBase.textFieldNameView.delegate = textFieldDelegate1
-        viewBase.textFieldNumberView.delegate = textFieldDelegate2
-        viewBase.textFieldMensagesView.delegate = textFieldDelegate3
+        setUpDelegate()
     }
     
 }
@@ -67,14 +55,33 @@ class MenuViewController: UIViewController{
 //MARK: DelegateEndEditionKeyboard
 extension MenuViewController:DelegateEndEditionKeyboard{
     func endEditionKeyboard() {
-        textFieldDelegate1.textViewDidEndEditing(viewBase.textFieldNameView)
-        textFieldDelegate2.textViewDidEndEditing(viewBase.textFieldNumberView)
-        textFieldDelegate3.textViewDidEndEditing(viewBase.textFieldMensagesView)
+        textFieldDelegate1.textViewDidEndEditing(viewBase.nameTextView)
+        textFieldDelegate2.textViewDidEndEditing(viewBase.numberViewTextView)
+        textFieldDelegate3.textViewDidEndEditing(viewBase.mensagesTextView)
     }
 }
 
 //MARK: Set Ups View
 extension MenuViewController{
+    
+    func setUpConstraints(){
+        constraintTopAnchorViewBase = viewBase.topAnchor.constraint(equalTo: self.view.layoutMarginsGuide.topAnchor, constant: 0)
+        
+        NSLayoutConstraint.activate([
+            viewBase.leadingAnchor.constraint(equalTo: self.view.leadingAnchor),
+            viewBase.trailingAnchor.constraint(equalTo: self.view.trailingAnchor),
+            viewBase.heightAnchor.constraint(equalTo: self.view.heightAnchor),
+            viewBase.topAnchor.constraint(equalTo: self.view.layoutMarginsGuide.topAnchor, constant: 0),
+        ])
+    }
+    
+    func setUpDelegate(){
+        viewBase.viewAcessory.delegateEndEditionKeyboard = self
+        viewBase.nameTextView.delegate = textFieldDelegate1
+        viewBase.numberViewTextView.delegate = textFieldDelegate2
+        viewBase.mensagesTextView.delegate = textFieldDelegate3
+    }
+    
     func setUpNavBar(){
         let apperance = [NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 18)]
         _ = navigationController?.navigationBar.layer.addBorder(edge: .bottom, color: UIColor.black, thickness: 0.28)
@@ -87,16 +94,16 @@ extension MenuViewController{
     
     func userDefaultData(){
         if UserDefaults.standard.value(forKey: "Name") != nil {
-            viewBase.textFieldNameView.alpha = 1
-            viewBase.textFieldNameView.text = UserDefaults.standard.value(forKey: "Name") as? String
+            viewBase.nameTextView.alpha = 1
+            viewBase.nameTextView.text = UserDefaults.standard.value(forKey: "Name") as? String
         }
         if UserDefaults.standard.value(forKey: "Number") != nil {
-            viewBase.textFieldNumberView.alpha = 1
-            viewBase.textFieldNumberView.text = UserDefaults.standard.value(forKey: "Number") as? String
+            viewBase.numberViewTextView.alpha = 1
+            viewBase.numberViewTextView.text = UserDefaults.standard.value(forKey: "Number") as? String
         }
         if UserDefaults.standard.value(forKey: "Mensage") != nil {
-            viewBase.textFieldMensagesView.alpha = 1
-            viewBase.textFieldMensagesView.text = UserDefaults.standard.value(forKey: "Mensage") as? String
+            viewBase.mensagesTextView.alpha = 1
+            viewBase.mensagesTextView.text = UserDefaults.standard.value(forKey: "Mensage") as? String
         }
         
         viewBase.switchShareLocationView.isOn = UserDefaults.standard.value(forKey: "switch_location") as? Bool ?? true
@@ -130,6 +137,7 @@ extension MenuViewController{
     
     @objc func appMovedToBackground() {
         print("App return of background!")
+        LocationService.share.locationManager.startUpdatingLocation()
         coordinator?.navigateToShakeViewController()
     }
 }

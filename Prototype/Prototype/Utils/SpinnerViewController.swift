@@ -35,7 +35,7 @@ class SpinnerViewController: UIViewController {
         viewSpinner.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
         viewSpinner.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         viewSpinner.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.4).isActive = true
-        viewSpinner.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.18).isActive = true
+        viewSpinner.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.2).isActive = true
         
         let blurEffect = UIBlurEffect(style: UIBlurEffect.Style.extraLight)
         let blurEffectView = UIVisualEffectView(effect: blurEffect)
@@ -50,7 +50,7 @@ class SpinnerViewController: UIViewController {
         viewSpinner.addSubview(spinner)
 
         spinner.centerXAnchor.constraint(equalTo: viewSpinner.centerXAnchor).isActive = true
-        spinner.topAnchor.constraint(equalTo: viewSpinner.topAnchor, constant: 45).isActive = true
+        spinner.topAnchor.constraint(equalTo: viewSpinner.topAnchor, constant: 20).isActive = true
         
         viewSpinner.addSubview(mensage)
         

@@ -14,7 +14,7 @@ class AlertsView:UIView {
         label.text = "Horários de alerta"
         label.numberOfLines = 0
         label.font = UIFont.systemFont(ofSize: 30)
-        label.textColor = .black
+        label.textColor = .white
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -24,7 +24,7 @@ class AlertsView:UIView {
         let label = UILabel(frame: .zero)
         label.text = "Adicionar"
         label.numberOfLines = 0
-        label.textColor = colorBack
+        label.textColor = .white
         label.backgroundColor = .clear
         label.font = UIFont.systemFont(ofSize: 15)
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -51,7 +51,7 @@ class AlertsView:UIView {
         button.setTitleColor(.black, for: .normal)
         button.setTitle("+", for: .normal)
         button.tintColor = .white
-        button.setTitleColor(.systemBlue, for: .normal)
+        button.setTitleColor(.black, for: .normal)
         button.titleLabel?.textColor = .systemBlue
         button.titleLabel?.textAlignment = .left
         button.titleLabel?.font = UIFont(name: Fonts.RobotoRegular, size: 20)
@@ -82,13 +82,14 @@ class AlertsView:UIView {
     lazy var pickerAlarmView:UIDatePicker = {
         let picker = UIDatePicker()
         picker.locale = Locale(identifier: "en_BR")
-        picker.preferredDatePickerStyle = .automatic
+        picker.preferredDatePickerStyle = .inline
         picker.backgroundColor = .clear
         picker.datePickerMode = .time
         picker.translatesAutoresizingMaskIntoConstraints = false
         return picker
     }()
     
+    //MARK: TableView
     lazy var tableDelegate:TableHourDelegate = {
        let delegate = TableHourDelegate()
         return delegate
@@ -110,15 +111,13 @@ class AlertsView:UIView {
         tableView.tableFooterView = UIView()
         tableView.delegate = tableDelegate
         tableView.dataSource = tableDataSource
-        //tableView.layer.borderWidth = 0.28
-        //tableView.layer.borderColor = UIColor.black.cgColor
         tableView.translatesAutoresizingMaskIntoConstraints = false
         return tableView
     }()
     
     override init(frame: CGRect) {
         super.init(frame: .zero)
-        let colorBack = UIColor(red: 213/255.0, green: 212/255.0, blue: 220/255.0, alpha: 1.0)
+        let colorBack = UIColor(red: 41/255.0, green: 42/255.0, blue: 48/255.0, alpha: 1.0)
         backgroundColor = colorBack
         self.isUserInteractionEnabled = true
         setupViews()
@@ -133,8 +132,8 @@ extension AlertsView:ViewCodable {
     func setupViewHierarchy() {
         self.addSubview(title)
         self.addSubview(subTitle)
-        self.addSubview(addHourAlert)
         self.addSubview(addAlarmView)
+        self.addSubview(addHourAlert)
         self.addSubview(tableView)
         
         //Suplementary View
@@ -175,14 +174,17 @@ extension AlertsView:ViewCodable {
             addAlarmView.topAnchor.constraint(equalTo: self.subTitle.bottomAnchor,constant: 10),
         ])
         
+    
+        let constraintTitleAlarmView = titleAlarmView.leadingAnchor.constraint(equalTo: self.leadingAnchor,constant: 10)
+        constraintTitleAlarmView.priority = UILayoutPriority(999)
+        constraintTitleAlarmView.isActive = true
+        
+        let pickerAlarmTrailingAnchor = pickerAlarmView.trailingAnchor.constraint(equalTo: addHourAlert.leadingAnchor, constant: -0.3)
+        pickerAlarmTrailingAnchor.priority = UILayoutPriority(999)
+        
         NSLayoutConstraint.activate([
-            titleAlarmView.leadingAnchor.constraint(equalTo: self.leadingAnchor,constant: 10)
-        ])
-
-        NSLayoutConstraint.activate([
-            pickerAlarmView.widthAnchor.constraint(equalTo: addAlarmView.widthAnchor, multiplier: 0.2),
-            pickerAlarmView.heightAnchor.constraint(equalTo: addAlarmView.heightAnchor, multiplier: 0.9),
-            pickerAlarmView.trailingAnchor.constraint(equalTo: addHourAlert.leadingAnchor, constant: -0.8)
+            pickerAlarmView.widthAnchor.constraint(equalTo: addAlarmView.widthAnchor, multiplier: 0.3),
+            pickerAlarmTrailingAnchor,
         ])
         
         NSLayoutConstraint.activate([

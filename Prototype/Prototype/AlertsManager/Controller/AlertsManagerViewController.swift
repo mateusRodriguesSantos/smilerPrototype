@@ -25,7 +25,8 @@ class AlertsManagerViewController: UIViewController{
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        self.navigationController?.isNavigationBarHidden = false
+        navigationController?.isNavigationBarHidden = false
+        self.navigationController?.navigationBar.tintColor = .black
         
         //Check if already exists alerts
         if viewBase.tableDataSource.hours.isEmpty == false{
@@ -59,7 +60,7 @@ extension AlertsManagerViewController{
         if type == .edit{
             let edit = UIBarButtonItem(barButtonSystemItem: type, target: self, action: #selector(playTappedEditAction))
             navigationItem.rightBarButtonItems = [edit]
-        }else{
+        }else if type == .trash{
             let edit = UIBarButtonItem(barButtonSystemItem: type, target: self, action: #selector(playTappedTrashAction))
             navigationItem.rightBarButtonItems = [edit]
         }
