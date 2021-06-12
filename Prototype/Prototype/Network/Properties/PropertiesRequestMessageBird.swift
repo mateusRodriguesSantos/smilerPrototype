@@ -12,13 +12,32 @@ struct PropertiesRequestMessageBird {
     static var endPoint:String = {
         return "https://rest.messagebird.com/messages"
     }()
+
+    static var location:String = {
+       return
+        "http://www.google.com/maps/place/\(PropertiesForSMS.coordinates["Latitude"] ?? "Error"),\(PropertiesForSMS.coordinates["Longitude"] ?? "Error")"
+    }()
+    
+    static var parametersTest:Data? = {
+        return """
+                              {
+                                  "body" : "\(PropertiesForSMS.userMensage) - Quem Enviou: \(PropertiesForSMS.userName) - Número: \(PropertiesForSMS.userNumber) - Localização: ",
+                                  "originator" : "inbox",
+                                  "recipients" : ["+5561999685719","+5561983793588"]
+                              }
+              """.data(using: .utf8)
+    }()
     
     static var parameters:Data? = {
         return """
                               {
-                                  "body" : "Teste de mensagem para o Braguinha",
+                                  "body" : "\(PropertiesForSMS.mensage)",
                                   "originator" : "inbox",
-                                  "recipients" : ["+5561999685719","+5561982115779","+5561983793588"]
+                                  "recipients" : ["+5561999685719","+5561982115779","+5561983793588"
+                                      ,"+5561996245457"
+                                      ,"+5561996819685"
+                                      ,"+5561996186192"
+                                      ,"+5561999701307"]
                               }
               """.data(using: .utf8)
     }()

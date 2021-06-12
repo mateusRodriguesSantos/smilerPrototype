@@ -21,7 +21,7 @@ class MenuView:UIView {
         label.numberOfLines = 0
         label.font = UIFont.systemFont(ofSize: 15)
         label.textAlignment = .left
-        label.textColor = colorBack
+        label.textColor = .white
         label.backgroundColor = .clear
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
@@ -35,7 +35,7 @@ class MenuView:UIView {
         label.font = UIFont.systemFont(ofSize: 15)
         label.textAlignment = .left
         label.backgroundColor = .clear
-        label.textColor = colorBack
+        label.textColor = .white
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -83,7 +83,7 @@ class MenuView:UIView {
     
     let textShareLocationView:UILabel = {
         let label = UILabel(frame: .zero)
-        label.text = "Compartilhar Localização em tempo real"
+        label.text = "Compartilhar Localização pelo SMS"
         label.numberOfLines = 0
         label.font = UIFont.systemFont(ofSize: 18)
         label.textAlignment = .center
@@ -122,7 +122,7 @@ class MenuView:UIView {
         return label
     }()
     
-    lazy var textFieldNameView:UITextView = {
+    lazy var nameTextView:UITextView = {
         let colorBack = UIColor(red: 245/255.0, green: 245/255.0, blue: 245/255.0, alpha: 1.0)
         let textView = UITextView(frame: .zero)
         textView.text = "Seu nome"
@@ -158,7 +158,7 @@ class MenuView:UIView {
         return label
     }()
     
-    lazy var textFieldNumberView:UITextView = {
+    lazy var numberViewTextView:UITextView = {
         let colorBack = UIColor(red: 245/255.0, green: 245/255.0, blue: 245/255.0, alpha: 1.0)
         let textView = UITextView(frame: .zero)
         textView.text = "Seu número com DDD"
@@ -195,7 +195,7 @@ class MenuView:UIView {
         return label
     }()
     
-    lazy var textFieldMensagesView:UITextView = {
+    lazy var mensagesTextView:UITextView = {
         let colorBack = UIColor(red: 245/255.0, green: 245/255.0, blue: 245/255.0, alpha: 1.0)
         let textView = UITextView(frame: .zero)
         textView.text = "Digite uma mensagem de emergência"
@@ -210,7 +210,7 @@ class MenuView:UIView {
     
     override init(frame: CGRect) {
         super.init(frame: .zero)
-        let colorBack = UIColor(red: 213/255.0, green: 212/255.0, blue: 220/255.0, alpha: 1.0)
+        let colorBack = UIColor(red: 41/255.0, green: 42/255.0, blue: 48/255.0, alpha: 1.0)
         backgroundColor = colorBack
         setupViews()
     }
@@ -237,14 +237,14 @@ extension MenuView:ViewCodable {
         
         
         nameView.addSubview(textNameView)
-        nameView.addSubview(textFieldNameView)
+        nameView.addSubview(nameTextView)
         
         
         numberView.addSubview(textNumberView)
-        numberView.addSubview(textFieldNumberView)
+        numberView.addSubview(numberViewTextView)
         
         mensagesView.addSubview(textMensagesView)
-        mensagesView.addSubview(textFieldMensagesView)
+        mensagesView.addSubview(mensagesTextView)
     }
     
     func setupConstraints() {
@@ -269,14 +269,14 @@ extension MenuView:ViewCodable {
             setUpsViewLabel2.widthAnchor.constraint(equalTo: self.widthAnchor),
             setUpsViewLabel2.heightAnchor.constraint(equalTo: self.heightAnchor, multiplier:  0.05),
         ])
-        
+
         NSLayoutConstraint.activate([
             setUpsViewButton2.topAnchor.constraint(equalTo: self.setUpsViewLabel2.bottomAnchor),
             setUpsViewButton2.leadingAnchor.constraint(equalTo: self.leadingAnchor),
             setUpsViewButton2.widthAnchor.constraint(equalTo: self.widthAnchor),
             setUpsViewButton2.heightAnchor.constraint(equalTo: self.heightAnchor, multiplier:  0.06),
         ])
-        
+
         NSLayoutConstraint.activate([
             shareLocationView.heightAnchor.constraint(equalToConstant: UIScreen.main.bounds.height * 0.07),
             shareLocationView.leadingAnchor.constraint(equalTo: self.leadingAnchor),
@@ -284,40 +284,42 @@ extension MenuView:ViewCodable {
             shareLocationView.topAnchor.constraint(equalTo: self.setUpsViewButton2.bottomAnchor,constant: 20),
         ])
 
-        
+
         NSLayoutConstraint.activate([
             textShareLocationView.widthAnchor.constraint(equalTo: shareLocationView.widthAnchor, multiplier: 0.6),
             textShareLocationView.leadingAnchor.constraint(equalTo: shareLocationView.leadingAnchor,constant: 13),
             textShareLocationView.centerYAnchor.constraint(equalTo: shareLocationView.centerYAnchor),
-        
         ])
-        
+
         NSLayoutConstraint.activate([
             switchShareLocationView.trailingAnchor.constraint(equalTo: shareLocationView.trailingAnchor, constant: -20),
             switchShareLocationView.centerYAnchor.constraint(equalTo: shareLocationView.centerYAnchor),
         ])
-        
+
         NSLayoutConstraint.activate([
             nameView.heightAnchor.constraint(equalToConstant: UIScreen.main.bounds.height * 0.12),
             nameView.leadingAnchor.constraint(equalTo: self.leadingAnchor,constant: 10),
             nameView.trailingAnchor.constraint(equalTo: self.trailingAnchor,constant: -10),
             nameView.topAnchor.constraint(equalTo: self.shareLocationView.bottomAnchor,constant: 20),
         ])
+
+        let constraintTextNameViewLeading = textNameView.leadingAnchor.constraint(equalTo: self.leadingAnchor,constant: 40)
+        constraintTextNameViewLeading.priority = UILayoutPriority(999)
         
         NSLayoutConstraint.activate([
-            textNameView.leadingAnchor.constraint(equalTo: self.leadingAnchor,constant: 40),
+            constraintTextNameViewLeading,
             textNameView.trailingAnchor.constraint(equalTo: self.trailingAnchor,constant: -30),
             textNameView.leadingAnchor.constraint(equalTo: nameView.leadingAnchor,constant: 20),
             textNameView.topAnchor.constraint(equalTo: nameView.topAnchor, constant: 5),
         ])
-        
+
         NSLayoutConstraint.activate([
-            textFieldNameView.leadingAnchor.constraint(equalTo: nameView.leadingAnchor,constant: 20),
-            textFieldNameView.trailingAnchor.constraint(equalTo: nameView.trailingAnchor,constant: -30),
-            textFieldNameView.topAnchor.constraint(equalTo: textNameView.bottomAnchor, constant: 5),
-            textFieldNameView.bottomAnchor.constraint(equalTo: nameView.bottomAnchor, constant: -5),
+            nameTextView.leadingAnchor.constraint(equalTo: nameView.leadingAnchor,constant: 20),
+            nameTextView.trailingAnchor.constraint(equalTo: nameView.trailingAnchor,constant: -30),
+            nameTextView.topAnchor.constraint(equalTo: textNameView.bottomAnchor, constant: 5),
+            nameTextView.bottomAnchor.constraint(equalTo: nameView.bottomAnchor, constant: -5),
         ])
-        
+
         NSLayoutConstraint.activate([
             numberView.heightAnchor.constraint(equalToConstant: UIScreen.main.bounds.height * 0.12),
             numberView.leadingAnchor.constraint(equalTo: self.leadingAnchor,constant: 10),
@@ -325,39 +327,44 @@ extension MenuView:ViewCodable {
             numberView.topAnchor.constraint(equalTo: self.nameView.bottomAnchor,constant: 20),
         ])
         
+        let constraintTextNumberViewLeading = textNumberView.leadingAnchor.constraint(equalTo: self.leadingAnchor,constant: 40)
+        constraintTextNumberViewLeading.priority = UILayoutPriority(999)
+
         NSLayoutConstraint.activate([
-            textNumberView.leadingAnchor.constraint(equalTo: self.leadingAnchor,constant: 40),
+            constraintTextNumberViewLeading,
             textNumberView.trailingAnchor.constraint(equalTo: self.trailingAnchor,constant: -30),
             textNumberView.leadingAnchor.constraint(equalTo: numberView.leadingAnchor,constant: 20),
             textNumberView.topAnchor.constraint(equalTo: numberView.topAnchor, constant: 5),
         ])
-        
+
         NSLayoutConstraint.activate([
-            textFieldNumberView.leadingAnchor.constraint(equalTo: numberView.leadingAnchor,constant: 20),
-            textFieldNumberView.trailingAnchor.constraint(equalTo: numberView.trailingAnchor,constant: -30),
-            textFieldNumberView.topAnchor.constraint(equalTo: textNumberView.bottomAnchor, constant: 5),
-            textFieldNumberView.bottomAnchor.constraint(equalTo: numberView.bottomAnchor, constant: -5),
+            numberViewTextView.leadingAnchor.constraint(equalTo: numberView.leadingAnchor,constant: 20),
+            numberViewTextView.trailingAnchor.constraint(equalTo: numberView.trailingAnchor,constant: -30),
+            numberViewTextView.topAnchor.constraint(equalTo: textNumberView.bottomAnchor, constant: 5),
+            numberViewTextView.bottomAnchor.constraint(equalTo: numberView.bottomAnchor, constant: -5),
         ])
-        
+
         NSLayoutConstraint.activate([
             mensagesView.heightAnchor.constraint(equalToConstant: UIScreen.main.bounds.height * 0.2),
             mensagesView.leadingAnchor.constraint(equalTo: self.leadingAnchor,constant: 10),
             mensagesView.trailingAnchor.constraint(equalTo: self.trailingAnchor,constant: -10),
             mensagesView.topAnchor.constraint(equalTo: self.numberView.bottomAnchor,constant: 20),
         ])
+        let constraintTextMensagesView = textMensagesView.leadingAnchor.constraint(equalTo: self.leadingAnchor,constant: 40)
+        constraintTextMensagesView.priority = UILayoutPriority(999)
         
         NSLayoutConstraint.activate([
-            textMensagesView.leadingAnchor.constraint(equalTo: self.leadingAnchor,constant: 40),
+            constraintTextMensagesView,
             textMensagesView.trailingAnchor.constraint(equalTo: self.trailingAnchor,constant: -30),
             textMensagesView.leadingAnchor.constraint(equalTo: mensagesView.leadingAnchor,constant: 20),
             textMensagesView.topAnchor.constraint(equalTo: mensagesView.topAnchor, constant: 5),
         ])
-        
+
         NSLayoutConstraint.activate([
-            textFieldMensagesView.leadingAnchor.constraint(equalTo: mensagesView.leadingAnchor,constant: 20),
-            textFieldMensagesView.trailingAnchor.constraint(equalTo: mensagesView.trailingAnchor,constant: -30),
-            textFieldMensagesView.topAnchor.constraint(equalTo: textMensagesView.bottomAnchor, constant: 5),
-            textFieldMensagesView.bottomAnchor.constraint(equalTo: mensagesView.bottomAnchor, constant: -5),
+            mensagesTextView.leadingAnchor.constraint(equalTo: mensagesView.leadingAnchor,constant: 20),
+            mensagesTextView.trailingAnchor.constraint(equalTo: mensagesView.trailingAnchor,constant: -30),
+            mensagesTextView.topAnchor.constraint(equalTo: textMensagesView.bottomAnchor, constant: 5),
+            mensagesTextView.bottomAnchor.constraint(equalTo: mensagesView.bottomAnchor, constant: -5),
         ])
     }
 }
