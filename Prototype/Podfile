@@ -12,6 +12,7 @@ target 'Smiler' do
   pod 'NatDS'
   pod 'NatDSIcons'
   pod 'ABBadgeButton'
+  pod 'SwiftyGif'
 
   target 'SmilerTests' do
     # Pods for testing
