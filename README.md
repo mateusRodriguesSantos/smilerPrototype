@@ -13,17 +13,19 @@ git clone https://github.com/mateusRodriguesSantos/smilerPrototype.git
 
 ![image](https://user-images.githubusercontent.com/51207923/118400001-37778100-b636-11eb-87b3-2d11cfd848d5.png)
 
-3 - Antes de rodar o projeto, é necessário adicionar a chave API_Key da API SMS Dev:
+3 - Antes de rodar o projeto, é necessário adicionar a chave API_Key da API SMS Dev e as chaves de teste e de uso da API MessageBird:
 
-- Para isso, é necessário adicionar o arquivo 'SMSDevAPI_Info.plist' com a chave da API. Crie o arquivo clicando com o botão direito na pasta 'Prototype' e crie um arquivo 'Property List', como na imagem abaixo:
+- Para isso, é necessário adicionar o arquivo 'API_Info.plist' com a chaves das APIs. Crie o arquivo clicando com o botão direito na pasta 'Prototype' e crie um arquivo 'Property List', como na imagem abaixo:
 
 ![image](https://user-images.githubusercontent.com/51207923/118400286-56c2de00-b637-11eb-92f4-e0d341b3f315.png)
 
-- Agora só basta adicionar a API_Key ao arquivo criado com o nome 'SMSDevAPI_Info.plist', como abaixo:
-- 
-![image](https://user-images.githubusercontent.com/51207923/118405320-c774f500-b64d-11eb-80ce-591016a98e9f.png)
+- Agora só basta adicionar as API_Key(s) ao arquivo criado com o nome 'API_Info.plist', como abaixo:
 
-***Para obter a chave KEY da API SMS DEV, basta entrar em contato com um dos administradores do projeto
+
+<img width="999" alt="Screen Shot 2021-06-13 at 17 31 05" src="https://user-images.githubusercontent.com/51207923/121821131-54bb6180-cc6d-11eb-97d4-b231effec531.png">
+
+
+***Para obter as chaves das APIs, basta entrar em contato com um dos administradores do projeto
 
 4 - Agora que é possível buildar o projeto no XCode, fique atento as regras de boas prátias do git:
 
