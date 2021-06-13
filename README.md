@@ -5,15 +5,23 @@ Esse projeto é uma aplicação iOS, com o objetivo de auxiliar vítimas de dive
 
 Como utilizar esse repositório?
 
-1 - Faça o git clone do repositório rodando o seguinte comando em um diretório de sua preferência:
+1 - Certifique-se de ter uma máquina Apple com a capacidade de executar o Xcode, CocoaPods, HomeBrew, RVM e Ruby:
+
+Faça a instalação do Xcode, HomeBrew, CocoaPods, RVM, Ruby em sua máquina Apple.
+
+2 - Instale as dependências do projeto:
+
+Execute o comando "pod install", pelo terminal, na raiz do projeto Xcode - na pasta "Prototype".
+
+2 - Faça o git clone do repositório rodando o seguinte comando em um diretório de sua preferência:
 
 git clone https://github.com/mateusRodriguesSantos/smilerPrototype.git
 
-2 - Em um device com o sistema MacOS, abra o arquivo 'Smiler.xcworkspace' - o projeto em branco, exemplo:
+3 - Em um device com o sistema MacOS, abra o arquivo 'Smiler.xcworkspace' - o projeto em branco, exemplo:
 
 ![image](https://user-images.githubusercontent.com/51207923/118400001-37778100-b636-11eb-87b3-2d11cfd848d5.png)
 
-3 - Antes de rodar o projeto, é necessário adicionar a chave API_Key da API SMS Dev e as chaves de teste e de uso da API MessageBird:
+4 - Antes de rodar o projeto, é necessário adicionar a chave API_Key da API SMS Dev e as chaves de teste e de uso da API MessageBird:
 
 - Para isso, é necessário adicionar o arquivo 'API_Info.plist' com a chaves das APIs. Crie o arquivo clicando com o botão direito na pasta 'Prototype' e crie um arquivo 'Property List', como na imagem abaixo:
 
