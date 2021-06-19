@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import NatDS
 
 class AlertViewCell: UITableViewCell {
     
@@ -37,8 +38,8 @@ class AlertViewCell: UITableViewCell {
         let label = UILabel(frame: .zero)
         label.numberOfLines = 0
         label.textAlignment = .left
-        label.font = UIFont(name: Fonts.RobotoRegular, size: 30)
-        label.textColor = .black
+        label.font = NatFonts.fontRoboto(ofSize: .heading5, withWeight: .bold)
+        label.textColor = .white
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -52,7 +53,7 @@ class AlertViewCell: UITableViewCell {
     
     let separatorView:UIView = {
         let view = UIView(frame: .zero)
-        view.backgroundColor = .black
+        view.backgroundColor = .white
         view.isUserInteractionEnabled = false
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
