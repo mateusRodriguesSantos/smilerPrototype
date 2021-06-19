@@ -93,129 +93,115 @@ class MenuView:UIView {
         label.font = NatFonts.fontRoboto(ofSize: .heading6, withWeight: .regular)
         label.textAlignment = .left
         label.textColor = NatColors.highEmphasis
-        label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
     
-    let switchShareLocationView:UISwitch = {
-        let switch_ = UISwitch(frame: .zero)
-        switch_.isOn = true
-        switch_.translatesAutoresizingMaskIntoConstraints = false
-        return switch_
+    let switchShareLocationView: UISwitch = {
+        let switchButton = UISwitch(frame: .zero)
+        switchButton.isOn = true
+        return switchButton
     }()
     
     //MARK: -NameView
-    
-    let nameView:UIView = {
-        let view = UIView(frame: .zero)
-        view.backgroundColor = .white
-        view.layer.cornerRadius = 20
-        view.translatesAutoresizingMaskIntoConstraints = false
+    let nameView: NatCard = {
+        let view = NatCard()
+        view.configure(borderRadius: true)
+        view.configure(elevation: true)
         return view
     }()
     
-    let textNameView:UILabel = {
-        let colorBack = UIColor(red: 0, green: 0, blue: 0, alpha: 0.5)
+    let textNameView: UILabel = {
         let label = UILabel(frame: .zero)
         label.text = "Meu Nome"
         label.numberOfLines = 0
-        label.font = UIFont.systemFont(ofSize: 18)
+        label.font = NatFonts.fontRoboto(ofSize: .body1, withWeight: .regular)
         label.textAlignment = .left
-        label.backgroundColor = .white
-        label.textColor = .black
-        label.translatesAutoresizingMaskIntoConstraints = false
+        label.textColor = NatColors.highEmphasis
+        label.backgroundColor = .clear
         return label
     }()
     
     lazy var nameTextView:UITextView = {
-        let colorBack = UIColor(red: 245/255.0, green: 245/255.0, blue: 245/255.0, alpha: 1.0)
         let textView = UITextView(frame: .zero)
-        textView.text = "Seu nome"
-        textView.alpha = 0.2
         textView.inputAccessoryView = viewAcessory
+        textView.textColor = NatColors.mediumEmphasis
+        textView.alpha = 0.5
+        textView.font = NatFonts.fontRoboto(ofSize: .body2, withWeight: .regular)
         textView.textAlignment = .left
-        textView.backgroundColor = .white
-        textView.font = UIFont.systemFont(ofSize: 20)
+        textView.backgroundColor = .clear
+        textView.text = "Digite seu nome"
         textView.translatesAutoresizingMaskIntoConstraints = false
         return textView
     }()
     
     //MARK: -Number View
-    
-    let numberView:UIView = {
-        let view = UIView(frame: .zero)
-        view.backgroundColor = .white
-        view.layer.cornerRadius = 20
+    let numberView: NatCard = {
+        let view = NatCard()
+        view.configure(borderRadius: true)
+        view.configure(elevation: true)
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
     
     let textNumberView:UILabel = {
-        let colorBack = UIColor(red: 0, green: 0, blue: 0, alpha: 0.5)
         let label = UILabel(frame: .zero)
-        label.text = "Meu número"
+        label.text = "Meu Número"
         label.numberOfLines = 0
-        label.font = UIFont.systemFont(ofSize: 18)
+        label.font = NatFonts.fontRoboto(ofSize: .body1, withWeight: .regular)
         label.textAlignment = .left
-        label.backgroundColor = .white
-        label.textColor = .black
-        label.translatesAutoresizingMaskIntoConstraints = false
+        label.textColor = NatColors.highEmphasis
+        label.backgroundColor = .clear
         return label
     }()
     
-    lazy var numberViewTextView:UITextView = {
-        let colorBack = UIColor(red: 245/255.0, green: 245/255.0, blue: 245/255.0, alpha: 1.0)
+    lazy var numberViewTextView: UITextView = {
         let textView = UITextView(frame: .zero)
-        textView.text = "Seu número com DDD"
-        textView.alpha = 0.2
-        textView.keyboardType = .numberPad
         textView.inputAccessoryView = viewAcessory
+        textView.textColor = NatColors.mediumEmphasis
+        textView.alpha = 0.5
+        textView.font = NatFonts.fontRoboto(ofSize: .body2, withWeight: .regular)
         textView.textAlignment = .left
-        textView.backgroundColor = .white
-        textView.font = UIFont.systemFont(ofSize: 20)
+        textView.backgroundColor = .clear
+        textView.text = "Digite seu número"
         textView.translatesAutoresizingMaskIntoConstraints = false
         return textView
     }()
     
     //MARK: -MensagesView
-    let mensagesView:UIView = {
-        let view = UIView(frame: .zero)
-        view.backgroundColor = .white
-        view.layer.cornerRadius = 20
+    let mensagesView: NatCard = {
+        let view = NatCard()
+        view.configure(borderRadius: true)
+        view.configure(elevation: true)
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
     
     let textMensagesView:UILabel = {
-        let colorBack = UIColor(red: 0, green: 0, blue: 0, alpha: 0.5)
         let label = UILabel(frame: .zero)
         label.text = "Mensagem"
         label.numberOfLines = 0
-        label.font = UIFont.systemFont(ofSize: 18)
+        label.font = NatFonts.fontRoboto(ofSize: .body1, withWeight: .regular)
         label.textAlignment = .left
-        label.backgroundColor = .white
-        label.textColor = .black
-        label.translatesAutoresizingMaskIntoConstraints = false
+        label.textColor = NatColors.highEmphasis
+        label.backgroundColor = .clear
         return label
     }()
     
-    lazy var mensagesTextView:UITextView = {
-        let colorBack = UIColor(red: 245/255.0, green: 245/255.0, blue: 245/255.0, alpha: 1.0)
+    lazy var mensagesTextView: UITextView = {
         let textView = UITextView(frame: .zero)
-        textView.text = "Digite uma mensagem de emergência"
-        textView.alpha = 0.2
         textView.inputAccessoryView = viewAcessory
+        textView.textColor = NatColors.mediumEmphasis
+        textView.alpha = 0.5
+        textView.text = "Digite uma mensagem de emergência"
+        textView.font = NatFonts.fontRoboto(ofSize: .body2, withWeight: .regular)
         textView.textAlignment = .left
-        textView.backgroundColor = .white
-        textView.font = UIFont.systemFont(ofSize: 20)
+        textView.backgroundColor = .clear
         textView.translatesAutoresizingMaskIntoConstraints = false
         return textView
     }()
     
     override init(frame: CGRect) {
         super.init(frame: .zero)
-        let colorBack = UIColor(red: 41/255.0, green: 42/255.0, blue: 48/255.0, alpha: 1.0)
-        backgroundColor = colorBack
         setupViews()
     }
     
@@ -241,10 +227,8 @@ extension MenuView:ViewCodable {
         shareLocationView.addSubview(textShareLocationView)
         shareLocationView.addSubview(switchShareLocationView)
         
-        
         nameView.addSubview(textNameView)
         nameView.addSubview(nameTextView)
-        
         
         numberView.addSubview(textNumberView)
         numberView.addSubview(numberViewTextView)
@@ -254,7 +238,6 @@ extension MenuView:ViewCodable {
     }
     
     func setupConstraints() {
-        
         setUpsViewLabel1.topToBottom(of: navigationBar)
         setUpsViewLabel1.leadingToSuperview(offset: NatSpacing.small)
         setUpsViewLabel1.trailingToSuperview(offset: NatSpacing.small)
@@ -288,27 +271,17 @@ extension MenuView:ViewCodable {
         textShareLocationView.centerYToSuperview()
         textShareLocationView.leadingToSuperview(offset: NatSpacing.tiny)
 
-        NSLayoutConstraint.activate([
-            switchShareLocationView.trailingAnchor.constraint(equalTo: shareLocationView.trailingAnchor, constant: -20),
-            switchShareLocationView.centerYAnchor.constraint(equalTo: shareLocationView.centerYAnchor),
-        ])
+        switchShareLocationView.centerYToSuperview()
+        switchShareLocationView.trailingToSuperview(offset: NatSpacing.tiny)
 
-        NSLayoutConstraint.activate([
-            nameView.heightAnchor.constraint(equalToConstant: UIScreen.main.bounds.height * 0.12),
-            nameView.leadingAnchor.constraint(equalTo: self.leadingAnchor,constant: 10),
-            nameView.trailingAnchor.constraint(equalTo: self.trailingAnchor,constant: -10),
-            nameView.topAnchor.constraint(equalTo: self.shareLocationView.bottomAnchor,constant: 20),
-        ])
+        nameView.topToBottom(of: textShareLocationView, offset: NatSpacing.semi)
+        nameView.leadingToSuperview(offset: NatSpacing.small)
+        nameView.trailingToSuperview(offset: NatSpacing.small)
+        nameView.height(NatSizes.large)
 
-        let constraintTextNameViewLeading = textNameView.leadingAnchor.constraint(equalTo: self.leadingAnchor,constant: 40)
-        constraintTextNameViewLeading.priority = UILayoutPriority(999)
-        
-        NSLayoutConstraint.activate([
-            constraintTextNameViewLeading,
-            textNameView.trailingAnchor.constraint(equalTo: self.trailingAnchor,constant: -30),
-            textNameView.leadingAnchor.constraint(equalTo: nameView.leadingAnchor,constant: 20),
-            textNameView.topAnchor.constraint(equalTo: nameView.topAnchor, constant: 5),
-        ])
+        textNameView.topToSuperview(offset: NatSpacing.tiny)
+        textNameView.leadingToSuperview(offset: NatSpacing.small)
+        textNameView.centerXToSuperview()
 
         NSLayoutConstraint.activate([
             nameTextView.leadingAnchor.constraint(equalTo: nameView.leadingAnchor,constant: 20),
@@ -317,22 +290,14 @@ extension MenuView:ViewCodable {
             nameTextView.bottomAnchor.constraint(equalTo: nameView.bottomAnchor, constant: -5),
         ])
 
-        NSLayoutConstraint.activate([
-            numberView.heightAnchor.constraint(equalToConstant: UIScreen.main.bounds.height * 0.12),
-            numberView.leadingAnchor.constraint(equalTo: self.leadingAnchor,constant: 10),
-            numberView.trailingAnchor.constraint(equalTo: self.trailingAnchor,constant: -10),
-            numberView.topAnchor.constraint(equalTo: self.nameView.bottomAnchor,constant: 20),
-        ])
-        
-        let constraintTextNumberViewLeading = textNumberView.leadingAnchor.constraint(equalTo: self.leadingAnchor,constant: 40)
-        constraintTextNumberViewLeading.priority = UILayoutPriority(999)
+        numberView.topToBottom(of: nameView, offset: NatSpacing.standard)
+        numberView.leadingToSuperview(offset: NatSpacing.small)
+        numberView.trailingToSuperview(offset: NatSpacing.small)
+        numberView.height(NatSizes.large)
 
-        NSLayoutConstraint.activate([
-            constraintTextNumberViewLeading,
-            textNumberView.trailingAnchor.constraint(equalTo: self.trailingAnchor,constant: -30),
-            textNumberView.leadingAnchor.constraint(equalTo: numberView.leadingAnchor,constant: 20),
-            textNumberView.topAnchor.constraint(equalTo: numberView.topAnchor, constant: 5),
-        ])
+        textNumberView.topToSuperview(offset: NatSpacing.tiny)
+        textNumberView.leadingToSuperview(offset: NatSpacing.small)
+        textNumberView.centerXToSuperview()
 
         NSLayoutConstraint.activate([
             numberViewTextView.leadingAnchor.constraint(equalTo: numberView.leadingAnchor,constant: 20),
@@ -341,21 +306,14 @@ extension MenuView:ViewCodable {
             numberViewTextView.bottomAnchor.constraint(equalTo: numberView.bottomAnchor, constant: -5),
         ])
 
-        NSLayoutConstraint.activate([
-            mensagesView.heightAnchor.constraint(equalToConstant: UIScreen.main.bounds.height * 0.2),
-            mensagesView.leadingAnchor.constraint(equalTo: self.leadingAnchor,constant: 10),
-            mensagesView.trailingAnchor.constraint(equalTo: self.trailingAnchor,constant: -10),
-            mensagesView.topAnchor.constraint(equalTo: self.numberView.bottomAnchor,constant: 20),
-        ])
-        let constraintTextMensagesView = textMensagesView.leadingAnchor.constraint(equalTo: self.leadingAnchor,constant: 40)
-        constraintTextMensagesView.priority = UILayoutPriority(999)
+        mensagesView.topToBottom(of: numberView, offset: NatSpacing.semi)
+        mensagesView.leadingToSuperview(offset: NatSpacing.small)
+        mensagesView.trailingToSuperview(offset: NatSpacing.small)
+        mensagesView.bottomToSuperview(offset: -NatSpacing.standard)
         
-        NSLayoutConstraint.activate([
-            constraintTextMensagesView,
-            textMensagesView.trailingAnchor.constraint(equalTo: self.trailingAnchor,constant: -30),
-            textMensagesView.leadingAnchor.constraint(equalTo: mensagesView.leadingAnchor,constant: 20),
-            textMensagesView.topAnchor.constraint(equalTo: mensagesView.topAnchor, constant: 5),
-        ])
+        textMensagesView.topToSuperview(offset: NatSpacing.tiny)
+        textMensagesView.leadingToSuperview(offset: NatSpacing.small)
+        textMensagesView.centerXToSuperview()
 
         NSLayoutConstraint.activate([
             mensagesTextView.leadingAnchor.constraint(equalTo: mensagesView.leadingAnchor,constant: 20),
