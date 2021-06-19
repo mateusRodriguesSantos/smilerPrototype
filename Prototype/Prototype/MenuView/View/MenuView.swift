@@ -6,88 +6,93 @@
 //
 
 import UIKit
+import TinyConstraints
+import NatDS
 
 class MenuView:UIView {
     
     ///Acessory view of keyboards
     let viewAcessory = AcessoryViewKeyboard(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height * 0.05))
     
+    //NavigationBar
+    public let navigationBar = AppNavigationBar(title: .text("Menu"), leftButton: .back)
+    
     //MARK: Buttons
     
-    let setUpsViewLabel1:UILabel = {
-        let colorBack = UIColor(red: 0, green: 0, blue: 0, alpha: 0.5)
+    let setUpsViewLabel1: UILabel = {
         let label = UILabel(frame: .zero)
         label.text = "Meus Alertas"
         label.numberOfLines = 0
-        label.font = UIFont.systemFont(ofSize: 15)
+        label.font = NatFonts.fontRoboto(ofSize: .body1, withWeight: .bold)
         label.textAlignment = .left
-        label.textColor = .white
-        label.backgroundColor = .clear
-        label.translatesAutoresizingMaskIntoConstraints = false
+        label.textColor = NatColors.highEmphasis
         return label
     }()
     
-    let setUpsViewLabel2:UILabel = {
-        let colorBack = UIColor(red: 0, green: 0, blue: 0, alpha: 0.5)
+    let setUpsViewLabel2: UILabel = {
         let label = UILabel(frame: .zero)
-        label.text = "Meus contatos"
+        label.text = "Meus Contatos"
         label.numberOfLines = 0
-        label.font = UIFont.systemFont(ofSize: 15)
+        label.font = NatFonts.fontRoboto(ofSize: .body1, withWeight: .bold)
         label.textAlignment = .left
-        label.backgroundColor = .clear
-        label.textColor = .white
-        label.translatesAutoresizingMaskIntoConstraints = false
+        label.textColor = NatColors.highEmphasis
         return label
     }()
     
-    let setUpsViewButton1:UIButton = {
-        let button = UIButton(frame: .zero)
-        button.contentEdgeInsets = UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 0)
-        button.backgroundColor = .white
-        button.setTitleColor(.black, for: .normal)
+    let setUpsViewButton1: FeedbackButton = {
+        let button = FeedbackButton(frame: .zero)
+        button.visualFeedback = true
+        button.contentEdgeInsets = UIEdgeInsets(top: 0, left: NatSpacing.tiny, bottom: 0, right: 0)
+        button.cornerRadius = NatSizes.micro
+        button.clipsToBounds = true
+        button.backgroundColor = NatColors.surface
+        button.setTitleColor(NatColors.highEmphasis, for: .normal)
         button.setTitle("Editar Alertas", for: .normal)
-        button.tintColor = .black
         button.contentHorizontalAlignment = .left
-        button.titleLabel?.font = UIFont.systemFont(ofSize: 18)
-        button.layer.borderWidth = 0.28
-        button.layer.borderColor = UIColor.black.cgColor
-        button.translatesAutoresizingMaskIntoConstraints = false
+        button.titleLabel?.font = NatFonts.fontRoboto(ofSize: .heading6, withWeight: .regular)
         return button
     }()
     
-    let setUpsViewButton2:UIButton = {
-        let button = UIButton(frame: .zero)
-        button.contentEdgeInsets = UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 0)
-        button.backgroundColor = .white
-        button.setTitleColor(.black, for: .normal)
-        button.setTitle("Gatilhos de emergência", for: .normal)
-        button.tintColor = .black
+    let setUpsViewButton2: FeedbackButton = {
+        let button = FeedbackButton(frame: .zero)
+        button.visualFeedback = true
+        button.contentEdgeInsets = UIEdgeInsets(top: 0, left: NatSpacing.tiny, bottom: 0, right: 0)
+        button.cornerRadius = NatSizes.micro
+        button.clipsToBounds = true
+        button.backgroundColor = NatColors.surface
+        button.setTitleColor(NatColors.highEmphasis, for: .normal)
+        button.setTitle("Contatos de Emergência", for: .normal)
         button.contentHorizontalAlignment = .left
-        button.titleLabel?.font =  UIFont.systemFont(ofSize: 18)
-        button.layer.borderWidth = 0.28
-        button.layer.borderColor = UIColor.black.cgColor
-        button.translatesAutoresizingMaskIntoConstraints = false
+        button.titleLabel?.font = NatFonts.fontRoboto(ofSize: .heading6, withWeight: .regular)
         return button
     }()
     
-    //MARK: LocationView share
+    //MARK: -LocationView share
+    let setUpsViewLabel3: UILabel = {
+        let label = UILabel(frame: .zero)
+        label.text = "Localização via SMS"
+        label.numberOfLines = 0
+        label.font = NatFonts.fontRoboto(ofSize: .body1, withWeight: .bold)
+        label.textAlignment = .left
+        label.textColor = NatColors.highEmphasis
+        return label
+    }()
     
-    let shareLocationView:UIView = {
+    let shareLocationView: UIView = {
         let view = UIView(frame: .zero)
-        view.backgroundColor = .white
-        view.layer.borderWidth = 0.28
-        view.layer.borderColor = UIColor.black.cgColor
-        view.translatesAutoresizingMaskIntoConstraints = false
+        view.cornerRadius = NatSizes.micro
+        view.clipsToBounds = true
+        view.backgroundColor = NatColors.surface
         return view
     }()
     
-    let textShareLocationView:UILabel = {
+    let textShareLocationView: UILabel = {
         let label = UILabel(frame: .zero)
-        label.text = "Compartilhar Localização pelo SMS"
+        label.text = "Permitir Localização"
         label.numberOfLines = 0
-        label.font = UIFont.systemFont(ofSize: 18)
-        label.textAlignment = .center
-        label.textColor = .black
+        label.font = NatFonts.fontRoboto(ofSize: .heading6, withWeight: .regular)
+        label.textAlignment = .left
+        label.textColor = NatColors.highEmphasis
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -99,7 +104,7 @@ class MenuView:UIView {
         return switch_
     }()
     
-    //MARK: NameView
+    //MARK: -NameView
     
     let nameView:UIView = {
         let view = UIView(frame: .zero)
@@ -135,7 +140,7 @@ class MenuView:UIView {
         return textView
     }()
     
-    //MARK: Number View
+    //MARK: -Number View
     
     let numberView:UIView = {
         let view = UIView(frame: .zero)
@@ -172,8 +177,7 @@ class MenuView:UIView {
         return textView
     }()
     
-    //MARK: MensagesView
-    
+    //MARK: -MensagesView
     let mensagesView:UIView = {
         let view = UIView(frame: .zero)
         view.backgroundColor = .white
@@ -222,6 +226,7 @@ class MenuView:UIView {
 
 extension MenuView:ViewCodable {
     func setupViewHierarchy() {
+        self.addSubview(navigationBar)
         //self.addSubview(setUpsView)
         self.addSubview(shareLocationView)
         self.addSubview(numberView)
@@ -231,6 +236,7 @@ extension MenuView:ViewCodable {
         self.addSubview(setUpsViewButton1)
         self.addSubview(setUpsViewLabel2)
         self.addSubview(setUpsViewButton2)
+        self.addSubview(setUpsViewLabel3)
         
         shareLocationView.addSubview(textShareLocationView)
         shareLocationView.addSubview(switchShareLocationView)
@@ -248,48 +254,39 @@ extension MenuView:ViewCodable {
     }
     
     func setupConstraints() {
-
-        NSLayoutConstraint.activate([
-            setUpsViewLabel1.topAnchor.constraint(equalTo: self.layoutMarginsGuide.topAnchor),
-            setUpsViewLabel1.leadingAnchor.constraint(equalTo: self.leadingAnchor,constant: 10),
-            setUpsViewLabel1.widthAnchor.constraint(equalTo: self.widthAnchor),
-            setUpsViewLabel1.heightAnchor.constraint(equalTo: self.heightAnchor, multiplier: 0.05),
-        ])
         
-        NSLayoutConstraint.activate([
-            setUpsViewButton1.topAnchor.constraint(equalTo: self.setUpsViewLabel1.bottomAnchor),
-            setUpsViewButton1.leadingAnchor.constraint(equalTo: self.leadingAnchor),
-            setUpsViewButton1.trailingAnchor.constraint(equalTo: self.trailingAnchor),
-            setUpsViewButton1.heightAnchor.constraint(equalTo: self.heightAnchor, multiplier:  0.06),
-        ])
+        setUpsViewLabel1.topToBottom(of: navigationBar)
+        setUpsViewLabel1.leadingToSuperview(offset: NatSpacing.small)
+        setUpsViewLabel1.trailingToSuperview(offset: NatSpacing.small)
+        setUpsViewLabel1.height(NatSizes.semiX)
         
-        NSLayoutConstraint.activate([
-            setUpsViewLabel2.topAnchor.constraint(equalTo: self.setUpsViewButton1.bottomAnchor),
-            setUpsViewLabel2.leadingAnchor.constraint(equalTo: self.leadingAnchor,constant: 10),
-            setUpsViewLabel2.widthAnchor.constraint(equalTo: self.widthAnchor),
-            setUpsViewLabel2.heightAnchor.constraint(equalTo: self.heightAnchor, multiplier:  0.05),
-        ])
+        setUpsViewButton1.topToBottom(of: setUpsViewLabel1)
+        setUpsViewButton1.leadingToSuperview(offset: NatSpacing.small)
+        setUpsViewButton1.trailingToSuperview(offset: NatSpacing.small)
+        setUpsViewButton1.height(NatSizes.medium)
+        
+        setUpsViewLabel2.topToBottom(of: setUpsViewButton1)
+        setUpsViewLabel2.leadingToSuperview(offset: NatSpacing.small)
+        setUpsViewLabel2.trailingToSuperview(offset: NatSpacing.small)
+        setUpsViewLabel2.height(NatSizes.semiX)
+        
+        setUpsViewButton2.topToBottom(of: setUpsViewLabel2)
+        setUpsViewButton2.leadingToSuperview(offset: NatSpacing.small)
+        setUpsViewButton2.trailingToSuperview(offset: NatSpacing.small)
+        setUpsViewButton2.height(NatSizes.medium)
+        
+        setUpsViewLabel3.topToBottom(of: setUpsViewButton2)
+        setUpsViewLabel3.leadingToSuperview(offset: NatSpacing.small)
+        setUpsViewLabel3.trailingToSuperview(offset: NatSpacing.small)
+        setUpsViewLabel3.height(NatSizes.semiX)
+        
+        shareLocationView.topToBottom(of: setUpsViewLabel3)
+        shareLocationView.leadingToSuperview(offset: NatSpacing.small)
+        shareLocationView.trailingToSuperview(offset: NatSpacing.small)
+        shareLocationView.height(NatSizes.medium)
 
-        NSLayoutConstraint.activate([
-            setUpsViewButton2.topAnchor.constraint(equalTo: self.setUpsViewLabel2.bottomAnchor),
-            setUpsViewButton2.leadingAnchor.constraint(equalTo: self.leadingAnchor),
-            setUpsViewButton2.widthAnchor.constraint(equalTo: self.widthAnchor),
-            setUpsViewButton2.heightAnchor.constraint(equalTo: self.heightAnchor, multiplier:  0.06),
-        ])
-
-        NSLayoutConstraint.activate([
-            shareLocationView.heightAnchor.constraint(equalToConstant: UIScreen.main.bounds.height * 0.07),
-            shareLocationView.leadingAnchor.constraint(equalTo: self.leadingAnchor),
-            shareLocationView.trailingAnchor.constraint(equalTo: self.trailingAnchor),
-            shareLocationView.topAnchor.constraint(equalTo: self.setUpsViewButton2.bottomAnchor,constant: 20),
-        ])
-
-
-        NSLayoutConstraint.activate([
-            textShareLocationView.widthAnchor.constraint(equalTo: shareLocationView.widthAnchor, multiplier: 0.6),
-            textShareLocationView.leadingAnchor.constraint(equalTo: shareLocationView.leadingAnchor,constant: 13),
-            textShareLocationView.centerYAnchor.constraint(equalTo: shareLocationView.centerYAnchor),
-        ])
+        textShareLocationView.centerYToSuperview()
+        textShareLocationView.leadingToSuperview(offset: NatSpacing.tiny)
 
         NSLayoutConstraint.activate([
             switchShareLocationView.trailingAnchor.constraint(equalTo: shareLocationView.trailingAnchor, constant: -20),
@@ -366,5 +363,9 @@ extension MenuView:ViewCodable {
             mensagesTextView.topAnchor.constraint(equalTo: textMensagesView.bottomAnchor, constant: 5),
             mensagesTextView.bottomAnchor.constraint(equalTo: mensagesView.bottomAnchor, constant: -5),
         ])
+    }
+    
+    func setupAditionalConfiguration() {
+        self.backgroundColor = NatColors.background
     }
 }

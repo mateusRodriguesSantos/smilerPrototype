@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import TinyConstraints
+import NatDS
 
 class MenuViewController: UIViewController{
     weak var coordinator:MainCoordinator?
@@ -30,22 +32,17 @@ class MenuViewController: UIViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        viewBase.translatesAutoresizingMaskIntoConstraints = false
+        self.viewBase.navigationBar.setLeftButtonAction({
+            self.navigationController?.popViewController(animated: true)
+        })
         self.view.addSubview(viewBase)
-        
-        constraintTopAnchorViewBase = viewBase.topAnchor.constraint(equalTo: self.view.layoutMarginsGuide.topAnchor, constant: 0)
-        if let constraintTop = constraintTopAnchorViewBase{
-            NSLayoutConstraint.activate([
-                viewBase.leadingAnchor.constraint(equalTo: self.view.leadingAnchor),
-                viewBase.trailingAnchor.constraint(equalTo: self.view.trailingAnchor),
-                viewBase.heightAnchor.constraint(equalTo: self.view.heightAnchor),
-                viewBase.topAnchor.constraint(equalTo: self.view.layoutMarginsGuide.topAnchor, constant: 0),
-                constraintTop,
-            ])
-        }
+        self.viewBase.edgesToSuperview()
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        //navigation
+        self.navigationController?.setNavigationBarHidden(true, animated: true)
         //Settings NavBar
         setUpNavBar()
         //Notification if app is on background
