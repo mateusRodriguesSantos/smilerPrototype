@@ -32,12 +32,16 @@ class MenuViewController: UIViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.viewBase.navigationBar.setLeftButtonAction({
-            self.navigationController?.popViewController(animated: true)
+        self.viewBase.navigationBar.setLeftButtonAction({ [weak self] in
+            self?.coordinator?.navigateToShakeViewController()
         })
         self.view.addSubview(viewBase)
 
-        self.viewBase.edgesToSuperview()
+        self.viewBase.leadingToSuperview(offset: 0)
+        self.viewBase.trailingToSuperview(offset: 0)
+        self.viewBase.height(UIScreen.main.bounds.height)
+        constraintTopAnchorViewBase = self.viewBase.topAnchor.constraint(equalTo: self.view.topAnchor, constant: 0)
+        constraintTopAnchorViewBase?.isActive = true
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -49,20 +53,25 @@ class MenuViewController: UIViewController{
         //Notification if app is on background
         let notificationCenter = NotificationCenter.default
         notificationCenter.addObserver(self, selector: #selector(appMovedToBackground), name: UIApplication.didBecomeActiveNotification, object: nil)
+        setUpTextView()
         //Get UserDefault data
         userDefaultData()
         //Button Triggers
         addTriggers()
-        //TextField Delegate
-
-        setUpDelegate()
-      
-        viewBase.viewAcessory.delegateEndEditionKeyboard = self
-        viewBase.nameTextView.delegate = textFieldDelegate1
-        viewBase.numberViewTextView.delegate = textFieldDelegate2
-        viewBase.mensagesTextView.delegate = textFieldDelegate3
     }
     
+}
+
+extension MenuViewController{
+    func setUpTextView(){
+        viewBase.viewAcessory.delegateEndEditionKeyboard = self
+        viewBase.nameTextView.delegate = textFieldDelegate1
+        viewBase.nameTextView.text = UITextView.textBase(.name)
+        viewBase.numberViewTextView.delegate = textFieldDelegate2
+        viewBase.numberViewTextView.text = UITextView.textBase(.number)
+        viewBase.mensagesTextView.delegate = textFieldDelegate3
+        viewBase.mensagesTextView.text = UITextView.textBase(.menssage)
+    }
 }
 
 //MARK: DelegateEndEditionKeyboard
@@ -118,7 +127,7 @@ extension MenuViewController{
             viewBase.mensagesTextView.alpha = 1
             viewBase.mensagesTextView.text = UserDefaults.standard.value(forKey: "Mensage") as? String
         }
-        
+
         viewBase.switchShareLocationView.isOn = UserDefaults.standard.value(forKey: "switch_location") as? Bool ?? true
     }
 }
