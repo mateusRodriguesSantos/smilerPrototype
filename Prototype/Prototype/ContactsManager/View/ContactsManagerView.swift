@@ -8,20 +8,20 @@
 import UIKit
 import NatDS
 import NatDSIcons
+import TinyConstraints
 
 class ContactsManagerView: UIView {
 
     //NavigationBar
-    private let navigationBar = AppNavigationBar(title: .text("Contatos"), leftButton: .back)
+    public let navigationBar = AppNavigationBar(title: .text("Contatos"), leftButton: .back)
     
-//    private let tableViewContacts: UITableView = {
-//       let tableView = UITableView()
-//        tableView.register(<#T##cellClass: AnyClass?##AnyClass?#>, forCellReuseIdentifier: <#T##String#>)
-//        return tableView
-//    }()
+    //Header
+    private let header: UIView = {
+        let view = UIView()
+        return view
+    }()
     
-    
-    override init(frame: CGRect) {
+    init(){
         super.init(frame: .zero)
         setupViews()
     }
@@ -35,11 +35,14 @@ class ContactsManagerView: UIView {
 extension ContactsManagerView:ViewCodable {
     func setupViewHierarchy() {
         self.addSubview(navigationBar)
-//        self.addSubview(tableViewContacts)
+        self.addSubview(header)
     }
     
     func setupConstraints() {
-
+//        header.topToBottom(of: navigationBar)
+//        header.leadingToSuperview()
+//        header.trailingToSuperview()
+//        header.height(NatSizes.semiX) //height: 40
     }
     
     func setupAditionalConfiguration() {

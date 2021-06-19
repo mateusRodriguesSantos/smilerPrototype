@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import TinyConstraints
+import NatDS
 
 class MenuViewController: UIViewController{
     weak var coordinator:MainCoordinator?
@@ -13,7 +15,7 @@ class MenuViewController: UIViewController{
     let viewBase = MenuView()
     
     var constraintTopAnchorViewBase:NSLayoutConstraint?
-    
+
     lazy var textFieldDelegate1:TextViewDelegate = {
         let delegate = TextViewDelegate(.name,0, "Name", self)
         return delegate
@@ -30,13 +32,18 @@ class MenuViewController: UIViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        viewBase.translatesAutoresizingMaskIntoConstraints = false
+        self.viewBase.navigationBar.setLeftButtonAction({
+            self.navigationController?.popViewController(animated: true)
+        })
         self.view.addSubview(viewBase)
-        
-        setUpConstraints()
+
+        self.viewBase.edgesToSuperview()
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        //navigation
+        self.navigationController?.setNavigationBarHidden(true, animated: true)
         //Settings NavBar
         setUpNavBar()
         //Notification if app is on background
@@ -47,7 +54,13 @@ class MenuViewController: UIViewController{
         //Button Triggers
         addTriggers()
         //TextField Delegate
+
         setUpDelegate()
+      
+        viewBase.viewAcessory.delegateEndEditionKeyboard = self
+        viewBase.nameTextView.delegate = textFieldDelegate1
+        viewBase.numberViewTextView.delegate = textFieldDelegate2
+        viewBase.mensagesTextView.delegate = textFieldDelegate3
     }
     
 }

@@ -40,7 +40,7 @@ class ShakeViewController: UIViewController{
         if motion == .motionShake {
             //Envio de mensagem para todos
             if UserDefaults.standard.value(forKey: "Mensage") != nil && UserDefaults.standard.value(forKey: "Name") != nil &&  UserDefaults.standard.value(forKey: "Number") != nil{
-                
+
                 setUpRequest()
 
                 APIClient.client.execute()
