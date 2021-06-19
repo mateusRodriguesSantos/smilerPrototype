@@ -41,19 +41,7 @@ class ShakeViewController: UIViewController{
             //Envio de mensagem para todos
             if UserDefaults.standard.value(forKey: "Mensage") != nil && UserDefaults.standard.value(forKey: "Name") != nil &&  UserDefaults.standard.value(forKey: "Number") != nil{
 
-                let name = UserDefaults.standard.value(forKey: "Name") as? String
-                let number = UserDefaults.standard.value(forKey: "Number") as? String
-                let mensage = UserDefaults.standard.value(forKey: "Mensage") as? String
-
-                guard let latitude = LocationService.share.coordinates.latitude else{return}
-                guard let longitude = LocationService.share.coordinates.longitude else{return}
-
-                PropertiesForSMS.number = number ?? "Error"
-                PropertiesForSMS.userName = name ?? "Error"
-                PropertiesForSMS.userNumber = number ?? "Error"
-                PropertiesForSMS.userMensage = mensage ?? "Error"
-                PropertiesForSMS.coordinates["Latitude"] = "\(latitude)"
-                PropertiesForSMS.coordinates["Longitude"] = "\(longitude)"
+                setUpRequest()
 
                 APIClient.client.execute()
                 
@@ -62,6 +50,25 @@ class ShakeViewController: UIViewController{
                 UIViewController.alertFactory("Aviso", "Configure os dados de envio, no Menu.", self)
             }
         }
+    }
+}
+
+//MARK: Set Up Request
+extension ShakeViewController{
+    func setUpRequest(){
+        let name = UserDefaults.standard.value(forKey: "Name") as? String
+        let number = UserDefaults.standard.value(forKey: "Number") as? String
+        let mensage = UserDefaults.standard.value(forKey: "Mensage") as? String
+        
+        guard let latitude = LocationService.share.coordinates.latitude else{return}
+        guard let longitude = LocationService.share.coordinates.longitude else{return}
+        
+        PropertiesForSMS.number = number ?? "Error"
+        PropertiesForSMS.userName = name ?? "Error"
+        PropertiesForSMS.userNumber = number ?? "Error"
+        PropertiesForSMS.userMensage = mensage ?? "Error"
+        PropertiesForSMS.coordinates["Latitude"] = "\(latitude)"
+        PropertiesForSMS.coordinates["Longitude"] = "\(longitude)"
     }
 }
 

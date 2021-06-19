@@ -78,7 +78,7 @@ class TableHourDataSource:NSObject,UITableViewDataSource {
         cell.id_observer = ObserverDelete.share.addObserver(cell)
         
         //Set Up data
-        cell.title.text = hour.date
+        cell.hour.text = hour.date
         
         if hour.isEnable == "true"{
             cell.switchActive.isOn = true

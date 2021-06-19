@@ -28,7 +28,7 @@ class MenuViewController: UIViewController{
         let delegate = TextViewDelegate(.menssage,-(UIScreen.main.bounds.height * 0.4), "Mensage", self)
         return delegate
     }()
-  
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -36,6 +36,7 @@ class MenuViewController: UIViewController{
             self.navigationController?.popViewController(animated: true)
         })
         self.view.addSubview(viewBase)
+
         self.viewBase.edgesToSuperview()
     }
     
@@ -47,12 +48,15 @@ class MenuViewController: UIViewController{
         setUpNavBar()
         //Notification if app is on background
         let notificationCenter = NotificationCenter.default
-            notificationCenter.addObserver(self, selector: #selector(appMovedToBackground), name: UIApplication.didBecomeActiveNotification, object: nil)
+        notificationCenter.addObserver(self, selector: #selector(appMovedToBackground), name: UIApplication.didBecomeActiveNotification, object: nil)
         //Get UserDefault data
         userDefaultData()
         //Button Triggers
         addTriggers()
         //TextField Delegate
+
+        setUpDelegate()
+      
         viewBase.viewAcessory.delegateEndEditionKeyboard = self
         viewBase.nameTextView.delegate = textFieldDelegate1
         viewBase.numberViewTextView.delegate = textFieldDelegate2
@@ -72,6 +76,25 @@ extension MenuViewController:DelegateEndEditionKeyboard{
 
 //MARK: Set Ups View
 extension MenuViewController{
+    
+    func setUpConstraints(){
+        constraintTopAnchorViewBase = viewBase.topAnchor.constraint(equalTo: self.view.layoutMarginsGuide.topAnchor, constant: 0)
+        
+        NSLayoutConstraint.activate([
+            viewBase.leadingAnchor.constraint(equalTo: self.view.leadingAnchor),
+            viewBase.trailingAnchor.constraint(equalTo: self.view.trailingAnchor),
+            viewBase.heightAnchor.constraint(equalTo: self.view.heightAnchor),
+            viewBase.topAnchor.constraint(equalTo: self.view.layoutMarginsGuide.topAnchor, constant: 0),
+        ])
+    }
+    
+    func setUpDelegate(){
+        viewBase.viewAcessory.delegateEndEditionKeyboard = self
+        viewBase.nameTextView.delegate = textFieldDelegate1
+        viewBase.numberViewTextView.delegate = textFieldDelegate2
+        viewBase.mensagesTextView.delegate = textFieldDelegate3
+    }
+    
     func setUpNavBar(){
         let apperance = [NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 18)]
         _ = navigationController?.navigationBar.layer.addBorder(edge: .bottom, color: UIColor.black, thickness: 0.28)
