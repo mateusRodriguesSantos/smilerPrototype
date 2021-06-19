@@ -656,7 +656,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				ADFBEC22256D4BDC002EAE9D /* LaunchScreen.storyboard in Resources */,
-				DC1BD8F5267E3A8100B3BDFC /* API_Info.plist in Resources */,
 				DCCC8872267042BE00B01C87 /* hand_shake.gif in Resources */,
 				DCE72A822655B4A1005D06E9 /* Roboto-Bold.ttf in Resources */,
 				DCE72A802655B491005D06E9 /* Roboto-Regular.ttf in Resources */,
