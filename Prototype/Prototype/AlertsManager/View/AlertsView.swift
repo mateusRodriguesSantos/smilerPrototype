@@ -89,6 +89,7 @@ class AlertsView:UIView {
         return picker
     }()
     
+    //MARK: TableView
     lazy var tableDelegate:TableHourDelegate = {
        let delegate = TableHourDelegate()
         return delegate

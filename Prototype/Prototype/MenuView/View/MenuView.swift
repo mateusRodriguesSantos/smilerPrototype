@@ -25,6 +25,8 @@ class MenuView:UIView {
         label.numberOfLines = 0
         label.font = NatFonts.fontRoboto(ofSize: .body1, withWeight: .bold)
         label.textAlignment = .left
+        label.translatesAutoresizingMaskIntoConstraints = false
+      
         label.textColor = NatColors.highEmphasis
         return label
     }()
@@ -35,6 +37,8 @@ class MenuView:UIView {
         label.numberOfLines = 0
         label.font = NatFonts.fontRoboto(ofSize: .body1, withWeight: .bold)
         label.textAlignment = .left
+        label.translatesAutoresizingMaskIntoConstraints = false
+
         label.textColor = NatColors.highEmphasis
         return label
     }()
@@ -122,6 +126,7 @@ class MenuView:UIView {
     }()
     
     lazy var nameTextView:UITextView = {
+        let colorBack = UIColor(red: 245/255.0, green: 245/255.0, blue: 245/255.0, alpha: 1.0)
         let textView = UITextView(frame: .zero)
         textView.inputAccessoryView = viewAcessory
         textView.textColor = NatColors.mediumEmphasis
@@ -129,7 +134,6 @@ class MenuView:UIView {
         textView.font = NatFonts.fontRoboto(ofSize: .body2, withWeight: .regular)
         textView.textAlignment = .left
         textView.backgroundColor = .clear
-        textView.text = "Digite seu nome"
         textView.translatesAutoresizingMaskIntoConstraints = false
         return textView
     }()
@@ -154,15 +158,17 @@ class MenuView:UIView {
         return label
     }()
     
-    lazy var numberViewTextView: UITextView = {
+  
+    lazy var numberViewTextView:UITextView = {
+        let colorBack = UIColor(red: 245/255.0, green: 245/255.0, blue: 245/255.0, alpha: 1.0)
         let textView = UITextView(frame: .zero)
         textView.inputAccessoryView = viewAcessory
+        textView.keyboardType = .numberPad
         textView.textColor = NatColors.mediumEmphasis
         textView.alpha = 0.5
         textView.font = NatFonts.fontRoboto(ofSize: .body2, withWeight: .regular)
         textView.textAlignment = .left
         textView.backgroundColor = .clear
-        textView.text = "Digite seu número"
         textView.translatesAutoresizingMaskIntoConstraints = false
         return textView
     }()
@@ -187,12 +193,12 @@ class MenuView:UIView {
         return label
     }()
     
+
     lazy var mensagesTextView: UITextView = {
         let textView = UITextView(frame: .zero)
         textView.inputAccessoryView = viewAcessory
         textView.textColor = NatColors.mediumEmphasis
         textView.alpha = 0.5
-        textView.text = "Digite uma mensagem de emergência"
         textView.font = NatFonts.fontRoboto(ofSize: .body2, withWeight: .regular)
         textView.textAlignment = .left
         textView.backgroundColor = .clear
@@ -202,6 +208,8 @@ class MenuView:UIView {
     
     override init(frame: CGRect) {
         super.init(frame: .zero)
+        let colorBack = UIColor(red: 41/255.0, green: 42/255.0, blue: 48/255.0, alpha: 1.0)
+        backgroundColor = colorBack
         setupViews()
     }
     

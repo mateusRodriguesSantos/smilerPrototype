@@ -28,15 +28,20 @@ class MenuViewController: UIViewController{
         let delegate = TextViewDelegate(.menssage,-(UIScreen.main.bounds.height * 0.4), "Mensage", self)
         return delegate
     }()
-  
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.viewBase.navigationBar.setLeftButtonAction({
-            self.navigationController?.popViewController(animated: true)
+        self.viewBase.navigationBar.setLeftButtonAction({ [weak self] in
+            self?.coordinator?.navigateToShakeViewController()
         })
         self.view.addSubview(viewBase)
-        self.viewBase.edgesToSuperview()
+ 
+        self.viewBase.leadingToSuperview(offset: 0)
+        self.viewBase.trailingToSuperview(offset: 0)
+        self.viewBase.height(UIScreen.main.bounds.height)
+        constraintTopAnchorViewBase = self.viewBase.topAnchor.constraint(equalTo: self.view.topAnchor, constant: 0)
+        constraintTopAnchorViewBase?.isActive = true
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -47,18 +52,30 @@ class MenuViewController: UIViewController{
         setUpNavBar()
         //Notification if app is on background
         let notificationCenter = NotificationCenter.default
-            notificationCenter.addObserver(self, selector: #selector(appMovedToBackground), name: UIApplication.didBecomeActiveNotification, object: nil)
+        notificationCenter.addObserver(self, selector: #selector(appMovedToBackground), name: UIApplication.didBecomeActiveNotification, object: nil)
+        
+        setUpTextView()
+        
         //Get UserDefault data
         userDefaultData()
         //Button Triggers
         addTriggers()
-        //TextField Delegate
-        viewBase.viewAcessory.delegateEndEditionKeyboard = self
-        viewBase.nameTextView.delegate = textFieldDelegate1
-        viewBase.numberViewTextView.delegate = textFieldDelegate2
-        viewBase.mensagesTextView.delegate = textFieldDelegate3
+        
+      
     }
     
+}
+
+extension MenuViewController{
+    func setUpTextView(){
+        viewBase.viewAcessory.delegateEndEditionKeyboard = self
+        viewBase.nameTextView.delegate = textFieldDelegate1
+        viewBase.nameTextView.text = UITextView.textBase(.name)
+        viewBase.numberViewTextView.delegate = textFieldDelegate2
+        viewBase.numberViewTextView.text = UITextView.textBase(.number)
+        viewBase.mensagesTextView.delegate = textFieldDelegate3
+        viewBase.mensagesTextView.text = UITextView.textBase(.menssage)
+    }
 }
 
 //MARK: DelegateEndEditionKeyboard
@@ -72,6 +89,25 @@ extension MenuViewController:DelegateEndEditionKeyboard{
 
 //MARK: Set Ups View
 extension MenuViewController{
+    
+    func setUpConstraints(){
+        constraintTopAnchorViewBase = viewBase.topAnchor.constraint(equalTo: self.view.layoutMarginsGuide.topAnchor, constant: 0)
+        
+        NSLayoutConstraint.activate([
+            viewBase.leadingAnchor.constraint(equalTo: self.view.leadingAnchor),
+            viewBase.trailingAnchor.constraint(equalTo: self.view.trailingAnchor),
+            viewBase.heightAnchor.constraint(equalTo: self.view.heightAnchor),
+            viewBase.topAnchor.constraint(equalTo: self.view.layoutMarginsGuide.topAnchor, constant: 0),
+        ])
+    }
+    
+    func setUpDelegate(){
+        viewBase.viewAcessory.delegateEndEditionKeyboard = self
+        viewBase.nameTextView.delegate = textFieldDelegate1
+        viewBase.numberViewTextView.delegate = textFieldDelegate2
+        viewBase.mensagesTextView.delegate = textFieldDelegate3
+    }
+    
     func setUpNavBar(){
         let apperance = [NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 18)]
         _ = navigationController?.navigationBar.layer.addBorder(edge: .bottom, color: UIColor.black, thickness: 0.28)
@@ -95,7 +131,7 @@ extension MenuViewController{
             viewBase.mensagesTextView.alpha = 1
             viewBase.mensagesTextView.text = UserDefaults.standard.value(forKey: "Mensage") as? String
         }
-        
+
         viewBase.switchShareLocationView.isOn = UserDefaults.standard.value(forKey: "switch_location") as? Bool ?? true
     }
 }
