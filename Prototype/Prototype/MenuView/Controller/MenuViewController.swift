@@ -10,11 +10,9 @@ import TinyConstraints
 import NatDS
 
 class MenuViewController: UIViewController{
-    weak var coordinator:MainCoordinator?
+    weak var coordinator: MainCoordinator?
     
     let viewBase = MenuView()
-    
-    var constraintTopAnchorViewBase:NSLayoutConstraint?
 
     lazy var textFieldDelegate1:TextViewDelegate = {
         let delegate = TextViewDelegate(.name,0, "Name", self)
@@ -29,25 +27,22 @@ class MenuViewController: UIViewController{
         return delegate
     }()
     
+    override func loadView() {
+        super.loadView()
+        self.view = viewBase
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         self.viewBase.navigationBar.setLeftButtonAction({ [weak self] in
             self?.coordinator?.navigateToShakeViewController()
         })
-        self.view.addSubview(viewBase)
-
-        self.viewBase.leadingToSuperview(offset: 0)
-        self.viewBase.trailingToSuperview(offset: 0)
-        self.viewBase.height(UIScreen.main.bounds.height)
-        constraintTopAnchorViewBase = self.viewBase.topAnchor.constraint(equalTo: self.view.topAnchor, constant: 0)
-        constraintTopAnchorViewBase?.isActive = true
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         //navigation
-        self.navigationController?.setNavigationBarHidden(true, animated: true)
+        self.navigationController?.setNavigationBarHidden(true, animated: false)
         //Settings NavBar
         setUpNavBar()
         //Notification if app is on background
@@ -59,7 +54,6 @@ class MenuViewController: UIViewController{
         //Button Triggers
         addTriggers()
     }
-    
 }
 
 extension MenuViewController{
@@ -85,18 +79,7 @@ extension MenuViewController:DelegateEndEditionKeyboard{
 
 //MARK: Set Ups View
 extension MenuViewController{
-    
-    func setUpConstraints(){
-        constraintTopAnchorViewBase = viewBase.topAnchor.constraint(equalTo: self.view.layoutMarginsGuide.topAnchor, constant: 0)
-        
-        NSLayoutConstraint.activate([
-            viewBase.leadingAnchor.constraint(equalTo: self.view.leadingAnchor),
-            viewBase.trailingAnchor.constraint(equalTo: self.view.trailingAnchor),
-            viewBase.heightAnchor.constraint(equalTo: self.view.heightAnchor),
-            viewBase.topAnchor.constraint(equalTo: self.view.layoutMarginsGuide.topAnchor, constant: 0),
-        ])
-    }
-    
+
     func setUpDelegate(){
         viewBase.viewAcessory.delegateEndEditionKeyboard = self
         viewBase.nameTextView.delegate = textFieldDelegate1

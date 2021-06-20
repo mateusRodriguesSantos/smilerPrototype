@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		1E13D0779708772EB4D0E66D /* Pods_Smiler.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA5D950F0170741E3B235656 /* Pods_Smiler.framework */; };
 		4EC82BBDAB11F62A432E64F2 /* Pods_Smiler_SmilerUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD21A10148BE393287CB1383 /* Pods_Smiler_SmilerUITests.framework */; };
+		57389DBA267F8F8C009635AE /* Contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57389DB9267F8F8C009635AE /* Contact.swift */; };
+		57389DBC267F9EF1009635AE /* PersistenceContacts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57389DBB267F9EF1009635AE /* PersistenceContacts.swift */; };
 		57754121266174B800C0DC6B /* AppNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57754120266174B800C0DC6B /* AppNavigationBar.swift */; };
 		57754139266175A900C0DC6B /* UIWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57754138266175A900C0DC6B /* UIWindow.swift */; };
 		5775413E266175D100C0DC6B /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5775413D266175D100C0DC6B /* UIView.swift */; };
@@ -31,7 +33,6 @@
 		ADFBEC2D256D4BDC002EAE9D /* PrototypeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADFBEC2C256D4BDC002EAE9D /* PrototypeTests.swift */; };
 		ADFBEC38256D4BDC002EAE9D /* PrototypeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADFBEC37256D4BDC002EAE9D /* PrototypeUITests.swift */; };
 		DC02A63526589F7100011760 /* CALayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC02A63426589F7100011760 /* CALayer.swift */; };
-		DC1BD8F5267E3A8100B3BDFC /* API_Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DC1BD8F4267E3A8100B3BDFC /* API_Info.plist */; };
 		DC1BD8F7267E4CD700B3BDFC /* UITextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC1BD8F6267E4CD700B3BDFC /* UITextView.swift */; };
 		DC22DC14265187A400C50AA7 /* ObserverDeleteButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC22DC13265187A400C50AA7 /* ObserverDeleteButton.swift */; };
 		DC22DC162651B01100C50AA7 /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC22DC152651B01100C50AA7 /* Alert.swift */; };
@@ -44,7 +45,6 @@
 		DC55052C2652AFDB00B7EE29 /* APIResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC55052B2652AFDB00B7EE29 /* APIResponse.swift */; };
 		DC55052E2652AFE200B7EE29 /* APIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC55052D2652AFE200B7EE29 /* APIRequest.swift */; };
 		DC5505302652AFE900B7EE29 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC55052F2652AFE900B7EE29 /* APIClient.swift */; };
-		DC7FD004266C736D00B271A1 /* API_Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DC7FD003266C736D00B271A1 /* API_Info.plist */; };
 		DC9AC68D266445DD00184CA5 /* PropertiesRequestMessageBird.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9AC68C266445DD00184CA5 /* PropertiesRequestMessageBird.swift */; };
 		DC9AFD802654670C00EA5B49 /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9AFD7F2654670C00EA5B49 /* NotificationService.swift */; };
 		DCA809C026177EBD00AC89FC /* MenuViewViewControllerTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA809BF26177EBD00AC89FC /* MenuViewViewControllerTestCase.swift */; };
@@ -91,6 +91,8 @@
 /* Begin PBXFileReference section */
 		0ADC97CE740E79CC364E67DF /* Pods-Smiler.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Smiler.debug.xcconfig"; path = "Target Support Files/Pods-Smiler/Pods-Smiler.debug.xcconfig"; sourceTree = "<group>"; };
 		547D4D456EFBB9EF071372BC /* Pods-Smiler.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Smiler.release.xcconfig"; path = "Target Support Files/Pods-Smiler/Pods-Smiler.release.xcconfig"; sourceTree = "<group>"; };
+		57389DB9267F8F8C009635AE /* Contact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contact.swift; sourceTree = "<group>"; };
+		57389DBB267F9EF1009635AE /* PersistenceContacts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceContacts.swift; sourceTree = "<group>"; };
 		57754120266174B800C0DC6B /* AppNavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppNavigationBar.swift; sourceTree = "<group>"; };
 		57754138266175A900C0DC6B /* UIWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIWindow.swift; sourceTree = "<group>"; };
 		5775413D266175D100C0DC6B /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
@@ -141,7 +143,6 @@
 		DC55052B2652AFDB00B7EE29 /* APIResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIResponse.swift; sourceTree = "<group>"; };
 		DC55052D2652AFE200B7EE29 /* APIRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIRequest.swift; sourceTree = "<group>"; };
 		DC55052F2652AFE900B7EE29 /* APIClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
-		DC7FD003266C736D00B271A1 /* API_Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = API_Info.plist; sourceTree = "<group>"; };
 		DC9AC68C266445DD00184CA5 /* PropertiesRequestMessageBird.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropertiesRequestMessageBird.swift; sourceTree = "<group>"; };
 		DC9AFD7F2654670C00EA5B49 /* NotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationService.swift; sourceTree = "<group>"; };
 		DCA809BF26177EBD00AC89FC /* MenuViewViewControllerTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewViewControllerTestCase.swift; sourceTree = "<group>"; };
@@ -198,6 +199,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		57389DB7267F8EFF009635AE /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		57389DB8267F8F7B009635AE /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				57389DB9267F8F8C009635AE /* Contact.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		6E10C7132574538000A39F3F /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -496,6 +512,8 @@
 		DCA809DE261793A900AC89FC /* ContactsManager */ = {
 			isa = PBXGroup;
 			children = (
+				57389DB8267F8F7B009635AE /* Model */,
+				57389DB7267F8EFF009635AE /* Profile */,
 				DCA809DF261793B700AC89FC /* Controller */,
 				DCA809E0261793BF00AC89FC /* View */,
 			);
@@ -524,6 +542,7 @@
 			children = (
 				DCE2A93F2653F4E8007B99B9 /* Persistence.swift */,
 				DCE2A93C2653ED0C007B99B9 /* PersistenceAlerts.swift */,
+				57389DBB267F9EF1009635AE /* PersistenceContacts.swift */,
 			);
 			path = Persistence;
 			sourceTree = "<group>";
@@ -838,11 +857,13 @@
 				57754148266177FD00C0DC6B /* ContactsManagerTBViewCell.swift in Sources */,
 				DCA809CC26178F9300AC89FC /* AlertsManagerViewController.swift in Sources */,
 				DCDE75D1261A56EA007D1BE4 /* Date.swift in Sources */,
+				57389DBA267F8F8C009635AE /* Contact.swift in Sources */,
 				AD41F23C256D522500F0E467 /* MainCoordinator.swift in Sources */,
 				DCA809F02617C40400AC89FC /* TableHourDelegate.swift in Sources */,
 				DC5505282652AFBD00B7EE29 /* PropertiesRequestSMSDev.swift in Sources */,
 				DC9AC68D266445DD00184CA5 /* PropertiesRequestMessageBird.swift in Sources */,
 				DC55052A2652AFD200B7EE29 /* ReturnSMS_SMSDev.swift in Sources */,
+				57389DBC267F9EF1009635AE /* PersistenceContacts.swift in Sources */,
 				577541432661767500C0DC6B /* NatFont.swift in Sources */,
 				DCE2A9422653FF73007B99B9 /* Results.swift in Sources */,
 				DC25AAF62670368F00122997 /* PropertiesForSMS.swift in Sources */,
@@ -1023,7 +1044,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 7TST2X4MAG;
+				DEVELOPMENT_TEAM = Z27F7H4265;
 				INFOPLIST_FILE = Prototype/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1044,7 +1065,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 7TST2X4MAG;
+				DEVELOPMENT_TEAM = Z27F7H4265;
 				INFOPLIST_FILE = Prototype/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				LD_RUNPATH_SEARCH_PATHS = (
