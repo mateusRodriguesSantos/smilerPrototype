@@ -6,7 +6,7 @@
 //
 
 import UIKit
-import Foundation
+import NatDS
 
 class TableHourDataSource:NSObject,UITableViewDataSource {
     var date:String {
@@ -68,7 +68,7 @@ class TableHourDataSource:NSObject,UITableViewDataSource {
         
         cell.isUserInteractionEnabled = true
         cell.selectionStyle = .none
-        cell.backgroundColor = .white
+        cell.backgroundColor = NatColors.surface
         
         //Get the hour object of cell
         let hour = self.hours[indexPath.row]

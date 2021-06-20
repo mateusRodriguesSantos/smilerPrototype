@@ -22,11 +22,14 @@ class AlertsManagerViewController: UIViewController{
         super.viewDidLoad()
         addTriggers()
         NotificationService.share.delegateEndNotification = self
+        viewBase.navBar.setLeftButtonAction { [weak self] in
+            self?.coordinator?.navigateToMenuViewController()
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        navigationController?.isNavigationBarHidden = false
-        self.navigationController?.navigationBar.tintColor = .black
+        super.viewWillAppear(animated)
+        self.navigationController?.setNavigationBarHidden(true, animated: true)
         
         //Check if already exists alerts
         if viewBase.tableDataSource.hours.isEmpty == false{
@@ -47,7 +50,7 @@ extension AlertsManagerViewController:DelegateEndNotification{
 //MARK: Triggers
 extension AlertsManagerViewController{
     func addTriggers() {
-        self.viewBase.addHourAlert.addTarget(self, action: #selector(self.addHourToTableViewAction), for: .touchUpInside)
+        self.viewBase.addHourAlertButton.addTarget(self, action: #selector(self.addHourToTableViewAction), for: .touchUpInside)
     }
 }
 
@@ -76,7 +79,7 @@ extension AlertsManagerViewController{
     @objc func playTappedEditAction(){
         //Transform the button that add alarm in unavailable
         viewBase.backAddHourAlert.alpha = 0.8
-        viewBase.addHourAlert.isUserInteractionEnabled = false
+        viewBase.addHourAlertButton.isUserInteractionEnabled = false
         
         //Add delete button in navBar
         addButtonInNavBar(.trash)
@@ -88,7 +91,7 @@ extension AlertsManagerViewController{
     @objc func playTappedTrashAction(){
         //Transform the button that add alarm in available
         viewBase.backAddHourAlert.alpha = 0.2
-        viewBase.addHourAlert.isUserInteractionEnabled = true
+        viewBase.addHourAlertButton.isUserInteractionEnabled = true
         
         //Add delete button in navBar
         addButtonInNavBar(.edit)

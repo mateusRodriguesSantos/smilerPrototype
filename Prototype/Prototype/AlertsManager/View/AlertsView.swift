@@ -6,76 +6,88 @@
 //
 
 import UIKit
+import NatDS
+import TinyConstraints
 
 class AlertsView:UIView {
+    
+    //MARK: NavBar
+    let navBar: AppNavigationBar = {
+        let navigation = AppNavigationBar(title: .text("Editar Alertas"), leftButton: .back)
+       
+        return navigation
+    }()
 
+    //MARK: Title and SubTitle
+    
     let title:UILabel = {
         let label = UILabel(frame: .zero)
         label.text = "Horários de alerta"
         label.numberOfLines = 0
-        label.font = UIFont.systemFont(ofSize: 30)
-        label.textColor = .white
+        label.textAlignment = .center
+        label.font = NatFonts.fontRoboto(ofSize: .heading4, withWeight: .regular)
+        label.textColor = NatColors.highEmphasis
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
     
-    let subTitle:UILabel = {
-        let colorBack = UIColor(red: 0, green: 0, blue: 0, alpha: 0.5)
+    let subTitle: UILabel = {
         let label = UILabel(frame: .zero)
         label.text = "Adicionar"
         label.numberOfLines = 0
-        label.textColor = .white
-        label.backgroundColor = .clear
-        label.font = UIFont.systemFont(ofSize: 15)
-        label.translatesAutoresizingMaskIntoConstraints = false
+        label.font = NatFonts.fontRoboto(ofSize: .body1, withWeight: .bold)
+        label.textAlignment = .left
+        label.textColor = NatColors.highEmphasis
         return label
     }()
     
-    lazy var addAlarmView:UIStackView = {
-        let view = UIStackView(frame: .zero)
-        view.backgroundColor = .white
-        view.alignment = .center
-        view.axis = .horizontal
-        view.distribution = .fill
-        let border = CALayer()
-        border.frame = CGRect(x:0, y: view.layer.frame.height - 0.28, width: view.layer.frame.width, height:0.28)
-        view.layer.insertSublayer(border, at: 0)
-        view.isUserInteractionEnabled = true
-        view.translatesAutoresizingMaskIntoConstraints = false
-        return view
-    }()
-    
-    let addHourAlert:UIButton = {
-        let button = UIButton(frame: .zero)
-        button.backgroundColor = .white
-        button.setTitleColor(.black, for: .normal)
+    //MARK: Alarm
+    let addHourAlertButton:FeedbackButton = {
+        let button = FeedbackButton()
+        button.backgroundColor = NatColors.surface
+        button.setTitleColor(.white, for: .normal)
+        button.badgeTextColor = .white
+        button.layer.borderWidth = 2
+        button.layer.cornerRadius = 5
+        button.layer.borderColor = UIColor.white.cgColor
         button.setTitle("+", for: .normal)
-        button.tintColor = .white
-        button.setTitleColor(.black, for: .normal)
-        button.titleLabel?.textColor = .systemBlue
         button.titleLabel?.textAlignment = .left
-        button.titleLabel?.font = UIFont(name: Fonts.RobotoRegular, size: 20)
-        button.translatesAutoresizingMaskIntoConstraints = false
+        button.titleLabel?.font = NatFonts.fontRoboto(ofSize: .heading6, withWeight: .regular)
+        button.visualFeedback = true
         return button
     }()
     
     let backAddHourAlert:UIView = {
         let view = UIView(frame: .zero)
-        view.backgroundColor = .lightGray
+        view.backgroundColor = NatColors.highEmphasis
         view.layer.cornerRadius = 6
         view.alpha = 0.2
         view.isUserInteractionEnabled = false
-        view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
     
-    let titleAlarmView:UILabel = {
+    //MARK: --StackView
+    
+    lazy var addAlarmView:UIStackView = {
+        let view = UIStackView(frame: .zero)
+        view.backgroundColor = NatColors.surface
+        view.alignment = .center
+        view.axis = .horizontal
+        view.distribution = .fill
+        view.layer.cornerRadius = 5
+        view.isUserInteractionEnabled = true
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
+
+    let titleAlarmViewLabel:UILabel = {
         let label = UILabel(frame: .zero)
         label.text = "Hora"
         label.numberOfLines = 0
-        label.font = UIFont(name: Fonts.RobotoRegular, size: 20)
-        label.textColor = .black
-        label.translatesAutoresizingMaskIntoConstraints = false
+        label.font = NatFonts.fontRoboto(ofSize: .heading5, withWeight: .regular)
+        label.textAlignment = .left
+        label.textColor = NatColors.highEmphasis
+        label.backgroundColor = .clear
         return label
     }()
     
@@ -84,6 +96,8 @@ class AlertsView:UIView {
         picker.locale = Locale(identifier: "en_BR")
         picker.preferredDatePickerStyle = .inline
         picker.backgroundColor = .clear
+        picker.tintColor = .white
+        picker.setValue(UIColor.white, forKeyPath: "textColor")
         picker.datePickerMode = .time
         picker.translatesAutoresizingMaskIntoConstraints = false
         return picker
@@ -106,6 +120,7 @@ class AlertsView:UIView {
         tableView.register(AlertViewCell.self, forCellReuseIdentifier: AlertViewCell.reuseIdentiferCell)
         tableView.backgroundColor = .clear
         tableView.automaticallyAdjustsScrollIndicatorInsets = false
+        tableView.layer.cornerRadius = 5
         tableView.separatorColor = .clear
         tableView.contentInset = .zero
         tableView.tableFooterView = UIView()
@@ -117,8 +132,6 @@ class AlertsView:UIView {
     
     override init(frame: CGRect) {
         super.init(frame: .zero)
-        let colorBack = UIColor(red: 41/255.0, green: 42/255.0, blue: 48/255.0, alpha: 1.0)
-        backgroundColor = colorBack
         self.isUserInteractionEnabled = true
         setupViews()
     }
@@ -130,56 +143,49 @@ class AlertsView:UIView {
 
 extension AlertsView:ViewCodable {
     func setupViewHierarchy() {
+        self.addSubview(navBar)
         self.addSubview(title)
         self.addSubview(subTitle)
+        self.addSubview(addHourAlertButton)
         self.addSubview(addAlarmView)
-        self.addSubview(addHourAlert)
         self.addSubview(tableView)
         
         //Suplementary View
-        addAlarmView.addArrangedSubview(titleAlarmView)
+        addAlarmView.addArrangedSubview(titleAlarmViewLabel)
         addAlarmView.addArrangedSubview(pickerAlarmView)
         
-        addHourAlert.addSubview(backAddHourAlert)
+        //addHourAlertButton.addSubview(backAddHourAlert)
+    }
+    
+    func setupAditionalConfiguration() {
+        self.backgroundColor = NatColors.background
     }
     
     func setupConstraints() {
-        NSLayoutConstraint.activate([
-            title.topAnchor.constraint(equalTo: self.layoutMarginsGuide.topAnchor,constant: 20),
-            title.centerXAnchor.constraint(equalTo: self.centerXAnchor),
-        ])
         
-        NSLayoutConstraint.activate([
-            subTitle.topAnchor.constraint(equalTo: self.title.bottomAnchor,constant: 20),
-            subTitle.leadingAnchor.constraint(equalTo: self.leadingAnchor,constant: 5)
-        ])
+        title.topToBottom(of: navBar,offset: NatSpacing.small)
+        title.centerXToSuperview()
+        title.leadingToSuperview()
+        title.trailingToSuperview()
         
-        NSLayoutConstraint.activate([
-            addHourAlert.trailingAnchor.constraint(equalTo: self.trailingAnchor),
-            addHourAlert.topAnchor.constraint(equalTo: self.subTitle.bottomAnchor,constant: 10),
-            addHourAlert.heightAnchor.constraint(equalTo: self.heightAnchor, multiplier: 0.09),
-        ])
+        subTitle.topToBottom(of: title,offset: NatSpacing.small)
+        subTitle.leadingToSuperview(offset: NatSpacing.tiny)
         
-        NSLayoutConstraint.activate([
-            backAddHourAlert.widthAnchor.constraint(equalTo: addHourAlert.widthAnchor, multiplier: 0.8),
-            backAddHourAlert.heightAnchor.constraint(equalTo: addHourAlert.heightAnchor, multiplier: 0.55),
-            backAddHourAlert.centerXAnchor.constraint(equalTo: addHourAlert.centerXAnchor),
-            backAddHourAlert.centerYAnchor.constraint(equalTo: addHourAlert.centerYAnchor),
-        ])
-        NSLayoutConstraint.activate([
-            addAlarmView.leadingAnchor.constraint(equalTo: self.leadingAnchor),
-            addAlarmView.trailingAnchor.constraint(equalTo: self.addHourAlert.leadingAnchor),
-            addAlarmView.widthAnchor.constraint(equalTo: self.widthAnchor, multiplier: 0.8),
-            addAlarmView.heightAnchor.constraint(equalTo: self.heightAnchor, multiplier: 0.09),
-            addAlarmView.topAnchor.constraint(equalTo: self.subTitle.bottomAnchor,constant: 10),
-        ])
+   
         
-    
-        let constraintTitleAlarmView = titleAlarmView.leadingAnchor.constraint(equalTo: self.leadingAnchor,constant: 10)
-        constraintTitleAlarmView.priority = UILayoutPriority(999)
-        constraintTitleAlarmView.isActive = true
+        addAlarmView.leftToSuperview(offset:-5)
+        addAlarmView.topToBottom(of: subTitle,offset: NatSpacing.tiny)
         
-        let pickerAlarmTrailingAnchor = pickerAlarmView.trailingAnchor.constraint(equalTo: addHourAlert.leadingAnchor, constant: -0.3)
+        titleAlarmViewLabel.leadingToSuperview(offset:NatSpacing.standard)
+        
+  
+        addHourAlertButton.topToBottom(of: subTitle,offset: NatSpacing.small)
+        addHourAlertButton.leadingToTrailing(of: addAlarmView,offset: NatSpacing.small)
+        addHourAlertButton.trailingToSuperview(offset: NatSpacing.small)
+        addHourAlertButton.heightAnchor.constraint(equalToConstant: UIScreen.main.bounds.height * 0.05).isActive = true
+  
+        
+        let pickerAlarmTrailingAnchor = pickerAlarmView.trailingAnchor.constraint(equalTo: addHourAlertButton.leadingAnchor, constant: -0.3)
         pickerAlarmTrailingAnchor.priority = UILayoutPriority(999)
         
         NSLayoutConstraint.activate([
