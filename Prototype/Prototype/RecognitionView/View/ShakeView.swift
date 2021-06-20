@@ -11,9 +11,7 @@ import SwiftyGif
 class ShakeView:UIView{
     
     //Variables
-    
-    //UI components
-    
+  
     let labelShake: UILabel = {
         let label = UILabel(frame: CGRect.zero)
         label.text = "Faça um Shake!!!\nCaso esteja em situação de perigo"

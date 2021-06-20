@@ -13,7 +13,12 @@ import TinyConstraints
 class ContactsManagerView: UIView {
 
     //NavigationBar
-    public let navigationBar = AppNavigationBar(title: .text("Contatos"), leftButton: .back)
+    public var navigationBar: AppNavigationBar = {
+        let icon = NatIconButton(style: .standardDefault)
+        icon.configure(icon: getIcon(.filledActionAdd))
+        let navBar = AppNavigationBar(title: .text("Contatos"), leftButton: .back, rightButtons: [icon])
+        return navBar
+    }()
     
     //Contacts
     private var contact: [Contact] = []
@@ -70,13 +75,12 @@ extension ContactsManagerView:ViewCodable {
 
 extension ContactsManagerView: UITableViewDelegate, UITableViewDataSource {
      func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        1
+        PersistenceContacts.share.getContacts().count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         guard let cell = contactsTableView.dequeueReusableCell(withIdentifier: ContactsManagerTBViewCell.identifier, for: indexPath) as? ContactsManagerTBViewCell else{
-            
             return UITableViewCell()
         }
         return cell

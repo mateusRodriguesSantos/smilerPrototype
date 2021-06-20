@@ -20,13 +20,13 @@ class ContactsManagerViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        self.navigationController?.setNavigationBarHidden(true, animated: true)
+        self.navigationController?.setNavigationBarHidden(true, animated: false)
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.viewBase.navigationBar.setLeftButtonAction({
-            self.navigationController?.popViewController(animated: true)
+        self.viewBase.navigationBar.setLeftButtonAction({ [weak self] in
+            self?.coordinator?.navigateToMenuViewController()
         })
     }
 }

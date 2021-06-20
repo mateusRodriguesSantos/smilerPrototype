@@ -208,8 +208,6 @@ class MenuView:UIView {
     
     override init(frame: CGRect) {
         super.init(frame: .zero)
-        let colorBack = UIColor(red: 41/255.0, green: 42/255.0, blue: 48/255.0, alpha: 1.0)
-        backgroundColor = colorBack
         setupViews()
     }
     
