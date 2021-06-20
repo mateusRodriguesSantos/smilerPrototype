@@ -11,6 +11,8 @@
 		4EC82BBDAB11F62A432E64F2 /* Pods_Smiler_SmilerUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD21A10148BE393287CB1383 /* Pods_Smiler_SmilerUITests.framework */; };
 		57389DBA267F8F8C009635AE /* Contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57389DB9267F8F8C009635AE /* Contact.swift */; };
 		57389DBC267F9EF1009635AE /* PersistenceContacts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57389DBB267F9EF1009635AE /* PersistenceContacts.swift */; };
+		57389DC0267FEE43009635AE /* NewContactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57389DBF267FEE43009635AE /* NewContactViewController.swift */; };
+		57389DC2267FEE4F009635AE /* NewContactView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57389DC1267FEE4F009635AE /* NewContactView.swift */; };
 		57754121266174B800C0DC6B /* AppNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57754120266174B800C0DC6B /* AppNavigationBar.swift */; };
 		57754139266175A900C0DC6B /* UIWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57754138266175A900C0DC6B /* UIWindow.swift */; };
 		5775413E266175D100C0DC6B /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5775413D266175D100C0DC6B /* UIView.swift */; };
@@ -93,6 +95,8 @@
 		547D4D456EFBB9EF071372BC /* Pods-Smiler.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Smiler.release.xcconfig"; path = "Target Support Files/Pods-Smiler/Pods-Smiler.release.xcconfig"; sourceTree = "<group>"; };
 		57389DB9267F8F8C009635AE /* Contact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contact.swift; sourceTree = "<group>"; };
 		57389DBB267F9EF1009635AE /* PersistenceContacts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceContacts.swift; sourceTree = "<group>"; };
+		57389DBF267FEE43009635AE /* NewContactViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewContactViewController.swift; sourceTree = "<group>"; };
+		57389DC1267FEE4F009635AE /* NewContactView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewContactView.swift; sourceTree = "<group>"; };
 		57754120266174B800C0DC6B /* AppNavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppNavigationBar.swift; sourceTree = "<group>"; };
 		57754138266175A900C0DC6B /* UIWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIWindow.swift; sourceTree = "<group>"; };
 		5775413D266175D100C0DC6B /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
@@ -524,6 +528,7 @@
 			isa = PBXGroup;
 			children = (
 				DCA809E2261793E800AC89FC /* ContactsManagerViewController.swift */,
+				57389DBF267FEE43009635AE /* NewContactViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -533,6 +538,7 @@
 			children = (
 				DCA809EA261793FA00AC89FC /* ContactsManagerView.swift */,
 				57754147266177FD00C0DC6B /* ContactsManagerTBViewCell.swift */,
+				57389DC1267FEE4F009635AE /* NewContactView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -850,6 +856,7 @@
 				57754139266175A900C0DC6B /* UIWindow.swift in Sources */,
 				DCF3C2A0265C4C51000FE0CB /* ViewController.swift in Sources */,
 				DCF3C2A3265C4E3D000FE0CB /* TextViewDelegate.swift in Sources */,
+				57389DC2267FEE4F009635AE /* NewContactView.swift in Sources */,
 				DCA809EB261793FA00AC89FC /* ContactsManagerView.swift in Sources */,
 				ADFBEC15256D4BDB002EAE9D /* SceneDelegate.swift in Sources */,
 				DCA809FA2617D67400AC89FC /* AlertViewCell.swift in Sources */,
@@ -865,6 +872,7 @@
 				DC55052A2652AFD200B7EE29 /* ReturnSMS_SMSDev.swift in Sources */,
 				57389DBC267F9EF1009635AE /* PersistenceContacts.swift in Sources */,
 				577541432661767500C0DC6B /* NatFont.swift in Sources */,
+				57389DC0267FEE43009635AE /* NewContactViewController.swift in Sources */,
 				DCE2A9422653FF73007B99B9 /* Results.swift in Sources */,
 				DC25AAF62670368F00122997 /* PropertiesForSMS.swift in Sources */,
 				5775413E266175D100C0DC6B /* UIView.swift in Sources */,

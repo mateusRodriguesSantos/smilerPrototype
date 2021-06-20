@@ -21,6 +21,9 @@ class ContactsManagerViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.navigationController?.setNavigationBarHidden(true, animated: false)
+        self.viewBase.icon.configure{ [weak self] in
+            self?.goToNewContact()
+        }
     }
     
     override func viewDidLoad() {
@@ -28,5 +31,11 @@ class ContactsManagerViewController: UIViewController {
         self.viewBase.navigationBar.setLeftButtonAction({ [weak self] in
             self?.coordinator?.navigateToMenuViewController()
         })
+    }
+}
+
+extension ContactsManagerViewController {
+    func goToNewContact(){
+        self.coordinator?.navigateToNewContactViewController()
     }
 }

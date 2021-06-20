@@ -47,5 +47,11 @@ extension MainCoordinator{
         viewController.coordinator = self
         navigationController.pushViewController(viewController, animated: true)
     }
+    
+    func navigateToNewContactViewController(){
+        let viewController = NewContactViewController()
+        viewController.coordinator = self
+        navigationController.pushViewController(viewController, animated: true)
+    }
 }
 
