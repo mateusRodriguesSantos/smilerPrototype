@@ -28,7 +28,7 @@ class AlertViewCell: UITableViewCell {
         button.isUserInteractionEnabled = true
         button.setImage(UIImage(systemName: "checkmark.circle"), for: .normal)
         button.addTarget(self, action: #selector(addForDrop), for: .touchUpInside)
-        button.tintColor = .systemBlue
+        button.tintColor = .white
         button.setTitleColor(.systemBlue, for: .normal)
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
