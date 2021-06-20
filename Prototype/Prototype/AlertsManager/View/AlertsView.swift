@@ -7,13 +7,21 @@
 
 import UIKit
 import NatDS
+import NatDSIcons
 import TinyConstraints
 
 class AlertsView:UIView {
     
     //MARK: NavBar
-    let navBar: AppNavigationBar = {
-        let navigation = AppNavigationBar(title: .text("Editar Alertas"), leftButton: .back)
+    
+    lazy var icon:NatIconButton = {
+        let icon = NatIconButton(style: .standardDefault)
+        icon.configure(icon: getIcon(.outlinedActionEdit))
+        return icon
+    }()
+    
+    lazy var navBar: AppNavigationBar = {
+        let navigation = AppNavigationBar(title: .text("Editar Alertas"), leftButton: .back, rightButtons: [icon])
        
         return navigation
     }()
@@ -179,10 +187,10 @@ extension AlertsView:ViewCodable {
         titleAlarmViewLabel.leadingToSuperview(offset:NatSpacing.standard)
         
   
-        addHourAlertButton.topToBottom(of: subTitle,offset: NatSpacing.small)
+        addHourAlertButton.topToBottom(of: subTitle,offset: NatSpacing.tiny)
         addHourAlertButton.leadingToTrailing(of: addAlarmView,offset: NatSpacing.small)
         addHourAlertButton.trailingToSuperview(offset: NatSpacing.small)
-        addHourAlertButton.heightAnchor.constraint(equalToConstant: UIScreen.main.bounds.height * 0.05).isActive = true
+        addHourAlertButton.heightAnchor.constraint(equalTo: addAlarmView.heightAnchor).isActive = true
   
         
         let pickerAlarmTrailingAnchor = pickerAlarmView.trailingAnchor.constraint(equalTo: addHourAlertButton.leadingAnchor, constant: -0.3)

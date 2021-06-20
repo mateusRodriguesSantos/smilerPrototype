@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import NatDSIcons
 
 class AlertsManagerViewController: UIViewController{
     ///MainCoordinator
@@ -33,9 +34,13 @@ class AlertsManagerViewController: UIViewController{
         
         //Check if already exists alerts
         if viewBase.tableDataSource.hours.isEmpty == false{
+            viewBase.icon.isHidden = false
             //Add edit button in navBar
-            let edit = UIBarButtonItem(barButtonSystemItem: .edit, target: self, action: #selector(playTappedEditAction))
-            navigationItem.rightBarButtonItems = [edit]
+            viewBase.icon.configure { [weak self] in
+                self?.playTappedEditAction()
+            }
+        }else{
+            viewBase.icon.isHidden = true
         }
     }
 }
@@ -61,25 +66,31 @@ extension AlertsManagerViewController{
         guard let type = buttonType else { return  }
         
         if type == .edit{
-            let edit = UIBarButtonItem(barButtonSystemItem: type, target: self, action: #selector(playTappedEditAction))
-            navigationItem.rightBarButtonItems = [edit]
+            viewBase.icon.configure { [weak self] in
+                self?.playTappedEditAction()
+            }
         }else if type == .trash{
-            let edit = UIBarButtonItem(barButtonSystemItem: type, target: self, action: #selector(playTappedTrashAction))
-            navigationItem.rightBarButtonItems = [edit]
+            viewBase.icon.configure { [weak self] in
+                self?.playTappedTrashAction()
+            }
         }
     }
     
     @objc func addHourToTableViewAction(){
         //Add edit button in navBar
+        viewBase.icon.isHidden = false
+        viewBase.icon.configure(icon: getIcon(.outlinedActionEdit))
         addButtonInNavBar(.edit)
         self.viewBase.tableDataSource.date = self.viewBase.pickerAlarmView.date.dateStringWith(strFormat: "HH:mm")
         self.viewBase.tableView.reloadData()
     }
     
-    @objc func playTappedEditAction(){
+    func playTappedEditAction(){
         //Transform the button that add alarm in unavailable
         viewBase.backAddHourAlert.alpha = 0.8
         viewBase.addHourAlertButton.isUserInteractionEnabled = false
+        
+        viewBase.icon.configure(icon: getIcon(.filledActionDelete))
         
         //Add delete button in navBar
         addButtonInNavBar(.trash)
@@ -88,10 +99,12 @@ extension AlertsManagerViewController{
         ObserverDelete.share.notifyEdition()
     }
     
-    @objc func playTappedTrashAction(){
+    func playTappedTrashAction(){
         //Transform the button that add alarm in available
         viewBase.backAddHourAlert.alpha = 0.2
         viewBase.addHourAlertButton.isUserInteractionEnabled = true
+        
+        viewBase.icon.configure(icon: getIcon(.outlinedActionEdit))
         
         //Add delete button in navBar
         addButtonInNavBar(.edit)
@@ -113,7 +126,7 @@ extension AlertsManagerViewController{
         self.viewBase.tableView.reloadData()
         //Remove buttons if all alarms is deleted
         if self.viewBase.tableDataSource.hours.isEmpty{
-            navigationItem.rightBarButtonItems = []
+            viewBase.icon.isHidden = true
         }
     }
 }
