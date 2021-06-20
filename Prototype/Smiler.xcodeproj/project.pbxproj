@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		1E13D0779708772EB4D0E66D /* Pods_Smiler.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA5D950F0170741E3B235656 /* Pods_Smiler.framework */; };
 		4EC82BBDAB11F62A432E64F2 /* Pods_Smiler_SmilerUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD21A10148BE393287CB1383 /* Pods_Smiler_SmilerUITests.framework */; };
+		57389DB5267E5B95009635AE /* Contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57389DB4267E5B95009635AE /* Contact.swift */; };
 		57754121266174B800C0DC6B /* AppNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57754120266174B800C0DC6B /* AppNavigationBar.swift */; };
 		57754139266175A900C0DC6B /* UIWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57754138266175A900C0DC6B /* UIWindow.swift */; };
 		5775413E266175D100C0DC6B /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5775413D266175D100C0DC6B /* UIView.swift */; };
@@ -42,7 +43,6 @@
 		DC55052C2652AFDB00B7EE29 /* APIResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC55052B2652AFDB00B7EE29 /* APIResponse.swift */; };
 		DC55052E2652AFE200B7EE29 /* APIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC55052D2652AFE200B7EE29 /* APIRequest.swift */; };
 		DC5505302652AFE900B7EE29 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC55052F2652AFE900B7EE29 /* APIClient.swift */; };
-		DC7FD004266C736D00B271A1 /* API_Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DC7FD003266C736D00B271A1 /* API_Info.plist */; };
 		DC9AC68D266445DD00184CA5 /* PropertiesRequestMessageBird.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9AC68C266445DD00184CA5 /* PropertiesRequestMessageBird.swift */; };
 		DC9AFD802654670C00EA5B49 /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9AFD7F2654670C00EA5B49 /* NotificationService.swift */; };
 		DCA809C026177EBD00AC89FC /* MenuViewViewControllerTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA809BF26177EBD00AC89FC /* MenuViewViewControllerTestCase.swift */; };
@@ -89,6 +89,7 @@
 /* Begin PBXFileReference section */
 		0ADC97CE740E79CC364E67DF /* Pods-Smiler.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Smiler.debug.xcconfig"; path = "Target Support Files/Pods-Smiler/Pods-Smiler.debug.xcconfig"; sourceTree = "<group>"; };
 		547D4D456EFBB9EF071372BC /* Pods-Smiler.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Smiler.release.xcconfig"; path = "Target Support Files/Pods-Smiler/Pods-Smiler.release.xcconfig"; sourceTree = "<group>"; };
+		57389DB4267E5B95009635AE /* Contact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contact.swift; sourceTree = "<group>"; };
 		57754120266174B800C0DC6B /* AppNavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppNavigationBar.swift; sourceTree = "<group>"; };
 		57754138266175A900C0DC6B /* UIWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIWindow.swift; sourceTree = "<group>"; };
 		5775413D266175D100C0DC6B /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
@@ -138,7 +139,6 @@
 		DC55052B2652AFDB00B7EE29 /* APIResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIResponse.swift; sourceTree = "<group>"; };
 		DC55052D2652AFE200B7EE29 /* APIRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIRequest.swift; sourceTree = "<group>"; };
 		DC55052F2652AFE900B7EE29 /* APIClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
-		DC7FD003266C736D00B271A1 /* API_Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = API_Info.plist; sourceTree = "<group>"; };
 		DC9AC68C266445DD00184CA5 /* PropertiesRequestMessageBird.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropertiesRequestMessageBird.swift; sourceTree = "<group>"; };
 		DC9AFD7F2654670C00EA5B49 /* NotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationService.swift; sourceTree = "<group>"; };
 		DCA809BF26177EBD00AC89FC /* MenuViewViewControllerTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewViewControllerTestCase.swift; sourceTree = "<group>"; };
@@ -195,6 +195,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		57389DB3267E5B87009635AE /* Contact */ = {
+			isa = PBXGroup;
+			children = (
+				57389DB4267E5B95009635AE /* Contact.swift */,
+			);
+			path = Contact;
+			sourceTree = "<group>";
+		};
 		6E10C7132574538000A39F3F /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -492,6 +500,7 @@
 		DCA809DE261793A900AC89FC /* ContactsManager */ = {
 			isa = PBXGroup;
 			children = (
+				57389DB3267E5B87009635AE /* Contact */,
 				DCA809DF261793B700AC89FC /* Controller */,
 				DCA809E0261793BF00AC89FC /* View */,
 			);
@@ -848,6 +857,7 @@
 				DC5505302652AFE900B7EE29 /* APIClient.swift in Sources */,
 				DCF3C29E265BDA6A000FE0CB /* LocationService.swift in Sources */,
 				DCE2A9402653F4E8007B99B9 /* Persistence.swift in Sources */,
+				57389DB5267E5B95009635AE /* Contact.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
