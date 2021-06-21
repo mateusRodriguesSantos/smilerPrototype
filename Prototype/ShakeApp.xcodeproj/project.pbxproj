@@ -34,6 +34,7 @@
 		ADFBEC22256D4BDC002EAE9D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ADFBEC20256D4BDC002EAE9D /* LaunchScreen.storyboard */; };
 		ADFBEC2D256D4BDC002EAE9D /* PrototypeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADFBEC2C256D4BDC002EAE9D /* PrototypeTests.swift */; };
 		ADFBEC38256D4BDC002EAE9D /* PrototypeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADFBEC37256D4BDC002EAE9D /* PrototypeUITests.swift */; };
+		DC01CE9F2680C0E000817183 /* API_Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DC01CE9E2680C0E000817183 /* API_Info.plist */; };
 		DC02A63526589F7100011760 /* CALayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC02A63426589F7100011760 /* CALayer.swift */; };
 		DC1BD8F7267E4CD700B3BDFC /* UITextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC1BD8F6267E4CD700B3BDFC /* UITextView.swift */; };
 		DC22DC14265187A400C50AA7 /* ObserverDeleteButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC22DC13265187A400C50AA7 /* ObserverDeleteButton.swift */; };
@@ -134,8 +135,8 @@
 		ADFBEC39256D4BDC002EAE9D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BC6804A0AF89BD5CAD5D3F84 /* Pods-ShakeApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ShakeApp.debug.xcconfig"; path = "Target Support Files/Pods-ShakeApp/Pods-ShakeApp.debug.xcconfig"; sourceTree = "<group>"; };
 		C92A4BD5AD38039AB4112532 /* Pods-ShakeApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ShakeApp.release.xcconfig"; path = "Target Support Files/Pods-ShakeApp/Pods-ShakeApp.release.xcconfig"; sourceTree = "<group>"; };
+		DC01CE9E2680C0E000817183 /* API_Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = API_Info.plist; sourceTree = "<group>"; };
 		DC02A63426589F7100011760 /* CALayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CALayer.swift; sourceTree = "<group>"; };
-		DC1BD8F4267E3A8100B3BDFC /* API_Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = API_Info.plist; sourceTree = "<group>"; };
 		DC1BD8F6267E4CD700B3BDFC /* UITextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextView.swift; sourceTree = "<group>"; };
 		DC22DC13265187A400C50AA7 /* ObserverDeleteButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObserverDeleteButton.swift; sourceTree = "<group>"; };
 		DC22DC152651B01100C50AA7 /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
@@ -321,7 +322,7 @@
 		ADFBEC11256D4BDB002EAE9D /* Prototype */ = {
 			isa = PBXGroup;
 			children = (
-				DC1BD8F4267E3A8100B3BDFC /* API_Info.plist */,
+				DC01CE9E2680C0E000817183 /* API_Info.plist */,
 				AD8A2E19256D500100B05AAB /* AppDelegate */,
 				DCF3C29C265BDA54000FE0CB /* Location */,
 				DC9AFD7E265466DB00EA5B49 /* Notification */,
@@ -673,6 +674,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				ADFBEC22256D4BDC002EAE9D /* LaunchScreen.storyboard in Resources */,
+				DC01CE9F2680C0E000817183 /* API_Info.plist in Resources */,
 				DCCC8872267042BE00B01C87 /* hand_shake.gif in Resources */,
 				DCE72A822655B4A1005D06E9 /* Roboto-Bold.ttf in Resources */,
 				DCE72A802655B491005D06E9 /* Roboto-Regular.ttf in Resources */,

@@ -12,11 +12,20 @@ class Recipients {
     
     var numbers: [String] = []
 
-    func getNumbersContacts(_ contacts: [Contact]) -> [String] {
-        for item in contacts {
-            numbers.append(item.phone)
+    func getNumbersContacts() -> String {
+        let contacts = PersistenceContacts.share.getContacts()
+        var recipients = ""
+        var count = 0
+
+        contacts.forEach{
+            if count == 0{
+                recipients.append("\($0.phone)")
+            }else{
+                recipients.append(",\($0.phone)")
+            }
+            count += 1
         }
-        return numbers
+        return recipients
     }
 }
 
@@ -34,21 +43,21 @@ struct PropertiesRequestMessageBird {
     static var parametersTest:Data? = {
         return """
                               {
-                                  "body" : "\(PropertiesForSMS.userMensage) - Quem Enviou: \(PropertiesForSMS.userName) - Número: \(PropertiesForSMS.userNumber) - Localização: ",
-                                  "originator" : "inbox",
-                                  "recipients" : [\(Recipients.share.getNumbersContacts(PersistenceContacts.share.getContacts()))]
+                                  "body":"\(PropertiesForSMS.userMensage) - Quem Enviou: \(PropertiesForSMS.userName) - Número: \(PropertiesForSMS.userNumber) - Localização: ",
+                                  "originator":"inbox",
+                                  "recipients":[\(Recipients.share.getNumbersContacts())]
                               }
               """.data(using: .utf8)
     }()
     
-    static var parameters:Data? = {
+    static var parameters:String? = {
         return """
                               {
-                                  "body" : "\(PropertiesForSMS.mensage)",
+                                  "body" :"\(PropertiesForSMS.userMensage) - Quem Enviou: \(PropertiesForSMS.userName) - Número: \(PropertiesForSMS.userNumber) - Localização: ",
                                   "originator" : "inbox",
-                                  "recipients" : [\(Recipients.share.getNumbersContacts(PersistenceContacts.share.getContacts()))]
+                                  "recipients"  : [\(Recipients.share.getNumbersContacts())]
                               }
-              """.data(using: .utf8)
+              """
     }()
     
     static var apiKeyLive: String {

@@ -81,6 +81,7 @@ extension ContactsManagerView: UITableViewDelegate, UITableViewDataSource {
             tableView.beginUpdates()
             PersistenceContacts.share.deleteContact(indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .fade)
+            setInformationContact()
             tableView.endUpdates()
         }
     }
