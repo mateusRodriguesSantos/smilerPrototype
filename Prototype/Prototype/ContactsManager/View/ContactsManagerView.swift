@@ -12,16 +12,17 @@ import TinyConstraints
 
 class ContactsManagerView: UIView {
 
-    //NavigationBar
-    public var navigationBar: AppNavigationBar = {
+    lazy var icon: NatIconButton = {
         let icon = NatIconButton(style: .standardDefault)
         icon.configure(icon: getIcon(.filledActionAdd))
+        return icon
+    }()
+    
+    //NavigationBar
+    lazy var navigationBar: AppNavigationBar = {
         let navBar = AppNavigationBar(title: .text("Contatos"), leftButton: .back, rightButtons: [icon])
         return navBar
     }()
-    
-    //Contacts
-    private var contact: [Contact] = []
     
     //Header
     private let header: UIView = {

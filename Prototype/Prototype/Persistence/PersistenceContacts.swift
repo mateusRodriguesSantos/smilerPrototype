@@ -41,7 +41,6 @@ class PersistenceContacts{
         do {
             try Persistence.realm?.write{
                 let contact = contacts?[index]
-                contact?.isEnable = newObject.isEnable
                 contact?.identifier = newObject.identifier
             }
         } catch {
@@ -55,7 +54,6 @@ class PersistenceContacts{
                 let contact = contacts?[index]
                 contact?.name = newObject.name
                 contact?.phone = newObject.phone
-                contact?.isEnable = newObject.isEnable
                 contact?.identifier = identifier
             }
         } catch {
@@ -67,30 +65,6 @@ class PersistenceContacts{
         do {
             try Persistence.realm?.write{
                 contact.identifier = identifier
-            }
-        } catch {
-            NSLog("Error in Update")
-        }
-    }
-    
-    func updateContactState(_ index: Int,_ newObject: Contact,_ state: String){
-        //fetchAlert()
-        do {
-            try Persistence.realm?.write{
-                let contact = contacts?[index]
-                contact?.name = newObject.name
-                contact?.phone = newObject.phone
-                contact?.isEnable = newObject.isEnable
-            }
-        } catch {
-            NSLog("Error in Update")
-        }
-    }
-    
-    func updateAlertState(_ contact: Contact,_ state:String){
-        do {
-            try Persistence.realm?.write{
-                contact.isEnable = state
             }
         } catch {
             NSLog("Error in Update")

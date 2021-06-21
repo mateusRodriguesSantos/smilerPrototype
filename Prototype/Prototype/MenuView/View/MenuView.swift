@@ -9,7 +9,7 @@ import UIKit
 import TinyConstraints
 import NatDS
 
-class MenuView:UIView {
+class MenuView: UIView {
     
     ///Acessory view of keyboards
     let viewAcessory = AcessoryViewKeyboard(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height * 0.05))
