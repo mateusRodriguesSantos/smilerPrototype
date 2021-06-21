@@ -35,7 +35,7 @@ class TextViewDelegate:NSObject, UITextViewDelegate{
         }
         
         guard let menuViewController = self.ownerView as? MenuViewController else{return}
-//        menuViewController.constraintTopAnchorViewBase?.constant = self.sizeOriginView ?? 0
+        menuViewController.constraintTopAnchorViewBase?.constant = self.sizeOriginView ?? 0
         
         UIView.animate(withDuration: 0.5) {
             menuViewController.view.layoutIfNeeded()
@@ -56,7 +56,7 @@ class TextViewDelegate:NSObject, UITextViewDelegate{
         textView.resignFirstResponder()
         
         guard let menuViewController = self.ownerView as? MenuViewController else{return}
-//        menuViewController.constraintTopAnchorViewBase?.constant = 0
+        menuViewController.constraintTopAnchorViewBase?.constant = 0
         
         UIView.animate(withDuration: 0.2) {
             menuViewController.view.layoutIfNeeded()
