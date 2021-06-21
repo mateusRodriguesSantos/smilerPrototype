@@ -25,8 +25,6 @@ class MenuView: UIView {
         label.numberOfLines = 0
         label.font = NatFonts.fontRoboto(ofSize: .body1, withWeight: .bold)
         label.textAlignment = .left
-        label.translatesAutoresizingMaskIntoConstraints = false
-      
         label.textColor = NatColors.highEmphasis
         return label
     }()
@@ -37,8 +35,6 @@ class MenuView: UIView {
         label.numberOfLines = 0
         label.font = NatFonts.fontRoboto(ofSize: .body1, withWeight: .bold)
         label.textAlignment = .left
-        label.translatesAutoresizingMaskIntoConstraints = false
-
         label.textColor = NatColors.highEmphasis
         return label
     }()
