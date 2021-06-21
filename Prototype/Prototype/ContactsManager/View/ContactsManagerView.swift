@@ -11,7 +11,10 @@ import NatDSIcons
 import TinyConstraints
 
 class ContactsManagerView: UIView {
-
+    
+    //Contact
+    lazy var contact = [Contact]()
+    
     lazy var icon: NatIconButton = {
         let icon = NatIconButton(style: .standardDefault)
         icon.configure(icon: getIcon(.filledActionAdd))
@@ -24,20 +27,15 @@ class ContactsManagerView: UIView {
         return navBar
     }()
     
-    //Header
-    private let header: UIView = {
-        let view = UIView()
-        return view
-    }()
-    
-    private let contactsTableView: UITableView = {
+    var contactsTableView: UITableView = {
         let tableView = UITableView(frame: .zero)
         tableView.register(ContactsManagerTBViewCell.self, forCellReuseIdentifier: ContactsManagerTBViewCell.identifier)
+        tableView.separatorColor = NatColors.lowEmphasis
         return tableView
     }()
     
-    init(){
-        super.init(frame: .zero)
+    override init(frame: CGRect) {
+        super.init(frame: frame)
         setupViews()
         contactsTableView.dataSource = self
         contactsTableView.delegate = self
@@ -52,31 +50,43 @@ class ContactsManagerView: UIView {
 extension ContactsManagerView:ViewCodable {
     func setupViewHierarchy() {
         self.addSubview(navigationBar)
-        self.addSubview(header)
         self.addSubview(contactsTableView)
     }
     
     func setupConstraints() {
-        header.topToBottom(of: navigationBar)
-        header.leadingToSuperview()
-        header.trailingToSuperview()
-        header.height(NatSizes.semiX) //height: 40
-        
-        contactsTableView.topToBottom(of: header)
+        contactsTableView.topToBottom(of: navigationBar)
         contactsTableView.leadingToSuperview()
         contactsTableView.trailingToSuperview()
         contactsTableView.bottomToSuperview()
     }
     
     func setupAditionalConfiguration() {
-        header.backgroundColor = .red
-        contactsTableView.backgroundColor = .yellow
+        contactsTableView.backgroundColor = NatColors.background
+        setInformationContact()
     }
 }
 
 extension ContactsManagerView: UITableViewDelegate, UITableViewDataSource {
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
      func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        PersistenceContacts.share.getContacts().count
+        contact.count
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            tableView.beginUpdates()
+            PersistenceContacts.share.deleteContact(indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: .fade)
+            tableView.endUpdates()
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
+        return .delete
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -84,8 +94,14 @@ extension ContactsManagerView: UITableViewDelegate, UITableViewDataSource {
         guard let cell = contactsTableView.dequeueReusableCell(withIdentifier: ContactsManagerTBViewCell.identifier, for: indexPath) as? ContactsManagerTBViewCell else{
             return UITableViewCell()
         }
+        cell.setupCell(contact[indexPath.row])
         return cell
     }
-    
-    
+}
+
+extension ContactsManagerView {
+    func setInformationContact(){
+        self.contact = PersistenceContacts.share.getContacts()
+        self.contactsTableView.reloadData()
+    }
 }

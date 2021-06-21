@@ -11,19 +11,26 @@ import NatDS
 import NatDSIcons
 
 public class ContactsManagerTBViewCell: UITableViewCell {
+        
     
     //MARK: Identifier
     static let identifier = "ContactsManagerTBViewCell"
     
     //MARK: Variables
-    private var nameLabel: UILabel = {
+    lazy var nameLabel: UILabel = {
         let label = UILabel()
+        label.numberOfLines = 0
+        label.font = NatFonts.fontRoboto(ofSize: .body1, withWeight: .regular)
+        label.textColor = NatColors.highEmphasis
         return label
     }()
     
-    private var accessButton: FeedbackButton = {
-        let button = FeedbackButton()
-        return button
+    lazy var phoneLabel: UILabel = {
+        let label = UILabel()
+        label.numberOfLines = 0
+        label.font = NatFonts.fontRoboto(ofSize: .body1, withWeight: .regular)
+        label.textColor = NatColors.highEmphasis
+        return label
     }()
     
     //MARK: -Initializer
@@ -39,14 +46,28 @@ public class ContactsManagerTBViewCell: UITableViewCell {
 
 extension ContactsManagerTBViewCell: ViewCodable {
     func setupViewHierarchy() {
-    
+        self.addSubview(nameLabel)
+        self.addSubview(phoneLabel)
     }
     
     func setupConstraints() {
-        
+        nameLabel.centerYToSuperview()
+        nameLabel.leadingToSuperview(offset: NatSpacing.tiny)
+     
+        phoneLabel.centerYToSuperview()
+        phoneLabel.trailingToSuperview(offset: NatSpacing.tiny)
+
     }
     
     func setupAditionalConfiguration() {
-        
+        self.selectionStyle = .none
+        self.backgroundColor = NatColors.lowEmphasis
+    }
+}
+
+extension ContactsManagerTBViewCell {
+    func setupCell(_ contact: Contact){
+        self.nameLabel.text = contact.name
+        self.phoneLabel.text = contact.phone
     }
 }

@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "ADFBEC0E256D4BDB002EAE9D"
-               BuildableName = "Smiler.app"
-               BlueprintName = "Smiler"
-               ReferencedContainer = "container:Smiler.xcodeproj">
+               BuildableName = "ShakeApp.app"
+               BlueprintName = "ShakeApp"
+               ReferencedContainer = "container:ShakeApp.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -34,9 +34,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "ADFBEC27256D4BDC002EAE9D"
-               BuildableName = "SmilerTests.xctest"
-               BlueprintName = "SmilerTests"
-               ReferencedContainer = "container:Smiler.xcodeproj">
+               BuildableName = "ShakeAppTests.xctest"
+               BlueprintName = "ShakeAppTests"
+               ReferencedContainer = "container:ShakeApp.xcodeproj">
             </BuildableReference>
          </TestableReference>
          <TestableReference
@@ -44,9 +44,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "ADFBEC32256D4BDC002EAE9D"
-               BuildableName = "SmilerUITests.xctest"
-               BlueprintName = "SmilerUITests"
-               ReferencedContainer = "container:Smiler.xcodeproj">
+               BuildableName = "ShakeAppUITests.xctest"
+               BlueprintName = "ShakeAppUITests"
+               ReferencedContainer = "container:ShakeApp.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -66,9 +66,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "ADFBEC0E256D4BDB002EAE9D"
-            BuildableName = "Smiler.app"
-            BlueprintName = "Smiler"
-            ReferencedContainer = "container:Smiler.xcodeproj">
+            BuildableName = "ShakeApp.app"
+            BlueprintName = "ShakeApp"
+            ReferencedContainer = "container:ShakeApp.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </LaunchAction>
@@ -83,9 +83,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "ADFBEC0E256D4BDB002EAE9D"
-            BuildableName = "Smiler.app"
-            BlueprintName = "Smiler"
-            ReferencedContainer = "container:Smiler.xcodeproj">
+            BuildableName = "ShakeApp.app"
+            BlueprintName = "ShakeApp"
+            ReferencedContainer = "container:ShakeApp.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
