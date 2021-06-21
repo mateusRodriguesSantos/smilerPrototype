@@ -7,15 +7,28 @@
 
 import Foundation
 
+class Recipients {
+    static let share = Recipients()
+    
+    var numbers: [String] = []
+
+    func getNumbersContacts(_ contacts: [Contact]) -> [String] {
+        for item in contacts {
+            numbers.append(item.phone)
+        }
+        return numbers
+    }
+}
+
 struct PropertiesRequestMessageBird {
     
     static var endPoint:String = {
         return "https://rest.messagebird.com/messages"
     }()
-
+    
     static var location:String = {
-       return
-        "http://www.google.com/maps/place/\(PropertiesForSMS.coordinates["Latitude"] ?? "Error"),\(PropertiesForSMS.coordinates["Longitude"] ?? "Error")"
+        return
+            "http://www.google.com/maps/place/\(PropertiesForSMS.coordinates["Latitude"] ?? "Error"),\(PropertiesForSMS.coordinates["Longitude"] ?? "Error")"
     }()
     
     static var parametersTest:Data? = {
@@ -23,7 +36,7 @@ struct PropertiesRequestMessageBird {
                               {
                                   "body" : "\(PropertiesForSMS.userMensage) - Quem Enviou: \(PropertiesForSMS.userName) - Número: \(PropertiesForSMS.userNumber) - Localização: ",
                                   "originator" : "inbox",
-                                  "recipients" : ["+5561999685719","+5561983793588"]
+                                  "recipients" : [\(Recipients.share.getNumbersContacts(PersistenceContacts.share.getContacts()))]
                               }
               """.data(using: .utf8)
     }()
@@ -33,11 +46,7 @@ struct PropertiesRequestMessageBird {
                               {
                                   "body" : "\(PropertiesForSMS.mensage)",
                                   "originator" : "inbox",
-                                  "recipients" : ["+5561999685719","+5561982115779","+5561983793588"
-                                      ,"+5561996245457"
-                                      ,"+5561996819685"
-                                      ,"+5561996186192"
-                                      ,"+5561999701307"]
+                                  "recipients" : [\(Recipients.share.getNumbersContacts(PersistenceContacts.share.getContacts()))]
                               }
               """.data(using: .utf8)
     }()

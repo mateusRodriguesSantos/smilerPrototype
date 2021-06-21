@@ -14,6 +14,8 @@ import NatDSIcons
 
 class NewContactView: UIView {
     
+    public var delegate: NewContactDelegate?
+    
     //NavigationBar
     lazy var navigationBar: AppNavigationBar = {
         let navBar = AppNavigationBar(title: .text("Novo Contato"), leftButton: .back)
@@ -26,7 +28,7 @@ class NewContactView: UIView {
         view.configure(elevation: true)
         return view
     }()
-
+    
     lazy var nameLabel: UILabel = {
         let label = UILabel()
         label.text = "Nome"
@@ -41,6 +43,7 @@ class NewContactView: UIView {
         textField.textColor = NatColors.highEmphasis
         textField.backgroundColor = NatColors.lowEmphasis
         textField.cornerRadius = NatSizes.micro
+        textField.keyboardType = .namePhonePad
         textField.clipsToBounds = true
         return textField
     }()
@@ -58,8 +61,10 @@ class NewContactView: UIView {
         let textField = UITextField()
         textField.textColor = NatColors.highEmphasis
         textField.backgroundColor = NatColors.lowEmphasis
+        textField.keyboardType = .namePhonePad
         textField.cornerRadius = NatSizes.micro
         textField.clipsToBounds = true
+        textField.fix(textField: textField)
         return textField
     }()
     
@@ -113,12 +118,12 @@ extension NewContactView: ViewCodable {
         phoneLabel.topToBottom(of: nameTextField, offset: NatSpacing.small)
         phoneLabel.leadingToSuperview(offset: NatSpacing.tiny)
         phoneLabel.trailingToSuperview()
-
+        
         phoneTextField.topToBottom(of: phoneLabel, offset: NatSpacing.tiny)
         phoneTextField.leadingToSuperview(offset: NatSpacing.tiny)
         phoneTextField.trailingToSuperview(offset: NatSpacing.tiny)
         phoneTextField.height(NatSizes.semi)
-
+        
         buttonAddContact.topToBottom(of: phoneTextField, offset: NatSpacing.large)
         buttonAddContact.leadingToSuperview(offset: NatSpacing.semi)
         buttonAddContact.trailingToSuperview(offset: NatSpacing.semi)
@@ -127,5 +132,45 @@ extension NewContactView: ViewCodable {
     
     func setupAditionalConfiguration() {
         self.backgroundColor = NatColors.background
+        self.setupView()
+    }
+}
+
+extension NewContactView {
+    
+    func setupView(){
+        self.buttonAddContact.addTarget(self, action: #selector(addContact), for: .touchUpInside)
+    }
+    
+    @objc func addContact(){
+        let contact = Contact()
+        if let nameContact = nameTextField.text, let phoneContact = phoneTextField.text {
+            contact.name = nameContact
+            contact.phone = ("+55" + phoneContact)
+        }
+        self.delegate?.addContact(contact)
+    }
+}
+
+
+private var __maxLengths = [UITextField: Int]()
+extension UITextField {
+    
+    @IBInspectable var maxLength: Int {
+        get {
+            guard let l = __maxLengths[self] else {
+                return 11 // (global default-limit. or just, Int.max)
+            }
+            return l
+        }
+        set {
+            __maxLengths[self] = newValue
+            addTarget(self, action: #selector(fix), for: .editingChanged)
+        }
+    }
+    @objc func fix(textField: UITextField) {
+        if let t = textField.text {
+            textField.text = String(t.prefix(maxLength))
+        }
     }
 }

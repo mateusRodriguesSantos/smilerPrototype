@@ -152,8 +152,7 @@ class MenuView: UIView {
     }()
     
   
-    lazy var numberViewTextView:UITextView = {
-        let colorBack = UIColor(red: 245/255.0, green: 245/255.0, blue: 245/255.0, alpha: 1.0)
+    lazy var numberViewTextView: UITextView = {
         let textView = UITextView(frame: .zero)
         textView.inputAccessoryView = viewAcessory
         textView.keyboardType = .numberPad
@@ -171,7 +170,6 @@ class MenuView: UIView {
         let view = NatCard()
         view.configure(borderRadius: true)
         view.configure(elevation: true)
-        view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
     
@@ -200,7 +198,7 @@ class MenuView: UIView {
     }()
     
     override init(frame: CGRect) {
-        super.init(frame: .zero)
+        super.init(frame: frame)
         setupViews()
     }
     
@@ -304,10 +302,10 @@ extension MenuView:ViewCodable {
             numberViewTextView.bottomAnchor.constraint(equalTo: numberView.bottomAnchor, constant: -5),
         ])
 
-        mensagesView.topToBottom(of: numberView, offset: NatSpacing.semi)
+        mensagesView.topToBottom(of: numberView, offset: NatSpacing.standard)
         mensagesView.leadingToSuperview(offset: NatSpacing.small)
         mensagesView.trailingToSuperview(offset: NatSpacing.small)
-        mensagesView.bottomToSuperview(offset: -NatSpacing.standard)
+        mensagesView.height(NatSizes.hugeX)
         
         textMensagesView.topToSuperview(offset: NatSpacing.tiny)
         textMensagesView.leadingToSuperview(offset: NatSpacing.small)
@@ -320,8 +318,8 @@ extension MenuView:ViewCodable {
             mensagesTextView.bottomAnchor.constraint(equalTo: mensagesView.bottomAnchor, constant: -5),
         ])
     }
-    
     func setupAditionalConfiguration() {
         self.backgroundColor = NatColors.background
+        self.layoutSubviews()
     }
 }

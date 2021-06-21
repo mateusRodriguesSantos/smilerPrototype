@@ -203,13 +203,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		57389DB7267F8EFF009635AE /* Profile */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Profile;
-			sourceTree = "<group>";
-		};
 		57389DB8267F8F7B009635AE /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -517,7 +510,6 @@
 			isa = PBXGroup;
 			children = (
 				57389DB8267F8F7B009635AE /* Model */,
-				57389DB7267F8EFF009635AE /* Profile */,
 				DCA809DF261793B700AC89FC /* Controller */,
 				DCA809E0261793BF00AC89FC /* View */,
 			);
