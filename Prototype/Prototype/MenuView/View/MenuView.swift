@@ -14,9 +14,6 @@ class MenuView: UIView {
     ///Acessory view of keyboards
     let viewAcessory = AcessoryViewKeyboard(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height * 0.05))
     
-    //NavigationBar
-    public let navigationBar = AppNavigationBar(title: .text("Menu"), leftButton: .back)
-    
     //MARK: Buttons
     
     let setUpsViewLabel1: UILabel = {
@@ -214,8 +211,7 @@ class MenuView: UIView {
 
 extension MenuView:ViewCodable {
     func setupViewHierarchy() {
-        self.addSubview(navigationBar)
-        //self.addSubview(setUpsView)
+//        self.addSubview(navigationBar)
         self.addSubview(shareLocationView)
         self.addSubview(numberView)
         self.addSubview(nameView)
@@ -240,7 +236,7 @@ extension MenuView:ViewCodable {
     }
     
     func setupConstraints() {
-        setUpsViewLabel1.topToBottom(of: navigationBar)
+        setUpsViewLabel1.topToSuperview()
         setUpsViewLabel1.leadingToSuperview(offset: NatSpacing.small)
         setUpsViewLabel1.trailingToSuperview(offset: NatSpacing.small)
         setUpsViewLabel1.height(NatSizes.semiX)

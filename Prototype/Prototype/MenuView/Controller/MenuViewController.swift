@@ -13,6 +13,11 @@ class MenuViewController: UIViewController{
     weak var coordinator: MainCoordinator?
     
     let viewBase = MenuView()
+    
+    var constraintTopAnchorViewBase:NSLayoutConstraint?
+    
+    //NavigationBar
+    public let navigationBar = AppNavigationBar(title: .text("Menu"), leftButton: .back)
 
     lazy var textFieldDelegate1:TextViewDelegate = {
         let delegate = TextViewDelegate(.name,0, "Name", self)
@@ -27,14 +32,19 @@ class MenuViewController: UIViewController{
         return delegate
     }()
     
-    override func loadView() {
-        super.loadView()
-        self.view = viewBase
-    }
-    
     override func viewDidLoad() {
+        self.view.addSubview(navigationBar)
+        self.view.addSubview(viewBase)
+        viewBase.trailingToSuperview()
+        viewBase.leadingToSuperview()
+        viewBase.height(UIScreen.main.bounds.height)
+        constraintTopAnchorViewBase = viewBase.topAnchor.constraint(equalTo: navigationBar.bottomAnchor,constant: 0)
+        constraintTopAnchorViewBase?.isActive = true
+        
+        
+        
         super.viewDidLoad()
-        self.viewBase.navigationBar.setLeftButtonAction({ [weak self] in
+        self.navigationBar.setLeftButtonAction({ [weak self] in
             self?.coordinator?.navigateToShakeViewController()
         })
     }
