@@ -56,7 +56,7 @@ class TextViewDelegate:NSObject, UITextViewDelegate{
         textView.resignFirstResponder()
         
         guard let menuViewController = self.ownerView as? MenuViewController else{return}
-        menuViewController.constraintTopAnchorViewBase?.constant = 0
+         menuViewController.constraintTopAnchorViewBase?.constant = 0
         
         UIView.animate(withDuration: 0.2) {
             menuViewController.view.layoutIfNeeded()
