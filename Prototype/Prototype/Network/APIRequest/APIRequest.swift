@@ -39,12 +39,10 @@ extension ExecuteRequestURLSession {
         guard let url = URL(string: PropertiesRequestMessageBird.endPoint),
               let parameters = PropertiesRequestMessageBird.parametersTest
         else{return}
- 
-        print(PropertiesRequestMessageBird.parameters)
-        
+
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
-        request.addValue("AccessKey \(PropertiesRequestMessageBird.apiKeyTest)", forHTTPHeaderField: "Authorization")
+        request.addValue("AccessKey \(PropertiesRequestMessageBird.apiKeyLive)", forHTTPHeaderField: "Authorization")
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
         request.httpBody = parameters
 

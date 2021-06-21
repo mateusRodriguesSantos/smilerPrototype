@@ -25,7 +25,8 @@ class Recipients {
             }
             count += 1
         }
-        return recipients
+        
+        return "[\(recipients)]"
     }
 }
 
@@ -36,16 +37,19 @@ struct PropertiesRequestMessageBird {
     }()
     
     static var location:String = {
-        return
-            "http://www.google.com/maps/place/\(PropertiesForSMS.coordinates["Latitude"] ?? "Error"),\(PropertiesForSMS.coordinates["Longitude"] ?? "Error")"
+        //return "http://www.google.com/maps/place/\(PropertiesForSMS.coordinates["Latitude"] ?? "Error"),\(PropertiesForSMS.coordinates["Longitude"] ?? "Error")"
+        
+               guard let latitude = LocationService.share.coordinates.latitude else{return ""}
+                guard let longitude = LocationService.share.coordinates.longitude else{return ""}
+        return "Latitude: \(latitude) Longitude: \(longitude)"
     }()
     
     static var parametersTest:Data? = {
         return """
                               {
-                                  "body":"\(PropertiesForSMS.userMensage) - Quem Enviou: \(PropertiesForSMS.userName) - Número: \(PropertiesForSMS.userNumber) - Localização: ",
+                                  "body":"\(PropertiesForSMS.userMensage) - Quem Enviou: \(PropertiesForSMS.userName) - Número: \(PropertiesForSMS.userNumber) - Localização: \(location)",
                                   "originator":"inbox",
-                                  "recipients":[\(Recipients.share.getNumbersContacts())]
+                                  "recipients":"\(Recipients.share.getNumbersContacts())"
                               }
               """.data(using: .utf8)
     }()
