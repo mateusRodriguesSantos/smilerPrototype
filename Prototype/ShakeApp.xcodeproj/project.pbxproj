@@ -118,7 +118,7 @@
 		AD41F231256D51C300F0E467 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		AD41F236256D51D000F0E467 /* ViewCodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewCodable.swift; sourceTree = "<group>"; };
 		AD41F23B256D522500F0E467 /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
-		ADFBEC0F256D4BDB002EAE9D /* Smiler.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Smiler.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		ADFBEC0F256D4BDB002EAE9D /* ShakeApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ShakeApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ADFBEC12256D4BDB002EAE9D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ADFBEC14256D4BDB002EAE9D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		ADFBEC16256D4BDB002EAE9D /* ShakeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShakeViewController.swift; sourceTree = "<group>"; };
@@ -126,10 +126,10 @@
 		ADFBEC1E256D4BDC002EAE9D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		ADFBEC21256D4BDC002EAE9D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		ADFBEC23256D4BDC002EAE9D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		ADFBEC28256D4BDC002EAE9D /* SmilerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SmilerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		ADFBEC28256D4BDC002EAE9D /* ShakeAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ShakeAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		ADFBEC2C256D4BDC002EAE9D /* PrototypeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrototypeTests.swift; sourceTree = "<group>"; };
 		ADFBEC2E256D4BDC002EAE9D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		ADFBEC33256D4BDC002EAE9D /* SmilerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SmilerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		ADFBEC33256D4BDC002EAE9D /* ShakeAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ShakeAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		ADFBEC37256D4BDC002EAE9D /* PrototypeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrototypeUITests.swift; sourceTree = "<group>"; };
 		ADFBEC39256D4BDC002EAE9D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B67AACFB326B2CE171C30A9E /* Pods-Smiler-SmilerUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Smiler-SmilerUITests.release.xcconfig"; path = "Target Support Files/Pods-Smiler-SmilerUITests/Pods-Smiler-SmilerUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -301,9 +301,9 @@
 		ADFBEC10256D4BDB002EAE9D /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				ADFBEC0F256D4BDB002EAE9D /* Smiler.app */,
-				ADFBEC28256D4BDC002EAE9D /* SmilerTests.xctest */,
-				ADFBEC33256D4BDC002EAE9D /* SmilerUITests.xctest */,
+				ADFBEC0F256D4BDB002EAE9D /* ShakeApp.app */,
+				ADFBEC28256D4BDC002EAE9D /* ShakeAppTests.xctest */,
+				ADFBEC33256D4BDC002EAE9D /* ShakeAppUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -566,9 +566,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		ADFBEC0E256D4BDB002EAE9D /* Smiler */ = {
+		ADFBEC0E256D4BDB002EAE9D /* ShakeApp */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = ADFBEC3C256D4BDC002EAE9D /* Build configuration list for PBXNativeTarget "Smiler" */;
+			buildConfigurationList = ADFBEC3C256D4BDC002EAE9D /* Build configuration list for PBXNativeTarget "ShakeApp" */;
 			buildPhases = (
 				213C4D440FA8F2C6498B7DF5 /* [CP] Check Pods Manifest.lock */,
 				ADFBEC0B256D4BDB002EAE9D /* Sources */,
@@ -580,14 +580,14 @@
 			);
 			dependencies = (
 			);
-			name = Smiler;
+			name = ShakeApp;
 			productName = Prototype;
-			productReference = ADFBEC0F256D4BDB002EAE9D /* Smiler.app */;
+			productReference = ADFBEC0F256D4BDB002EAE9D /* ShakeApp.app */;
 			productType = "com.apple.product-type.application";
 		};
-		ADFBEC27256D4BDC002EAE9D /* SmilerTests */ = {
+		ADFBEC27256D4BDC002EAE9D /* ShakeAppTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = ADFBEC3F256D4BDC002EAE9D /* Build configuration list for PBXNativeTarget "SmilerTests" */;
+			buildConfigurationList = ADFBEC3F256D4BDC002EAE9D /* Build configuration list for PBXNativeTarget "ShakeAppTests" */;
 			buildPhases = (
 				9075950EC3CB346C2668B121 /* [CP] Check Pods Manifest.lock */,
 				ADFBEC24256D4BDC002EAE9D /* Sources */,
@@ -600,14 +600,14 @@
 			dependencies = (
 				ADFBEC2A256D4BDC002EAE9D /* PBXTargetDependency */,
 			);
-			name = SmilerTests;
+			name = ShakeAppTests;
 			productName = PrototypeTests;
-			productReference = ADFBEC28256D4BDC002EAE9D /* SmilerTests.xctest */;
+			productReference = ADFBEC28256D4BDC002EAE9D /* ShakeAppTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		ADFBEC32256D4BDC002EAE9D /* SmilerUITests */ = {
+		ADFBEC32256D4BDC002EAE9D /* ShakeAppUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = ADFBEC42256D4BDC002EAE9D /* Build configuration list for PBXNativeTarget "SmilerUITests" */;
+			buildConfigurationList = ADFBEC42256D4BDC002EAE9D /* Build configuration list for PBXNativeTarget "ShakeAppUITests" */;
 			buildPhases = (
 				AC5E7DA3CC1C044C2121A49A /* [CP] Check Pods Manifest.lock */,
 				ADFBEC2F256D4BDC002EAE9D /* Sources */,
@@ -620,9 +620,9 @@
 			dependencies = (
 				ADFBEC35256D4BDC002EAE9D /* PBXTargetDependency */,
 			);
-			name = SmilerUITests;
+			name = ShakeAppUITests;
 			productName = PrototypeUITests;
-			productReference = ADFBEC33256D4BDC002EAE9D /* SmilerUITests.xctest */;
+			productReference = ADFBEC33256D4BDC002EAE9D /* ShakeAppUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -647,7 +647,7 @@
 					};
 				};
 			};
-			buildConfigurationList = ADFBEC0A256D4BDB002EAE9D /* Build configuration list for PBXProject "Smiler" */;
+			buildConfigurationList = ADFBEC0A256D4BDB002EAE9D /* Build configuration list for PBXProject "ShakeApp" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -660,9 +660,9 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				ADFBEC0E256D4BDB002EAE9D /* Smiler */,
-				ADFBEC27256D4BDC002EAE9D /* SmilerTests */,
-				ADFBEC32256D4BDC002EAE9D /* SmilerUITests */,
+				ADFBEC0E256D4BDB002EAE9D /* ShakeApp */,
+				ADFBEC27256D4BDC002EAE9D /* ShakeAppTests */,
+				ADFBEC32256D4BDC002EAE9D /* ShakeAppUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -899,12 +899,12 @@
 /* Begin PBXTargetDependency section */
 		ADFBEC2A256D4BDC002EAE9D /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = ADFBEC0E256D4BDB002EAE9D /* Smiler */;
+			target = ADFBEC0E256D4BDB002EAE9D /* ShakeApp */;
 			targetProxy = ADFBEC29256D4BDC002EAE9D /* PBXContainerItemProxy */;
 		};
 		ADFBEC35256D4BDC002EAE9D /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = ADFBEC0E256D4BDB002EAE9D /* Smiler */;
+			target = ADFBEC0E256D4BDB002EAE9D /* ShakeApp */;
 			targetProxy = ADFBEC34256D4BDC002EAE9D /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -1044,7 +1044,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 7TST2X4MAG;
+				DEVELOPMENT_TEAM = Z27F7H4265;
 				INFOPLIST_FILE = Prototype/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1065,7 +1065,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 7TST2X4MAG;
+				DEVELOPMENT_TEAM = Z27F7H4265;
 				INFOPLIST_FILE = Prototype/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1098,7 +1098,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Smiler.app/Smiler";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ShakeApp.app/ShakeApp";
 			};
 			name = Debug;
 		};
@@ -1121,7 +1121,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Smiler.app/Smiler";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ShakeApp.app/ShakeApp";
 			};
 			name = Release;
 		};
@@ -1170,7 +1170,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		ADFBEC0A256D4BDB002EAE9D /* Build configuration list for PBXProject "Smiler" */ = {
+		ADFBEC0A256D4BDB002EAE9D /* Build configuration list for PBXProject "ShakeApp" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				ADFBEC3A256D4BDC002EAE9D /* Debug */,
@@ -1179,7 +1179,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		ADFBEC3C256D4BDC002EAE9D /* Build configuration list for PBXNativeTarget "Smiler" */ = {
+		ADFBEC3C256D4BDC002EAE9D /* Build configuration list for PBXNativeTarget "ShakeApp" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				ADFBEC3D256D4BDC002EAE9D /* Debug */,
@@ -1188,7 +1188,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		ADFBEC3F256D4BDC002EAE9D /* Build configuration list for PBXNativeTarget "SmilerTests" */ = {
+		ADFBEC3F256D4BDC002EAE9D /* Build configuration list for PBXNativeTarget "ShakeAppTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				ADFBEC40256D4BDC002EAE9D /* Debug */,
@@ -1197,7 +1197,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		ADFBEC42256D4BDC002EAE9D /* Build configuration list for PBXNativeTarget "SmilerUITests" */ = {
+		ADFBEC42256D4BDC002EAE9D /* Build configuration list for PBXNativeTarget "ShakeAppUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				ADFBEC43256D4BDC002EAE9D /* Debug */,
