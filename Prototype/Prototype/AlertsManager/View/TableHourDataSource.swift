@@ -6,7 +6,7 @@
 //
 
 import UIKit
-import Foundation
+import NatDS
 
 class TableHourDataSource:NSObject,UITableViewDataSource {
     var date:String {
@@ -68,7 +68,7 @@ class TableHourDataSource:NSObject,UITableViewDataSource {
         
         cell.isUserInteractionEnabled = true
         cell.selectionStyle = .none
-        cell.backgroundColor = .white
+        cell.backgroundColor = NatColors.surface
         
         //Get the hour object of cell
         let hour = self.hours[indexPath.row]
@@ -78,7 +78,7 @@ class TableHourDataSource:NSObject,UITableViewDataSource {
         cell.id_observer = ObserverDelete.share.addObserver(cell)
         
         //Set Up data
-        cell.title.text = hour.date
+        cell.hour.text = hour.date
         
         if hour.isEnable == "true"{
             cell.switchActive.isOn = true

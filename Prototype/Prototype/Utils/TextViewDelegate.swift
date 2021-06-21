@@ -7,21 +7,15 @@
 
 import UIKit
 
-enum TextBase{
-    case name
-    case number
-    case menssage
-    case error
-}
 
-class TextFieldDelegate:NSObject, UITextViewDelegate{
+class TextViewDelegate:NSObject, UITextViewDelegate{
     
     var sizeOriginView:CGFloat?
     var nameKeyUserDefault:String?
     var ownerView:UIViewController?
-    var typeText:TextBase?
+    var typeText:UITextView.TextBase?
 
-    init(_ typeText:TextBase,_ sizeOriginView:CGFloat,_ nameKeyUserDefault:String,_ ownerView:UIViewController) {
+    init(_ typeText:UITextView.TextBase,_ sizeOriginView:CGFloat,_ nameKeyUserDefault:String,_ ownerView:UIViewController) {
         self.sizeOriginView = sizeOriginView
         self.nameKeyUserDefault = nameKeyUserDefault
         self.ownerView = ownerView
@@ -29,10 +23,11 @@ class TextFieldDelegate:NSObject, UITextViewDelegate{
     }
 
     func textViewDidBeginEditing(_ textView: UITextView) {
-        
-        if UserDefaults.standard.value(forKey: nameKeyUserDefault ?? "Error") != nil {
-            guard let textValue = UserDefaults.standard.value(forKey: nameKeyUserDefault ?? "Error") as? String else{return}
-            textView.text = textValue
+        if let text = UserDefaults.standard.value(forKey: nameKeyUserDefault ?? "Error") as? String{
+            textView.text = text
+            textView.alpha = 1
+        }else if textView.text == UITextView.textBase(self.typeText ?? .error){
+            textView.text = ""
             textView.alpha = 1
         }else{
             textView.text = ""
@@ -50,34 +45,21 @@ class TextFieldDelegate:NSObject, UITextViewDelegate{
     func textViewDidEndEditing(_ textView: UITextView) {
         
         if textView.text.isEmpty{
-            textView.text = textBase(self.typeText ?? .error)
-            textView.alpha = 0.2
+            textView.text = UITextView.textBase(self.typeText ?? .error)
+            textView.alpha = 0.5
         }
         
-        if textView.text != textBase(self.typeText ?? .error){
+        if textView.text != UITextView.textBase(self.typeText ?? .error){
             UserDefaults.standard.setValue(textView.text, forKey: nameKeyUserDefault ?? "Error")
         }
         
         textView.resignFirstResponder()
         
         guard let menuViewController = self.ownerView as? MenuViewController else{return}
-        menuViewController.constraintTopAnchorViewBase?.constant = 0
+         menuViewController.constraintTopAnchorViewBase?.constant = 0
         
-        UIView.animate(withDuration: 0.5) {
+        UIView.animate(withDuration: 0.2) {
             menuViewController.view.layoutIfNeeded()
-        }
-    }
-    
-    func textBase(_ typeText:TextBase) -> String{
-        switch typeText {
-        case .name:
-            return "Seu nome"
-        case .number:
-            return "Seu número com DDD"
-        case .menssage:
-            return "Digite uma mensagem de emergência"
-        case .error:
-            return "Error"
         }
     }
 }

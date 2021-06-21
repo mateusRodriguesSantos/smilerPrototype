@@ -19,7 +19,7 @@ class AcessoryViewKeyboard:UIView{
     let okButton:UIButton = {
         let button = UIButton(frame: .zero)
         button.setTitleColor(.black, for: .normal)
-        button.setTitle("OK", for: .normal)
+        button.setTitle("Salvar", for: .normal)
         button.tintColor = .white
         button.contentHorizontalAlignment = .trailing
         button.setTitleColor(.systemBlue, for: .normal)

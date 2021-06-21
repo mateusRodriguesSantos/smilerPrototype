@@ -7,11 +7,22 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4571DF7C94C01DA112A91A4A /* Pods_Smiler.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE9A6AC7F97FCC16F5B2F392 /* Pods_Smiler.framework */; };
+		106112E7FAB1BDBC32452FB3 /* Pods_ShakeApp_ShakeAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44A895514EA732597E96F9CC /* Pods_ShakeApp_ShakeAppTests.framework */; };
+		38715B5B2800578433E0341F /* Pods_ShakeApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F0BE315AC947E3D39E32D837 /* Pods_ShakeApp.framework */; };
+		53479B390A9A2AA58C9E40C1 /* Pods_ShakeApp_ShakeAppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 073FB8A408BB15629BAD0475 /* Pods_ShakeApp_ShakeAppUITests.framework */; };
+		57389DBA267F8F8C009635AE /* Contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57389DB9267F8F8C009635AE /* Contact.swift */; };
+		57389DBC267F9EF1009635AE /* PersistenceContacts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57389DBB267F9EF1009635AE /* PersistenceContacts.swift */; };
+		57389DC0267FEE43009635AE /* NewContactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57389DBF267FEE43009635AE /* NewContactViewController.swift */; };
+		57389DC2267FEE4F009635AE /* NewContactView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57389DC1267FEE4F009635AE /* NewContactView.swift */; };
+		57754121266174B800C0DC6B /* AppNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57754120266174B800C0DC6B /* AppNavigationBar.swift */; };
+		57754139266175A900C0DC6B /* UIWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57754138266175A900C0DC6B /* UIWindow.swift */; };
+		5775413E266175D100C0DC6B /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5775413D266175D100C0DC6B /* UIView.swift */; };
+		577541432661767500C0DC6B /* NatFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 577541422661767500C0DC6B /* NatFont.swift */; };
+		57754148266177FD00C0DC6B /* ContactsManagerTBViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57754147266177FD00C0DC6B /* ContactsManagerTBViewCell.swift */; };
+		5775414D266178FD00C0DC6B /* FeedbackButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5775414C266178FD00C0DC6B /* FeedbackButton.swift */; };
 		6E10C7152574538E00A39F3F /* UIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E10C7142574538E00A39F3F /* UIButton.swift */; };
 		6E10C7292575687400A39F3F /* ShakeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E10C7282575687400A39F3F /* ShakeView.swift */; };
 		6E10C7772579BC5300A39F3F /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E10C7762579BC5300A39F3F /* String.swift */; };
-		7D2438826D84DFBB007F2A81 /* Pods_Smiler_SmilerUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D3273A99E96E1A66C281DA9 /* Pods_Smiler_SmilerUITests.framework */; };
 		AD41F232256D51C300F0E467 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD41F231256D51C300F0E467 /* Coordinator.swift */; };
 		AD41F237256D51D000F0E467 /* ViewCodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD41F236256D51D000F0E467 /* ViewCodable.swift */; };
 		AD41F23C256D522500F0E467 /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD41F23B256D522500F0E467 /* MainCoordinator.swift */; };
@@ -23,10 +34,12 @@
 		ADFBEC22256D4BDC002EAE9D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ADFBEC20256D4BDC002EAE9D /* LaunchScreen.storyboard */; };
 		ADFBEC2D256D4BDC002EAE9D /* PrototypeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADFBEC2C256D4BDC002EAE9D /* PrototypeTests.swift */; };
 		ADFBEC38256D4BDC002EAE9D /* PrototypeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADFBEC37256D4BDC002EAE9D /* PrototypeUITests.swift */; };
-		B5EB8CEDDBB98472604A9EE6 /* Pods_Smiler_SmilerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E6898BD246CE3EF04041533D /* Pods_Smiler_SmilerTests.framework */; };
+		DC01CE9F2680C0E000817183 /* API_Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DC01CE9E2680C0E000817183 /* API_Info.plist */; };
 		DC02A63526589F7100011760 /* CALayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC02A63426589F7100011760 /* CALayer.swift */; };
+		DC1BD8F7267E4CD700B3BDFC /* UITextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC1BD8F6267E4CD700B3BDFC /* UITextView.swift */; };
 		DC22DC14265187A400C50AA7 /* ObserverDeleteButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC22DC13265187A400C50AA7 /* ObserverDeleteButton.swift */; };
 		DC22DC162651B01100C50AA7 /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC22DC152651B01100C50AA7 /* Alert.swift */; };
+		DC25AAF62670368F00122997 /* PropertiesForSMS.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC25AAF52670368F00122997 /* PropertiesForSMS.swift */; };
 		DC2F58BE2614FEC7008D12B3 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC2F58BD2614FEC7008D12B3 /* MenuViewController.swift */; };
 		DC2F58C62614FEE3008D12B3 /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC2F58C52614FEE3008D12B3 /* MenuView.swift */; };
 		DC4C9AA426633A4B00F44D41 /* ReturnSMS_MessageBird.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC4C9AA326633A4B00F44D41 /* ReturnSMS_MessageBird.swift */; };
@@ -35,7 +48,6 @@
 		DC55052C2652AFDB00B7EE29 /* APIResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC55052B2652AFDB00B7EE29 /* APIResponse.swift */; };
 		DC55052E2652AFE200B7EE29 /* APIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC55052D2652AFE200B7EE29 /* APIRequest.swift */; };
 		DC5505302652AFE900B7EE29 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC55052F2652AFE900B7EE29 /* APIClient.swift */; };
-		DC7B294F2661C5530090DCDC /* API_Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DC7B294E2661C5520090DCDC /* API_Info.plist */; };
 		DC9AC68D266445DD00184CA5 /* PropertiesRequestMessageBird.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9AC68C266445DD00184CA5 /* PropertiesRequestMessageBird.swift */; };
 		DC9AFD802654670C00EA5B49 /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9AFD7F2654670C00EA5B49 /* NotificationService.swift */; };
 		DCA809C026177EBD00AC89FC /* MenuViewViewControllerTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA809BF26177EBD00AC89FC /* MenuViewViewControllerTestCase.swift */; };
@@ -46,18 +58,18 @@
 		DCA809F02617C40400AC89FC /* TableHourDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA809EF2617C40400AC89FC /* TableHourDelegate.swift */; };
 		DCA809F52617C45A00AC89FC /* TableHourDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA809F42617C45A00AC89FC /* TableHourDataSource.swift */; };
 		DCA809FA2617D67400AC89FC /* AlertViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA809F92617D67400AC89FC /* AlertViewCell.swift */; };
+		DCCC8872267042BE00B01C87 /* hand_shake.gif in Resources */ = {isa = PBXBuildFile; fileRef = DCCC8871267042BE00B01C87 /* hand_shake.gif */; };
 		DCCFCF0B265D7375007623AB /* AcessoryViewKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCCFCF0A265D7375007623AB /* AcessoryViewKeyboard.swift */; };
 		DCDE75D1261A56EA007D1BE4 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCDE75D0261A56EA007D1BE4 /* Date.swift */; };
 		DCE2A93D2653ED0C007B99B9 /* PersistenceAlerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE2A93C2653ED0C007B99B9 /* PersistenceAlerts.swift */; };
 		DCE2A9402653F4E8007B99B9 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE2A93F2653F4E8007B99B9 /* Persistence.swift */; };
 		DCE2A9422653FF73007B99B9 /* Results.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE2A9412653FF73007B99B9 /* Results.swift */; };
-		DCE72A7E2655830B005D06E9 /* AlertViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE72A7D2655830B005D06E9 /* AlertViewModel.swift */; };
 		DCE72A802655B491005D06E9 /* Roboto-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DCE72A7F2655B491005D06E9 /* Roboto-Regular.ttf */; };
 		DCE72A822655B4A1005D06E9 /* Roboto-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DCE72A812655B4A1005D06E9 /* Roboto-Bold.ttf */; };
 		DCE72A832655B5E3005D06E9 /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E68FB532579FD9B00BA3315 /* Fonts.swift */; };
 		DCF3C29E265BDA6A000FE0CB /* LocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF3C29D265BDA6A000FE0CB /* LocationService.swift */; };
 		DCF3C2A0265C4C51000FE0CB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF3C29F265C4C51000FE0CB /* ViewController.swift */; };
-		DCF3C2A3265C4E3D000FE0CB /* TextFieldDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF3C2A2265C4E3D000FE0CB /* TextFieldDelegate.swift */; };
+		DCF3C2A3265C4E3D000FE0CB /* TextViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF3C2A2265C4E3D000FE0CB /* TextViewDelegate.swift */; };
 		DCF3C2A5265C530F000FE0CB /* KeyboardNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF3C2A4265C530F000FE0CB /* KeyboardNotification.swift */; };
 		DCF40028265C8B6600A10B2C /* SpinnerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF40027265C8B6600A10B2C /* SpinnerViewController.swift */; };
 /* End PBXBuildFile section */
@@ -80,10 +92,20 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		14F5B337F0D45E3DBC58120C /* Pods-Smiler.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Smiler.debug.xcconfig"; path = "Target Support Files/Pods-Smiler/Pods-Smiler.debug.xcconfig"; sourceTree = "<group>"; };
-		267C49BC627802DC8A051D92 /* Pods-Smiler-SmilerUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Smiler-SmilerUITests.debug.xcconfig"; path = "Target Support Files/Pods-Smiler-SmilerUITests/Pods-Smiler-SmilerUITests.debug.xcconfig"; sourceTree = "<group>"; };
-		27C80D5F332D67DF67F82C65 /* Pods-Smiler-SmilerTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Smiler-SmilerTests.debug.xcconfig"; path = "Target Support Files/Pods-Smiler-SmilerTests/Pods-Smiler-SmilerTests.debug.xcconfig"; sourceTree = "<group>"; };
-		5D3273A99E96E1A66C281DA9 /* Pods_Smiler_SmilerUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Smiler_SmilerUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		073FB8A408BB15629BAD0475 /* Pods_ShakeApp_ShakeAppUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ShakeApp_ShakeAppUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2E8C7E49AA9642BF00CF6F6A /* Pods-ShakeApp-ShakeAppUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ShakeApp-ShakeAppUITests.release.xcconfig"; path = "Target Support Files/Pods-ShakeApp-ShakeAppUITests/Pods-ShakeApp-ShakeAppUITests.release.xcconfig"; sourceTree = "<group>"; };
+		44A895514EA732597E96F9CC /* Pods_ShakeApp_ShakeAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ShakeApp_ShakeAppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		57389DB9267F8F8C009635AE /* Contact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contact.swift; sourceTree = "<group>"; };
+		57389DBB267F9EF1009635AE /* PersistenceContacts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceContacts.swift; sourceTree = "<group>"; };
+		57389DBF267FEE43009635AE /* NewContactViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewContactViewController.swift; sourceTree = "<group>"; };
+		57389DC1267FEE4F009635AE /* NewContactView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewContactView.swift; sourceTree = "<group>"; };
+		57754120266174B800C0DC6B /* AppNavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppNavigationBar.swift; sourceTree = "<group>"; };
+		57754138266175A900C0DC6B /* UIWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIWindow.swift; sourceTree = "<group>"; };
+		5775413D266175D100C0DC6B /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
+		577541422661767500C0DC6B /* NatFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NatFont.swift; sourceTree = "<group>"; };
+		57754147266177FD00C0DC6B /* ContactsManagerTBViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsManagerTBViewCell.swift; sourceTree = "<group>"; };
+		5775414C266178FD00C0DC6B /* FeedbackButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackButton.swift; sourceTree = "<group>"; };
+		624428EA02AB63318AB719F1 /* Pods-ShakeApp-ShakeAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ShakeApp-ShakeAppTests.release.xcconfig"; path = "Target Support Files/Pods-ShakeApp-ShakeAppTests/Pods-ShakeApp-ShakeAppTests.release.xcconfig"; sourceTree = "<group>"; };
 		6E10C7142574538E00A39F3F /* UIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButton.swift; sourceTree = "<group>"; };
 		6E10C7282575687400A39F3F /* ShakeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShakeView.swift; sourceTree = "<group>"; };
 		6E10C7762579BC5300A39F3F /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
@@ -93,12 +115,11 @@
 		6E68FB512579FD7900BA3315 /* FontsFree-Net-SFProDisplay-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "FontsFree-Net-SFProDisplay-Bold.ttf"; sourceTree = "<group>"; };
 		6E68FB522579FD7900BA3315 /* FontsFree-Net-SFCompactText-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "FontsFree-Net-SFCompactText-Regular.ttf"; sourceTree = "<group>"; };
 		6E68FB532579FD9B00BA3315 /* Fonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
-		80DC82A68E3A0BCCF8899723 /* Pods-Smiler-SmilerUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Smiler-SmilerUITests.release.xcconfig"; path = "Target Support Files/Pods-Smiler-SmilerUITests/Pods-Smiler-SmilerUITests.release.xcconfig"; sourceTree = "<group>"; };
-		AC1F4C6B33D94C85259D0C1C /* Pods-Smiler-SmilerTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Smiler-SmilerTests.release.xcconfig"; path = "Target Support Files/Pods-Smiler-SmilerTests/Pods-Smiler-SmilerTests.release.xcconfig"; sourceTree = "<group>"; };
+		76B87275AF719EDB64323666 /* Pods-ShakeApp-ShakeAppUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ShakeApp-ShakeAppUITests.debug.xcconfig"; path = "Target Support Files/Pods-ShakeApp-ShakeAppUITests/Pods-ShakeApp-ShakeAppUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		AD41F231256D51C300F0E467 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		AD41F236256D51D000F0E467 /* ViewCodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewCodable.swift; sourceTree = "<group>"; };
 		AD41F23B256D522500F0E467 /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
-		ADFBEC0F256D4BDB002EAE9D /* Smiler.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Smiler.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		ADFBEC0F256D4BDB002EAE9D /* ShakeApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ShakeApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ADFBEC12256D4BDB002EAE9D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ADFBEC14256D4BDB002EAE9D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		ADFBEC16256D4BDB002EAE9D /* ShakeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShakeViewController.swift; sourceTree = "<group>"; };
@@ -106,16 +127,20 @@
 		ADFBEC1E256D4BDC002EAE9D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		ADFBEC21256D4BDC002EAE9D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		ADFBEC23256D4BDC002EAE9D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		ADFBEC28256D4BDC002EAE9D /* SmilerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SmilerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		ADFBEC28256D4BDC002EAE9D /* ShakeAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ShakeAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		ADFBEC2C256D4BDC002EAE9D /* PrototypeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrototypeTests.swift; sourceTree = "<group>"; };
 		ADFBEC2E256D4BDC002EAE9D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		ADFBEC33256D4BDC002EAE9D /* SmilerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SmilerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		ADFBEC33256D4BDC002EAE9D /* ShakeAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ShakeAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		ADFBEC37256D4BDC002EAE9D /* PrototypeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrototypeUITests.swift; sourceTree = "<group>"; };
 		ADFBEC39256D4BDC002EAE9D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		D4EA4AEFD0E4AD588E064F82 /* Pods-Smiler.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Smiler.release.xcconfig"; path = "Target Support Files/Pods-Smiler/Pods-Smiler.release.xcconfig"; sourceTree = "<group>"; };
+		BC6804A0AF89BD5CAD5D3F84 /* Pods-ShakeApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ShakeApp.debug.xcconfig"; path = "Target Support Files/Pods-ShakeApp/Pods-ShakeApp.debug.xcconfig"; sourceTree = "<group>"; };
+		C92A4BD5AD38039AB4112532 /* Pods-ShakeApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ShakeApp.release.xcconfig"; path = "Target Support Files/Pods-ShakeApp/Pods-ShakeApp.release.xcconfig"; sourceTree = "<group>"; };
+		DC01CE9E2680C0E000817183 /* API_Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = API_Info.plist; sourceTree = "<group>"; };
 		DC02A63426589F7100011760 /* CALayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CALayer.swift; sourceTree = "<group>"; };
+		DC1BD8F6267E4CD700B3BDFC /* UITextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextView.swift; sourceTree = "<group>"; };
 		DC22DC13265187A400C50AA7 /* ObserverDeleteButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObserverDeleteButton.swift; sourceTree = "<group>"; };
 		DC22DC152651B01100C50AA7 /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
+		DC25AAF52670368F00122997 /* PropertiesForSMS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropertiesForSMS.swift; sourceTree = "<group>"; };
 		DC2F58BD2614FEC7008D12B3 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		DC2F58C52614FEE3008D12B3 /* MenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
 		DC4C9AA326633A4B00F44D41 /* ReturnSMS_MessageBird.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReturnSMS_MessageBird.swift; sourceTree = "<group>"; };
@@ -124,7 +149,6 @@
 		DC55052B2652AFDB00B7EE29 /* APIResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIResponse.swift; sourceTree = "<group>"; };
 		DC55052D2652AFE200B7EE29 /* APIRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIRequest.swift; sourceTree = "<group>"; };
 		DC55052F2652AFE900B7EE29 /* APIClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
-		DC7B294E2661C5520090DCDC /* API_Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = API_Info.plist; path = ../../../API_Info.plist; sourceTree = "<group>"; };
 		DC9AC68C266445DD00184CA5 /* PropertiesRequestMessageBird.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropertiesRequestMessageBird.swift; sourceTree = "<group>"; };
 		DC9AFD7F2654670C00EA5B49 /* NotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationService.swift; sourceTree = "<group>"; };
 		DCA809BF26177EBD00AC89FC /* MenuViewViewControllerTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewViewControllerTestCase.swift; sourceTree = "<group>"; };
@@ -135,21 +159,21 @@
 		DCA809EF2617C40400AC89FC /* TableHourDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableHourDelegate.swift; sourceTree = "<group>"; };
 		DCA809F42617C45A00AC89FC /* TableHourDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableHourDataSource.swift; sourceTree = "<group>"; };
 		DCA809F92617D67400AC89FC /* AlertViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertViewCell.swift; sourceTree = "<group>"; };
+		DCCC8871267042BE00B01C87 /* hand_shake.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = hand_shake.gif; sourceTree = "<group>"; };
 		DCCFCF0A265D7375007623AB /* AcessoryViewKeyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcessoryViewKeyboard.swift; sourceTree = "<group>"; };
 		DCDE75D0261A56EA007D1BE4 /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
 		DCE2A93C2653ED0C007B99B9 /* PersistenceAlerts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceAlerts.swift; sourceTree = "<group>"; };
 		DCE2A93F2653F4E8007B99B9 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		DCE2A9412653FF73007B99B9 /* Results.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Results.swift; sourceTree = "<group>"; };
-		DCE72A7D2655830B005D06E9 /* AlertViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertViewModel.swift; sourceTree = "<group>"; };
 		DCE72A7F2655B491005D06E9 /* Roboto-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Regular.ttf"; sourceTree = "<group>"; };
 		DCE72A812655B4A1005D06E9 /* Roboto-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Bold.ttf"; sourceTree = "<group>"; };
 		DCF3C29D265BDA6A000FE0CB /* LocationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationService.swift; sourceTree = "<group>"; };
 		DCF3C29F265C4C51000FE0CB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		DCF3C2A2265C4E3D000FE0CB /* TextFieldDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldDelegate.swift; sourceTree = "<group>"; };
+		DCF3C2A2265C4E3D000FE0CB /* TextViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextViewDelegate.swift; sourceTree = "<group>"; };
 		DCF3C2A4265C530F000FE0CB /* KeyboardNotification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardNotification.swift; sourceTree = "<group>"; };
 		DCF40027265C8B6600A10B2C /* SpinnerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpinnerViewController.swift; sourceTree = "<group>"; };
-		DE9A6AC7F97FCC16F5B2F392 /* Pods_Smiler.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Smiler.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		E6898BD246CE3EF04041533D /* Pods_Smiler_SmilerTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Smiler_SmilerTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E0F6C0B7F5231DBD5C00647E /* Pods-ShakeApp-ShakeAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ShakeApp-ShakeAppTests.debug.xcconfig"; path = "Target Support Files/Pods-ShakeApp-ShakeAppTests/Pods-ShakeApp-ShakeAppTests.debug.xcconfig"; sourceTree = "<group>"; };
+		F0BE315AC947E3D39E32D837 /* Pods_ShakeApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ShakeApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -157,7 +181,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4571DF7C94C01DA112A91A4A /* Pods_Smiler.framework in Frameworks */,
+				38715B5B2800578433E0341F /* Pods_ShakeApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -165,7 +189,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B5EB8CEDDBB98472604A9EE6 /* Pods_Smiler_SmilerTests.framework in Frameworks */,
+				106112E7FAB1BDBC32452FB3 /* Pods_ShakeApp_ShakeAppTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -173,21 +197,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7D2438826D84DFBB007F2A81 /* Pods_Smiler_SmilerUITests.framework in Frameworks */,
+				53479B390A9A2AA58C9E40C1 /* Pods_ShakeApp_ShakeAppUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		20B1A3359494EE1F41C9D092 /* Frameworks */ = {
+		01B07CCC718594030093ADF5 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				DE9A6AC7F97FCC16F5B2F392 /* Pods_Smiler.framework */,
-				E6898BD246CE3EF04041533D /* Pods_Smiler_SmilerTests.framework */,
-				5D3273A99E96E1A66C281DA9 /* Pods_Smiler_SmilerUITests.framework */,
+				F0BE315AC947E3D39E32D837 /* Pods_ShakeApp.framework */,
+				44A895514EA732597E96F9CC /* Pods_ShakeApp_ShakeAppTests.framework */,
+				073FB8A408BB15629BAD0475 /* Pods_ShakeApp_ShakeAppUITests.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		57389DB8267F8F7B009635AE /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				57389DB9267F8F8C009635AE /* Contact.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		6E10C7132574538000A39F3F /* Extensions */ = {
@@ -199,6 +231,10 @@
 				DCE2A9412653FF73007B99B9 /* Results.swift */,
 				DC02A63426589F7100011760 /* CALayer.swift */,
 				DCF3C29F265C4C51000FE0CB /* ViewController.swift */,
+				57754138266175A900C0DC6B /* UIWindow.swift */,
+				5775413D266175D100C0DC6B /* UIView.swift */,
+				577541422661767500C0DC6B /* NatFont.swift */,
+				DC1BD8F6267E4CD700B3BDFC /* UITextView.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -206,6 +242,7 @@
 		6E68FB4D2579FD5900BA3315 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				DCCC8871267042BE00B01C87 /* hand_shake.gif */,
 				DCE72A7F2655B491005D06E9 /* Roboto-Regular.ttf */,
 				DCE72A812655B4A1005D06E9 /* Roboto-Bold.ttf */,
 				6E68FB4F2579FD7900BA3315 /* FontsFree-Net-SFCompactText-Bold.ttf */,
@@ -225,9 +262,11 @@
 				AD41F231256D51C300F0E467 /* Coordinator.swift */,
 				AD41F236256D51D000F0E467 /* ViewCodable.swift */,
 				AD41F23B256D522500F0E467 /* MainCoordinator.swift */,
-				DCF3C2A2265C4E3D000FE0CB /* TextFieldDelegate.swift */,
+				DCF3C2A2265C4E3D000FE0CB /* TextViewDelegate.swift */,
 				DCF3C2A4265C530F000FE0CB /* KeyboardNotification.swift */,
 				DCF40027265C8B6600A10B2C /* SpinnerViewController.swift */,
+				57754120266174B800C0DC6B /* AppNavigationBar.swift */,
+				5775414C266178FD00C0DC6B /* FeedbackButton.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -265,17 +304,17 @@
 				ADFBEC2B256D4BDC002EAE9D /* PrototypeTests */,
 				ADFBEC36256D4BDC002EAE9D /* PrototypeUITests */,
 				ADFBEC10256D4BDB002EAE9D /* Products */,
-				20B1A3359494EE1F41C9D092 /* Frameworks */,
 				D1822D66C471D6118D917F69 /* Pods */,
+				01B07CCC718594030093ADF5 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
 		ADFBEC10256D4BDB002EAE9D /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				ADFBEC0F256D4BDB002EAE9D /* Smiler.app */,
-				ADFBEC28256D4BDC002EAE9D /* SmilerTests.xctest */,
-				ADFBEC33256D4BDC002EAE9D /* SmilerUITests.xctest */,
+				ADFBEC0F256D4BDB002EAE9D /* ShakeApp.app */,
+				ADFBEC28256D4BDC002EAE9D /* ShakeAppTests.xctest */,
+				ADFBEC33256D4BDC002EAE9D /* ShakeAppUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -283,6 +322,7 @@
 		ADFBEC11256D4BDB002EAE9D /* Prototype */ = {
 			isa = PBXGroup;
 			children = (
+				DC01CE9E2680C0E000817183 /* API_Info.plist */,
 				AD8A2E19256D500100B05AAB /* AppDelegate */,
 				DCF3C29C265BDA54000FE0CB /* Location */,
 				DC9AFD7E265466DB00EA5B49 /* Notification */,
@@ -299,7 +339,6 @@
 				ADFBEC1E256D4BDC002EAE9D /* Assets.xcassets */,
 				ADFBEC23256D4BDC002EAE9D /* Info.plist */,
 				ADFBEC1B256D4BDB002EAE9D /* Prototype.xcdatamodeld */,
-				DC7B294E2661C5520090DCDC /* API_Info.plist */,
 			);
 			path = Prototype;
 			sourceTree = "<group>";
@@ -326,12 +365,12 @@
 		D1822D66C471D6118D917F69 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				14F5B337F0D45E3DBC58120C /* Pods-Smiler.debug.xcconfig */,
-				D4EA4AEFD0E4AD588E064F82 /* Pods-Smiler.release.xcconfig */,
-				27C80D5F332D67DF67F82C65 /* Pods-Smiler-SmilerTests.debug.xcconfig */,
-				AC1F4C6B33D94C85259D0C1C /* Pods-Smiler-SmilerTests.release.xcconfig */,
-				267C49BC627802DC8A051D92 /* Pods-Smiler-SmilerUITests.debug.xcconfig */,
-				80DC82A68E3A0BCCF8899723 /* Pods-Smiler-SmilerUITests.release.xcconfig */,
+				BC6804A0AF89BD5CAD5D3F84 /* Pods-ShakeApp.debug.xcconfig */,
+				C92A4BD5AD38039AB4112532 /* Pods-ShakeApp.release.xcconfig */,
+				E0F6C0B7F5231DBD5C00647E /* Pods-ShakeApp-ShakeAppTests.debug.xcconfig */,
+				624428EA02AB63318AB719F1 /* Pods-ShakeApp-ShakeAppTests.release.xcconfig */,
+				76B87275AF719EDB64323666 /* Pods-ShakeApp-ShakeAppUITests.debug.xcconfig */,
+				2E8C7E49AA9642BF00CF6F6A /* Pods-ShakeApp-ShakeAppUITests.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -343,6 +382,16 @@
 				DC22DC152651B01100C50AA7 /* Alert.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		DC25AAF7267036AD00122997 /* Properties */ = {
+			isa = PBXGroup;
+			children = (
+				DC25AAF52670368F00122997 /* PropertiesForSMS.swift */,
+				DC5505272652AFBD00B7EE29 /* PropertiesRequestSMSDev.swift */,
+				DC9AC68C266445DD00184CA5 /* PropertiesRequestMessageBird.swift */,
+			);
+			path = Properties;
 			sourceTree = "<group>";
 		};
 		DC2F58B22614FDBD008D12B3 /* RecognitionView */ = {
@@ -381,8 +430,7 @@
 		DC5505222652AF7900B7EE29 /* Network */ = {
 			isa = PBXGroup;
 			children = (
-				DC9AC68C266445DD00184CA5 /* PropertiesRequestMessageBird.swift */,
-				DC5505272652AFBD00B7EE29 /* PropertiesRequestSMSDev.swift */,
+				DC25AAF7267036AD00122997 /* Properties */,
 				DC5505262652AFA000B7EE29 /* Codable */,
 				DC5505252652AF9800B7EE29 /* APIResponse */,
 				DC5505242652AF9000B7EE29 /* APIRequest */,
@@ -444,7 +492,6 @@
 			isa = PBXGroup;
 			children = (
 				DC22DC122651878F00C50AA7 /* Model */,
-				DCE72A7C265582D9005D06E9 /* ViewModel */,
 				DCA809C826178F5B00AC89FC /* Controller */,
 				DCA809C926178F6200AC89FC /* View */,
 			);
@@ -473,6 +520,7 @@
 		DCA809DE261793A900AC89FC /* ContactsManager */ = {
 			isa = PBXGroup;
 			children = (
+				57389DB8267F8F7B009635AE /* Model */,
 				DCA809DF261793B700AC89FC /* Controller */,
 				DCA809E0261793BF00AC89FC /* View */,
 			);
@@ -483,6 +531,7 @@
 			isa = PBXGroup;
 			children = (
 				DCA809E2261793E800AC89FC /* ContactsManagerViewController.swift */,
+				57389DBF267FEE43009635AE /* NewContactViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -491,6 +540,8 @@
 			isa = PBXGroup;
 			children = (
 				DCA809EA261793FA00AC89FC /* ContactsManagerView.swift */,
+				57754147266177FD00C0DC6B /* ContactsManagerTBViewCell.swift */,
+				57389DC1267FEE4F009635AE /* NewContactView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -500,16 +551,9 @@
 			children = (
 				DCE2A93F2653F4E8007B99B9 /* Persistence.swift */,
 				DCE2A93C2653ED0C007B99B9 /* PersistenceAlerts.swift */,
+				57389DBB267F9EF1009635AE /* PersistenceContacts.swift */,
 			);
 			path = Persistence;
-			sourceTree = "<group>";
-		};
-		DCE72A7C265582D9005D06E9 /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-				DCE72A7D2655830B005D06E9 /* AlertViewModel.swift */,
-			);
-			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		DCF3C29C265BDA54000FE0CB /* Location */ = {
@@ -523,63 +567,63 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		ADFBEC0E256D4BDB002EAE9D /* Smiler */ = {
+		ADFBEC0E256D4BDB002EAE9D /* ShakeApp */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = ADFBEC3C256D4BDC002EAE9D /* Build configuration list for PBXNativeTarget "Smiler" */;
+			buildConfigurationList = ADFBEC3C256D4BDC002EAE9D /* Build configuration list for PBXNativeTarget "ShakeApp" */;
 			buildPhases = (
-				2C1BDDFADBCE2A95661A36F1 /* [CP] Check Pods Manifest.lock */,
+				785DF3939E7EF617BD076DCE /* [CP] Check Pods Manifest.lock */,
 				ADFBEC0B256D4BDB002EAE9D /* Sources */,
 				ADFBEC0C256D4BDB002EAE9D /* Frameworks */,
 				ADFBEC0D256D4BDB002EAE9D /* Resources */,
-				8C6965142335548ED37E8D0D /* [CP] Embed Pods Frameworks */,
+				2B72440BCC794349D8F53B06 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = Smiler;
+			name = ShakeApp;
 			productName = Prototype;
-			productReference = ADFBEC0F256D4BDB002EAE9D /* Smiler.app */;
+			productReference = ADFBEC0F256D4BDB002EAE9D /* ShakeApp.app */;
 			productType = "com.apple.product-type.application";
 		};
-		ADFBEC27256D4BDC002EAE9D /* SmilerTests */ = {
+		ADFBEC27256D4BDC002EAE9D /* ShakeAppTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = ADFBEC3F256D4BDC002EAE9D /* Build configuration list for PBXNativeTarget "SmilerTests" */;
+			buildConfigurationList = ADFBEC3F256D4BDC002EAE9D /* Build configuration list for PBXNativeTarget "ShakeAppTests" */;
 			buildPhases = (
-				F234A2B3A209D90CCBE73701 /* [CP] Check Pods Manifest.lock */,
+				0134EAE8DC21F1E56547DCBB /* [CP] Check Pods Manifest.lock */,
 				ADFBEC24256D4BDC002EAE9D /* Sources */,
 				ADFBEC25256D4BDC002EAE9D /* Frameworks */,
 				ADFBEC26256D4BDC002EAE9D /* Resources */,
-				4912FBBFDAD0D396ADD5691E /* [CP] Embed Pods Frameworks */,
+				509EBAD7A8C844FCF44CD19E /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 				ADFBEC2A256D4BDC002EAE9D /* PBXTargetDependency */,
 			);
-			name = SmilerTests;
+			name = ShakeAppTests;
 			productName = PrototypeTests;
-			productReference = ADFBEC28256D4BDC002EAE9D /* SmilerTests.xctest */;
+			productReference = ADFBEC28256D4BDC002EAE9D /* ShakeAppTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		ADFBEC32256D4BDC002EAE9D /* SmilerUITests */ = {
+		ADFBEC32256D4BDC002EAE9D /* ShakeAppUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = ADFBEC42256D4BDC002EAE9D /* Build configuration list for PBXNativeTarget "SmilerUITests" */;
+			buildConfigurationList = ADFBEC42256D4BDC002EAE9D /* Build configuration list for PBXNativeTarget "ShakeAppUITests" */;
 			buildPhases = (
-				D05FCBC9843F5E0DEAF6EDD7 /* [CP] Check Pods Manifest.lock */,
+				E4FA7820898DA671CA7ED8D8 /* [CP] Check Pods Manifest.lock */,
 				ADFBEC2F256D4BDC002EAE9D /* Sources */,
 				ADFBEC30256D4BDC002EAE9D /* Frameworks */,
 				ADFBEC31256D4BDC002EAE9D /* Resources */,
-				B314CAAA9D6DAB95320EEBCA /* [CP] Embed Pods Frameworks */,
+				E0F8E9E0D1F90B28ED5EE462 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 				ADFBEC35256D4BDC002EAE9D /* PBXTargetDependency */,
 			);
-			name = SmilerUITests;
+			name = ShakeAppUITests;
 			productName = PrototypeUITests;
-			productReference = ADFBEC33256D4BDC002EAE9D /* SmilerUITests.xctest */;
+			productReference = ADFBEC33256D4BDC002EAE9D /* ShakeAppUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -604,7 +648,7 @@
 					};
 				};
 			};
-			buildConfigurationList = ADFBEC0A256D4BDB002EAE9D /* Build configuration list for PBXProject "Smiler" */;
+			buildConfigurationList = ADFBEC0A256D4BDB002EAE9D /* Build configuration list for PBXProject "ShakeApp" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -617,9 +661,9 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				ADFBEC0E256D4BDB002EAE9D /* Smiler */,
-				ADFBEC27256D4BDC002EAE9D /* SmilerTests */,
-				ADFBEC32256D4BDC002EAE9D /* SmilerUITests */,
+				ADFBEC0E256D4BDB002EAE9D /* ShakeApp */,
+				ADFBEC27256D4BDC002EAE9D /* ShakeAppTests */,
+				ADFBEC32256D4BDC002EAE9D /* ShakeAppUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -630,7 +674,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				ADFBEC22256D4BDC002EAE9D /* LaunchScreen.storyboard in Resources */,
-				DC7B294F2661C5530090DCDC /* API_Info.plist in Resources */,
+				DC01CE9F2680C0E000817183 /* API_Info.plist in Resources */,
+				DCCC8872267042BE00B01C87 /* hand_shake.gif in Resources */,
 				DCE72A822655B4A1005D06E9 /* Roboto-Bold.ttf in Resources */,
 				DCE72A802655B491005D06E9 /* Roboto-Regular.ttf in Resources */,
 				ADFBEC1F256D4BDC002EAE9D /* Assets.xcassets in Resources */,
@@ -654,7 +699,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		2C1BDDFADBCE2A95661A36F1 /* [CP] Check Pods Manifest.lock */ = {
+		0134EAE8DC21F1E56547DCBB /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -669,65 +714,48 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-Smiler-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-ShakeApp-ShakeAppTests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		4912FBBFDAD0D396ADD5691E /* [CP] Embed Pods Frameworks */ = {
+		2B72440BCC794349D8F53B06 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Smiler-SmilerTests/Pods-Smiler-SmilerTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-ShakeApp/Pods-ShakeApp-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Smiler-SmilerTests/Pods-Smiler-SmilerTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-ShakeApp/Pods-ShakeApp-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Smiler-SmilerTests/Pods-Smiler-SmilerTests-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ShakeApp/Pods-ShakeApp-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		8C6965142335548ED37E8D0D /* [CP] Embed Pods Frameworks */ = {
+		509EBAD7A8C844FCF44CD19E /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Smiler/Pods-Smiler-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-ShakeApp-ShakeAppTests/Pods-ShakeApp-ShakeAppTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Smiler/Pods-Smiler-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-ShakeApp-ShakeAppTests/Pods-ShakeApp-ShakeAppTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Smiler/Pods-Smiler-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ShakeApp-ShakeAppTests/Pods-ShakeApp-ShakeAppTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		B314CAAA9D6DAB95320EEBCA /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Smiler-SmilerUITests/Pods-Smiler-SmilerUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Smiler-SmilerUITests/Pods-Smiler-SmilerUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Smiler-SmilerUITests/Pods-Smiler-SmilerUITests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		D05FCBC9843F5E0DEAF6EDD7 /* [CP] Check Pods Manifest.lock */ = {
+		785DF3939E7EF617BD076DCE /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -742,14 +770,31 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-Smiler-SmilerUITests-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-ShakeApp-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		F234A2B3A209D90CCBE73701 /* [CP] Check Pods Manifest.lock */ = {
+		E0F8E9E0D1F90B28ED5EE462 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ShakeApp-ShakeAppUITests/Pods-ShakeApp-ShakeAppUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ShakeApp-ShakeAppUITests/Pods-ShakeApp-ShakeAppUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ShakeApp-ShakeAppUITests/Pods-ShakeApp-ShakeAppUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E4FA7820898DA671CA7ED8D8 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -764,7 +809,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-Smiler-SmilerTests-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-ShakeApp-ShakeAppUITests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -785,6 +830,7 @@
 				DC02A63526589F7100011760 /* CALayer.swift in Sources */,
 				DC2F58BE2614FEC7008D12B3 /* MenuViewController.swift in Sources */,
 				DCA809E3261793E800AC89FC /* ContactsManagerViewController.swift in Sources */,
+				DC1BD8F7267E4CD700B3BDFC /* UITextView.swift in Sources */,
 				DCF3C2A5265C530F000FE0CB /* KeyboardNotification.swift in Sources */,
 				6E10C7292575687400A39F3F /* ShakeView.swift in Sources */,
 				DC4C9AA426633A4B00F44D41 /* ReturnSMS_MessageBird.swift in Sources */,
@@ -796,24 +842,34 @@
 				DCE2A93D2653ED0C007B99B9 /* PersistenceAlerts.swift in Sources */,
 				AD41F237256D51D000F0E467 /* ViewCodable.swift in Sources */,
 				ADFBEC17256D4BDB002EAE9D /* ShakeViewController.swift in Sources */,
+				57754121266174B800C0DC6B /* AppNavigationBar.swift in Sources */,
+				5775414D266178FD00C0DC6B /* FeedbackButton.swift in Sources */,
 				DC2F58C62614FEE3008D12B3 /* MenuView.swift in Sources */,
 				DCCFCF0B265D7375007623AB /* AcessoryViewKeyboard.swift in Sources */,
 				ADFBEC13256D4BDB002EAE9D /* AppDelegate.swift in Sources */,
+				57754139266175A900C0DC6B /* UIWindow.swift in Sources */,
 				DCF3C2A0265C4C51000FE0CB /* ViewController.swift in Sources */,
-				DCF3C2A3265C4E3D000FE0CB /* TextFieldDelegate.swift in Sources */,
+				DCF3C2A3265C4E3D000FE0CB /* TextViewDelegate.swift in Sources */,
+				57389DC2267FEE4F009635AE /* NewContactView.swift in Sources */,
 				DCA809EB261793FA00AC89FC /* ContactsManagerView.swift in Sources */,
 				ADFBEC15256D4BDB002EAE9D /* SceneDelegate.swift in Sources */,
 				DCA809FA2617D67400AC89FC /* AlertViewCell.swift in Sources */,
 				DCE72A832655B5E3005D06E9 /* Fonts.swift in Sources */,
-				DCE72A7E2655830B005D06E9 /* AlertViewModel.swift in Sources */,
+				57754148266177FD00C0DC6B /* ContactsManagerTBViewCell.swift in Sources */,
 				DCA809CC26178F9300AC89FC /* AlertsManagerViewController.swift in Sources */,
 				DCDE75D1261A56EA007D1BE4 /* Date.swift in Sources */,
+				57389DBA267F8F8C009635AE /* Contact.swift in Sources */,
 				AD41F23C256D522500F0E467 /* MainCoordinator.swift in Sources */,
 				DCA809F02617C40400AC89FC /* TableHourDelegate.swift in Sources */,
 				DC5505282652AFBD00B7EE29 /* PropertiesRequestSMSDev.swift in Sources */,
 				DC9AC68D266445DD00184CA5 /* PropertiesRequestMessageBird.swift in Sources */,
 				DC55052A2652AFD200B7EE29 /* ReturnSMS_SMSDev.swift in Sources */,
+				57389DBC267F9EF1009635AE /* PersistenceContacts.swift in Sources */,
+				577541432661767500C0DC6B /* NatFont.swift in Sources */,
+				57389DC0267FEE43009635AE /* NewContactViewController.swift in Sources */,
 				DCE2A9422653FF73007B99B9 /* Results.swift in Sources */,
+				DC25AAF62670368F00122997 /* PropertiesForSMS.swift in Sources */,
+				5775413E266175D100C0DC6B /* UIView.swift in Sources */,
 				AD41F232256D51C300F0E467 /* Coordinator.swift in Sources */,
 				DC55052C2652AFDB00B7EE29 /* APIResponse.swift in Sources */,
 				6E10C7152574538E00A39F3F /* UIButton.swift in Sources */,
@@ -845,12 +901,12 @@
 /* Begin PBXTargetDependency section */
 		ADFBEC2A256D4BDC002EAE9D /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = ADFBEC0E256D4BDB002EAE9D /* Smiler */;
+			target = ADFBEC0E256D4BDB002EAE9D /* ShakeApp */;
 			targetProxy = ADFBEC29256D4BDC002EAE9D /* PBXContainerItemProxy */;
 		};
 		ADFBEC35256D4BDC002EAE9D /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = ADFBEC0E256D4BDB002EAE9D /* Smiler */;
+			target = ADFBEC0E256D4BDB002EAE9D /* ShakeApp */;
 			targetProxy = ADFBEC34256D4BDC002EAE9D /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -985,13 +1041,14 @@
 		};
 		ADFBEC3D256D4BDC002EAE9D /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 14F5B337F0D45E3DBC58120C /* Pods-Smiler.debug.xcconfig */;
+			baseConfigurationReference = BC6804A0AF89BD5CAD5D3F84 /* Pods-ShakeApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7TST2X4MAG;
 				INFOPLIST_FILE = Prototype/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1005,13 +1062,14 @@
 		};
 		ADFBEC3E256D4BDC002EAE9D /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D4EA4AEFD0E4AD588E064F82 /* Pods-Smiler.release.xcconfig */;
+			baseConfigurationReference = C92A4BD5AD38039AB4112532 /* Pods-ShakeApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7TST2X4MAG;
 				INFOPLIST_FILE = Prototype/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1025,7 +1083,7 @@
 		};
 		ADFBEC40256D4BDC002EAE9D /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 27C80D5F332D67DF67F82C65 /* Pods-Smiler-SmilerTests.debug.xcconfig */;
+			baseConfigurationReference = E0F6C0B7F5231DBD5C00647E /* Pods-ShakeApp-ShakeAppTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -1042,13 +1100,13 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Smiler.app/Smiler";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ShakeApp.app/ShakeApp";
 			};
 			name = Debug;
 		};
 		ADFBEC41256D4BDC002EAE9D /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = AC1F4C6B33D94C85259D0C1C /* Pods-Smiler-SmilerTests.release.xcconfig */;
+			baseConfigurationReference = 624428EA02AB63318AB719F1 /* Pods-ShakeApp-ShakeAppTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -1065,13 +1123,13 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Smiler.app/Smiler";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ShakeApp.app/ShakeApp";
 			};
 			name = Release;
 		};
 		ADFBEC43256D4BDC002EAE9D /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 267C49BC627802DC8A051D92 /* Pods-Smiler-SmilerUITests.debug.xcconfig */;
+			baseConfigurationReference = 76B87275AF719EDB64323666 /* Pods-ShakeApp-ShakeAppUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -1092,7 +1150,7 @@
 		};
 		ADFBEC44256D4BDC002EAE9D /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 80DC82A68E3A0BCCF8899723 /* Pods-Smiler-SmilerUITests.release.xcconfig */;
+			baseConfigurationReference = 2E8C7E49AA9642BF00CF6F6A /* Pods-ShakeApp-ShakeAppUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -1114,7 +1172,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		ADFBEC0A256D4BDB002EAE9D /* Build configuration list for PBXProject "Smiler" */ = {
+		ADFBEC0A256D4BDB002EAE9D /* Build configuration list for PBXProject "ShakeApp" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				ADFBEC3A256D4BDC002EAE9D /* Debug */,
@@ -1123,7 +1181,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		ADFBEC3C256D4BDC002EAE9D /* Build configuration list for PBXNativeTarget "Smiler" */ = {
+		ADFBEC3C256D4BDC002EAE9D /* Build configuration list for PBXNativeTarget "ShakeApp" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				ADFBEC3D256D4BDC002EAE9D /* Debug */,
@@ -1132,7 +1190,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		ADFBEC3F256D4BDC002EAE9D /* Build configuration list for PBXNativeTarget "SmilerTests" */ = {
+		ADFBEC3F256D4BDC002EAE9D /* Build configuration list for PBXNativeTarget "ShakeAppTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				ADFBEC40256D4BDC002EAE9D /* Debug */,
@@ -1141,7 +1199,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		ADFBEC42256D4BDC002EAE9D /* Build configuration list for PBXNativeTarget "SmilerUITests" */ = {
+		ADFBEC42256D4BDC002EAE9D /* Build configuration list for PBXNativeTarget "ShakeAppUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				ADFBEC43256D4BDC002EAE9D /* Debug */,

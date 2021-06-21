@@ -7,14 +7,14 @@
 
 import UIKit
 import CoreData
+import NatDS
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        NotificationService.share.authorizeNotification()
-        LocationService.share.requestAuthorization()
-        //LocationService.share.locationManager.startUpdatingLocation()
+
+        DesignSystem().configure(with: .naturaDark)
         return true
     }
 

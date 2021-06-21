@@ -1,15 +1,20 @@
 # Uncomment the next line to define a global platform for your project
 # platform :ios, '9.0'
 
-target 'Smiler' do
+target 'ShakeApp' do
   # Comment the next line if you don't want to use dynamic frameworks
   use_frameworks!
 
   # Pods for Smiler
   pod 'RealmSwift'
   pod 'Alamofire', '~> 5.2'
+  pod "TinyConstraints"
+  pod 'NatDS'
+  pod 'NatDSIcons'
+  pod 'ABBadgeButton'
+  pod 'SwiftyGif'
 
-  target 'SmilerTests' do
+  target 'ShakeAppTests' do
     # Pods for testing
     pod 'Quick' # if you want to use it with Quick
     pod 'Nimble' # if you want to use it with Quick
@@ -17,7 +22,7 @@ target 'Smiler' do
   
   end
 
-  target 'SmilerUITests' do
+  target 'ShakeAppUITests' do
     # Pods for testing
   end
 

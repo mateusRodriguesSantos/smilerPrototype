@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import NatDS
 
 class AlertViewCell: UITableViewCell {
     
@@ -27,29 +28,18 @@ class AlertViewCell: UITableViewCell {
         button.isUserInteractionEnabled = true
         button.setImage(UIImage(systemName: "checkmark.circle"), for: .normal)
         button.addTarget(self, action: #selector(addForDrop), for: .touchUpInside)
-        button.tintColor = .systemBlue
+        button.tintColor = .white
         button.setTitleColor(.systemBlue, for: .normal)
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()
     
-    let title:UILabel = {
+    let hour:UILabel = {
         let label = UILabel(frame: .zero)
         label.numberOfLines = 0
         label.textAlignment = .left
-        label.font = UIFont(name: Fonts.RobotoRegular, size: 30)
-        label.textColor = .black
-        label.translatesAutoresizingMaskIntoConstraints = false
-        return label
-    }()
-    
-    let subTitle:UILabel = {
-        let label = UILabel(frame: .zero)
-        label.numberOfLines = 0
-        label.text = "22/07/2021"
-        label.textAlignment = .left
-        label.font = UIFont(name: Fonts.RobotoRegular, size: 20)
-        label.textColor = .black
+        label.font = NatFonts.fontRoboto(ofSize: .heading5, withWeight: .bold)
+        label.textColor = .white
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -63,7 +53,7 @@ class AlertViewCell: UITableViewCell {
     
     let separatorView:UIView = {
         let view = UIView(frame: .zero)
-        view.backgroundColor = .black
+        view.backgroundColor = .white
         view.isUserInteractionEnabled = false
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
@@ -83,8 +73,7 @@ class AlertViewCell: UITableViewCell {
 extension AlertViewCell:ViewCodable {
     func setupViewHierarchy() {
         self.contentView.addSubview(removeAlertButton)
-        self.addSubview(title)
-        //self.addSubview(subTitle)
+        self.addSubview(hour)
         self.contentView.addSubview(switchActive)
         self.addSubview(separatorView)
     }
@@ -97,15 +86,9 @@ extension AlertViewCell:ViewCodable {
         ])
         
         NSLayoutConstraint.activate([
-            title.trailingAnchor.constraint(equalTo: self.removeAlertButton.leadingAnchor, constant: 100),
-            title.centerYAnchor.constraint(equalTo: self.centerYAnchor),
+            hour.trailingAnchor.constraint(equalTo: self.removeAlertButton.leadingAnchor, constant: 100),
+            hour.centerYAnchor.constraint(equalTo: self.centerYAnchor),
         ])
-        
-//        NSLayoutConstraint.activate([
-//            subTitle.trailingAnchor.constraint(equalTo: self.removeAlertButton.leadingAnchor, constant: 135),
-//            subTitle.topAnchor.constraint(equalTo: self.title.bottomAnchor),
-//            //subTitle.centerYAnchor.constraint(equalTo: self.centerYAnchor),
-//        ])
         
         NSLayoutConstraint.activate([
             switchActive.trailingAnchor.constraint(equalTo: self.trailingAnchor,constant: -20),

@@ -6,27 +6,35 @@
 //
 
 import UIKit
+import SwiftyGif
 
 class ShakeView:UIView{
     
     //Variables
-    
-    //UI components
-    
+  
     let labelShake: UILabel = {
         let label = UILabel(frame: CGRect.zero)
         label.text = "Faça um Shake!!!\nCaso esteja em situação de perigo"
         label.numberOfLines = 0
         label.textAlignment = .center
         label.font = UIFont(name: Fonts.RobotoBold, size: 20)
-        label.textColor = .black
+        label.textColor = .white
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
     
-    let imageShake: UIImageView = {
-        let imageView = UIImageView(frame: CGRect.zero)
-        imageView.image = UIImage(named: "shake")
+    lazy var imageShake: UIImageView = {
+        
+        var gif = UIImage()
+        do {
+            gif = try UIImage(gifName: "hand_shake.gif")
+        } catch {
+            NSLog("Error in load gif: \(error)")
+        }
+        
+        let imageView = UIImageView()
+        imageView.setGifImage(gif)
+        imageView.startAnimatingGif()
         imageView.isHidden = false
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.layer.zPosition = 3
@@ -35,14 +43,14 @@ class ShakeView:UIView{
     
     let menuButton:UIButton = {
         let button = UIButton(frame: .zero)
-        button.setBackgroundImage(UIImage(named: "SettingsIconsettings"), for: .normal)
+        button.setBackgroundImage(UIImage(named: "SettingsIcon"), for: .normal)
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()
 
     init() {
         super.init(frame: .zero)
-        let colorBack = UIColor(red: 213/255.0, green: 212/255.0, blue: 220/255.0, alpha: 1.0)
+        let colorBack = UIColor(red: 41/255.0, green: 42/255.0, blue: 48/255.0, alpha: 1.0)
         backgroundColor = colorBack
         setupViews()
     }
@@ -61,8 +69,8 @@ extension ShakeView:ViewCodable{
     
     func setupConstraints() {
         NSLayoutConstraint.activate([
-            imageShake.widthAnchor.constraint(equalTo: self.widthAnchor,multiplier: 0.8),
-            imageShake.heightAnchor.constraint(equalTo: self.heightAnchor, multiplier: 0.48),
+            imageShake.widthAnchor.constraint(equalTo: self.widthAnchor),
+            imageShake.heightAnchor.constraint(equalTo: self.heightAnchor, multiplier: 0.5),
             imageShake.centerYAnchor.constraint(equalTo: self.centerYAnchor),
             imageShake.centerXAnchor.constraint(equalTo: self.centerXAnchor),
         ])
@@ -73,7 +81,7 @@ extension ShakeView:ViewCodable{
         ])
         
         NSLayoutConstraint.activate([
-            menuButton.topAnchor.constraint(equalTo: self.layoutMarginsGuide.topAnchor),
+            menuButton.topAnchor.constraint(equalTo: self.layoutMarginsGuide.topAnchor,constant: 20),
             menuButton.trailingAnchor.constraint(equalTo: self.trailingAnchor,constant: -20),
         ])
     }

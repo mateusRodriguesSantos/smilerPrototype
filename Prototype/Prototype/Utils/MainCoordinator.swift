@@ -29,17 +29,14 @@ extension MainCoordinator{
         viewController.coordinator = self
         self.navigationController.viewControllers = [viewController]
     }
-    
+
     func navigateToMenuViewController(){
         let viewController = MenuViewController()
         viewController.coordinator = self
-        viewController.modalPresentationStyle = .overFullScreen
-//        navigationController.present(viewController, animated: true, completion: nil)
-        self.navigationController.viewControllers = [viewController]
+        navigationController.pushViewController(viewController, animated: true)
     }
 
     func navigateToAlertsViewController(){
-        
         let viewController = AlertsManagerViewController()
         viewController.coordinator = self
         navigationController.pushViewController(viewController, animated: true)
@@ -47,6 +44,12 @@ extension MainCoordinator{
     
     func navigateToContactsManagerViewController(){
         let viewController = ContactsManagerViewController()
+        viewController.coordinator = self
+        navigationController.pushViewController(viewController, animated: true)
+    }
+    
+    func navigateToNewContactViewController(){
+        let viewController = NewContactViewController()
         viewController.coordinator = self
         navigationController.pushViewController(viewController, animated: true)
     }

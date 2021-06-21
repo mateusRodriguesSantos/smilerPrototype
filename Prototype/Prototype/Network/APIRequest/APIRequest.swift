@@ -37,9 +37,8 @@ extension ExecuteRequestURLSession {
     
     func sendSMS_MessageBird(completion: @escaping (Data?,Error?) -> Void) {
         guard let url = URL(string: PropertiesRequestMessageBird.endPoint),
-              let parameters = PropertiesRequestMessageBird.parameters
+              let parameters = PropertiesRequestMessageBird.parametersTest
         else{return}
-       
 
         var request = URLRequest(url: url)
         request.httpMethod = "POST"

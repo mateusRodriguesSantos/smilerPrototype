@@ -1,49 +1,69 @@
 PODS:
+  - ABBadgeButton (0.1.0)
   - Alamofire (5.4.3)
   - iOSSnapshotTestCase (6.2.0):
     - iOSSnapshotTestCase/SwiftSupport (= 6.2.0)
   - iOSSnapshotTestCase/Core (6.2.0)
   - iOSSnapshotTestCase/SwiftSupport (6.2.0):
     - iOSSnapshotTestCase/Core
-  - Nimble (9.0.0)
+  - NatDS (5.1.0)
+  - NatDSIcons (1.4.0)
+  - Nimble (9.2.0)
   - Nimble-Snapshots (9.1.0):
     - Nimble-Snapshots/Core (= 9.1.0)
   - Nimble-Snapshots/Core (9.1.0):
     - iOSSnapshotTestCase (~> 6.0)
     - Nimble
-  - Quick (3.1.2)
-  - Realm (10.7.2):
-    - Realm/Headers (= 10.7.2)
-  - Realm/Headers (10.7.2)
-  - RealmSwift (10.7.2):
-    - Realm (= 10.7.2)
+  - Quick (4.0.0)
+  - Realm (10.7.6):
+    - Realm/Headers (= 10.7.6)
+  - Realm/Headers (10.7.6)
+  - RealmSwift (10.7.6):
+    - Realm (= 10.7.6)
+  - SwiftyGif (5.4.0)
+  - TinyConstraints (4.0.1)
 
 DEPENDENCIES:
+  - ABBadgeButton
   - Alamofire (~> 5.2)
+  - NatDS
+  - NatDSIcons
   - Nimble
   - Nimble-Snapshots
   - Quick
   - RealmSwift
+  - SwiftyGif
+  - TinyConstraints
 
 SPEC REPOS:
   trunk:
+    - ABBadgeButton
     - Alamofire
     - iOSSnapshotTestCase
+    - NatDS
+    - NatDSIcons
     - Nimble
     - Nimble-Snapshots
     - Quick
     - Realm
     - RealmSwift
+    - SwiftyGif
+    - TinyConstraints
 
 SPEC CHECKSUMS:
+  ABBadgeButton: 3d08cceff96842f69fd290b6c386f9d1245698c7
   Alamofire: e447a2774a40c996748296fa2c55112fdbbc42f9
   iOSSnapshotTestCase: 9ab44cb5aa62b84d31847f40680112e15ec579a6
-  Nimble: 3b4ec3fd40f1dc178058e0981107721c615643d8
+  NatDS: 888844aa19ce833dbc19a5a328288d5b02d41a2d
+  NatDSIcons: 533e90a8d5dcb2d5d83b494d7dc2652d45277ced
+  Nimble: 4f4a345c80b503b3ea13606a4f98405974ee4d0b
   Nimble-Snapshots: 6605431525245f967ca9d558bb12a49da3d040e3
-  Quick: 60f0ea3b8e0cfc0df3259a5c06a238ad8b3c46e0
-  Realm: e523da9ade306c5ae87e85dc09fdef148d3e1cc1
-  RealmSwift: 4f6758c3adbdcc87f7b7777107226532a077f61c
+  Quick: 6473349e43b9271a8d43839d9ba1c442ed1b7ac4
+  Realm: ed860452717c8db8f4bf832b6807f7f2ce708839
+  RealmSwift: e31c4ddbcc42ac879313d656b86f9ca539f6f4f4
+  SwiftyGif: 5d4af95df24caf1c570dbbcb32a3b8a0763bc6d7
+  TinyConstraints: 8dd91295e56797648c7bc335dd20e1d91ec4c192
 
-PODFILE CHECKSUM: 47dc416e13b8e458626b92a8b86bb7e3cc0af2e7
+PODFILE CHECKSUM: 05b1a7cd366f2c193df998de05c90a942649eba9
 
 COCOAPODS: 1.10.1
