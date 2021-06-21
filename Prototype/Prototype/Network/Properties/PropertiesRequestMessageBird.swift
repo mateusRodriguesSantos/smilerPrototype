@@ -37,11 +37,7 @@ struct PropertiesRequestMessageBird {
     }()
     
     static var location:String = {
-        //return "http://www.google.com/maps/place/\(PropertiesForSMS.coordinates["Latitude"] ?? "Error"),\(PropertiesForSMS.coordinates["Longitude"] ?? "Error")"
-        
-               guard let latitude = LocationService.share.coordinates.latitude else{return ""}
-                guard let longitude = LocationService.share.coordinates.longitude else{return ""}
-        return "Latitude: \(latitude) Longitude: \(longitude)"
+        return "http://www.google.com/maps/place/\(PropertiesForSMS.coordinates["Latitude"] ?? "Error"),\(PropertiesForSMS.coordinates["Longitude"] ?? "Error")"
     }()
     
     static var parametersTest:Data? = {
