@@ -7,8 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1E13D0779708772EB4D0E66D /* Pods_Smiler.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA5D950F0170741E3B235656 /* Pods_Smiler.framework */; };
-		4EC82BBDAB11F62A432E64F2 /* Pods_Smiler_SmilerUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD21A10148BE393287CB1383 /* Pods_Smiler_SmilerUITests.framework */; };
+		106112E7FAB1BDBC32452FB3 /* Pods_ShakeApp_ShakeAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44A895514EA732597E96F9CC /* Pods_ShakeApp_ShakeAppTests.framework */; };
+		38715B5B2800578433E0341F /* Pods_ShakeApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F0BE315AC947E3D39E32D837 /* Pods_ShakeApp.framework */; };
+		53479B390A9A2AA58C9E40C1 /* Pods_ShakeApp_ShakeAppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 073FB8A408BB15629BAD0475 /* Pods_ShakeApp_ShakeAppUITests.framework */; };
 		57389DBA267F8F8C009635AE /* Contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57389DB9267F8F8C009635AE /* Contact.swift */; };
 		57389DBC267F9EF1009635AE /* PersistenceContacts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57389DBB267F9EF1009635AE /* PersistenceContacts.swift */; };
 		57389DC0267FEE43009635AE /* NewContactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57389DBF267FEE43009635AE /* NewContactViewController.swift */; };
@@ -22,7 +23,6 @@
 		6E10C7152574538E00A39F3F /* UIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E10C7142574538E00A39F3F /* UIButton.swift */; };
 		6E10C7292575687400A39F3F /* ShakeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E10C7282575687400A39F3F /* ShakeView.swift */; };
 		6E10C7772579BC5300A39F3F /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E10C7762579BC5300A39F3F /* String.swift */; };
-		A070C6E48D3C83A564EC6F20 /* Pods_Smiler_SmilerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A90AE9BB233C6C99853A93C0 /* Pods_Smiler_SmilerTests.framework */; };
 		AD41F232256D51C300F0E467 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD41F231256D51C300F0E467 /* Coordinator.swift */; };
 		AD41F237256D51D000F0E467 /* ViewCodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD41F236256D51D000F0E467 /* ViewCodable.swift */; };
 		AD41F23C256D522500F0E467 /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD41F23B256D522500F0E467 /* MainCoordinator.swift */; };
@@ -91,8 +91,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0ADC97CE740E79CC364E67DF /* Pods-Smiler.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Smiler.debug.xcconfig"; path = "Target Support Files/Pods-Smiler/Pods-Smiler.debug.xcconfig"; sourceTree = "<group>"; };
-		547D4D456EFBB9EF071372BC /* Pods-Smiler.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Smiler.release.xcconfig"; path = "Target Support Files/Pods-Smiler/Pods-Smiler.release.xcconfig"; sourceTree = "<group>"; };
+		073FB8A408BB15629BAD0475 /* Pods_ShakeApp_ShakeAppUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ShakeApp_ShakeAppUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2E8C7E49AA9642BF00CF6F6A /* Pods-ShakeApp-ShakeAppUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ShakeApp-ShakeAppUITests.release.xcconfig"; path = "Target Support Files/Pods-ShakeApp-ShakeAppUITests/Pods-ShakeApp-ShakeAppUITests.release.xcconfig"; sourceTree = "<group>"; };
+		44A895514EA732597E96F9CC /* Pods_ShakeApp_ShakeAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ShakeApp_ShakeAppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		57389DB9267F8F8C009635AE /* Contact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contact.swift; sourceTree = "<group>"; };
 		57389DBB267F9EF1009635AE /* PersistenceContacts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceContacts.swift; sourceTree = "<group>"; };
 		57389DBF267FEE43009635AE /* NewContactViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewContactViewController.swift; sourceTree = "<group>"; };
@@ -103,7 +104,7 @@
 		577541422661767500C0DC6B /* NatFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NatFont.swift; sourceTree = "<group>"; };
 		57754147266177FD00C0DC6B /* ContactsManagerTBViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsManagerTBViewCell.swift; sourceTree = "<group>"; };
 		5775414C266178FD00C0DC6B /* FeedbackButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackButton.swift; sourceTree = "<group>"; };
-		684C921C33DB3AB238EFD38E /* Pods-Smiler-SmilerUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Smiler-SmilerUITests.debug.xcconfig"; path = "Target Support Files/Pods-Smiler-SmilerUITests/Pods-Smiler-SmilerUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		624428EA02AB63318AB719F1 /* Pods-ShakeApp-ShakeAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ShakeApp-ShakeAppTests.release.xcconfig"; path = "Target Support Files/Pods-ShakeApp-ShakeAppTests/Pods-ShakeApp-ShakeAppTests.release.xcconfig"; sourceTree = "<group>"; };
 		6E10C7142574538E00A39F3F /* UIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButton.swift; sourceTree = "<group>"; };
 		6E10C7282575687400A39F3F /* ShakeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShakeView.swift; sourceTree = "<group>"; };
 		6E10C7762579BC5300A39F3F /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
@@ -113,8 +114,7 @@
 		6E68FB512579FD7900BA3315 /* FontsFree-Net-SFProDisplay-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "FontsFree-Net-SFProDisplay-Bold.ttf"; sourceTree = "<group>"; };
 		6E68FB522579FD7900BA3315 /* FontsFree-Net-SFCompactText-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "FontsFree-Net-SFCompactText-Regular.ttf"; sourceTree = "<group>"; };
 		6E68FB532579FD9B00BA3315 /* Fonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
-		A90AE9BB233C6C99853A93C0 /* Pods_Smiler_SmilerTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Smiler_SmilerTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		AD21A10148BE393287CB1383 /* Pods_Smiler_SmilerUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Smiler_SmilerUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		76B87275AF719EDB64323666 /* Pods-ShakeApp-ShakeAppUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ShakeApp-ShakeAppUITests.debug.xcconfig"; path = "Target Support Files/Pods-ShakeApp-ShakeAppUITests/Pods-ShakeApp-ShakeAppUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		AD41F231256D51C300F0E467 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		AD41F236256D51D000F0E467 /* ViewCodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewCodable.swift; sourceTree = "<group>"; };
 		AD41F23B256D522500F0E467 /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
@@ -132,7 +132,8 @@
 		ADFBEC33256D4BDC002EAE9D /* ShakeAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ShakeAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		ADFBEC37256D4BDC002EAE9D /* PrototypeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrototypeUITests.swift; sourceTree = "<group>"; };
 		ADFBEC39256D4BDC002EAE9D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		B67AACFB326B2CE171C30A9E /* Pods-Smiler-SmilerUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Smiler-SmilerUITests.release.xcconfig"; path = "Target Support Files/Pods-Smiler-SmilerUITests/Pods-Smiler-SmilerUITests.release.xcconfig"; sourceTree = "<group>"; };
+		BC6804A0AF89BD5CAD5D3F84 /* Pods-ShakeApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ShakeApp.debug.xcconfig"; path = "Target Support Files/Pods-ShakeApp/Pods-ShakeApp.debug.xcconfig"; sourceTree = "<group>"; };
+		C92A4BD5AD38039AB4112532 /* Pods-ShakeApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ShakeApp.release.xcconfig"; path = "Target Support Files/Pods-ShakeApp/Pods-ShakeApp.release.xcconfig"; sourceTree = "<group>"; };
 		DC02A63426589F7100011760 /* CALayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CALayer.swift; sourceTree = "<group>"; };
 		DC1BD8F4267E3A8100B3BDFC /* API_Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = API_Info.plist; sourceTree = "<group>"; };
 		DC1BD8F6267E4CD700B3BDFC /* UITextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextView.swift; sourceTree = "<group>"; };
@@ -170,9 +171,8 @@
 		DCF3C2A2265C4E3D000FE0CB /* TextViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextViewDelegate.swift; sourceTree = "<group>"; };
 		DCF3C2A4265C530F000FE0CB /* KeyboardNotification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardNotification.swift; sourceTree = "<group>"; };
 		DCF40027265C8B6600A10B2C /* SpinnerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpinnerViewController.swift; sourceTree = "<group>"; };
-		E76AF25E2F5DD3ED28863947 /* Pods-Smiler-SmilerTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Smiler-SmilerTests.release.xcconfig"; path = "Target Support Files/Pods-Smiler-SmilerTests/Pods-Smiler-SmilerTests.release.xcconfig"; sourceTree = "<group>"; };
-		EA5D950F0170741E3B235656 /* Pods_Smiler.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Smiler.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		FB7FEC73DE562F9237B3F65B /* Pods-Smiler-SmilerTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Smiler-SmilerTests.debug.xcconfig"; path = "Target Support Files/Pods-Smiler-SmilerTests/Pods-Smiler-SmilerTests.debug.xcconfig"; sourceTree = "<group>"; };
+		E0F6C0B7F5231DBD5C00647E /* Pods-ShakeApp-ShakeAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ShakeApp-ShakeAppTests.debug.xcconfig"; path = "Target Support Files/Pods-ShakeApp-ShakeAppTests/Pods-ShakeApp-ShakeAppTests.debug.xcconfig"; sourceTree = "<group>"; };
+		F0BE315AC947E3D39E32D837 /* Pods_ShakeApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ShakeApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -180,7 +180,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1E13D0779708772EB4D0E66D /* Pods_Smiler.framework in Frameworks */,
+				38715B5B2800578433E0341F /* Pods_ShakeApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -188,7 +188,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A070C6E48D3C83A564EC6F20 /* Pods_Smiler_SmilerTests.framework in Frameworks */,
+				106112E7FAB1BDBC32452FB3 /* Pods_ShakeApp_ShakeAppTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -196,13 +196,23 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4EC82BBDAB11F62A432E64F2 /* Pods_Smiler_SmilerUITests.framework in Frameworks */,
+				53479B390A9A2AA58C9E40C1 /* Pods_ShakeApp_ShakeAppUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		01B07CCC718594030093ADF5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F0BE315AC947E3D39E32D837 /* Pods_ShakeApp.framework */,
+				44A895514EA732597E96F9CC /* Pods_ShakeApp_ShakeAppTests.framework */,
+				073FB8A408BB15629BAD0475 /* Pods_ShakeApp_ShakeAppUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		57389DB8267F8F7B009635AE /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -294,7 +304,7 @@
 				ADFBEC36256D4BDC002EAE9D /* PrototypeUITests */,
 				ADFBEC10256D4BDB002EAE9D /* Products */,
 				D1822D66C471D6118D917F69 /* Pods */,
-				FF9B25912996E8DCA59781A6 /* Frameworks */,
+				01B07CCC718594030093ADF5 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -354,12 +364,12 @@
 		D1822D66C471D6118D917F69 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				0ADC97CE740E79CC364E67DF /* Pods-Smiler.debug.xcconfig */,
-				547D4D456EFBB9EF071372BC /* Pods-Smiler.release.xcconfig */,
-				FB7FEC73DE562F9237B3F65B /* Pods-Smiler-SmilerTests.debug.xcconfig */,
-				E76AF25E2F5DD3ED28863947 /* Pods-Smiler-SmilerTests.release.xcconfig */,
-				684C921C33DB3AB238EFD38E /* Pods-Smiler-SmilerUITests.debug.xcconfig */,
-				B67AACFB326B2CE171C30A9E /* Pods-Smiler-SmilerUITests.release.xcconfig */,
+				BC6804A0AF89BD5CAD5D3F84 /* Pods-ShakeApp.debug.xcconfig */,
+				C92A4BD5AD38039AB4112532 /* Pods-ShakeApp.release.xcconfig */,
+				E0F6C0B7F5231DBD5C00647E /* Pods-ShakeApp-ShakeAppTests.debug.xcconfig */,
+				624428EA02AB63318AB719F1 /* Pods-ShakeApp-ShakeAppTests.release.xcconfig */,
+				76B87275AF719EDB64323666 /* Pods-ShakeApp-ShakeAppUITests.debug.xcconfig */,
+				2E8C7E49AA9642BF00CF6F6A /* Pods-ShakeApp-ShakeAppUITests.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -553,16 +563,6 @@
 			path = Location;
 			sourceTree = "<group>";
 		};
-		FF9B25912996E8DCA59781A6 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				EA5D950F0170741E3B235656 /* Pods_Smiler.framework */,
-				A90AE9BB233C6C99853A93C0 /* Pods_Smiler_SmilerTests.framework */,
-				AD21A10148BE393287CB1383 /* Pods_Smiler_SmilerUITests.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -570,11 +570,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = ADFBEC3C256D4BDC002EAE9D /* Build configuration list for PBXNativeTarget "ShakeApp" */;
 			buildPhases = (
-				213C4D440FA8F2C6498B7DF5 /* [CP] Check Pods Manifest.lock */,
+				785DF3939E7EF617BD076DCE /* [CP] Check Pods Manifest.lock */,
 				ADFBEC0B256D4BDB002EAE9D /* Sources */,
 				ADFBEC0C256D4BDB002EAE9D /* Frameworks */,
 				ADFBEC0D256D4BDB002EAE9D /* Resources */,
-				FF831693D9CBB5AB14BAED84 /* [CP] Embed Pods Frameworks */,
+				2B72440BCC794349D8F53B06 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -589,11 +589,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = ADFBEC3F256D4BDC002EAE9D /* Build configuration list for PBXNativeTarget "ShakeAppTests" */;
 			buildPhases = (
-				9075950EC3CB346C2668B121 /* [CP] Check Pods Manifest.lock */,
+				0134EAE8DC21F1E56547DCBB /* [CP] Check Pods Manifest.lock */,
 				ADFBEC24256D4BDC002EAE9D /* Sources */,
 				ADFBEC25256D4BDC002EAE9D /* Frameworks */,
 				ADFBEC26256D4BDC002EAE9D /* Resources */,
-				54663FF97F9EF4292ACFA952 /* [CP] Embed Pods Frameworks */,
+				509EBAD7A8C844FCF44CD19E /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -609,11 +609,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = ADFBEC42256D4BDC002EAE9D /* Build configuration list for PBXNativeTarget "ShakeAppUITests" */;
 			buildPhases = (
-				AC5E7DA3CC1C044C2121A49A /* [CP] Check Pods Manifest.lock */,
+				E4FA7820898DA671CA7ED8D8 /* [CP] Check Pods Manifest.lock */,
 				ADFBEC2F256D4BDC002EAE9D /* Sources */,
 				ADFBEC30256D4BDC002EAE9D /* Frameworks */,
 				ADFBEC31256D4BDC002EAE9D /* Resources */,
-				EEBB2CC1288D04D0716A7124 /* [CP] Embed Pods Frameworks */,
+				E0F8E9E0D1F90B28ED5EE462 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -697,7 +697,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		213C4D440FA8F2C6498B7DF5 /* [CP] Check Pods Manifest.lock */ = {
+		0134EAE8DC21F1E56547DCBB /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -712,31 +712,48 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-Smiler-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-ShakeApp-ShakeAppTests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		54663FF97F9EF4292ACFA952 /* [CP] Embed Pods Frameworks */ = {
+		2B72440BCC794349D8F53B06 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Smiler-SmilerTests/Pods-Smiler-SmilerTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-ShakeApp/Pods-ShakeApp-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Smiler-SmilerTests/Pods-Smiler-SmilerTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-ShakeApp/Pods-ShakeApp-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Smiler-SmilerTests/Pods-Smiler-SmilerTests-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ShakeApp/Pods-ShakeApp-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		9075950EC3CB346C2668B121 /* [CP] Check Pods Manifest.lock */ = {
+		509EBAD7A8C844FCF44CD19E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ShakeApp-ShakeAppTests/Pods-ShakeApp-ShakeAppTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ShakeApp-ShakeAppTests/Pods-ShakeApp-ShakeAppTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ShakeApp-ShakeAppTests/Pods-ShakeApp-ShakeAppTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		785DF3939E7EF617BD076DCE /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -751,14 +768,31 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-Smiler-SmilerTests-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-ShakeApp-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		AC5E7DA3CC1C044C2121A49A /* [CP] Check Pods Manifest.lock */ = {
+		E0F8E9E0D1F90B28ED5EE462 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ShakeApp-ShakeAppUITests/Pods-ShakeApp-ShakeAppUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ShakeApp-ShakeAppUITests/Pods-ShakeApp-ShakeAppUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ShakeApp-ShakeAppUITests/Pods-ShakeApp-ShakeAppUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E4FA7820898DA671CA7ED8D8 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -773,45 +807,11 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-Smiler-SmilerUITests-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-ShakeApp-ShakeAppUITests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		EEBB2CC1288D04D0716A7124 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Smiler-SmilerUITests/Pods-Smiler-SmilerUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Smiler-SmilerUITests/Pods-Smiler-SmilerUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Smiler-SmilerUITests/Pods-Smiler-SmilerUITests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		FF831693D9CBB5AB14BAED84 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Smiler/Pods-Smiler-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Smiler/Pods-Smiler-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Smiler/Pods-Smiler-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -1039,12 +1039,12 @@
 		};
 		ADFBEC3D256D4BDC002EAE9D /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0ADC97CE740E79CC364E67DF /* Pods-Smiler.debug.xcconfig */;
+			baseConfigurationReference = BC6804A0AF89BD5CAD5D3F84 /* Pods-ShakeApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = Z27F7H4265;
+				DEVELOPMENT_TEAM = 7TST2X4MAG;
 				INFOPLIST_FILE = Prototype/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1060,12 +1060,12 @@
 		};
 		ADFBEC3E256D4BDC002EAE9D /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 547D4D456EFBB9EF071372BC /* Pods-Smiler.release.xcconfig */;
+			baseConfigurationReference = C92A4BD5AD38039AB4112532 /* Pods-ShakeApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = Z27F7H4265;
+				DEVELOPMENT_TEAM = 7TST2X4MAG;
 				INFOPLIST_FILE = Prototype/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1081,7 +1081,7 @@
 		};
 		ADFBEC40256D4BDC002EAE9D /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = FB7FEC73DE562F9237B3F65B /* Pods-Smiler-SmilerTests.debug.xcconfig */;
+			baseConfigurationReference = E0F6C0B7F5231DBD5C00647E /* Pods-ShakeApp-ShakeAppTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -1104,7 +1104,7 @@
 		};
 		ADFBEC41256D4BDC002EAE9D /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E76AF25E2F5DD3ED28863947 /* Pods-Smiler-SmilerTests.release.xcconfig */;
+			baseConfigurationReference = 624428EA02AB63318AB719F1 /* Pods-ShakeApp-ShakeAppTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -1127,7 +1127,7 @@
 		};
 		ADFBEC43256D4BDC002EAE9D /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 684C921C33DB3AB238EFD38E /* Pods-Smiler-SmilerUITests.debug.xcconfig */;
+			baseConfigurationReference = 76B87275AF719EDB64323666 /* Pods-ShakeApp-ShakeAppUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -1148,7 +1148,7 @@
 		};
 		ADFBEC44256D4BDC002EAE9D /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B67AACFB326B2CE171C30A9E /* Pods-Smiler-SmilerUITests.release.xcconfig */;
+			baseConfigurationReference = 2E8C7E49AA9642BF00CF6F6A /* Pods-ShakeApp-ShakeAppUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
